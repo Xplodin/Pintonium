@@ -1,0 +1,19 @@
+{
+  "title": "Valyrium",
+  "r": 232,
+  "g": 92,
+  "b": 49,
+  "input": {
+    "id": "taiga:valyrium_ore"
+  },
+  "description": [
+    {
+      "text": "Die alten Valyrer waren die Ersten, die das seltene Metall, wass sie Valyium nanntne, entdeckten. Es ist im Nether zu finden, aber überaus selten."
+    }
+  ],
+  "informations": [
+    "Level: Valyrium",
+    "Sehr selten",
+    "Y: 0 - 128"
+  ]
+}

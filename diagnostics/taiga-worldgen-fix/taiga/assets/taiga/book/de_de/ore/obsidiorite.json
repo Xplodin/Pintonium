@@ -1,0 +1,20 @@
+{
+  "title": "Obsidiorit",
+  "r": 34,
+  "g": 72,
+  "b": 83,
+  "input": {
+    "id": "taiga:obsidiorite_block"
+  },
+  "description": [
+    {
+      "text": "Obsidiorit findet man im Ende ziemlich häufig. Scheinbar entstanden die kubischen Meteoriten im Void und schweben seither im Ende umher. Man muss fliegen können oder Treppen bauen, um sie abzubauen."
+    }
+  ],
+  "informations": [
+    "Level: Duranite",
+    "Manchmal brechen sie nicht vollständig",
+    "Sehr hart",
+    "Schweben im Ende"
+  ]
+}

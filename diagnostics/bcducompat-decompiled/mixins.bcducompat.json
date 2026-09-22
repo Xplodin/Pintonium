@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.kc.bcducompat.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "mixins": [
+    "MixinConfigLoader",
+    "MixinCavernCarver"
+  ],
+  "client": [],
+  "server": [],
+  "setSourceFile": true
+}

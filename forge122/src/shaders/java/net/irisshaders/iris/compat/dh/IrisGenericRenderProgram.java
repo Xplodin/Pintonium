@@ -138,7 +138,8 @@ public class IrisGenericRenderProgram implements IDhApiGenericObjectShaderProgra
 
         this.va = GL_STATE_MANAGER.glGenVertexArrays();
 		GL_STATE_MANAGER.glBindVertexArray(va);
-		GL32.glVertexAttribPointer(0, 3, GL32.GL_FLOAT, false, 0, 0);
+		// bindVertexBuffer configures the pointer after binding DH's actual VBO.
+		// No array buffer is guaranteed to be bound while this VAO is created.
 		GL32.glEnableVertexAttribArray(0);
 
 		projectionUniform = tryGetUniformLocation2("iris_ProjectionMatrix");

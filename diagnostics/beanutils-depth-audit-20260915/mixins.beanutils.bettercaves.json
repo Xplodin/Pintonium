@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.bean.beanutils.mixin.bettercaves",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBetterCavesConfigLoader",
+    "MixinCaveCarver",
+    "MixinCavernCarver"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

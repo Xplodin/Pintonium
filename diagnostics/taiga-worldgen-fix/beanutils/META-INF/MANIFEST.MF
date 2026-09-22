@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+FMLAT: beanutils_at.cfg
+ForceLoadAsMod: true
+FMLCorePlugin: dev.beanpack.memory.ResourcePathPlugin
+FMLCorePluginContainsFMLMod: true
+

@@ -1,0 +1,281 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:fluid"
+  },
+  "variants": {
+    "triberium_fluid": [
+      {
+        "custom": {
+          "fluid": "triberium_fluid"
+        }
+      }
+    ],
+    "magma_fluid": [
+      {
+        "custom": {
+          "fluid": "magma_fluid"
+        }
+      }
+    ],
+    "dilithium_fluid": [
+      {
+        "custom": {
+          "fluid": "dilithium_fluid"
+        }
+      }
+    ],
+    "nitronite_fluid": [
+      {
+        "custom": {
+          "fluid": "nitronite_fluid"
+        }
+      }
+    ],
+    "meteorite_fluid": [
+      {
+        "custom": {
+          "fluid": "meteorite_fluid"
+        }
+      }
+    ],
+    "basalt_fluid": [
+      {
+        "custom": {
+          "fluid": "basalt_fluid"
+        }
+      }
+    ],
+    "tiberium_fluid": [
+      {
+        "custom": {
+          "fluid": "tiberium_fluid"
+        }
+      }
+    ],
+    "aurorium_fluid": [
+      {
+        "custom": {
+          "fluid": "aurorium_fluid"
+        }
+      }
+    ],
+    "prometheum_fluid": [
+      {
+        "custom": {
+          "fluid": "prometheum_fluid"
+        }
+      }
+    ],
+    "duranite_fluid": [
+      {
+        "custom": {
+          "fluid": "duranite_fluid"
+        }
+      }
+    ],
+    "valyrium_fluid": [
+      {
+        "custom": {
+          "fluid": "valyrium_fluid"
+        }
+      }
+    ],
+    "vibranium_fluid": [
+      {
+        "custom": {
+          "fluid": "vibranium_fluid"
+        }
+      }
+    ],
+    "karmesine_fluid": [
+      {
+        "custom": {
+          "fluid": "karmesine_fluid"
+        }
+      }
+    ],
+    "jauxum_fluid": [
+      {
+        "custom": {
+          "fluid": "jauxum_fluid"
+        }
+      }
+    ],
+    "ovium_fluid": [
+      {
+        "custom": {
+          "fluid": "ovium_fluid"
+        }
+      }
+    ],
+    "terrax_fluid": [
+      {
+        "custom": {
+          "fluid": "terrax_fluid"
+        }
+      }
+    ],
+    "palladium_fluid": [
+      {
+        "custom": {
+          "fluid": "palladium_fluid"
+        }
+      }
+    ],
+    "uru_fluid": [
+      {
+        "custom": {
+          "fluid": "uru_fluid"
+        }
+      }
+    ],
+    "osram_fluid": [
+      {
+        "custom": {
+          "fluid": "osram_fluid"
+        }
+      }
+    ],
+    "abyssum_fluid": [
+      {
+        "custom": {
+          "fluid": "abyssum_fluid"
+        }
+      }
+    ],
+    "eezo_fluid": [
+      {
+        "custom": {
+          "fluid": "eezo_fluid"
+        }
+      }
+    ],
+    "fractum_fluid": [
+      {
+        "custom": {
+          "fluid": "fractum_fluid"
+        }
+      }
+    ],
+    "violium_fluid": [
+      {
+        "custom": {
+          "fluid": "violium_fluid"
+        }
+      }
+    ],
+    "proxii_fluid": [
+      {
+        "custom": {
+          "fluid": "proxii_fluid"
+        }
+      }
+    ],
+    "tritonite_fluid": [
+      {
+        "custom": {
+          "fluid": "tritonite_fluid"
+        }
+      }
+    ],
+    "ignitz_fluid": [
+      {
+        "custom": {
+          "fluid": "ignitz_fluid"
+        }
+      }
+    ],
+    "imperomite_fluid": [
+      {
+        "custom": {
+          "fluid": "imperomite_fluid"
+        }
+      }
+    ],
+    "solarium_fluid": [
+      {
+        "custom": {
+          "fluid": "solarium_fluid"
+        }
+      }
+    ],
+    "nihilite_fluid": [
+      {
+        "custom": {
+          "fluid": "nihilite_fluid"
+        }
+      }
+    ],
+    "adamant_fluid": [
+      {
+        "custom": {
+          "fluid": "adamant_fluid"
+        }
+      }
+    ],
+    "dyonite_fluid": [
+      {
+        "custom": {
+          "fluid": "dyonite_fluid"
+        }
+      }
+    ],
+    "nucleum_fluid": [
+      {
+        "custom": {
+          "fluid": "nucleum_fluid"
+        }
+      }
+    ],
+    "lumix_fluid": [
+      {
+        "custom": {
+          "fluid": "lumix_fluid"
+        }
+      }
+    ],
+    "seismum_fluid": [
+      {
+        "custom": {
+          "fluid": "seismum_fluid"
+        }
+      }
+    ],
+    "astrium_fluid": [
+      {
+        "custom": {
+          "fluid": "astrium_fluid"
+        }
+      }
+    ],
+    "niob_fluid": [
+      {
+        "custom": {
+          "fluid": "niob_fluid"
+        }
+      }
+    ],
+    "yrdeen_fluid": [
+      {
+        "custom": {
+          "fluid": "yrdeen_fluid"
+        }
+      }
+    ],
+    "iox_fluid": [
+      {
+        "custom": {
+          "fluid": "iox_fluid"
+        }
+      }
+    ],
+    "obsidiorite_fluid": [
+      {
+        "custom": {
+          "fluid": "obsidiorite_fluid"
+        }
+      }
+    ]
+  }
+}

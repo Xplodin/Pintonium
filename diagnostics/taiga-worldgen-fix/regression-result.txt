@@ -1,0 +1,2 @@
+PASS: 8400 cases; 10355 placements; identical writes, reads and RNG state; flags 3 -> 18 only.
+Scope: simulated block storage; real neighbor/fluid effects and runtime Mixin application require in-game validation.

@@ -1,0 +1,255 @@
+Samples: 81339; cumulative estimated allocations: 259.99 GiB (not retained RAM)
+
+Disjoint stack categories (full sampled stack):
+ 47.76%   124.18 GiB cumulative: Other allocations
+ 20.05%    52.13 GiB cumulative: StellarCore resource discovery and binding
+ 17.35%    45.12 GiB cumulative: Other VintageFix model/texture/resource paths
+  7.33%    19.04 GiB cumulative: CraftTweaker replaceAllOccurences
+  4.92%    12.80 GiB cumulative: Tinkers ore-dictionary melting registration
+  2.58%     6.72 GiB cumulative: StellarCore preallocated state-mapper maps
+
+First non-JDK frame:
+  5.48% net.minecraft.util.ResourceLocation.toString:62
+  5.29% com.google.common.base.Splitter$SplittingIterator.computeNext:607
+  5.20% net.minecraft.client.resources.AbstractResourcePack.func_110592_c:1521
+  3.90% top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  3.38% github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  3.27% com.gildedgames.the_aether.api.AetherAPI.handler$eio000$baubles$fix:521
+  2.69% net.minecraftforge.fml.common.eventhandler.ListenerList$ListenerListInst.getListeners:215
+  2.60% org.embeddedt.vintagefix.util.CachedResourcePath.<init>:23
+  2.06% javax.imageio.ImageIO.read:1422
+  1.87% com.xcompwiz.mystcraft.client.render.PageBuilder$PageSprite.stitchWord:320
+  1.86% net.minecraft.item.ItemStack.func_77973_b:178
+  1.81% crafttweaker.mc1120.oredict.MCOreDictEntry.getFromIngredient:54
+  1.79% net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cmj000$stellarcore$stellar_core$getResource:1160
+  1.57% slimeknights.mantle.util.RecipeMatch$ItemCombination.matches:242
+  1.54% github.kasuminova.stellarcore.shaded.org.jctools.maps.NonBlockingIdentityHashMap.initialize:270
+  1.46% net.minecraft.client.resources.AbstractResourcePack.func_110592_c:1519
+  1.11% net.minecraft.util.NonNullList.handler$cma000$stellarcore$injectWithSize:531
+  1.08% it.unimi.dsi.fastutil.objects.ObjectArrayList.grow:353
+
+Allocation stack groups:
+
+  2.51% (6.53 GiB cumulative, 1768 samples, largest weight 78.1 MiB) [B
+  java.util.Arrays.copyOfRange:3845
+  java.lang.StringLatin1.newString:760
+  java.lang.String.substring:2904
+  java.lang.String.subSequence:2937
+  com.google.common.base.Splitter$SplittingIterator.computeNext:607
+  com.google.common.base.Splitter$SplittingIterator.computeNext:519
+  com.google.common.base.AbstractIterator.tryToComputeNext:68
+  com.google.common.base.AbstractIterator.hasNext:63
+  org.embeddedt.vintagefix.util.CachedResourcePath.<init>:25
+  net.minecraft.client.resources.FileResourcePack.handler$cid000$vintagefix$fastHasResource:1078
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+
+  2.30% (5.97 GiB cumulative, 1563 samples, largest weight 76.1 MiB) java.lang.String
+  java.lang.StringLatin1.newString:760
+  java.lang.String.substring:2904
+  java.lang.String.subSequence:2937
+  com.google.common.base.Splitter$SplittingIterator.computeNext:607
+  com.google.common.base.Splitter$SplittingIterator.computeNext:519
+  com.google.common.base.AbstractIterator.tryToComputeNext:68
+  com.google.common.base.AbstractIterator.hasNext:63
+  org.embeddedt.vintagefix.util.CachedResourcePath.<init>:25
+  net.minecraft.client.resources.FileResourcePack.handler$cid000$vintagefix$fastHasResource:1078
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+
+  1.61% (4.20 GiB cumulative, 1488 samples, largest weight 155.6 MiB) [Ljava.lang.String;
+  crafttweaker.mc1120.oredict.MCOreDictEntry.getFromIngredient:54
+  crafttweaker.api.minecraft.CraftTweakerMC.getOreDict:750
+  crafttweaker.api.minecraft.CraftTweakerMC.getIIngredient:704
+  crafttweaker.api.minecraft.CraftTweakerMC.getIIngredients:962
+  crafttweaker.mc1120.recipes.MCRecipeWrapper.getIngredients1D:96
+  crafttweaker.mc1120.recipes.MCRecipeWrapper.getIngredients2D:101
+  crafttweaker.mc1120.recipes.MCRecipeManager$ActionReplaceAllOccurences.setCurrentModifiedRecipe:908
+  crafttweaker.mc1120.CraftTweaker.onPostInit:197
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000bb64000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+  jdk.internal.reflect.DirectMethodHandleAccessor.invoke:104
+  java.lang.reflect.Method.invoke:565
+
+  1.29% (3.35 GiB cumulative, 794 samples, largest weight 350.7 MiB) [Ljava.util.HashMap$Node;
+  java.util.HashMap.resize:711
+  java.util.HashMap.putVal:636
+  java.util.HashMap.put:619
+  java.util.HashSet.add:230
+  slimeknights.mantle.util.RecipeMatch$ItemCombination.matches:242
+  slimeknights.tconstruct.library.smeltery.MeltingRecipe.matches:50
+  slimeknights.tconstruct.library.TinkerRegistry.handler$dlh000$stellarcore$injectGetMelting:1247
+  slimeknights.tconstruct.library.TinkerRegistry.getMelting:-1
+  slimeknights.tconstruct.smeltery.TinkerSmeltery.registerRecipeOredictMelting:962
+  slimeknights.tconstruct.TinkerIntegration.postInit:173
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000bb64000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+
+  1.11% (2.89 GiB cumulative, 307 samples, largest weight 980.0 MiB) [Ljava.lang.Object;
+  github.kasuminova.stellarcore.shaded.org.jctools.maps.NonBlockingIdentityHashMap.initialize:270
+  github.kasuminova.stellarcore.shaded.org.jctools.maps.NonBlockingIdentityHashMap.<init>:263
+  net.minecraft.client.renderer.block.statemap.StateMapperBase.handler$cmn002$stellarcore$injectInit:535
+  net.minecraft.client.renderer.block.statemap.StateMapperBase.<init>:12
+  net.minecraft.client.renderer.block.statemap.DefaultStateMapper.<init>:7
+  net.minecraft.client.renderer.block.statemap.BlockStateMapper.func_188181_b:60
+  org.embeddedt.vintagefix.dynamicresources.model.ModelLocationInformation.init:83
+  net.minecraft.client.renderer.block.model.ModelManager.func_110549_a:1195
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110542_a:126
+  net.minecraft.client.Minecraft.func_71384_a:509
+  net.minecraft.client.Minecraft.func_99999_d:374
+  net.minecraft.client.main.Main.main:123
+  java.lang.invoke.LambdaForm$DMH.0x000000000b591c00.invokeStaticInit:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000b34e000.invoke:-1
+
+  1.05% (2.73 GiB cumulative, 763 samples, largest weight 560.4 MiB) [Ljava.lang.Object;
+  it.unimi.dsi.fastutil.objects.ObjectArrayList.grow:353
+  it.unimi.dsi.fastutil.objects.ObjectArrayList.add:365
+  net.minecraft.util.NonNullList.add:58
+  java.util.AbstractList.add:113
+  java.util.AbstractCollection.addAll:338
+  slimeknights.tconstruct.library.utils.ListUtil.getListFrom:11
+  slimeknights.tconstruct.library.smeltery.MeltingRecipe.matches:50
+  slimeknights.tconstruct.library.TinkerRegistry.handler$dlh000$stellarcore$injectGetMelting:1247
+  slimeknights.tconstruct.library.TinkerRegistry.getMelting:-1
+  slimeknights.tconstruct.smeltery.TinkerSmeltery.registerRecipeOredictMelting:962
+  slimeknights.tconstruct.TinkerIntegration.postInit:173
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000bb64000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+
+  0.93% (2.42 GiB cumulative, 154 samples, largest weight 1392.7 MiB) [I
+  github.kasuminova.stellarcore.shaded.org.jctools.maps.NonBlockingIdentityHashMap.initialize:272
+  github.kasuminova.stellarcore.shaded.org.jctools.maps.NonBlockingIdentityHashMap.<init>:263
+  net.minecraft.client.renderer.block.statemap.StateMapperBase.handler$cmn002$stellarcore$injectInit:535
+  net.minecraft.client.renderer.block.statemap.StateMapperBase.<init>:12
+  net.minecraft.client.renderer.block.statemap.DefaultStateMapper.<init>:7
+  net.minecraft.client.renderer.block.statemap.BlockStateMapper.func_188181_b:60
+  org.embeddedt.vintagefix.dynamicresources.model.ModelLocationInformation.init:83
+  net.minecraft.client.renderer.block.model.ModelManager.func_110549_a:1195
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110542_a:126
+  net.minecraft.client.Minecraft.func_71384_a:509
+  net.minecraft.client.Minecraft.func_99999_d:374
+  net.minecraft.client.main.Main.main:123
+  java.lang.invoke.LambdaForm$DMH.0x000000000b591c00.invokeStaticInit:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000b34e000.invoke:-1
+
+  0.83% (2.17 GiB cumulative, 559 samples, largest weight 185.3 MiB) [B
+  java.lang.String.<init>:4863
+  java.lang.StringBuilder.toString:478
+  net.minecraft.util.ResourceLocation.toString:62
+  java.lang.String.valueOf:4530
+  java.lang.StringBuilder.append:173
+  com.gildedgames.the_aether.api.AetherAPI.handler$eio000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000000de7c400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000000c195400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+
+  0.76% (1.97 GiB cumulative, 265 samples, largest weight 59.9 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$cmg000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cmj000$stellarcore$stellar_core$getResource:1162
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110536_a:-1
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector.lambda$resourceExists$2:132
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector$$Lambda.0x000000001307ac00.apply:-1
+
+  0.70% (1.82 GiB cumulative, 520 samples, largest weight 173.8 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  com.gildedgames.the_aether.api.AetherAPI.handler$eio000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000000de7c400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000000c195400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673
+  net.minecraft.item.ItemStack.func_77946_l:426
+
+  0.68% (1.76 GiB cumulative, 552 samples, largest weight 175.1 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.util.ResourceLocation.toString:62
+  java.lang.String.valueOf:4530
+  java.lang.StringBuilder.append:173
+  com.gildedgames.the_aether.api.AetherAPI.handler$eio000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000000de7c400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000000c195400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+
+  0.68% (1.76 GiB cumulative, 550 samples, largest weight 189.5 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  java.lang.StringBuilder.append:173
+  com.gildedgames.the_aether.api.AetherAPI.handler$eio000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000000de7c400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000000c195400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673
+
+  0.62% (1.62 GiB cumulative, 284 samples, largest weight 531.5 MiB) java.util.HashMap$KeyIterator
+  java.util.HashMap$HashIterator.<init>:1596
+  java.util.HashMap$KeyIterator.<init>:1627
+  java.util.HashMap$KeySet.iterator:992
+  java.util.HashSet.iterator:183
+  slimeknights.mantle.util.RecipeMatch$ItemCombination.matches:247
+  slimeknights.tconstruct.library.smeltery.MeltingRecipe.matches:50
+  slimeknights.tconstruct.library.TinkerRegistry.handler$dlh000$stellarcore$injectGetMelting:1247
+  slimeknights.tconstruct.library.TinkerRegistry.getMelting:-1
+  slimeknights.tconstruct.smeltery.TinkerSmeltery.registerRecipeOredictMelting:962
+  slimeknights.tconstruct.TinkerIntegration.postInit:173
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000000bb64000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+
+  0.58% (1.52 GiB cumulative, 655 samples, largest weight 155.4 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.util.ResourceLocation.toString:62
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:45
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:31
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.onAttachCapability:66
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000000e453600.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000000c195400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673

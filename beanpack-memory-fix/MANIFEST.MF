@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+FMLCorePlugin: dev.beanpack.memory.ResourcePathPlugin
+FMLCorePluginContainsFMLMod: false

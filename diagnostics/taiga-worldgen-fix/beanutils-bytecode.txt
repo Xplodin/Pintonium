@@ -1,0 +1,807 @@
+Compiled from "MixinGenerator.java"
+public abstract class com.bean.beanutils.mixin.MixinGenerator {
+  public com.bean.beanutils.mixin.MixinGenerator();
+    Code:
+       0: aload_0
+       1: invokespecial #19                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void generateOreStoneVariant(net.minecraft.block.state.IBlockState, net.minecraft.block.BlockStone$EnumType, java.util.Random, int, int, net.minecraft.world.World, int);
+    Code:
+       0: iconst_1
+       1: anewarray     #12                 // class net/minecraft/block/BlockStone$EnumType
+       4: dup
+       5: iconst_0
+       6: aload_1
+       7: aastore
+       8: invokestatic  #30                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+      11: astore        7
+      13: invokestatic  #36                 // Method com/bean/beanutils/config/DepthUpdateCompat.getOverworldMinY:()I
+      16: istore        8
+      18: bipush        96
+      20: istore        9
+      22: iload         9
+      24: iload         8
+      26: bipush        32
+      28: invokestatic  #42                 // Method java/lang/Math.max:(II)I
+      31: invokestatic  #45                 // Method java/lang/Math.min:(II)I
+      34: istore        10
+      36: iconst_1
+      37: iload         9
+      39: iload         10
+      41: isub
+      42: iconst_1
+      43: iadd
+      44: invokestatic  #42                 // Method java/lang/Math.max:(II)I
+      47: istore        11
+      49: iload         8
+      51: iload         9
+      53: bipush        31
+      55: invokestatic  #45                 // Method java/lang/Math.min:(II)I
+      58: invokestatic  #42                 // Method java/lang/Math.max:(II)I
+      61: istore        12
+      63: iconst_1
+      64: iload         12
+      66: iload         8
+      68: isub
+      69: iconst_1
+      70: iadd
+      71: invokestatic  #42                 // Method java/lang/Math.max:(II)I
+      74: istore        13
+      76: iconst_0
+      77: istore        14
+      79: iload         14
+      81: iload         6
+      83: if_icmpge     451
+      86: iload_3
+      87: aload_2
+      88: bipush        16
+      90: invokevirtual #57                 // Method java/util/Random.nextInt:(I)I
+      93: iadd
+      94: istore        15
+      96: iload         4
+      98: aload_2
+      99: bipush        16
+     101: invokevirtual #57                 // Method java/util/Random.nextInt:(I)I
+     104: iadd
+     105: istore        16
+     107: new           #59                 // class net/minecraft/util/math/BlockPos
+     110: dup
+     111: iload         15
+     113: aload_2
+     114: iload         11
+     116: invokevirtual #57                 // Method java/util/Random.nextInt:(I)I
+     119: iload         10
+     121: iadd
+     122: iload         16
+     124: invokespecial #62                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     127: astore        17
+     129: aload         5
+     131: aload         17
+     133: invokevirtual #66                 // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     136: astore        18
+     138: aload         18
+     140: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     145: getstatic     #76                 // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     148: invokevirtual #82                 // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     151: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     156: invokevirtual #86                 // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     159: ifeq          194
+     162: aload         7
+     164: aload         18
+     166: getstatic     #90                 // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     169: invokeinterface #94,  2           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     174: invokeinterface #97,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     179: ifeq          276
+     182: aload         5
+     184: aload         17
+     186: aload_0
+     187: invokevirtual #101                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     190: pop
+     191: goto          276
+     194: aload         17
+     196: invokevirtual #104                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     199: iload         8
+     201: if_icmplt     276
+     204: aload         17
+     206: invokevirtual #108                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     209: astore        17
+     211: aload         5
+     213: aload         17
+     215: invokevirtual #66                 // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     218: astore        18
+     220: aload         18
+     222: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     227: getstatic     #76                 // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     230: invokevirtual #82                 // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     233: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     238: invokevirtual #86                 // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     241: ifeq          194
+     244: aload         7
+     246: aload         18
+     248: getstatic     #90                 // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     251: invokeinterface #94,  2           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     256: invokeinterface #97,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     261: ifeq          194
+     264: aload         5
+     266: aload         17
+     268: aload_0
+     269: invokevirtual #101                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     272: pop
+     273: goto          276
+     276: new           #59                 // class net/minecraft/util/math/BlockPos
+     279: dup
+     280: iload         15
+     282: aload_2
+     283: iload         13
+     285: invokevirtual #57                 // Method java/util/Random.nextInt:(I)I
+     288: iload         8
+     290: iadd
+     291: iload         16
+     293: invokespecial #62                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     296: astore        17
+     298: aload         5
+     300: aload         17
+     302: invokevirtual #66                 // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     305: astore        18
+     307: aload         18
+     309: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     314: getstatic     #76                 // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     317: invokevirtual #82                 // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     320: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     325: invokevirtual #86                 // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     328: ifeq          363
+     331: aload         7
+     333: aload         18
+     335: getstatic     #90                 // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     338: invokeinterface #94,  2           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     343: invokeinterface #97,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     348: ifeq          445
+     351: aload         5
+     353: aload         17
+     355: aload_0
+     356: invokevirtual #101                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     359: pop
+     360: goto          445
+     363: aload         17
+     365: invokevirtual #104                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     368: iload         9
+     370: if_icmpgt     445
+     373: aload         17
+     375: invokevirtual #111                // Method net/minecraft/util/math/BlockPos.func_177984_a:()Lnet/minecraft/util/math/BlockPos;
+     378: astore        17
+     380: aload         5
+     382: aload         17
+     384: invokevirtual #66                 // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     387: astore        18
+     389: aload         18
+     391: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     396: getstatic     #76                 // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     399: invokevirtual #82                 // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     402: invokeinterface #70,  1           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     407: invokevirtual #86                 // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     410: ifeq          363
+     413: aload         7
+     415: aload         18
+     417: getstatic     #90                 // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     420: invokeinterface #94,  2           // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     425: invokeinterface #97,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     430: ifeq          363
+     433: aload         5
+     435: aload         17
+     437: aload_0
+     438: invokevirtual #101                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     441: pop
+     442: goto          445
+     445: iinc          14, 2
+     448: goto          79
+     451: return
+}
+Compiled from "MixinWorldGen.java"
+public abstract class com.bean.beanutils.mixin.MixinWorldGen {
+  private java.util.List blackList;
+
+  private java.util.Map meteorGenStats;
+
+  private java.util.Map meteorChunkStats;
+
+  public com.bean.beanutils.mixin.MixinWorldGen();
+    Code:
+       0: aload_0
+       1: invokespecial #25                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  private static int tdp$getInt(java.util.Map, int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       5: invokeinterface #42,  2           // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      10: astore_2
+      11: aload_2
+      12: instanceof    #44                 // class java/lang/Number
+      15: ifeq          28
+      18: aload_2
+      19: checkcast     #44                 // class java/lang/Number
+      22: invokevirtual #48                 // Method java/lang/Number.intValue:()I
+      25: goto          29
+      28: iconst_0
+      29: ireturn
+
+  private static void tdp$generateCommonOverworldOres(java.util.Random, int, int, net.minecraft.world.World);
+    Code:
+       0: invokestatic  #60                 // Method com/bean/beanutils/config/DepthUpdateCompat.getOverworldMinY:()I
+       3: istore        4
+       5: invokestatic  #63                 // Method com/bean/beanutils/config/DepthUpdateCompat.getOverworldLavaY:()I
+       8: istore        5
+      10: invokestatic  #67                 // Method com/bean/beanutils/config/DepthUpdateCompat.getDeepHost:()Lnet/minecraft/block/state/IBlockState;
+      13: astore        6
+      15: iconst_2
+      16: anewarray     #69                 // class net/minecraft/block/state/IBlockState
+      19: dup
+      20: iconst_0
+      21: getstatic     #75                 // Field net/minecraft/init/Blocks.field_150353_l:Lnet/minecraft/block/BlockStaticLiquid;
+      24: invokevirtual #80                 // Method net/minecraft/block/BlockStaticLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      27: aastore
+      28: dup
+      29: iconst_1
+      30: getstatic     #84                 // Field net/minecraft/init/Blocks.field_150356_k:Lnet/minecraft/block/BlockDynamicLiquid;
+      33: invokevirtual #87                 // Method net/minecraft/block/BlockDynamicLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      36: aastore
+      37: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+      40: getstatic     #99                 // Field com/sosnitzka/taiga/Blocks.basaltBlock:Lnet/minecraft/block/Block;
+      43: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      46: aload_0
+      47: iload_1
+      48: iload_2
+      49: aload_3
+      50: getstatic     #107                // Field com/sosnitzka/taiga/TAIGAConfiguration.BASALT_VAL:I
+      53: iconst_0
+      54: bipush        64
+      56: invokestatic  #113                // Method com/sosnitzka/taiga/util/Generator.generateOreDescending:(Ljava/util/List;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;III)V
+      59: iconst_2
+      60: anewarray     #69                 // class net/minecraft/block/state/IBlockState
+      63: dup
+      64: iconst_0
+      65: getstatic     #75                 // Field net/minecraft/init/Blocks.field_150353_l:Lnet/minecraft/block/BlockStaticLiquid;
+      68: invokevirtual #80                 // Method net/minecraft/block/BlockStaticLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      71: aastore
+      72: dup
+      73: iconst_1
+      74: getstatic     #84                 // Field net/minecraft/init/Blocks.field_150356_k:Lnet/minecraft/block/BlockDynamicLiquid;
+      77: invokevirtual #87                 // Method net/minecraft/block/BlockDynamicLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      80: aastore
+      81: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+      84: getstatic     #99                 // Field com/sosnitzka/taiga/Blocks.basaltBlock:Lnet/minecraft/block/Block;
+      87: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      90: aload_0
+      91: iload_1
+      92: iload_2
+      93: aload_3
+      94: iconst_1
+      95: getstatic     #107                // Field com/sosnitzka/taiga/TAIGAConfiguration.BASALT_VAL:I
+      98: iconst_2
+      99: idiv
+     100: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     103: iload         4
+     105: iload         5
+     107: bipush        20
+     109: iadd
+     110: invokestatic  #113                // Method com/sosnitzka/taiga/util/Generator.generateOreDescending:(Ljava/util/List;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;III)V
+     113: iconst_1
+     114: anewarray     #69                 // class net/minecraft/block/state/IBlockState
+     117: dup
+     118: iconst_0
+     119: getstatic     #122                // Field net/minecraft/init/Blocks.field_150357_h:Lnet/minecraft/block/Block;
+     122: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     125: aastore
+     126: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     129: getstatic     #125                // Field com/sosnitzka/taiga/Blocks.eezoOre:Lnet/minecraft/block/Block;
+     132: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     135: aload_0
+     136: iload_1
+     137: iload_2
+     138: aload_3
+     139: getstatic     #128                // Field com/sosnitzka/taiga/TAIGAConfiguration.EEZO_VAL:I
+     142: iload         4
+     144: iload         4
+     146: bipush        10
+     148: iadd
+     149: invokestatic  #113                // Method com/sosnitzka/taiga/util/Generator.generateOreDescending:(Ljava/util/List;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;III)V
+     152: getstatic     #131                // Field com/sosnitzka/taiga/Blocks.karmesineOre:Lnet/minecraft/block/Block;
+     155: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     158: getstatic     #135                // Field net/minecraft/block/BlockStone$EnumType.ANDESITE:Lnet/minecraft/block/BlockStone$EnumType;
+     161: aload_0
+     162: iload_1
+     163: iload_2
+     164: aload_3
+     165: getstatic     #138                // Field com/sosnitzka/taiga/TAIGAConfiguration.KARMESINE_VAL:I
+     168: invokestatic  #142                // Method com/sosnitzka/taiga/util/Generator.generateOreStoneVariant:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/BlockStone$EnumType;Ljava/util/Random;IILnet/minecraft/world/World;I)V
+     171: getstatic     #145                // Field com/sosnitzka/taiga/Blocks.oviumOre:Lnet/minecraft/block/Block;
+     174: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     177: getstatic     #148                // Field net/minecraft/block/BlockStone$EnumType.DIORITE:Lnet/minecraft/block/BlockStone$EnumType;
+     180: aload_0
+     181: iload_1
+     182: iload_2
+     183: aload_3
+     184: getstatic     #151                // Field com/sosnitzka/taiga/TAIGAConfiguration.OVIUM_VAL:I
+     187: invokestatic  #142                // Method com/sosnitzka/taiga/util/Generator.generateOreStoneVariant:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/BlockStone$EnumType;Ljava/util/Random;IILnet/minecraft/world/World;I)V
+     190: getstatic     #154                // Field com/sosnitzka/taiga/Blocks.jauxumOre:Lnet/minecraft/block/Block;
+     193: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     196: getstatic     #157                // Field net/minecraft/block/BlockStone$EnumType.GRANITE:Lnet/minecraft/block/BlockStone$EnumType;
+     199: aload_0
+     200: iload_1
+     201: iload_2
+     202: aload_3
+     203: getstatic     #160                // Field com/sosnitzka/taiga/TAIGAConfiguration.JAUXUM_VAL:I
+     206: invokestatic  #142                // Method com/sosnitzka/taiga/util/Generator.generateOreStoneVariant:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/BlockStone$EnumType;Ljava/util/Random;IILnet/minecraft/world/World;I)V
+     209: getstatic     #163                // Field com/sosnitzka/taiga/Blocks.vibraniumOre:Lnet/minecraft/block/Block;
+     212: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     215: getstatic     #166                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     218: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     221: aload_0
+     222: iload_1
+     223: iload_2
+     224: aload_3
+     225: getstatic     #169                // Field com/sosnitzka/taiga/TAIGAConfiguration.VIBRANIUM_VAL:I
+     228: bipush        100
+     230: iconst_0
+     231: bipush        64
+     233: iconst_2
+     234: bipush        6
+     236: iconst_5
+     237: anewarray     #171                // class net/minecraft/world/biome/Biome
+     240: dup
+     241: iconst_0
+     242: getstatic     #177                // Field net/minecraft/init/Biomes.field_76786_s:Lnet/minecraft/world/biome/Biome;
+     245: aastore
+     246: dup
+     247: iconst_1
+     248: getstatic     #180                // Field net/minecraft/init/Biomes.field_76770_e:Lnet/minecraft/world/biome/Biome;
+     251: aastore
+     252: dup
+     253: iconst_2
+     254: getstatic     #183                // Field net/minecraft/init/Biomes.field_76783_v:Lnet/minecraft/world/biome/Biome;
+     257: aastore
+     258: dup
+     259: iconst_3
+     260: getstatic     #186                // Field net/minecraft/init/Biomes.field_150580_W:Lnet/minecraft/world/biome/Biome;
+     263: aastore
+     264: dup
+     265: iconst_4
+     266: getstatic     #189                // Field net/minecraft/init/Biomes.field_76769_d:Lnet/minecraft/world/biome/Biome;
+     269: aastore
+     270: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     273: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     276: getstatic     #163                // Field com/sosnitzka/taiga/Blocks.vibraniumOre:Lnet/minecraft/block/Block;
+     279: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     282: aload         6
+     284: aload_0
+     285: iload_1
+     286: iload_2
+     287: aload_3
+     288: iconst_1
+     289: getstatic     #169                // Field com/sosnitzka/taiga/TAIGAConfiguration.VIBRANIUM_VAL:I
+     292: iconst_2
+     293: idiv
+     294: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     297: bipush        100
+     299: iload         4
+     301: iconst_0
+     302: iconst_2
+     303: bipush        6
+     305: iconst_5
+     306: anewarray     #171                // class net/minecraft/world/biome/Biome
+     309: dup
+     310: iconst_0
+     311: getstatic     #177                // Field net/minecraft/init/Biomes.field_76786_s:Lnet/minecraft/world/biome/Biome;
+     314: aastore
+     315: dup
+     316: iconst_1
+     317: getstatic     #180                // Field net/minecraft/init/Biomes.field_76770_e:Lnet/minecraft/world/biome/Biome;
+     320: aastore
+     321: dup
+     322: iconst_2
+     323: getstatic     #183                // Field net/minecraft/init/Biomes.field_76783_v:Lnet/minecraft/world/biome/Biome;
+     326: aastore
+     327: dup
+     328: iconst_3
+     329: getstatic     #186                // Field net/minecraft/init/Biomes.field_150580_W:Lnet/minecraft/world/biome/Biome;
+     332: aastore
+     333: dup
+     334: iconst_4
+     335: getstatic     #189                // Field net/minecraft/init/Biomes.field_76769_d:Lnet/minecraft/world/biome/Biome;
+     338: aastore
+     339: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     342: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     345: getstatic     #196                // Field com/sosnitzka/taiga/Blocks.dilithiumOre:Lnet/minecraft/block/Block;
+     348: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     351: getstatic     #166                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     354: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     357: aload_0
+     358: iload_1
+     359: iload_2
+     360: aload_3
+     361: getstatic     #199                // Field com/sosnitzka/taiga/TAIGAConfiguration.DILITHIUM_VAL:I
+     364: bipush        100
+     366: iconst_0
+     367: bipush        64
+     369: iconst_2
+     370: bipush        8
+     372: bipush        7
+     374: anewarray     #171                // class net/minecraft/world/biome/Biome
+     377: dup
+     378: iconst_0
+     379: getstatic     #189                // Field net/minecraft/init/Biomes.field_76769_d:Lnet/minecraft/world/biome/Biome;
+     382: aastore
+     383: dup
+     384: iconst_1
+     385: getstatic     #177                // Field net/minecraft/init/Biomes.field_76786_s:Lnet/minecraft/world/biome/Biome;
+     388: aastore
+     389: dup
+     390: iconst_2
+     391: getstatic     #202                // Field net/minecraft/init/Biomes.field_185442_R:Lnet/minecraft/world/biome/Biome;
+     394: aastore
+     395: dup
+     396: iconst_3
+     397: getstatic     #205                // Field net/minecraft/init/Biomes.field_76771_b:Lnet/minecraft/world/biome/Biome;
+     400: aastore
+     401: dup
+     402: iconst_4
+     403: getstatic     #208                // Field net/minecraft/init/Biomes.field_150575_M:Lnet/minecraft/world/biome/Biome;
+     406: aastore
+     407: dup
+     408: iconst_5
+     409: getstatic     #211                // Field net/minecraft/init/Biomes.field_76776_l:Lnet/minecraft/world/biome/Biome;
+     412: aastore
+     413: dup
+     414: bipush        6
+     416: getstatic     #214                // Field net/minecraft/init/Biomes.field_76787_r:Lnet/minecraft/world/biome/Biome;
+     419: aastore
+     420: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     423: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     426: getstatic     #196                // Field com/sosnitzka/taiga/Blocks.dilithiumOre:Lnet/minecraft/block/Block;
+     429: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     432: aload         6
+     434: aload_0
+     435: iload_1
+     436: iload_2
+     437: aload_3
+     438: iconst_1
+     439: getstatic     #199                // Field com/sosnitzka/taiga/TAIGAConfiguration.DILITHIUM_VAL:I
+     442: iconst_2
+     443: idiv
+     444: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     447: bipush        100
+     449: iload         4
+     451: bipush        -96
+     453: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     456: iconst_0
+     457: iconst_2
+     458: bipush        8
+     460: bipush        7
+     462: anewarray     #171                // class net/minecraft/world/biome/Biome
+     465: dup
+     466: iconst_0
+     467: getstatic     #189                // Field net/minecraft/init/Biomes.field_76769_d:Lnet/minecraft/world/biome/Biome;
+     470: aastore
+     471: dup
+     472: iconst_1
+     473: getstatic     #177                // Field net/minecraft/init/Biomes.field_76786_s:Lnet/minecraft/world/biome/Biome;
+     476: aastore
+     477: dup
+     478: iconst_2
+     479: getstatic     #202                // Field net/minecraft/init/Biomes.field_185442_R:Lnet/minecraft/world/biome/Biome;
+     482: aastore
+     483: dup
+     484: iconst_3
+     485: getstatic     #205                // Field net/minecraft/init/Biomes.field_76771_b:Lnet/minecraft/world/biome/Biome;
+     488: aastore
+     489: dup
+     490: iconst_4
+     491: getstatic     #208                // Field net/minecraft/init/Biomes.field_150575_M:Lnet/minecraft/world/biome/Biome;
+     494: aastore
+     495: dup
+     496: iconst_5
+     497: getstatic     #211                // Field net/minecraft/init/Biomes.field_76776_l:Lnet/minecraft/world/biome/Biome;
+     500: aastore
+     501: dup
+     502: bipush        6
+     504: getstatic     #214                // Field net/minecraft/init/Biomes.field_76787_r:Lnet/minecraft/world/biome/Biome;
+     507: aastore
+     508: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     511: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     514: getstatic     #163                // Field com/sosnitzka/taiga/Blocks.vibraniumOre:Lnet/minecraft/block/Block;
+     517: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     520: getstatic     #166                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     523: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     526: aload_0
+     527: iload_1
+     528: iload_2
+     529: aload_3
+     530: iconst_1
+     531: bipush        15
+     533: iconst_0
+     534: sipush        128
+     537: iconst_1
+     538: iconst_5
+     539: aconst_null
+     540: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     543: getstatic     #163                // Field com/sosnitzka/taiga/Blocks.vibraniumOre:Lnet/minecraft/block/Block;
+     546: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     549: aload         6
+     551: aload_0
+     552: iload_1
+     553: iload_2
+     554: aload_3
+     555: iconst_1
+     556: bipush        15
+     558: iload         4
+     560: iconst_0
+     561: iconst_1
+     562: iconst_5
+     563: aconst_null
+     564: invokestatic  #193                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+     567: getstatic     #218                // Field com/sosnitzka/taiga/TAIGAConfiguration.ironGen:Z
+     570: ifeq          636
+     573: getstatic     #221                // Field net/minecraft/init/Blocks.field_150366_p:Lnet/minecraft/block/Block;
+     576: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     579: getstatic     #166                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     582: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     585: aload_0
+     586: iload_1
+     587: iload_2
+     588: aload_3
+     589: getstatic     #224                // Field com/sosnitzka/taiga/TAIGAConfiguration.IRON_VAL:I
+     592: iconst_0
+     593: bipush        32
+     595: iconst_2
+     596: bipush        8
+     598: invokestatic  #227                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIII)V
+     601: getstatic     #221                // Field net/minecraft/init/Blocks.field_150366_p:Lnet/minecraft/block/Block;
+     604: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     607: aload         6
+     609: aload_0
+     610: iload_1
+     611: iload_2
+     612: aload_3
+     613: iconst_1
+     614: getstatic     #224                // Field com/sosnitzka/taiga/TAIGAConfiguration.IRON_VAL:I
+     617: iconst_2
+     618: idiv
+     619: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     622: iload         4
+     624: bipush        -32
+     626: iconst_m1
+     627: invokestatic  #230                // Method java/lang/Math.min:(II)I
+     630: iconst_2
+     631: bipush        8
+     633: invokestatic  #227                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIII)V
+     636: return
+
+  private void beanutils$generateDeepNetherOres(java.util.Random, int, int, net.minecraft.world.World, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: aload         4
+       2: getfield      #256                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+       5: invokevirtual #261                // Method net/minecraft/world/WorldProvider.getDimension:()I
+       8: invokestatic  #267                // Method com/bean/beanutils/config/DepthsHeightAccess.getMinY:(I)I
+      11: istore        6
+      13: iload         6
+      15: iflt          19
+      18: return
+      19: getstatic     #270                // Field com/sosnitzka/taiga/Blocks.tiberiumOre:Lnet/minecraft/block/Block;
+      22: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      25: getstatic     #273                // Field net/minecraft/init/Blocks.field_150424_aL:Lnet/minecraft/block/Block;
+      28: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      31: aload_1
+      32: iload_2
+      33: iload_3
+      34: aload         4
+      36: iconst_1
+      37: getstatic     #276                // Field com/sosnitzka/taiga/TAIGAConfiguration.TIBERIUM_VAL:I
+      40: iconst_3
+      41: idiv
+      42: invokestatic  #119                // Method java/lang/Math.max:(II)I
+      45: iload         6
+      47: bipush        32
+      49: bipush        10
+      51: bipush        35
+      53: invokestatic  #227                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIII)V
+      56: getstatic     #279                // Field com/sosnitzka/taiga/Blocks.prometheumOre:Lnet/minecraft/block/Block;
+      59: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      62: getstatic     #273                // Field net/minecraft/init/Blocks.field_150424_aL:Lnet/minecraft/block/Block;
+      65: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      68: aload_1
+      69: iload_2
+      70: iload_3
+      71: aload         4
+      73: iconst_1
+      74: getstatic     #282                // Field com/sosnitzka/taiga/TAIGAConfiguration.PROMETHEUM_VAL:I
+      77: iconst_2
+      78: idiv
+      79: invokestatic  #119                // Method java/lang/Math.max:(II)I
+      82: iload         6
+      84: bipush        -96
+      86: invokestatic  #119                // Method java/lang/Math.max:(II)I
+      89: iconst_0
+      90: iconst_2
+      91: iconst_4
+      92: invokestatic  #227                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIII)V
+      95: getstatic     #285                // Field com/sosnitzka/taiga/Blocks.valyriumOre:Lnet/minecraft/block/Block;
+      98: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     101: getstatic     #273                // Field net/minecraft/init/Blocks.field_150424_aL:Lnet/minecraft/block/Block;
+     104: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     107: aload_1
+     108: iload_2
+     109: iload_3
+     110: aload         4
+     112: iconst_1
+     113: getstatic     #288                // Field com/sosnitzka/taiga/TAIGAConfiguration.VALYRIUM_VAL:I
+     116: iconst_2
+     117: idiv
+     118: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     121: iload         6
+     123: iconst_0
+     124: iconst_2
+     125: iconst_4
+     126: invokestatic  #227                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIIII)V
+     129: iconst_2
+     130: anewarray     #69                 // class net/minecraft/block/state/IBlockState
+     133: dup
+     134: iconst_0
+     135: getstatic     #75                 // Field net/minecraft/init/Blocks.field_150353_l:Lnet/minecraft/block/BlockStaticLiquid;
+     138: invokevirtual #80                 // Method net/minecraft/block/BlockStaticLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     141: aastore
+     142: dup
+     143: iconst_1
+     144: getstatic     #84                 // Field net/minecraft/init/Blocks.field_150356_k:Lnet/minecraft/block/BlockDynamicLiquid;
+     147: invokevirtual #87                 // Method net/minecraft/block/BlockDynamicLiquid.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     150: aastore
+     151: invokestatic  #93                 // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+     154: getstatic     #291                // Field com/sosnitzka/taiga/Blocks.osramOre:Lnet/minecraft/block/Block;
+     157: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     160: aload_1
+     161: iload_2
+     162: iload_3
+     163: aload         4
+     165: iconst_1
+     166: getstatic     #294                // Field com/sosnitzka/taiga/TAIGAConfiguration.OSRAM_VAL:I
+     169: iconst_2
+     170: idiv
+     171: invokestatic  #119                // Method java/lang/Math.max:(II)I
+     174: iload         6
+     176: iconst_0
+     177: bipush        15
+     179: invokestatic  #297                // Method com/sosnitzka/taiga/util/Generator.generateOre:(Ljava/util/List;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIII)V
+     182: return
+
+  private void world(java.util.Random, int, int, net.minecraft.world.World);
+    Code:
+       0: getstatic     #304                // Field com/sosnitzka/taiga/Blocks.duraniteOre:Lnet/minecraft/block/Block;
+       3: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+       6: getstatic     #307                // Field com/sosnitzka/taiga/Blocks.blockMeteorite:Lnet/minecraft/block/Block;
+       9: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      12: aload_1
+      13: iload_2
+      14: iload_3
+      15: aload         4
+      17: getstatic     #310                // Field com/sosnitzka/taiga/TAIGAConfiguration.DURANITE_VAL:I
+      20: bipush        6
+      22: bipush        16
+      24: bipush        112
+      26: invokestatic  #314                // Method com/sosnitzka/taiga/util/Generator.generateMeteor:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIII)I
+      29: pop
+      30: aload_1
+      31: iload_2
+      32: iload_3
+      33: aload         4
+      35: invokestatic  #316                // Method tdp$generateCommonOverworldOres:(Ljava/util/Random;IILnet/minecraft/world/World;)V
+      38: return
+
+  private void other(java.util.Random, int, int, net.minecraft.world.World);
+    Code:
+       0: aload         4
+       2: getfield      #256                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+       5: invokevirtual #261                // Method net/minecraft/world/WorldProvider.getDimension:()I
+       8: istore        5
+      10: aload_0
+      11: getfield      #319                // Field meteorGenStats:Ljava/util/Map;
+      14: iload         5
+      16: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      19: invokeinterface #323,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+      24: ifne          46
+      27: aload_0
+      28: getfield      #319                // Field meteorGenStats:Ljava/util/Map;
+      31: iload         5
+      33: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      36: iconst_0
+      37: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      40: invokeinterface #327,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      45: pop
+      46: aload_0
+      47: getfield      #329                // Field meteorChunkStats:Ljava/util/Map;
+      50: iload         5
+      52: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      55: invokeinterface #323,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+      60: ifne          82
+      63: aload_0
+      64: getfield      #329                // Field meteorChunkStats:Ljava/util/Map;
+      67: iload         5
+      69: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      72: iconst_0
+      73: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      76: invokeinterface #327,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      81: pop
+      82: aload_0
+      83: getfield      #329                // Field meteorChunkStats:Ljava/util/Map;
+      86: iload         5
+      88: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      91: aload_0
+      92: getfield      #329                // Field meteorChunkStats:Ljava/util/Map;
+      95: iload         5
+      97: invokestatic  #331                // Method tdp$getInt:(Ljava/util/Map;I)I
+     100: iconst_1
+     101: iadd
+     102: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     105: invokeinterface #327,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     110: pop
+     111: aload_0
+     112: getfield      #319                // Field meteorGenStats:Ljava/util/Map;
+     115: iload         5
+     117: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     120: aload_0
+     121: getfield      #319                // Field meteorGenStats:Ljava/util/Map;
+     124: iload         5
+     126: invokestatic  #331                // Method tdp$getInt:(Ljava/util/Map;I)I
+     129: getstatic     #304                // Field com/sosnitzka/taiga/Blocks.duraniteOre:Lnet/minecraft/block/Block;
+     132: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     135: getstatic     #307                // Field com/sosnitzka/taiga/Blocks.blockMeteorite:Lnet/minecraft/block/Block;
+     138: invokevirtual #102                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     141: aload_1
+     142: iload_2
+     143: iload_3
+     144: aload         4
+     146: getstatic     #310                // Field com/sosnitzka/taiga/TAIGAConfiguration.DURANITE_VAL:I
+     149: bipush        6
+     151: bipush        16
+     153: bipush        112
+     155: invokestatic  #314                // Method com/sosnitzka/taiga/util/Generator.generateMeteor:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;IIII)I
+     158: iadd
+     159: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     162: invokeinterface #327,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     167: pop
+     168: aload_1
+     169: iload_2
+     170: iload_3
+     171: aload         4
+     173: invokestatic  #316                // Method tdp$generateCommonOverworldOres:(Ljava/util/Random;IILnet/minecraft/world/World;)V
+     176: aload_0
+     177: getfield      #329                // Field meteorChunkStats:Ljava/util/Map;
+     180: iload         5
+     182: invokestatic  #331                // Method tdp$getInt:(Ljava/util/Map;I)I
+     185: bipush        100
+     187: if_icmple     243
+     190: aload_0
+     191: getfield      #319                // Field meteorGenStats:Ljava/util/Map;
+     194: iload         5
+     196: invokestatic  #331                // Method tdp$getInt:(Ljava/util/Map;I)I
+     199: ifne          243
+     202: aload_0
+     203: getfield      #333                // Field blackList:Ljava/util/List;
+     206: iload         5
+     208: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     211: invokeinterface #338,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     216: pop
+     217: getstatic     #344                // Field com/sosnitzka/taiga/TAIGA.logger:Lorg/apache/logging/log4j/Logger;
+     220: ldc_w         #346                // String Detected void dimension, adding to blacklist: %d
+     223: iconst_1
+     224: anewarray     #4                  // class java/lang/Object
+     227: dup
+     228: iconst_0
+     229: iload         5
+     231: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     234: aastore
+     235: invokestatic  #352                // Method java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+     238: invokeinterface #358,  2          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;)V
+     243: return
+}

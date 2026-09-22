@@ -1,0 +1,11 @@
+{
+  "title": "Neue Erze",
+  "image": {
+    "file": "taiga:textures/gui/book/ores.png"
+  },
+  "text": [
+    {
+      "text": "TAIGA fügt viele neue Blöcke und Erze hinzu, die nach und nach zu besseren Legierungen verschmolzen werden können. Auf den nächsten Seiten lernst du die Erze von TAIGA kennen."
+    }
+  ]
+}

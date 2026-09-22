@@ -1,0 +1,132 @@
+Allocation signatures (overlapping bytes, total=82664666728):
+27676932872  33.48% matteroverdrive.handler.thread.RegisterItemsFromRecipes
+18886925640  22.85% depthsupdate
+18142727672  21.95% retrosophisticatedbackpacks
+10414917600  12.60% bettercaves
+8024756408   9.71% journeymap
+4524548760   5.47% ChunkBuilderMeshingTask
+2993288272   3.62% qioprocessing
+1802926416   2.18% appeng.services.CompassService
+1558792232   1.89% curvy_pipes
+Thread execution sample counts:
+   5197   0.00% pool-4-thread-1
+   3759   0.00% Server thread
+   2309   0.00% Client thread
+   1283   0.00% JM-task-1
+    603   0.00% JM-ChunkCache-IO
+    282   0.00% Chunk Render Task Executor #0
+    273   0.00% Chunk Render Task Executor #1
+    249   0.00% Chunk Render Task Executor #2
+    231   0.00% Chunk Render Task Executor #3
+    223   0.00% Chunk Render Task Executor #4
+    208   0.00% Chunk Render Task Executor #5
+    195   0.00% Chunk Render Task Executor #8
+    193   0.00% Chunk Render Task Executor #7
+    192   0.00% Chunk Render Task Executor #6
+    161   0.00% Chunk Render Task Executor #9
+    116   0.00% Pulsar-Sky
+    113   0.00% Pintonium chunk graph search thread
+     54   0.00% Pulsar-Block
+     37   0.00% Chunk I/O Executor Thread-1
+     18   0.00% File IO Thread
+     13   0.00% Netty Local Client IO #0
+      6   0.00% Reference Handler
+      4   0.00% Thread-47
+      3   0.00% Netty Local Server IO #1
+      3   0.00% NTM-Packet-Thread-1-1
+      3   0.00% flare-monitoring-thread-1
+      2   0.00% ForkJoinPool.commonPool-worker-113
+      2   0.00% ForkJoinPool.commonPool-worker-102
+      2   0.00% ForkJoinPool.commonPool-worker-105
+      2   0.00% ForkJoinPool.commonPool-worker-101
+      2   0.00% pool-12-thread-1
+      2   0.00% AE Compass Service
+      2   0.00% ForkJoinPool.commonPool-worker-125
+      2   0.00% ForkJoinPool.commonPool-worker-120
+      1   0.00% ForkJoinPool.commonPool-worker-116
+      1   0.00% ForkJoinPool.commonPool-worker-110
+      1   0.00% ForkJoinPool.commonPool-worker-112
+      1   0.00% ResearchIOThread
+      1   0.00% ForkJoinPool.commonPool-worker-118
+      1   0.00% JFR Periodic Tasks
+      1   0.00% ForkJoinPool.commonPool-worker-104
+      1   0.00% Thread-3099
+      1   0.00% ForkJoinPool.commonPool-worker-100
+      1   0.00% StellarCore-BlockFaceUVsPool-CanonicalizeWorker
+      1   0.00% ForkJoinPool.commonPool-worker-109
+      1   0.00% JM-RegionImageWriter
+      1   0.00% OpenComputers-SoundUpdater
+      1   0.00% Thread-3098
+      1   0.00% Finalizer
+      1   0.00% ForkJoinPool.commonPool-worker-127
+      1   0.00% ForkJoinPool.commonPool-worker-122
+      1   0.00% ForkJoinPool.commonPool-worker-123
+      1   0.00% ForkJoinPool.commonPool-worker-99
+      1   0.00% ForkJoinPool.commonPool-worker-98
+      1   0.00% Attach Listener
+Server inclusive method samples (overlapping, denominator=3759):
+   3562  94.76% net.minecraft.server.integrated.IntegratedServer.func_71217_p
+   3546  94.33% net.minecraft.server.MinecraftServer.run
+   3531  93.93% java.lang.Thread.runWith
+   3519  93.62% java.lang.Thread.run
+   3475  92.44% net.minecraft.server.MinecraftServer.func_71217_p
+   2964  78.85% net.minecraft.server.MinecraftServer.func_71190_q
+   2741  72.92% net.minecraft.world.WorldServer.func_72835_b
+   2562  68.16% net.minecraft.world.gen.ChunkProviderServer.func_186025_d
+   2012  53.52% net.minecraft.world.chunk.Chunk.func_186034_a
+   2011  53.50% net.minecraft.world.chunk.Chunk.func_186030_a
+   1818  48.36% net.minecraft.server.management.PlayerChunkMap.func_72693_b
+   1798  47.83% net.minecraft.server.management.PlayerChunkMapEntry.func_187268_a
+   1797  47.81% net.minecraftforge.fml.common.registry.GameRegistry.generateWorld
+   1796  47.78% micdoodle8.mods.galacticraft.core.TransformerHooks.otherModGenerate
+   1791  47.65% net.minecraft.world.World.func_180495_p
+   1593  42.38% net.minecraft.world.World.func_175726_f
+   1588  42.25% net.minecraft.world.World.func_72964_e
+   1187  31.58% net.minecraft.world.gen.ChunkProviderServer.redirect$zfe000$depthsupdate$onGenerateChunk
+   1167  31.05% net.minecraftforge.fml.common.eventhandler.EventBus.post
+   1160  30.86% net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke
+   1106  29.42% net.minecraft.world.World.func_180501_a
+    945  25.14% net.minecraft.world.World.markAndNotifyBlock
+    739  19.66% biomesoplenty.common.world.ChunkGeneratorOverworldBOP.func_185932_a
+    703  18.70% net.minecraft.world.World.func_175623_d
+    685  18.22% net.minecraft.world.WorldEntitySpawner.func_77192_a
+    669  17.80% net.minecraft.world.World.func_175685_c
+    667  17.74% net.minecraft.world.World.func_175722_b
+    643  17.11% net.minecraft.world.World.func_175656_a
+    634  16.87% net.minecraft.world.World.func_190524_a
+    589  15.67% sayys.depthsupdate.world.generation.LushCavesGenerator.generateLushCave
+    588  15.64% sayys.depthsupdate.world.generation.LushCavesGenerator.generate
+    585  15.56% sayys.depthsupdate.world.generation.LushCavesGenerator.placeGroundPatch
+    572  15.22% net.minecraft.world.WorldEntitySpawner.canCreatureTypeSpawnBody
+    571  15.19% net.minecraft.entity.EntityLiving$SpawnPlacementType.canSpawnAt
+    566  15.06% net.minecraft.world.WorldEntitySpawner.func_180267_a
+    565  15.03% com.sosnitzka.taiga.world.WorldGen.tdp$generateCommonOverworldOres
+    565  15.03% com.sosnitzka.taiga.world.WorldGen.world
+    565  15.03% com.sosnitzka.taiga.world.WorldGen.generate
+    564  15.00% com.sosnitzka.taiga.util.Generator.generateOreDescending
+    518  13.78% sayys.depthsupdate.world.generation.DripstoneCavesGenerator.generateDripstoneCave
+    517  13.75% net.minecraftforge.fml.common.FMLCommonHandler.onPostServerTick
+    516  13.73% sayys.depthsupdate.world.generation.DripstoneCavesGenerator.generate
+    493  13.12% sayys.depthsupdate.world.generation.DripstoneCavesGenerator.placeCluster
+    483  12.85% sayys.depthsupdate.world.generation.LushCavesGenerator.placeMossPatch
+    473  12.58% com.yungnickyoung.minecraft.bettercaves.world.MapGenBetterCaves.func_186125_a
+    463  12.32% mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$Builder.add
+    463  12.32% mekanism.qioprocessing.common.planning.QIORecipeCatalogService.advanceCapture
+    463  12.32% mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$RecipeOutputIndex$Capture.process
+    463  12.32% net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x000000002ea58400.accept
+    463  12.32% mekanism.qioprocessing.common.planning.QIORecipeCatalogService.onServerTick
+    463  12.32% mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$Builder.access$15100
+    449  11.94% net.minecraftforge.event.ForgeEventFactory.gatherCapabilities
+    442  11.76% mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$Builder.candidates
+    442  11.76% mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$Builder.exactGridCandidates
+    440  11.71% mekanism.qioprocessing.api.resource.PortableResourceDescriptor.itemIgnoringCapabilities
+    428  11.39% net.minecraft.world.chunk.Chunk.func_186032_a
+    413  10.99% mekanism.api.qio.resource.QIOResourceDescriptor.<init>
+    405  10.77% sayys.depthsupdate.world.generation.noise.CaveNoiseGenerator.generate
+    397  10.56% mekanism.api.qio.resource.QIOResourceDescriptor.createSemanticIdentity
+    375   9.98% com.yungnickyoung.minecraft.bettercaves.world.CaveCarverController.carveChunk
+    369   9.82% net.minecraft.world.chunk.Chunk.func_177435_g
+    360   9.58% biomesoplenty.common.world.ChunkGeneratorOverworldBOP.func_185931_b
+    339   9.02% net.minecraft.item.ItemStack.func_77946_l
+    336   8.94% mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.normalize
+    334   8.89% net.minecraft.world.chunk.Chunk.handler$zeg000$depthsupdate$getBlockState

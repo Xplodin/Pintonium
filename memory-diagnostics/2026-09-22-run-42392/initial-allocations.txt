@@ -1,0 +1,257 @@
+Samples: 20992; cumulative estimated allocations: 28.66 GiB (not retained RAM)
+
+Stack signatures (number of samples, not object counts):
+       0 CachedResourcePath
+       0 fastHasResource
+       0 NonBlockingIdentityHashMap.initialize
+      16 java.lang.String.format
+
+Disjoint stack categories (full sampled stack):
+ 99.49%    28.52 GiB cumulative: Other allocations
+  0.51%     0.15 GiB cumulative: StellarCore resource discovery and binding
+
+First non-JDK frame:
+ 25.63% top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  9.98% net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  5.52% org.objectweb.asm.tree.InsnList.add:227
+  3.92% com.hbm.render.loader.HFRWavefrontObject.loadObjModel:100
+  2.74% org.objectweb.asm.ClassReader.readUtf:3737
+  2.12% org.objectweb.asm.SymbolTable.put:450
+  2.03% org.objectweb.asm.Type.stringConcat$1:-1
+  1.84% top.outlands.foundation.boot.ActualClassLoader.readFully:398
+  1.83% net.minecraftforge.fml.common.eventhandler.EventBus.lambda$register$0:119
+  1.80% org.objectweb.asm.ByteVector.enlarge:364
+  1.68% org.objectweb.asm.ClassReader.<init>:206
+  1.44% top.outlands.foundation.boot.ActualClassLoader.getClassBytes:485
+  1.26% org.objectweb.asm.ClassWriter.toByteArray:613
+  1.20% top.outlands.foundation.boot.ActualClassLoader.readFully:409
+  1.20% org.objectweb.asm.ClassReader.readCode:1534
+  0.95% net.minecraft.client.resources.FileResourcePack.func_110587_b:70
+  0.90% org.objectweb.asm.tree.MethodNode.visitLabel:400
+  0.81% org.objectweb.asm.Type.getObjectType:253
+
+Allocation stack groups:
+
+  1.41% (0.41 GiB cumulative, 26 samples, largest weight 230.8 MiB) [Ljava.util.HashMap$Node;
+  java.util.HashMap.resize:711
+  java.util.HashMap.putVal:670
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.ClientProxy.registerClientEvents:93
+  net.tslat.aoa3.common.ClientProxy.preInit:39
+  net.tslat.aoa3.advent.AdventOfAscension.fmlPreInit:74
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x0000000014b6c000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+
+  0.92% (0.27 GiB cumulative, 17 samples, largest weight 263.7 MiB) java.util.LinkedHashMap$LinkedEntryIterator
+  java.util.HashMap.putMapEntries:520
+  java.util.LinkedHashMap.<init>:481
+  java.util.jar.Attributes.<init>:93
+  java.util.jar.Attributes.clone:301
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:556
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+
+  0.86% (0.25 GiB cumulative, 4 samples, largest weight 252.3 MiB) [Ljava.util.HashMap$Node;
+  java.util.HashMap.resize:711
+  java.util.HashMap.putVal:670
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:657
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus$ContextSetterEventListener.invoke:246
+
+  0.86% (0.25 GiB cumulative, 15 samples, largest weight 247.9 MiB) java.util.LinkedHashMap
+  java.util.HashMap.get:565
+  sun.net.www.protocol.jar.URLJarFile.getManifest:110
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:477
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus$ContextSetterEventListener.invoke:246
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.registries.GameData.redirect$zch000$supermartijn$fireRegistryEventsRedirectPost:1515
+
+  0.84% (0.24 GiB cumulative, 48 samples, largest weight 225.8 MiB) java.util.jar.Attributes
+  java.util.HashMap.hash:338
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.ClientProxy.registerClientEvents:93
+  net.tslat.aoa3.common.ClientProxy.preInit:39
+  net.tslat.aoa3.advent.AdventOfAscension.fmlPreInit:74
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x0000000014b6c000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+
+  0.84% (0.24 GiB cumulative, 1 samples, largest weight 245.6 MiB) [I
+  net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  net.minecraft.client.renderer.texture.TextureUtil.func_110995_a:243
+  net.minecraft.client.renderer.texture.TextureUtil.func_110989_a:211
+  net.minecraft.client.renderer.texture.SimpleTexture.func_110551_a:46
+  hellfirepvp.astralsorcery.client.util.resource.BindableResource.allocateGlId:68
+  hellfirepvp.astralsorcery.client.util.TexturePreloader.preloadMandatoryTextures:54
+  hellfirepvp.astralsorcery.client.util.TexturePreloader.doPreloadRoutine:28
+  hellfirepvp.astralsorcery.client.util.resource.AssetLibrary.func_110549_a:63
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110544_b:137
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110541_a:116
+  net.minecraft.client.Minecraft.func_110436_a:787
+  net.minecraftforge.fml.client.FMLClientHandler.refreshResources:1171
+  net.minecraftforge.fml.client.FMLClientHandler.refreshResources:1164
+  chanceCubes.sounds.CustomSoundsLoader.assemble:113
+
+  0.83% (0.24 GiB cumulative, 22 samples, largest weight 234.6 MiB) java.util.jar.Attributes
+  java.util.HashMap.hash:338
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:556
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus$ContextSetterEventListener.invoke:246
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+
+  0.82% (0.23 GiB cumulative, 34 samples, largest weight 98.9 MiB) java.util.jar.Attributes
+  java.util.HashMap.hash:338
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:869
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus$ContextSetterEventListener.invoke:246
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+
+  0.79% (0.23 GiB cumulative, 14 samples, largest weight 218.0 MiB) [Ljava.util.HashMap$Node;
+  java.util.HashMap.resize:711
+  java.util.HashMap.putVal:670
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.ArmourRegister.registerArmours:360
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015c94a00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus$ContextSetterEventListener.invoke:246
+
+  0.76% (0.22 GiB cumulative, 3 samples, largest weight 217.5 MiB) [B
+  java.util.zip.ZipFile$ZipFileInflaterInputStream.<init>:420
+  java.util.zip.ZipFile.getInputStream:358
+  net.minecraft.client.resources.FileResourcePack.func_110591_a:44
+  net.minecraftforge.fml.client.FMLFileResourcePack.func_110591_a:57
+  net.minecraft.client.resources.AbstractResourcePack.func_110590_a:48
+  net.minecraft.client.resources.FallbackResourceManager.func_177245_a:78
+  com.supermartijn642.core.data.LanguageLoader.findAllResources:67
+  net.minecraft.client.resources.Locale.redirect$zdf000$supermartijn$loadLocaleDataFilesRedirect:532
+  net.minecraft.client.resources.Locale.func_135022_a:38
+  net.minecraft.client.resources.LanguageManager.func_110549_a:67
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110544_b:137
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110541_a:116
+  net.minecraft.client.Minecraft.func_110436_a:787
+  net.minecraftforge.fml.client.FMLClientHandler.refreshResources:1171
+
+  0.74% (0.21 GiB cumulative, 63 samples, largest weight 187.3 MiB) java.util.LinkedHashMap$Entry
+  java.util.HashMap.putVal:637
+  java.util.HashMap.putMapEntries:523
+  java.util.LinkedHashMap.<init>:481
+  java.util.jar.Attributes.<init>:93
+  java.util.jar.Attributes.clone:301
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.ClientProxy.registerClientEvents:93
+  net.tslat.aoa3.common.ClientProxy.preInit:39
+  net.tslat.aoa3.advent.AdventOfAscension.fmlPreInit:74
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+
+  0.71% (0.20 GiB cumulative, 19 samples, largest weight 183.1 MiB) java.util.LinkedHashMap$Entry
+  java.util.HashMap.putVal:637
+  java.util.HashMap.putMapEntries:523
+  java.util.LinkedHashMap.<init>:481
+  java.util.jar.Attributes.<init>:93
+  java.util.jar.Attributes.clone:301
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.ArmourRegister.registerArmours:360
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015c94a00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+
+  0.68% (0.20 GiB cumulative, 36 samples, largest weight 137.0 MiB) java.util.LinkedHashMap$LinkedEntryIterator
+  java.util.HashMap.putMapEntries:520
+  java.util.LinkedHashMap.<init>:481
+  java.util.jar.Attributes.<init>:93
+  java.util.jar.Attributes.clone:301
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.registration.WeaponRegister.registerWeapon:687
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000015d18400.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+
+  0.68% (0.20 GiB cumulative, 2 samples, largest weight 199.6 MiB) java.util.LinkedHashMap
+  java.util.HashMap.get:565
+  sun.net.www.protocol.jar.URLJarFile.getManifest:110
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.utils.PacketUtil.registerPackets:30
+  net.tslat.aoa3.utils.PacketUtil.init:18
+  net.tslat.aoa3.advent.AdventOfAscension.fmlPreInit:77
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x0000000014b6c000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+  jdk.internal.reflect.DirectMethodHandleAccessor.invoke:104

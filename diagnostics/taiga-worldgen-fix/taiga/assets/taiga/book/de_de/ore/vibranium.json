@@ -1,0 +1,20 @@
+{
+  "title": "Vibranium",
+  "r": 186,
+  "g": 210,
+  "b": 217,
+  "input": {
+    "id": "taiga:vibranium_ore"
+  },
+  "description": [
+    {
+      "text": "Vibranium ist eins der seltensten Erze der Welt. Stimmen sagen, dass man es in Wüsten und Bergen öfter finden kann. Wer es abbaut, muss wegen seiner Zusammensetzung aber acht geben, um sich nicht selbst zu verletzen"
+    }
+  ],
+  "informations": [
+    "Level: Vibranium",
+    "Sehr selten",
+    "Häufiger in Wüsten und Bergen",
+    "Es vibriert"
+  ]
+}

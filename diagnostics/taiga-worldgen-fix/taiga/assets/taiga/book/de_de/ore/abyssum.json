@@ -1,0 +1,18 @@
+{
+  "title": "Abyssum",
+  "r": 33,
+  "g": 188,
+  "b": 194,
+  "input": {
+    "id": "taiga:abyssum_ore"
+  },
+  "description": [
+    {
+      "text": "Wie schon bei Eezo entsteht Abyssum durch Sonnenstürme, die bis ins End reichen. Das aufgeladenen Void fusioniert dabei mit Endstein zu Abyssum und setzt sich, da keine Bedrockbarriere existiert an den Boden der Enderinseln ab."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Achtung: Stürze nicht ins Void"
+  ]
+}

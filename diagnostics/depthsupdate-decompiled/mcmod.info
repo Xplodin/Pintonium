@@ -1,0 +1,12 @@
+[{
+	"modid": "depthsupdate",
+	"name": "Depths Update",
+	"version": "1.12.2-1.0.0-a12",
+	"mcversion": "1.12.2",
+	"description": "Backporting Caves & Cliffs. Deeper worlds with negative coordinates!",
+	"authorList": ["__sayys"],
+	"credits": "",
+	"url": "https://www.curseforge.com/minecraft/mc-mods/depths-update",
+	"updateJSON": "https://forge.curseupdate.com/1472501/depthsupdate",
+	"logoFile": "assets/depthsupdate/icon.png"
+}]

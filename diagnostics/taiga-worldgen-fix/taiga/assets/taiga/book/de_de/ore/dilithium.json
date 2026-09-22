@@ -1,0 +1,19 @@
+{
+  "title": "Dilithium",
+  "r": 121,
+  "g": 174,
+  "b": 166,
+  "input": {
+    "id": "taiga:dilithium_ore"
+  },
+  "description": [
+    {
+      "text": "Wo es Sand gibt, ist Dilithium nicht weit entfernt. Man nutzt es, um Tiberium zu stabilisieren, wobei es selbst viel eigene Energie besitzt. Es kann explodieren, aber auch als Wärmequelle genutzt werden."
+    }
+  ],
+  "informations": [
+    "Level: Diamant",
+    "Vorsicht: Kann bei Explosionen eine Kettenreaktion auslösen",
+    "Orte: Wüsten, Strände, Ozene"
+  ]
+}

@@ -1,0 +1,121 @@
+Start: 2026-09-14T00:33:31.090Z
+End: 2026-09-14T00:34:16.793Z
+Duration ms: 45703
+Interval: 4000; mode: EXECUTION
+Thread selector: # com.cleanroommc.flare.proto.FlareSamplerProtos$SamplerMetadata$ThreadDumper@20aeba
+ids: 498
+type: SPECIFIC
+type_value: 1
+Aggregator: # com.cleanroommc.flare.proto.FlareSamplerProtos$SamplerMetadata$DataAggregator@a01fc
+thread_grouper: BY_POOL
+thread_grouper_value: 1
+tick_length_threshold: 0
+Platform: # com.cleanroommc.flare.proto.FlareProtos$PlatformMetadata@bf893c09
+minecraft_version: "1.12.2"
+name: "Cleanroom"
+spark_version: 2
+type: CLIENT
+type_value: 1
+version: "0.6.13-alpha"
+Memory: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Memory@d8866076
+heap {
+  total: 12784238592
+  used: 12756975616
+}
+TPS: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Tps@c6d2488b
+last15_m: 12.400740021215409
+last1_m: 4.258123162297835
+last5_m: 9.429718766162715
+MSPT: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Mspt@9148d027
+last1_m {
+  max: 3314.4104
+  mean: 31.007050500000002
+  median: 12.7938
+  min: 7.3728
+  percentile95: 71.0218
+}
+last5_m {
+  max: 3314.4104
+  mean: 23.26723105
+  median: 13.4516
+  min: 7.3728
+  percentile95: 36.4179
+}
+GC: {}
+CPU: # com.cleanroommc.flare.proto.FlareProtos$SystemStatistics$Cpu@b0ffb6fe
+model_name: "AMD Ryzen 9 5900XT 16-Core Processor"
+process_usage {
+  last15_m: 0.16940270899611704
+  last1_m: 0.20114103840731154
+}
+system_usage {
+  last15_m: 0.2375898995583121
+  last1_m: 0.2662164975179127
+}
+threads: 32
+RAW thread times: [8408.0, 7580.0, 10268.0, 7172.0, 4976.0]; windows: [178934601, 178934602, 178934603, 178934604, 178934605]
+RAW root java.lang.Thread.run [8412.0, 7580.0, 10268.0, 7172.0, 4976.0]
+RAW child java.lang.Thread.runWith [8412.0, 7580.0, 10268.0, 7172.0, 4976.0]
+RAW grandchild net.minecraft.server.MinecraftServer.run [33576.0, 30312.0, 20532.0, 14344.0, 4976.0]
+
+THREAD Server thread: 38404.000 ms; 15231 nodes; 38408.000 ms roots
+Window index: -1; parent/child time inconsistencies: 1019; max excess ms: 65332.0
+WARNING: timing totals are internally inconsistent; do not use the following percentages as reliable CPU attribution.
+TOP INCLUSIVE (overlapping parent/child frames):
+1155.32% 443688.000 ms SELF  1808.000 ms net.minecraftforge.event.ForgeEventFactory.gatherCapabilities
+ 950.24% 364932.000 ms SELF  5068.000 ms net.minecraft.item.ItemStack.func_77946_l
+ 843.66% 324000.000 ms SELF   204.000 ms mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.normalize
+ 810.30% 311188.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.createSemanticIdentity
+ 752.45% 288972.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.<init>
+ 750.94% 288392.000 ms SELF 77908.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0
+ 750.94% 288392.000 ms SELF     0.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda/0x00000000aa184400.accept
+ 625.50% 240216.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.outputsFor
+ 605.99% 232724.000 ms SELF     0.000 ms mekanism.qioprocessing.api.resource.PortableResourceDescriptor.itemIgnoringCapabilities
+ 598.00% 229656.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.createPattern
+ 580.59% 222968.000 ms SELF 153468.000 ms net.minecraftforge.fml.common.eventhandler.EventBus.post
+ 575.07% 220848.000 ms SELF 29588.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke
+ 525.06% 201644.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.addCandidateGroups
+ 510.28% 195968.000 ms SELF     0.000 ms net.minecraft.server.MinecraftServer.func_71217_p
+ 463.07% 177836.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.ensureCandidateOutputProfiles
+ 444.44% 170684.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.decodeUnchecked
+ 389.20% 149468.000 ms SELF     0.000 ms net.minecraft.server.integrated.IntegratedServer.func_71217_p
+ 384.06% 147496.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.of
+ 374.72% 143908.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.compile
+ 374.24% 143724.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$RecipeOutputIndex$Capture.process
+ 365.42% 140336.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.access$3500
+ 341.59% 131184.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.writeTemplate
+ 340.34% 130704.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.representativePattern
+ 334.75% 128556.000 ms SELF     0.000 ms net.minecraftforge.fml.common.FMLCommonHandler.onPostServerTick
+ 313.45% 120376.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceCodecs.item
+ 294.67% 113164.000 ms SELF    36.000 ms mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.readTemplate
+ 291.72% 112032.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.persisted
+ 272.85% 104784.000 ms SELF  1600.000 ms mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.sameType
+ 272.85% 104784.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.sameTypeUnchecked
+ 270.13% 103740.000 ms SELF     0.000 ms net.minecraft.server.MinecraftServer.run
+ 259.88%  99804.000 ms SELF     0.000 ms net.minecraft.server.MinecraftServer.func_71190_q
+ 258.58%  99304.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIORecipeCatalogService.advanceCapture
+TOP SELF:
+ 399.61% 153468.000 ms net.minecraftforge.fml.common.eventhandler.EventBus.post
+ 202.86%  77908.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0
+ 124.11%  47664.000 ms java.lang.StringBuilder.append
+  83.65%  32124.000 ms net.minecraft.util.ResourceLocation.redirect$chg001$stellarcore$injectInit
+  80.62%  30960.000 ms java.util.ArrayList.indexOfRange
+  77.04%  29588.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke
+  62.30%  23924.000 ms net.minecraft.world.chunk.BlockStatePaletteHashMap.func_186039_a
+  60.43%  23208.000 ms org.cyclops.cyclopscore.modcompat.capabilities.CapabilityConstructorRegistry.onLoad
+  44.98%  17276.000 ms net.minecraft.block.state.BlockStateContainer$StateImplementation.func_185904_a
+  42.28%  16236.000 ms net.minecraft.world.chunk.BlockStateContainer.func_186016_a
+  41.00%  15744.000 ms net.minecraft.world.chunk.Chunk.func_186032_a
+  37.69%  14476.000 ms java.lang.String.toLowerCase
+  34.34%  13188.000 ms net.minecraft.world.World.func_72964_e
+  28.75%  11040.000 ms java.lang.StringBuilder.toString
+  25.56%   9816.000 ms net.minecraft.network.datasync.EntityDataManager.func_187225_a
+  25.50%   9792.000 ms net.minecraft.item.ItemStack.func_77952_i
+  25.10%   9640.000 ms com.google.common.collect.HashBiMap.seekByKey
+  25.02%   9608.000 ms java.util.zip.Deflater.deflateBytesBytes
+  24.80%   9524.000 ms cyb0124.curvy_pipes.1.0
+  24.32%   9340.000 ms baubles.api.registries.ItemData.isBauble
+  23.86%   9164.000 ms com.xcompwiz.mystcraft.world.profiling.WorldProviderMystDummy.access$000
+  23.70%   9100.000 ms java.util.Collections$UnmodifiableMap.containsKey
+  23.46%   9008.000 ms com.buuz135.industrial.utils.compat.baubles.MeatFeederBauble$Event.onAttachCapability
+  21.86%   8396.000 ms net.minecraftforge.common.capabilities.CapabilityDispatcher.getCapability

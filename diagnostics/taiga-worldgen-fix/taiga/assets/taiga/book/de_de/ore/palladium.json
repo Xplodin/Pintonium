@@ -1,0 +1,20 @@
+{
+  "title": "Palladium",
+  "r": 238,
+  "g": 135,
+  "b": 54,
+  "input": {
+    "id": "taiga:palladium_ore"
+  },
+  "description": [
+    {
+      "text": "Palladium ist ein kristallines Erz, welches im Ende auftaucht. Die im Ende vorherrschende Strahlung wird durch Palladium erzeugt. Es glüht und zerfällt auf Grund seiner Radioaktivität."
+    }
+  ],
+  "informations": [
+    "Level: Duranite",
+    "Gefährlich radioaktiv",
+    "Leuchtet im Dunkeln",
+    "Kristallin"
+  ]
+}

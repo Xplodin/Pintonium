@@ -38,7 +38,12 @@ public class Vector2Uniform extends Uniform {
 		Vector2f newValue = value.get();
 
 		if (!newValue.equals(cachedValue)) {
-			cachedValue = newValue;
+			// Suppliers may reuse a mutable vector; retain a snapshot for comparison.
+			if (cachedValue == null) {
+				cachedValue = new Vector2f(newValue);
+			} else {
+				cachedValue.set(newValue);
+			}
 			IrisRenderSystem.uniform2f(this.location, newValue.x, newValue.y);
 		}
 	}

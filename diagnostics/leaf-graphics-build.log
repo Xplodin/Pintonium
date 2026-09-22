@@ -1,0 +1,128 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+Running Stonecutter 0.9.6
+Skipping project babric by request
+Skipping project modern by request
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy UP-TO-DATE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+
+> Configure project :
+[TauGradle] Versioning plugin v0.3.36
+[TauGradle] Publishing plugin v0.3.36
+Pintonium: 2.4.2-dev
+
+> Task :celeritas-unimined-plugin:compileJava UP-TO-DATE
+> Task :celeritas-unimined-plugin:pluginDescriptors UP-TO-DATE
+> Task :celeritas-unimined-plugin:processResources UP-TO-DATE
+> Task :celeritas-unimined-plugin:classes UP-TO-DATE
+> Task :celeritas-unimined-plugin:jar UP-TO-DATE
+
+> Configure project :forge122:1.12.2
+[Unimined] Plugin Version: 1.3.15-SNAPSHOT
+[Unimined/Minecraft :common:main] Combining with :common:main
+[Unimined/Minecraft :common-shaders:main] Combining with :common-shaders:main
+[Unimined/MinecraftDownloader] retrieving version metadata
+[Unimined/Minecraft :forge122:1.12.2:main] Applying minecraft config for source set 'main'
+[Unimined/ForgeTransformer] Selected FG3
+[Unimined/Forge] Using FG3 transformer
+[Unimined/ForgeTransformer] FG3 does not support custom mcp_config (searge) version specification. Using 1.12.2-20200226.224830 from userdev.
+[Unimined/Minecraft :forge122:1.12.2:main] Applying FG3MinecraftTransformer
+[Unimined/ForgeTransformer] Attempting inject forge userdev into minecraft jar
+[Unimined/Minecraft :forge122:1.12.2:main] Applying run configs
+Merging client and server jars...
+[Unimined/Forge] transforming minecraft jar for FG3
+[Unimined/ForgeTransformer] Applying ATs [forge_at.cfg, C:\Users\somet\OneDrive\Documents\celeritest\forge122\src\main\resources\META-INF\celeritas_at.cfg]
+[Unimined/ForgeTransformer] Using user access transformer C:\Users\somet\OneDrive\Documents\celeritest\forge122\src\main\resources\META-INF\celeritas_at.cfg
+[Unimined/ModRemapper] Remapping mods from searge/searge to mcp/searge
+[Unimined/ModRemapper] No mods found for remapping
+[Unimined/ModRemapper] Remapping mods from searge/searge to mcp/searge
+[Unimined/ModRemapper] Found 2 mods for remapping
+Merging client and server jars...
+[Unimined/Forge] transforming minecraft jar for FG3
+[Unimined/ForgeTransformer] Applying ATs [forge_at.cfg, C:\Users\somet\OneDrive\Documents\celeritest\forge122\src\main\resources\META-INF\celeritas_at.cfg]
+[Unimined/ForgeTransformer] Using user access transformer C:\Users\somet\OneDrive\Documents\celeritest\forge122\src\main\resources\META-INF\celeritas_at.cfg
+
+> Task :common:compileJava UP-TO-DATE
+> Task :common:processResources UP-TO-DATE
+> Task :common:classes UP-TO-DATE
+> Task :common-shaders:compileJava UP-TO-DATE
+> Task :common-shaders:processResources UP-TO-DATE
+> Task :common-shaders:classes UP-TO-DATE
+> Task :forge122:1.12.2:compileJava
+> Task :forge122:1.12.2:processResources UP-TO-DATE
+> Task :forge122:1.12.2:classes
+> Task :forge122:1.12.2:jar
+
+> Task :forge122:1.12.2:remapJar
+[Unimined/RemapJar :forge122:1.12.2:remapJar] remapping output pintonium-forge-1.12.2-2.4.2-dev-dev.jar from mcp/searge to searge
+[Unimined/ModRemapper] Remapping mods from searge/searge to mcp/searge
+[Unimined/ModRemapper] Found 2 mods for remapping
+
+[Unimined/MappingsProvider] Resolving mappings for source set 'main'
+[Unimined/MappingsProvider] Mapping tree initialized, official -> [searge, mcp]
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinFramebuffer_Shaders without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinEntityRenderer_Shaders without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/ClientChunkManagerMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/textures/TextureAtlasSpriteMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/textures/RenderItemMixin without entry!
+[WARN]  [MIXIN] Failed to resolve At target get in mixin org.taumc.celeritas.mixin.features.textures.RenderItemMixin
+[WARN]  [MIXIN] Failed to resolve @ModifyExpressionValue func_175032_a ([null]) on (markSpriteActive(Ljava/lang/Object;)Ljava/lang/Object;) null in org/taumc/celeritas/mixin/features/textures/RenderItemMixin
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/mipmaps/TextureUtilMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/ChunkRenderDispatcherMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinParticleManager_Shaders without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/accessor/MixinEntityRendererLightmapAccessor without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/ActiveRenderInfoAccessor without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/ChunkProviderClientAccessor without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/statelisteners/MixinEntityRenderer_Fog without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/options/MixinRenderGlobal without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/collections/ClassInheritanceMultiMapMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/LightUtilMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/MixinDirection without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/compat/scannable/MixinProxyOptiFine without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/startup/MixinInitRenderer without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/frustum/FrustumMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/options/MixinGuiOptions without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/startup/MixinGameSettings without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/compat/distanthorizons/MixinDhClientApiRenderState without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/textures/TextureAtlasMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/options/MixinEntityRenderer without entry!
+[WARN]  [MIXIN] Failed to resolve At target iterator in mixin org.taumc.celeritas.mixin.features.textures.TextureAtlasMixin
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/RenderGlobalMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinShaderChunkRenderer without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/ChunkAccessor without entry!
+[WARN]  [MIXIN] Failed to resolve At target isEmpty in mixin org.taumc.celeritas.mixin.core.terrain.RenderGlobalMixin
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/compat/distanthorizons/DhTextureAtlasSpriteWrapperMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/MinecraftMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinRenderDragon_Shaders without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/compat/distanthorizons/DhBlockStateWrapperMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/WorldClientMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/compat/scannable/MixinScannerRenderer without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/mipmaps/TextureAtlasSpriteMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/core/terrain/BiomeColorHelperMixin without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/startup/MixinGuiMainMenu without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/features/options/MixinGuiIngameForge without entry!
+[WARN]  [MIXIN] [RefmapBuilder] found mixin class org/taumc/celeritas/mixin/shaders/MixinRenderGlobal_Shaders without entry!
+
+> Task :forge122:1.12.2:shadowRemapJar
+> Task :forge122:1.12.2:packageJar
+
+[Incubating] Problems report is available at: file:///C:/Users/somet/OneDrive/Documents/celeritest/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 38s
+25 actionable tasks: 5 executed, 20 up-to-date

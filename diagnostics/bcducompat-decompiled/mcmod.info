@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "bcducompat",
+    "name": "Better Caves DepthsUpdate Compat",
+    "version": "1.0.6",
+    "mcversion": "1.12.2",
+    "description": "Allows YUNG's Better Caves 2.0.4 floored caverns to carve into DepthsUpdate negative-Y terrain.",
+    "authorList": ["K C / OpenAI"],
+    "credits": "YUNG's Better Caves and DepthsUpdate remain separate required mods.",
+    "url": "",
+    "updateUrl": ""
+  }
+]

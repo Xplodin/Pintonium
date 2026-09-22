@@ -1,0 +1,259 @@
+Samples: 63370; cumulative estimated allocations: 129.80 GiB (not retained RAM)
+
+Stack signatures (number of samples, not object counts):
+       0 CachedResourcePath
+       0 fastHasResource
+       0 NonBlockingIdentityHashMap.initialize
+     151 java.lang.String.format
+
+Disjoint stack categories (full sampled stack):
+ 59.52%    77.26 GiB cumulative: Other allocations
+ 15.22%    19.75 GiB cumulative: Other VintageFix model/texture/resource paths
+ 14.19%    18.42 GiB cumulative: CraftTweaker replaceAllOccurences
+ 11.07%    14.37 GiB cumulative: StellarCore resource discovery and binding
+
+First non-JDK frame:
+  9.45% top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  6.18% net.minecraft.util.ResourceLocation.toString:62
+  4.96% net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  3.40% github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  3.19% net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  3.15% crafttweaker.mc1120.oredict.MCOreDictEntry.getFromIngredient:54
+  2.35% org.objectweb.asm.tree.InsnList.add:227
+  2.10% com.gildedgames.the_aether.api.AetherAPI.handler$ehh000$baubles$fix:521
+  2.08% net.minecraft.item.ItemStack.func_77946_l:425
+  1.89% javax.imageio.ImageIO.read:1422
+  1.39% javax.imageio.ImageTypeSpecifier.createBufferedImage:1067
+  1.23% com.enderio.core.common.util.NNList.iterator:185
+  1.19% net.minecraft.client.resources.AbstractResourcePack.func_110589_b:-1
+  1.17% net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getResource:1160
+  1.06% com.hbm.render.loader.HFRWavefrontObject.loadObjModel:100
+  1.05% org.cyclops.cyclopscore.modcompat.capabilities.CapabilityConstructorRegistry.onLoad:214
+  1.04% com.google.common.collect.HashBiMap.keyOrNull:807
+  1.02% net.minecraft.item.ItemStack.func_77973_b:178
+
+Allocation stack groups:
+
+  2.72% (3.53 GiB cumulative, 1316 samples, largest weight 167.0 MiB) [Ljava.lang.String;
+  crafttweaker.mc1120.oredict.MCOreDictEntry.getFromIngredient:54
+  crafttweaker.api.minecraft.CraftTweakerMC.getOreDict:750
+  crafttweaker.api.minecraft.CraftTweakerMC.getIIngredient:704
+  crafttweaker.api.minecraft.CraftTweakerMC.getIIngredients:962
+  crafttweaker.mc1120.recipes.MCRecipeWrapper.getIngredients1D:96
+  crafttweaker.mc1120.recipes.MCRecipeWrapper.getIngredients2D:101
+  crafttweaker.mc1120.recipes.MCRecipeManager$ActionReplaceAllOccurences.setCurrentModifiedRecipe:908
+  crafttweaker.mc1120.CraftTweaker.onPostInit:197
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000001518c000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl:155
+  jdk.internal.reflect.DirectMethodHandleAccessor.invoke:104
+  java.lang.reflect.Method.invoke:565
+
+  0.94% (1.22 GiB cumulative, 249 samples, largest weight 183.0 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.util.ResourceLocation.toString:62
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:45
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:31
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.onAttachCapability:66
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000017262800.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673
+
+  0.77% (1.00 GiB cumulative, 3 samples, largest weight 994.9 MiB) [I
+  net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  net.minecraft.client.renderer.texture.TextureUtil.func_110995_a:243
+  net.minecraft.client.renderer.texture.TextureUtil.func_110989_a:211
+  net.minecraft.client.renderer.texture.SimpleTexture.func_110551_a:46
+  net.minecraft.client.renderer.texture.TextureManager.func_110579_a:69
+  net.minecraft.client.renderer.texture.TextureManager.func_110577_a:44
+  li.cil.oc.client.Textures$.bind:540
+  li.cil.oc.client.Textures$Model$.loader:96
+  li.cil.oc.client.Textures$TextureBundle$$anonfun$init$1.apply:572
+  li.cil.oc.client.Textures$TextureBundle$$anonfun$init$1.apply:572
+  scala.collection.mutable.ResizableArray$class.foreach:59
+  scala.collection.mutable.ArrayBuffer.foreach:48
+  li.cil.oc.client.Textures$TextureBundle.init:572
+  li.cil.oc.client.Textures$.onTextureStitchPre:561
+
+  0.74% (0.97 GiB cumulative, 199 samples, largest weight 179.6 MiB) [B
+  java.lang.String.indexOf:2468
+  net.minecraft.util.ResourceLocation.func_177516_a:41
+  net.minecraft.util.ResourceLocation.<init>:32
+  com.gildedgames.the_aether.api.AetherAPI.handler$ehh000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000016ce7800.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673
+  net.minecraft.item.ItemStack.func_77946_l:426
+
+  0.70% (0.91 GiB cumulative, 258 samples, largest weight 22.2 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$chl000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getResource:1162
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110536_a:-1
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector.lambda$resourceExists$2:132
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector$$Lambda.0x000000001bd1b400.apply:-1
+
+  0.68% (0.88 GiB cumulative, 261 samples, largest weight 22.7 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$chl000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+
+  0.61% (0.79 GiB cumulative, 244 samples, largest weight 120.5 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.util.ResourceLocation.toString:62
+  java.lang.String.valueOf:4530
+  java.lang.StringBuilder.append:173
+  com.gildedgames.the_aether.api.AetherAPI.handler$ehh000$baubles$fix:521
+  com.gildedgames.the_aether.api.AetherAPI.isAccessory:-1
+  baubles.compat.aether.EventHandler.itemCapabilityAttach:56
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000016ce7800.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+
+  0.60% (0.78 GiB cumulative, 255 samples, largest weight 161.2 MiB) java.util.LinkedHashMap
+  net.minecraft.item.ItemStack.func_77946_l:425
+  crafttweaker.mc1120.item.MCItemStack.<init>:81
+  crafttweaker.mc1120.item.MCItemStack.<init>:87
+  crafttweaker.api.minecraft.CraftTweakerMC.getIItemStackWildcardSize:230
+  crafttweaker.mc1120.oredict.MCOreDictEntry$$Lambda.0x000000001c1dc000.apply:-1
+  java.util.stream.ReferencePipeline$3$1.accept:214
+  it.unimi.dsi.fastutil.objects.ObjectArrayList$1.forEachRemaining:897
+  java.util.Spliterators$IteratorSpliterator.forEachRemaining:1939
+  java.util.stream.AbstractPipeline.copyInto:570
+  java.util.stream.AbstractPipeline.wrapAndCopyInto:560
+  java.util.stream.ReduceOps$ReduceOp.evaluateSequential:921
+  java.util.stream.AbstractPipeline.evaluate:265
+  java.util.stream.ReferencePipeline.collect:723
+  crafttweaker.mc1120.oredict.MCOreDictEntry.getItems:188
+
+  0.52% (0.67 GiB cumulative, 94 samples, largest weight 59.9 MiB) [B
+  sun.awt.image.ByteInterleavedRaster.setDataElements:602
+  sun.awt.image.ByteInterleavedRaster.setRect:1176
+  com.sun.imageio.plugins.png.PNGImageReader.decodePass:1310
+  com.sun.imageio.plugins.png.PNGImageReader.decodeImage:1379
+  com.sun.imageio.plugins.png.PNGImageReader.readImage:1519
+  com.sun.imageio.plugins.png.PNGImageReader.read:1845
+  javax.imageio.ImageIO.read:1422
+  javax.imageio.ImageIO.read:1319
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+  net.minecraft.client.renderer.texture.TextureMap$$Lambda.0x000000001a591a00.run:-1
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1753
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1745
+
+  0.50% (0.65 GiB cumulative, 176 samples, largest weight 24.7 MiB) [B
+  java.lang.String.<init>:4863
+  java.lang.StringBuilder.toString:478
+  net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+  slimeknights.tconstruct.library.client.CustomTextureCreator.md5d56b8$stellarcore$lambda$stellar_core$parallelCreateMaterialTextures$1$0:603
+  slimeknights.tconstruct.library.client.CustomTextureCreator$$Lambda.0x000000001bd75e00.accept:-1
+  java.util.stream.ForEachOps$ForEachOp$OfRef.accept:186
+
+  0.47% (0.62 GiB cumulative, 171 samples, largest weight 21.0 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+  slimeknights.tconstruct.library.client.CustomTextureCreator.md5d56b8$stellarcore$lambda$stellar_core$parallelCreateMaterialTextures$1$0:603
+  slimeknights.tconstruct.library.client.CustomTextureCreator$$Lambda.0x000000001bd75e00.accept:-1
+
+  0.46% (0.60 GiB cumulative, 212 samples, largest weight 107.1 MiB) [B
+  java.lang.String.<init>:4863
+  java.lang.StringBuilder.toString:478
+  net.minecraft.util.ResourceLocation.toString:62
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:45
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.isShulkerBox:31
+  vazkii.quark.management.feature.RightClickAddToShulkerBox.onAttachCapability:66
+  net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda.0x0000000017262800.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0:62
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda.0x000000001521da00.accept:-1
+  net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke:79
+  net.minecraftforge.fml.common.eventhandler.EventBus.post:204
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:691
+  net.minecraftforge.event.ForgeEventFactory.gatherCapabilities:673
+  net.minecraft.item.ItemStack.func_77946_l:426
+
+  0.46% (0.59 GiB cumulative, 190 samples, largest weight 112.0 MiB) [B
+  java.lang.String.<init>:4863
+  java.lang.StringBuilder.toString:478
+  net.minecraft.util.ResourceLocation.toString:62
+  crafttweaker.mc1120.recipes.MCRecipeManager$ActionRemoveRecipeByRecipeName.apply:555
+  crafttweaker.runtime.CrTTweaker.apply:61
+  crafttweaker.CraftTweakerAPI.apply:151
+  crafttweaker.mc1120.CraftTweaker.lambda$applyActions$3:270
+  crafttweaker.mc1120.CraftTweaker$$Lambda.0x000000001cc02c00.accept:-1
+  java.util.ArrayList.forEach:1604
+  crafttweaker.mc1120.CraftTweaker.applyActions:267
+  crafttweaker.mc1120.recipes.MCRecipeManager$ActionReplaceAllOccurences.removeOldRecipes:972
+  crafttweaker.mc1120.CraftTweaker.onPostInit:205
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x000000001518c000.invoke:-1
+
+  0.45% (0.58 GiB cumulative, 251 samples, largest weight 64.2 MiB) net.minecraft.item.ItemStack
+  net.minecraft.item.ItemStack.func_77946_l:424
+  crafttweaker.mc1120.item.MCItemStack.<init>:81
+  crafttweaker.mc1120.item.MCItemStack.<init>:87
+  crafttweaker.api.minecraft.CraftTweakerMC.getIItemStackWildcardSize:230
+  crafttweaker.mc1120.oredict.MCOreDictEntry$$Lambda.0x000000001c1dc000.apply:-1
+  java.util.stream.ReferencePipeline$3$1.accept:214
+  it.unimi.dsi.fastutil.objects.ObjectArrayList$1.forEachRemaining:897
+  java.util.Spliterators$IteratorSpliterator.forEachRemaining:1939
+  java.util.stream.AbstractPipeline.copyInto:570
+  java.util.stream.AbstractPipeline.wrapAndCopyInto:560
+  java.util.stream.ReduceOps$ReduceOp.evaluateSequential:921
+  java.util.stream.AbstractPipeline.evaluate:265
+  java.util.stream.ReferencePipeline.collect:723
+  crafttweaker.mc1120.oredict.MCOreDictEntry.getItems:188

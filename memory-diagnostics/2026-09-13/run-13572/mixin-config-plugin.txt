@@ -1,0 +1,912 @@
+Compiled from "MixinConfigPlugin.java"
+public class org.embeddedt.vintagefix.core.MixinConfigPlugin implements org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin {
+  private static final org.apache.logging.log4j.Logger LOGGER;
+
+  private static final java.lang.String PACKAGE_PREFIX;
+
+  private static final com.google.common.collect.ImmutableMap<java.lang.String, java.util.function.Consumer<org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin>> MIXIN_PROCESSING_MAP;
+
+  private static final java.util.List<org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin> allMixins;
+
+  private static java.util.Properties config;
+
+  private static final com.google.common.collect.ImmutableMap<java.lang.String, java.lang.Boolean> extraBaseNames;
+
+  private static final java.util.List<java.lang.String> VINTAGIUM_DISABLED_PACKAGES;
+
+  private static final java.util.List<java.lang.String> OPTIFINE_DISABLED_PACKAGES;
+
+  private static final java.util.List<java.lang.String> SLEDGEHAMMER_DISABLED_PACKAGES;
+
+  public org.embeddedt.vintagefix.core.MixinConfigPlugin();
+    Code:
+         0: aload_0
+         1: invokespecial #61                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  private void considerClass(java.lang.String) throws java.io.IOException;
+    Code:
+         0: ldc           #2                  // class org/embeddedt/vintagefix/core/MixinConfigPlugin
+         2: invokevirtual #75                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+         5: new           #77                 // class java/lang/StringBuilder
+         8: dup
+         9: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+        12: ldc           #80                 // String org/embeddedt/vintagefix/mixin/
+        14: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        17: aload_1
+        18: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        21: invokevirtual #88                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        24: invokevirtual #94                 // Method java/lang/ClassLoader.getResourceAsStream:(Ljava/lang/String;)Ljava/io/InputStream;
+        27: astore_2
+        28: aconst_null
+        29: astore_3
+        30: aload_2
+        31: ifnonnull     65
+        34: aload_2
+        35: ifnull        64
+        38: aload_3
+        39: ifnull        60
+        42: aload_2
+        43: invokevirtual #99                 // Method java/io/InputStream.close:()V
+        46: goto          64
+        49: astore        4
+        51: aload_3
+        52: aload         4
+        54: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+        57: goto          64
+        60: aload_2
+        61: invokevirtual #99                 // Method java/io/InputStream.close:()V
+        64: return
+        65: new           #107                // class org/objectweb/asm/ClassReader
+        68: dup
+        69: aload_2
+        70: invokespecial #110                // Method org/objectweb/asm/ClassReader."<init>":(Ljava/io/InputStream;)V
+        73: astore        4
+        75: new           #112                // class org/objectweb/asm/tree/ClassNode
+        78: dup
+        79: invokespecial #113                // Method org/objectweb/asm/tree/ClassNode."<init>":()V
+        82: astore        5
+        84: aload         4
+        86: aload         5
+        88: bipush        7
+        90: invokevirtual #117                // Method org/objectweb/asm/ClassReader.accept:(Lorg/objectweb/asm/ClassVisitor;I)V
+        93: aload         5
+        95: getfield      #120                // Field org/objectweb/asm/tree/ClassNode.invisibleAnnotations:Ljava/util/List;
+        98: ifnonnull     132
+       101: aload_2
+       102: ifnull        131
+       105: aload_3
+       106: ifnull        127
+       109: aload_2
+       110: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       113: goto          131
+       116: astore        6
+       118: aload_3
+       119: aload         6
+       121: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       124: goto          131
+       127: aload_2
+       128: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       131: return
+       132: new           #9                  // class org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin
+       135: dup
+       136: invokespecial #121                // Method org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin."<init>":()V
+       139: astore        6
+       141: aload         6
+       143: aload         5
+       145: getfield      #124                // Field org/objectweb/asm/tree/ClassNode.name:Ljava/lang/String;
+       148: bipush        47
+       150: bipush        46
+       152: invokevirtual #128                // Method java/lang/String.replace:(CC)Ljava/lang/String;
+       155: putfield      #131                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.className:Ljava/lang/String;
+       158: aload         5
+       160: getfield      #120                // Field org/objectweb/asm/tree/ClassNode.invisibleAnnotations:Ljava/util/List;
+       163: invokeinterface #137,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+       168: astore        7
+       170: aload         7
+       172: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       177: ifeq          225
+       180: aload         7
+       182: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       187: checkcast     #149                // class org/objectweb/asm/tree/AnnotationNode
+       190: astore        8
+       192: getstatic     #151                // Field MIXIN_PROCESSING_MAP:Lcom/google/common/collect/ImmutableMap;
+       195: aload         8
+       197: getfield      #154                // Field org/objectweb/asm/tree/AnnotationNode.desc:Ljava/lang/String;
+       200: invokevirtual #158                // Method com/google/common/collect/ImmutableMap.get:(Ljava/lang/Object;)Ljava/lang/Object;
+       203: checkcast     #160                // class java/util/function/Consumer
+       206: astore        9
+       208: aload         9
+       210: ifnull        222
+       213: aload         9
+       215: aload         6
+       217: invokeinterface #163,  2          // InterfaceMethod java/util/function/Consumer.accept:(Ljava/lang/Object;)V
+       222: goto          170
+       225: aload         6
+       227: getfield      #167                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.valid:Z
+       230: ifeq          244
+       233: getstatic     #169                // Field allMixins:Ljava/util/List;
+       236: aload         6
+       238: invokeinterface #173,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       243: pop
+       244: aload_2
+       245: ifnull        320
+       248: aload_3
+       249: ifnull        270
+       252: aload_2
+       253: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       256: goto          320
+       259: astore        4
+       261: aload_3
+       262: aload         4
+       264: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       267: goto          320
+       270: aload_2
+       271: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       274: goto          320
+       277: astore        4
+       279: aload         4
+       281: astore_3
+       282: aload         4
+       284: athrow
+       285: astore        10
+       287: aload_2
+       288: ifnull        317
+       291: aload_3
+       292: ifnull        313
+       295: aload_2
+       296: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       299: goto          317
+       302: astore        11
+       304: aload_3
+       305: aload         11
+       307: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       310: goto          317
+       313: aload_2
+       314: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       317: aload         10
+       319: athrow
+       320: return
+      Exception table:
+         from    to  target type
+            42    46    49   Class java/lang/Throwable
+           109   113   116   Class java/lang/Throwable
+           252   256   259   Class java/lang/Throwable
+            30    34   277   Class java/lang/Throwable
+            65   101   277   Class java/lang/Throwable
+           132   244   277   Class java/lang/Throwable
+            30    34   285   any
+            65   101   285   any
+           132   244   285   any
+           295   299   302   Class java/lang/Throwable
+           277   287   285   any
+
+  private static java.lang.String mixinClassNameToBaseName(java.lang.String);
+    Code:
+         0: aload_0
+         1: ldc           #43                 // String org.embeddedt.vintagefix.
+         3: ldc           #191                // String
+         5: invokevirtual #194                // Method java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+         8: astore_1
+         9: aload_1
+        10: iconst_0
+        11: aload_1
+        12: bipush        46
+        14: invokevirtual #198                // Method java/lang/String.lastIndexOf:(I)I
+        17: invokevirtual #202                // Method java/lang/String.substring:(II)Ljava/lang/String;
+        20: areturn
+
+  private static void writeOrderedProperties(java.util.Properties, java.io.OutputStream) throws java.io.IOException;
+    Code:
+         0: new           #208                // class java/io/PrintWriter
+         3: dup
+         4: aload_1
+         5: invokespecial #211                // Method java/io/PrintWriter."<init>":(Ljava/io/OutputStream;)V
+         8: astore_2
+         9: aconst_null
+        10: astore_3
+        11: aload_2
+        12: ldc           #213                // String # VintageFix config file
+        14: invokevirtual #216                // Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+        17: aload_2
+        18: invokevirtual #218                // Method java/io/PrintWriter.println:()V
+        21: new           #220                // class java/util/ArrayList
+        24: dup
+        25: aload_0
+        26: invokevirtual #226                // Method java/util/Properties.keySet:()Ljava/util/Set;
+        29: invokespecial #229                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+        32: astore        4
+        34: aload         4
+        36: invokestatic  #235                // InterfaceMethod java/util/Comparator.naturalOrder:()Ljava/util/Comparator;
+        39: invokeinterface #239,  2          // InterfaceMethod java/util/List.sort:(Ljava/util/Comparator;)V
+        44: aload         4
+        46: invokeinterface #137,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        51: astore        5
+        53: aload         5
+        55: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        60: ifeq          111
+        63: aload         5
+        65: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        70: checkcast     #101                // class java/lang/String
+        73: astore        6
+        75: aload_2
+        76: new           #77                 // class java/lang/StringBuilder
+        79: dup
+        80: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+        83: aload         6
+        85: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        88: ldc           #243                // String =
+        90: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        93: aload_0
+        94: aload         6
+        96: invokevirtual #246                // Method java/util/Properties.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+        99: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       102: invokevirtual #88                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       105: invokevirtual #216                // Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+       108: goto          53
+       111: aload_2
+       112: ifnull        187
+       115: aload_3
+       116: ifnull        137
+       119: aload_2
+       120: invokevirtual #247                // Method java/io/PrintWriter.close:()V
+       123: goto          187
+       126: astore        4
+       128: aload_3
+       129: aload         4
+       131: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       134: goto          187
+       137: aload_2
+       138: invokevirtual #247                // Method java/io/PrintWriter.close:()V
+       141: goto          187
+       144: astore        4
+       146: aload         4
+       148: astore_3
+       149: aload         4
+       151: athrow
+       152: astore        7
+       154: aload_2
+       155: ifnull        184
+       158: aload_3
+       159: ifnull        180
+       162: aload_2
+       163: invokevirtual #247                // Method java/io/PrintWriter.close:()V
+       166: goto          184
+       169: astore        8
+       171: aload_3
+       172: aload         8
+       174: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       177: goto          184
+       180: aload_2
+       181: invokevirtual #247                // Method java/io/PrintWriter.close:()V
+       184: aload         7
+       186: athrow
+       187: return
+      Exception table:
+         from    to  target type
+           119   123   126   Class java/lang/Throwable
+            11   111   144   Class java/lang/Throwable
+            11   111   152   any
+           162   166   169   Class java/lang/Throwable
+           144   154   152   any
+
+  public void onLoad(java.lang.String);
+    Code:
+         0: getstatic     #169                // Field allMixins:Ljava/util/List;
+         3: invokeinterface #264,  1          // InterfaceMethod java/util/List.size:()I
+         8: ifne          797
+        11: invokestatic  #269                // Method org/embeddedt/vintagefix/mixinextras/MixinExtrasBootstrap.init:()V
+        14: ldc           #2                  // class org/embeddedt/vintagefix/core/MixinConfigPlugin
+        16: ldc_w         #271                // String /mixins.vintagefix.json
+        19: invokevirtual #275                // Method java/lang/Class.getResource:(Ljava/lang/String;)Ljava/net/URL;
+        22: invokestatic  #280                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        25: checkcast     #282                // class java/net/URL
+        28: invokevirtual #286                // Method java/net/URL.toURI:()Ljava/net/URI;
+        31: astore_2
+        32: aload_2
+        33: invokestatic  #292                // Method java/nio/file/FileSystems.getFileSystem:(Ljava/net/URI;)Ljava/nio/file/FileSystem;
+        36: astore_3
+        37: goto          50
+        40: astore        4
+        42: aload_2
+        43: invokestatic  #300                // Method java/util/Collections.emptyMap:()Ljava/util/Map;
+        46: invokestatic  #304                // Method java/nio/file/FileSystems.newFileSystem:(Ljava/net/URI;Ljava/util/Map;)Ljava/nio/file/FileSystem;
+        49: astore_3
+        50: aload_3
+        51: ldc_w         #308                // String org
+        54: iconst_3
+        55: anewarray     #101                // class java/lang/String
+        58: dup
+        59: iconst_0
+        60: ldc_w         #310                // String embeddedt
+        63: aastore
+        64: dup
+        65: iconst_1
+        66: ldc_w         #312                // String vintagefix
+        69: aastore
+        70: dup
+        71: iconst_2
+        72: ldc_w         #313                // String mixin
+        75: aastore
+        76: invokevirtual #317                // Method java/nio/file/FileSystem.getPath:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+        79: invokeinterface #323,  1          // InterfaceMethod java/nio/file/Path.toAbsolutePath:()Ljava/nio/file/Path;
+        84: astore        5
+        86: aload         5
+        88: iconst_0
+        89: anewarray     #325                // class java/nio/file/FileVisitOption
+        92: invokestatic  #331                // Method java/nio/file/Files.walk:(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+        95: astore        6
+        97: aconst_null
+        98: astore        7
+       100: aload         6
+       102: invokestatic  #337                // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+       105: invokeinterface #343,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       110: checkcast     #133                // class java/util/List
+       113: astore        4
+       115: aload         6
+       117: ifnull        210
+       120: aload         7
+       122: ifnull        147
+       125: aload         6
+       127: invokeinterface #344,  1          // InterfaceMethod java/util/stream/Stream.close:()V
+       132: goto          210
+       135: astore        8
+       137: aload         7
+       139: aload         8
+       141: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       144: goto          210
+       147: aload         6
+       149: invokeinterface #344,  1          // InterfaceMethod java/util/stream/Stream.close:()V
+       154: goto          210
+       157: astore        8
+       159: aload         8
+       161: astore        7
+       163: aload         8
+       165: athrow
+       166: astore        9
+       168: aload         6
+       170: ifnull        207
+       173: aload         7
+       175: ifnull        200
+       178: aload         6
+       180: invokeinterface #344,  1          // InterfaceMethod java/util/stream/Stream.close:()V
+       185: goto          207
+       188: astore        10
+       190: aload         7
+       192: aload         10
+       194: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       197: goto          207
+       200: aload         6
+       202: invokeinterface #344,  1          // InterfaceMethod java/util/stream/Stream.close:()V
+       207: aload         9
+       209: athrow
+       210: aload         4
+       212: invokeinterface #137,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+       217: astore        6
+       219: aload         6
+       221: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       226: ifeq          294
+       229: aload         6
+       231: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       236: checkcast     #319                // class java/nio/file/Path
+       239: astore        7
+       241: aload         7
+       243: ifnonnull     249
+       246: goto          219
+       249: aload         5
+       251: aload         7
+       253: invokeinterface #323,  1          // InterfaceMethod java/nio/file/Path.toAbsolutePath:()Ljava/nio/file/Path;
+       258: invokeinterface #348,  2          // InterfaceMethod java/nio/file/Path.relativize:(Ljava/nio/file/Path;)Ljava/nio/file/Path;
+       263: astore        7
+       265: aload         7
+       267: invokeinterface #349,  1          // InterfaceMethod java/nio/file/Path.toString:()Ljava/lang/String;
+       272: astore        8
+       274: aload         8
+       276: ldc_w         #351                // String .class
+       279: invokevirtual #355                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+       282: ifeq          291
+       285: aload_0
+       286: aload         8
+       288: invokespecial #357                // Method considerClass:(Ljava/lang/String;)V
+       291: goto          219
+       294: goto          307
+       297: astore_2
+       298: new           #361                // class java/lang/RuntimeException
+       301: dup
+       302: aload_2
+       303: invokespecial #363                // Method java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+       306: athrow
+       307: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       310: ldc_w         #367                // String Found {} mixins
+       313: getstatic     #169                // Field allMixins:Ljava/util/List;
+       316: invokeinterface #264,  1          // InterfaceMethod java/util/List.size:()I
+       321: invokestatic  #373                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       324: invokeinterface #379,  3          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;Ljava/lang/Object;)V
+       329: new           #222                // class java/util/Properties
+       332: dup
+       333: invokespecial #380                // Method java/util/Properties."<init>":()V
+       336: putstatic     #382                // Field config:Ljava/util/Properties;
+       339: new           #384                // class java/io/File
+       342: dup
+       343: getstatic     #390                // Field net/minecraft/launchwrapper/Launch.minecraftHome:Ljava/io/File;
+       346: new           #77                 // class java/lang/StringBuilder
+       349: dup
+       350: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+       353: ldc_w         #391                // String config
+       356: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       359: getstatic     #394                // Field java/io/File.separator:Ljava/lang/String;
+       362: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       365: ldc_w         #396                // String vintagefix.properties
+       368: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       371: invokevirtual #88                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       374: invokespecial #399                // Method java/io/File."<init>":(Ljava/io/File;Ljava/lang/String;)V
+       377: astore_2
+       378: aload_2
+       379: invokevirtual #402                // Method java/io/File.exists:()Z
+       382: ifeq          492
+       385: aload_2
+       386: invokevirtual #405                // Method java/io/File.toPath:()Ljava/nio/file/Path;
+       389: iconst_0
+       390: anewarray     #407                // class java/nio/file/OpenOption
+       393: invokestatic  #411                // Method java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+       396: astore_3
+       397: aconst_null
+       398: astore        4
+       400: getstatic     #382                // Field config:Ljava/util/Properties;
+       403: aload_3
+       404: invokevirtual #414                // Method java/util/Properties.load:(Ljava/io/InputStream;)V
+       407: aload_3
+       408: ifnull        488
+       411: aload         4
+       413: ifnull        435
+       416: aload_3
+       417: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       420: goto          488
+       423: astore        5
+       425: aload         4
+       427: aload         5
+       429: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       432: goto          488
+       435: aload_3
+       436: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       439: goto          488
+       442: astore        5
+       444: aload         5
+       446: astore        4
+       448: aload         5
+       450: athrow
+       451: astore        11
+       453: aload_3
+       454: ifnull        485
+       457: aload         4
+       459: ifnull        481
+       462: aload_3
+       463: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       466: goto          485
+       469: astore        12
+       471: aload         4
+       473: aload         12
+       475: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       478: goto          485
+       481: aload_3
+       482: invokevirtual #99                 // Method java/io/InputStream.close:()V
+       485: aload         11
+       487: athrow
+       488: goto          492
+       491: astore_3
+       492: getstatic     #169                // Field allMixins:Ljava/util/List;
+       495: invokeinterface #137,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+       500: astore_3
+       501: aload_3
+       502: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       507: ifeq          591
+       510: aload_3
+       511: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       516: checkcast     #9                  // class org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin
+       519: astore        4
+       521: aload         4
+       523: getfield      #131                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.className:Ljava/lang/String;
+       526: invokestatic  #416                // Method mixinClassNameToBaseName:(Ljava/lang/String;)Ljava/lang/String;
+       529: astore        5
+       531: getstatic     #382                // Field config:Ljava/util/Properties;
+       534: aload         5
+       536: invokevirtual #419                // Method java/util/Properties.containsKey:(Ljava/lang/Object;)Z
+       539: ifne          588
+       542: getstatic     #421                // Field extraBaseNames:Lcom/google/common/collect/ImmutableMap;
+       545: aload         5
+       547: iconst_1
+       548: invokestatic  #426                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       551: invokevirtual #430                // Method com/google/common/collect/ImmutableMap.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       554: checkcast     #423                // class java/lang/Boolean
+       557: invokevirtual #431                // Method java/lang/Boolean.toString:()Ljava/lang/String;
+       560: astore        6
+       562: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       565: ldc_w         #433                // String Added missing entry \'{}\' to config file with default value \'{}\'
+       568: aload         5
+       570: aload         6
+       572: invokeinterface #437,  4          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+       577: getstatic     #382                // Field config:Ljava/util/Properties;
+       580: aload         5
+       582: aload         6
+       584: invokevirtual #440                // Method java/util/Properties.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       587: pop
+       588: goto          501
+       591: getstatic     #421                // Field extraBaseNames:Lcom/google/common/collect/ImmutableMap;
+       594: invokevirtual #444                // Method com/google/common/collect/ImmutableMap.entrySet:()Lcom/google/common/collect/ImmutableSet;
+       597: invokevirtual #449                // Method com/google/common/collect/ImmutableSet.iterator:()Lcom/google/common/collect/UnmodifiableIterator;
+       600: astore_3
+       601: aload_3
+       602: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       607: ifeq          667
+       610: aload_3
+       611: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       616: checkcast     #12                 // class java/util/Map$Entry
+       619: astore        4
+       621: getstatic     #382                // Field config:Ljava/util/Properties;
+       624: aload         4
+       626: invokeinterface #452,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+       631: invokevirtual #419                // Method java/util/Properties.containsKey:(Ljava/lang/Object;)Z
+       634: ifne          664
+       637: getstatic     #382                // Field config:Ljava/util/Properties;
+       640: aload         4
+       642: invokeinterface #452,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+       647: aload         4
+       649: invokeinterface #455,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+       654: checkcast     #423                // class java/lang/Boolean
+       657: invokevirtual #431                // Method java/lang/Boolean.toString:()Ljava/lang/String;
+       660: invokevirtual #440                // Method java/util/Properties.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       663: pop
+       664: goto          601
+       667: aload_2
+       668: invokevirtual #405                // Method java/io/File.toPath:()Ljava/nio/file/Path;
+       671: iconst_0
+       672: anewarray     #407                // class java/nio/file/OpenOption
+       675: invokestatic  #459                // Method java/nio/file/Files.newOutputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+       678: astore_3
+       679: aconst_null
+       680: astore        4
+       682: getstatic     #382                // Field config:Ljava/util/Properties;
+       685: aload_3
+       686: invokestatic  #461                // Method writeOrderedProperties:(Ljava/util/Properties;Ljava/io/OutputStream;)V
+       689: aload_3
+       690: ifnull        770
+       693: aload         4
+       695: ifnull        717
+       698: aload_3
+       699: invokevirtual #462                // Method java/io/OutputStream.close:()V
+       702: goto          770
+       705: astore        5
+       707: aload         4
+       709: aload         5
+       711: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       714: goto          770
+       717: aload_3
+       718: invokevirtual #462                // Method java/io/OutputStream.close:()V
+       721: goto          770
+       724: astore        5
+       726: aload         5
+       728: astore        4
+       730: aload         5
+       732: athrow
+       733: astore        13
+       735: aload_3
+       736: ifnull        767
+       739: aload         4
+       741: ifnull        763
+       744: aload_3
+       745: invokevirtual #462                // Method java/io/OutputStream.close:()V
+       748: goto          767
+       751: astore        14
+       753: aload         4
+       755: aload         14
+       757: invokevirtual #105                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       760: goto          767
+       763: aload_3
+       764: invokevirtual #462                // Method java/io/OutputStream.close:()V
+       767: aload         13
+       769: athrow
+       770: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       773: ldc_w         #464                // String Successfully saved config file
+       776: invokeinterface #466,  2          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;)V
+       781: goto          797
+       784: astore_3
+       785: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       788: ldc_w         #468                // String Exception handling config
+       791: aload_3
+       792: invokeinterface #472,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;Ljava/lang/Throwable;)V
+       797: return
+      Exception table:
+         from    to  target type
+            32    37    40   Class java/nio/file/FileSystemNotFoundException
+           125   132   135   Class java/lang/Throwable
+           100   115   157   Class java/lang/Throwable
+           100   115   166   any
+           178   185   188   Class java/lang/Throwable
+           157   168   166   any
+            14   294   297   Class java/io/IOException
+            14   294   297   Class java/net/URISyntaxException
+           416   420   423   Class java/lang/Throwable
+           400   407   442   Class java/lang/Throwable
+           400   407   451   any
+           462   466   469   Class java/lang/Throwable
+           442   453   451   any
+           385   488   491   Class java/lang/IllegalArgumentException
+           698   702   705   Class java/lang/Throwable
+           682   689   724   Class java/lang/Throwable
+           682   689   733   any
+           744   748   751   Class java/lang/Throwable
+           724   735   733   any
+           378   781   784   Class java/io/IOException
+
+  public java.lang.String getRefMapperConfig();
+    Code:
+         0: aconst_null
+         1: areturn
+
+  public boolean shouldApplyMixin(java.lang.String, java.lang.String);
+    Code:
+         0: iconst_1
+         1: ireturn
+
+  public void acceptTargets(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>);
+    Code:
+         0: return
+
+  public static boolean isMixinClassApplied(java.lang.String);
+    Code:
+         0: aload_0
+         1: ldc           #43                 // String org.embeddedt.vintagefix.
+         3: ldc           #191                // String
+         5: invokevirtual #194                // Method java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+         8: astore_1
+         9: aload_0
+        10: invokestatic  #416                // Method mixinClassNameToBaseName:(Ljava/lang/String;)Ljava/lang/String;
+        13: astore_2
+        14: getstatic     #513                // Field org/embeddedt/vintagefix/core/VintageFixCore.OPTIFINE:Z
+        17: ifeq          49
+        20: getstatic     #515                // Field OPTIFINE_DISABLED_PACKAGES:Ljava/util/List;
+        23: invokeinterface #518,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        28: aload_2
+        29: dup
+        30: invokevirtual #522                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+        33: pop
+        34: invokedynamic #539,  0            // InvokeDynamic #0:test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+        39: invokeinterface #543,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+        44: ifeq          49
+        47: iconst_0
+        48: ireturn
+        49: getstatic     #546                // Field org/embeddedt/vintagefix/core/VintageFixCore.VINTAGIUM:Z
+        52: ifeq          84
+        55: getstatic     #548                // Field VINTAGIUM_DISABLED_PACKAGES:Ljava/util/List;
+        58: invokeinterface #518,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        63: aload_2
+        64: dup
+        65: invokevirtual #522                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+        68: pop
+        69: invokedynamic #539,  0            // InvokeDynamic #0:test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+        74: invokeinterface #543,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+        79: ifeq          84
+        82: iconst_0
+        83: ireturn
+        84: getstatic     #551                // Field org/embeddedt/vintagefix/core/VintageFixCore.SLEDGEHAMMER:Z
+        87: ifeq          119
+        90: getstatic     #553                // Field SLEDGEHAMMER_DISABLED_PACKAGES:Ljava/util/List;
+        93: invokeinterface #518,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        98: aload_2
+        99: dup
+       100: invokevirtual #522                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+       103: pop
+       104: invokedynamic #539,  0            // InvokeDynamic #0:test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+       109: invokeinterface #543,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+       114: ifeq          119
+       117: iconst_0
+       118: ireturn
+       119: aload_1
+       120: ldc_w         #555                // String mixin.blockstates.Property
+       123: invokevirtual #526                // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+       126: ifeq          137
+       129: getstatic     #558                // Field org/embeddedt/vintagefix/core/VintageFixCore.SPONGE:Z
+       132: ifeq          137
+       135: iconst_0
+       136: ireturn
+       137: getstatic     #382                // Field config:Ljava/util/Properties;
+       140: aload_2
+       141: ldc           #191                // String
+       143: invokevirtual #561                // Method java/util/Properties.getProperty:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       146: invokestatic  #564                // Method java/lang/Boolean.parseBoolean:(Ljava/lang/String;)Z
+       149: istore_3
+       150: iload_3
+       151: ifne          167
+       154: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       157: ldc_w         #566                // String Not applying mixin \'{}\' as \'{}\' is disabled in config
+       160: aload_0
+       161: aload_2
+       162: invokeinterface #437,  4          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+       167: iload_3
+       168: ireturn
+
+  public java.util.List<java.lang.String> getMixins();
+    Code:
+         0: invokestatic  #575                // Method org/spongepowered/asm/mixin/MixinEnvironment.getCurrentEnvironment:()Lorg/spongepowered/asm/mixin/MixinEnvironment;
+         3: invokevirtual #579                // Method org/spongepowered/asm/mixin/MixinEnvironment.getPhase:()Lorg/spongepowered/asm/mixin/MixinEnvironment$Phase;
+         6: astore_1
+         7: aload_1
+         8: getstatic     #583                // Field org/spongepowered/asm/mixin/MixinEnvironment$Phase.DEFAULT:Lorg/spongepowered/asm/mixin/MixinEnvironment$Phase;
+        11: if_acmpne     161
+        14: getstatic     #588                // Field org/embeddedt/vintagefix/core/LateMixins.atLateStage:Z
+        17: ifne          35
+        20: ldc_w         #590                // String vintagefix.transformerCache
+        23: invokestatic  #593                // Method java/lang/Boolean.getBoolean:(Ljava/lang/String;)Z
+        26: ifeq          35
+        29: getstatic     #599                // Field org/embeddedt/vintagefix/transformercache/TransformerCache.instance:Lorg/embeddedt/vintagefix/transformercache/TransformerCache;
+        32: invokevirtual #600                // Method org/embeddedt/vintagefix/transformercache/TransformerCache.init:()V
+        35: invokestatic  #575                // Method org/spongepowered/asm/mixin/MixinEnvironment.getCurrentEnvironment:()Lorg/spongepowered/asm/mixin/MixinEnvironment;
+        38: invokevirtual #604                // Method org/spongepowered/asm/mixin/MixinEnvironment.getSide:()Lorg/spongepowered/asm/mixin/MixinEnvironment$Side;
+        41: astore_2
+        42: getstatic     #169                // Field allMixins:Ljava/util/List;
+        45: invokeinterface #518,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        50: aload_2
+        51: invokedynamic #614,  0            // InvokeDynamic #1:test:(Lorg/spongepowered/asm/mixin/MixinEnvironment$Side;)Ljava/util/function/Predicate;
+        56: invokeinterface #618,  2          // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+        61: invokedynamic #625,  0            // InvokeDynamic #2:test:()Ljava/util/function/Predicate;
+        66: invokeinterface #618,  2          // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+        71: invokedynamic #636,  0            // InvokeDynamic #3:apply:()Ljava/util/function/Function;
+        76: invokeinterface #640,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        81: invokedynamic #644,  0            // InvokeDynamic #4:test:()Ljava/util/function/Predicate;
+        86: invokeinterface #618,  2          // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+        91: invokedynamic #650,  0            // InvokeDynamic #5:apply:()Ljava/util/function/Function;
+        96: invokeinterface #640,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       101: invokestatic  #337                // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+       104: invokeinterface #343,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       109: checkcast     #133                // class java/util/List
+       112: astore_3
+       113: aload_3
+       114: invokeinterface #137,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+       119: astore        4
+       121: aload         4
+       123: invokeinterface #143,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       128: ifeq          159
+       131: aload         4
+       133: invokeinterface #147,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       138: checkcast     #101                // class java/lang/String
+       141: astore        5
+       143: getstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+       146: ldc_w         #652                // String loading {}
+       149: aload         5
+       151: invokeinterface #655,  3          // InterfaceMethod org/apache/logging/log4j/Logger.debug:(Ljava/lang/String;Ljava/lang/Object;)V
+       156: goto          121
+       159: aload_3
+       160: areturn
+       161: aconst_null
+       162: areturn
+
+  public void preApply(java.lang.String, org.objectweb.asm.tree.ClassNode, java.lang.String, org.spongepowered.asm.mixin.extensibility.IMixinInfo);
+    Code:
+         0: return
+
+  public void postApply(java.lang.String, org.objectweb.asm.tree.ClassNode, java.lang.String, org.spongepowered.asm.mixin.extensibility.IMixinInfo);
+    Code:
+         0: return
+
+  private static java.lang.String lambda$getMixins$6(java.lang.String);
+    Code:
+         0: aload_0
+         1: ldc_w         #667                // String org.embeddedt.vintagefix.mixin.
+         4: ldc           #191                // String
+         6: invokevirtual #194                // Method java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+         9: areturn
+
+  private static java.lang.String lambda$getMixins$5(org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_0
+         1: getfield      #131                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.className:Ljava/lang/String;
+         4: areturn
+
+  private static boolean lambda$getMixins$4(org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_0
+         1: getfield      #671                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.isLate:Z
+         4: getstatic     #588                // Field org/embeddedt/vintagefix/core/LateMixins.atLateStage:Z
+         7: if_icmpne     14
+        10: iconst_1
+        11: goto          15
+        14: iconst_0
+        15: ireturn
+
+  private static boolean lambda$getMixins$3(org.spongepowered.asm.mixin.MixinEnvironment$Side, org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_1
+         1: getfield      #674                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.isClientOnly:Z
+         4: ifeq          14
+         7: aload_0
+         8: getstatic     #677                // Field org/spongepowered/asm/mixin/MixinEnvironment$Side.CLIENT:Lorg/spongepowered/asm/mixin/MixinEnvironment$Side;
+        11: if_acmpne     18
+        14: iconst_1
+        15: goto          19
+        18: iconst_0
+        19: ireturn
+
+  private static void lambda$static$2(org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_0
+         1: iconst_1
+         2: putfield      #671                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.isLate:Z
+         5: return
+
+  private static void lambda$static$1(org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_0
+         1: iconst_1
+         2: putfield      #674                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.isClientOnly:Z
+         5: return
+
+  private static void lambda$static$0(org.embeddedt.vintagefix.core.MixinConfigPlugin$PotentialMixin);
+    Code:
+         0: aload_0
+         1: iconst_1
+         2: putfield      #167                // Field org/embeddedt/vintagefix/core/MixinConfigPlugin$PotentialMixin.valid:Z
+         5: return
+
+  static {};
+    Code:
+         0: ldc_w         #684                // String VintageFix Mixin Loader
+         3: invokestatic  #690                // Method org/apache/logging/log4j/LogManager.getLogger:(Ljava/lang/String;)Lorg/apache/logging/log4j/Logger;
+         6: putstatic     #365                // Field LOGGER:Lorg/apache/logging/log4j/Logger;
+         9: invokestatic  #694                // Method com/google/common/collect/ImmutableMap.builder:()Lcom/google/common/collect/ImmutableMap$Builder;
+        12: ldc_w         #696                // String Lorg/spongepowered/asm/mixin/Mixin;
+        15: invokedynamic #704,  0            // InvokeDynamic #6:accept:()Ljava/util/function/Consumer;
+        20: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        23: ldc_w         #709                // String Lorg/embeddedt/vintagefix/annotation/ClientOnlyMixin;
+        26: invokedynamic #713,  0            // InvokeDynamic #7:accept:()Ljava/util/function/Consumer;
+        31: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        34: ldc_w         #715                // String Lorg/embeddedt/vintagefix/annotation/LateMixin;
+        37: invokedynamic #719,  0            // InvokeDynamic #8:accept:()Ljava/util/function/Consumer;
+        42: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        45: invokevirtual #723                // Method com/google/common/collect/ImmutableMap$Builder.build:()Lcom/google/common/collect/ImmutableMap;
+        48: putstatic     #151                // Field MIXIN_PROCESSING_MAP:Lcom/google/common/collect/ImmutableMap;
+        51: new           #220                // class java/util/ArrayList
+        54: dup
+        55: invokespecial #724                // Method java/util/ArrayList."<init>":()V
+        58: putstatic     #169                // Field allMixins:Ljava/util/List;
+        61: invokestatic  #694                // Method com/google/common/collect/ImmutableMap.builder:()Lcom/google/common/collect/ImmutableMap$Builder;
+        64: ldc_w         #726                // String mixin.dynamic_resources.background_item_bake
+        67: iconst_1
+        68: invokestatic  #426                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+        71: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        74: ldc_w         #728                // String mixin.bugfix.extrautils
+        77: iconst_0
+        78: invokestatic  #426                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+        81: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        84: ldc_w         #730                // String mixin.version_protest
+        87: iconst_0
+        88: invokestatic  #426                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+        91: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+        94: ldc_w         #732                // String mixin.dynamic_resources.hide_model_exceptions
+        97: iconst_0
+        98: invokestatic  #426                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       101: invokevirtual #707                // Method com/google/common/collect/ImmutableMap$Builder.put:(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
+       104: invokevirtual #723                // Method com/google/common/collect/ImmutableMap$Builder.build:()Lcom/google/common/collect/ImmutableMap;
+       107: putstatic     #421                // Field extraBaseNames:Lcom/google/common/collect/ImmutableMap;
+       110: ldc_w         #734                // String mixin.chunk_rendering
+       113: ldc_w         #736                // String mixin.bugfix.entity_disappearing
+       116: ldc_w         #738                // String mixin.invisible_subchunks
+       119: invokestatic  #742                // Method com/google/common/collect/ImmutableList.of:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+       122: putstatic     #548                // Field VINTAGIUM_DISABLED_PACKAGES:Ljava/util/List;
+       125: invokestatic  #745                // Method com/google/common/collect/ImmutableList.builder:()Lcom/google/common/collect/ImmutableList$Builder;
+       128: getstatic     #548                // Field VINTAGIUM_DISABLED_PACKAGES:Ljava/util/List;
+       131: invokevirtual #749                // Method com/google/common/collect/ImmutableList$Builder.addAll:(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList$Builder;
+       134: ldc_w         #751                // String mixin.textures
+       137: invokevirtual #754                // Method com/google/common/collect/ImmutableList$Builder.add:(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+       140: ldc_w         #756                // String mixin.bugfix.ao_artifacts
+       143: invokevirtual #754                // Method com/google/common/collect/ImmutableList$Builder.add:(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+       146: invokevirtual #759                // Method com/google/common/collect/ImmutableList$Builder.build:()Lcom/google/common/collect/ImmutableList;
+       149: putstatic     #515                // Field OPTIFINE_DISABLED_PACKAGES:Ljava/util/List;
+       152: invokestatic  #745                // Method com/google/common/collect/ImmutableList.builder:()Lcom/google/common/collect/ImmutableList$Builder;
+       155: ldc_w         #761                // String mixin.bugfix.dark_entities
+       158: invokevirtual #754                // Method com/google/common/collect/ImmutableList$Builder.add:(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+       161: ldc_w         #763                // String mixin.bugfix.render_state_leaks
+       164: invokevirtual #754                // Method com/google/common/collect/ImmutableList$Builder.add:(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+       167: invokevirtual #759                // Method com/google/common/collect/ImmutableList$Builder.build:()Lcom/google/common/collect/ImmutableList;
+       170: putstatic     #553                // Field SLEDGEHAMMER_DISABLED_PACKAGES:Ljava/util/List;
+       173: return
+}

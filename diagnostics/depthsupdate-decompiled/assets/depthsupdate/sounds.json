@@ -1,0 +1,20 @@
+{
+  "item.spyglass.use": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "depthsupdate:item/spyglass/use",
+        "stream": false
+      }
+    ]
+  },
+  "item.spyglass.stop": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "depthsupdate:item/spyglass/stop",
+        "stream": false
+      }
+    ]
+  }
+}

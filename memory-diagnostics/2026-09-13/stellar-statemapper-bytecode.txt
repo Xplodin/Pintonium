@@ -1,0 +1,122 @@
+Compiled from "MixinStateMapperBase.java"
+public abstract class github.kasuminova.stellarcore.mixin.minecraft.statemapperbase.MixinStateMapperBase {
+  protected java.util.Map<net.minecraft.block.state.IBlockState, net.minecraft.client.renderer.block.model.ModelResourceLocation> field_178133_b;
+
+  public github.kasuminova.stellarcore.mixin.minecraft.statemapperbase.MixinStateMapperBase();
+    Code:
+         0: aload_0
+         1: invokespecial #26                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  protected abstract net.minecraft.client.renderer.block.model.ModelResourceLocation func_178132_a(net.minecraft.block.state.IBlockState);
+
+  private void injectInit(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+         0: getstatic     #45                 // Field github/kasuminova/stellarcore/common/config/StellarCoreConfig.PERFORMANCE:Lgithub/kasuminova/stellarcore/common/config/category/Performance;
+         3: getfield      #49                 // Field github/kasuminova/stellarcore/common/config/category/Performance.vanilla:Lgithub/kasuminova/stellarcore/common/config/category/Performance$Vanilla;
+         6: getfield      #53                 // Field github/kasuminova/stellarcore/common/config/category/Performance$Vanilla.parallelModelLoader:Z
+         9: ifeq          27
+        12: aload_0
+        13: new           #55                 // class github/kasuminova/stellarcore/shaded/org/jctools/maps/NonBlockingIdentityHashMap
+        16: dup
+        17: sipush        8192
+        20: invokespecial #58                 // Method github/kasuminova/stellarcore/shaded/org/jctools/maps/NonBlockingIdentityHashMap."<init>":(I)V
+        23: putfield      #60                 // Field field_178133_b:Ljava/util/Map;
+        26: return
+        27: aload_0
+        28: new           #62                 // class it/unimi/dsi/fastutil/objects/Reference2ObjectOpenHashMap
+        31: dup
+        32: invokespecial #63                 // Method it/unimi/dsi/fastutil/objects/Reference2ObjectOpenHashMap."<init>":()V
+        35: putfield      #60                 // Field field_178133_b:Ljava/util/Map;
+        38: return
+
+  private void stellar_core$putStateModelLocations(net.minecraft.block.Block, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.util.Map<net.minecraft.block.state.IBlockState, net.minecraft.client.renderer.block.model.ModelResourceLocation>>);
+    Code:
+         0: aload_1
+         1: invokevirtual #78                 // Method net/minecraft/block/Block.func_176194_O:()Lnet/minecraft/block/state/BlockStateContainer;
+         4: invokevirtual #84                 // Method net/minecraft/block/state/BlockStateContainer.func_177619_a:()Lcom/google/common/collect/ImmutableList;
+         7: astore_3
+         8: new           #62                 // class it/unimi/dsi/fastutil/objects/Reference2ObjectOpenHashMap
+        11: dup
+        12: aload_3
+        13: invokeinterface #90,  1           // InterfaceMethod java/util/List.size:()I
+        18: invokespecial #91                 // Method it/unimi/dsi/fastutil/objects/Reference2ObjectOpenHashMap."<init>":(I)V
+        21: astore        4
+        23: aload_0
+        24: getfield      #60                 // Field field_178133_b:Ljava/util/Map;
+        27: instanceof    #93                 // class java/util/concurrent/ConcurrentMap
+        30: ifeq          146
+        33: aload_0
+        34: getfield      #60                 // Field field_178133_b:Ljava/util/Map;
+        37: checkcast     #93                 // class java/util/concurrent/ConcurrentMap
+        40: astore        5
+        42: aload_3
+        43: invokeinterface #97,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        48: astore        6
+        50: aload         6
+        52: invokeinterface #107,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        57: ifeq          139
+        60: aload         6
+        62: invokeinterface #111,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        67: checkcast     #113                // class net/minecraft/block/state/IBlockState
+        70: astore        7
+        72: aload         5
+        74: aload         7
+        76: invokeinterface #117,  2          // InterfaceMethod java/util/concurrent/ConcurrentMap.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        81: checkcast     #119                // class net/minecraft/client/renderer/block/model/ModelResourceLocation
+        84: astore        8
+        86: aload         8
+        88: ifnonnull     124
+        91: aload_0
+        92: aload         7
+        94: invokevirtual #121                // Method func_178132_a:(Lnet/minecraft/block/state/IBlockState;)Lnet/minecraft/client/renderer/block/model/ModelResourceLocation;
+        97: astore        8
+        99: aload         5
+       101: aload         7
+       103: aload         8
+       105: invokeinterface #125,  3          // InterfaceMethod java/util/concurrent/ConcurrentMap.putIfAbsent:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       110: checkcast     #119                // class net/minecraft/client/renderer/block/model/ModelResourceLocation
+       113: astore        9
+       115: aload         9
+       117: ifnull        124
+       120: aload         9
+       122: astore        8
+       124: aload         4
+       126: aload         7
+       128: aload         8
+       130: invokeinterface #128,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       135: pop
+       136: goto          50
+       139: aload_2
+       140: aload         4
+       142: invokevirtual #132                // Method org/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable.setReturnValue:(Ljava/lang/Object;)V
+       145: return
+       146: aload_3
+       147: invokeinterface #97,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+       152: astore        5
+       154: aload         5
+       156: invokeinterface #107,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       161: ifeq          213
+       164: aload         5
+       166: invokeinterface #111,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       171: checkcast     #113                // class net/minecraft/block/state/IBlockState
+       174: astore        6
+       176: aload_0
+       177: getfield      #60                 // Field field_178133_b:Ljava/util/Map;
+       180: aload         6
+       182: aload_0
+       183: invokedynamic #146,  0            // InvokeDynamic #0:apply:(Lgithub/kasuminova/stellarcore/mixin/minecraft/statemapperbase/MixinStateMapperBase;)Ljava/util/function/Function;
+       188: invokeinterface #150,  3          // InterfaceMethod java/util/Map.computeIfAbsent:(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+       193: checkcast     #119                // class net/minecraft/client/renderer/block/model/ModelResourceLocation
+       196: astore        7
+       198: aload         4
+       200: aload         6
+       202: aload         7
+       204: invokeinterface #128,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       209: pop
+       210: goto          154
+       213: aload_2
+       214: aload         4
+       216: invokevirtual #132                // Method org/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable.setReturnValue:(Ljava/lang/Object;)V
+       219: return
+}

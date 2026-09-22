@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.bean.beanutils.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinDistributionUniform"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

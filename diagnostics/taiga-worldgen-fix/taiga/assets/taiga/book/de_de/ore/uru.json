@@ -1,0 +1,19 @@
+{
+  "title": "Uru",
+  "r": 191,
+  "g": 185,
+  "b": 240,
+  "input": {
+    "id": "taiga:uru_ore"
+  },
+  "description": [
+    {
+      "text": "Die Legenden besagen, dass nur Götter in der Lage waren, Uru zu schmelzen. Große, mythische Waffen, wie der Hammer Mjolnir sollen daraus geschmiedet worden sein. Man findet es in den schwebenden Meteoriten aus Obsidiorit."
+    }
+  ],
+  "informations": [
+    "Level: Valyrium",
+    "Mystisches Erz",
+    "Aufzufinden in den schwebenden Kuboiden im Ende"
+  ]
+}

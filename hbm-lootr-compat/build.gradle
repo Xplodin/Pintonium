@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net' }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = '1.0.0'
+group = 'dev.beanpack.hbmlootr'
+archivesBaseName = 'hbm-lootr-compat'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+minecraft {
+    // Forge's Maven no longer serves the 2860 userdev classifier used by
+    // ForgeGradle 2.3. These APIs are unchanged in Cleanroom/Forge 2864.
+    version = '1.12.2-14.23.5.2816'
+    mappings = 'stable_39'
+    runDir = 'run'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand version: project.version, mcversion: project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Ovium",
+  "r": 125,
+  "g": 119,
+  "b": 195,
+  "input": {
+    "id": "taiga:ovium_ore"
+  },
+  "description": [
+    {
+      "text": "Ovium ist eines der drei etherischen Erze. Zusammen mit Jauxum und Karmesin erzeugt es beim verschmelzen die Verbindung Terrax."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Entsteht in Diorit"
+  ]
+}

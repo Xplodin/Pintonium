@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: taiga
+Implementation-Version: 1.0-SNAPSHOT
+Specification-Vendor: Zkaface, Chefe, TeamThreshold
+Specification-Title: taiga
+Implementation-Timestamp: 2024-01-28T21:59:48+0000
+Specification-Version: 1
+Implementation-Vendor: Zkaface, Chefe, TeamThreshold
+

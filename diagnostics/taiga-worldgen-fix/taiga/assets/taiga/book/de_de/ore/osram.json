@@ -1,0 +1,19 @@
+{
+  "title": "Osram",
+  "r": 255,
+  "g": 188,
+  "b": 144,
+  "input": {
+    "id": "taiga:osram_ore"
+  },
+  "description": [
+    {
+      "text": "Osram entstand, als Glimmersteinpartikel unter hohem Druck und enormen Temperaturen schmolz. Dieses seltene Erz kann man in den vielen Lavaseen des Nethers entdecken."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Schwimmt in Nether-Lavaseen",
+    "Es ist hart und heiß"
+  ]
+}

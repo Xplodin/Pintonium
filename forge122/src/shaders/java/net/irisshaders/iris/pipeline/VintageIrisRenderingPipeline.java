@@ -24,16 +24,21 @@ import net.irisshaders.iris.shadows.ShadowCompositeRenderer;
 import net.irisshaders.iris.shadows.ShadowRenderTargets;
 import net.irisshaders.iris.targets.RenderTargetStateListener;
 import net.irisshaders.iris.uniforms.CommonUniforms;
+import net.irisshaders.iris.uniforms.CapturedRenderingState;
 import net.irisshaders.iris.uniforms.custom.CustomUniforms;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.shader.Framebuffer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import org.embeddedt.embeddium.compat.mc.MCShaderInstance;
 import org.embeddedt.embeddium.compat.mc.MCVertexFormat;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Matrix4f;
 import org.taumc.celeritas.interfaces.IRenderTargetExt;
 import org.embeddedt.embeddium.impl.gl.shader.ShaderType;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL20;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,6 +77,8 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
     private boolean vintageEntityShaderBridgeLogged;
     private boolean vintageEntityPreferShaderProgram;
     private boolean vintageEntityClampLowerBodySkyLight;
+    private int vintageEntityColorUniformLocation = -1;
+    private int vintageEntityCompatColorUniformLocation = -1;
 
     @Nullable
     private Program vintageBlockEntityCompatProgram;
@@ -213,6 +220,8 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
 
             int[] drawBuffers = this.celeritas$drawBuffersOrDefault(source);
             this.vintageEntityProgram = builder.build();
+            this.vintageEntityColorUniformLocation = GL20.glGetUniformLocation(
+                    this.vintageEntityProgram.getProgramId(), "entityColor");
             this.customUniforms.mapholderToPass(builder, this.vintageEntityProgram);
             this.vintageEntityFramebuffer = this.renderTargets.createGbufferFramebuffer(this.flippedAfterPrepare,
                     drawBuffers);
@@ -229,6 +238,7 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             this.vintageEntityBlendOverride = null;
             this.vintageEntityBufferBlendOverrides = Collections.emptyList();
             this.vintageEntityClampLowerBodySkyLight = false;
+            this.vintageEntityColorUniformLocation = -1;
             IRIS_LOGGER.warn("Failed to create the 1.12 entity shader bridge. Entities will use vanilla rendering for this shader pack.", e);
         }
     }
@@ -245,7 +255,7 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             boolean pbrFresnelEntityLayout = this.celeritas$isPbrFresnelLayout(source, drawBuffers);
             // If the pack entity program cannot be used, keep the fallback restrained for
             // Solas-style color+aux layouts so the generic bridge does not over-brighten mobs.
-            boolean useDirectEntityLightmapColor = solasStyleEntityLayout || pbrFresnelEntityLayout;
+            boolean useDirectEntityLightmapColor = solasStyleEntityLayout;
             ProgramBuilder builder = ProgramBuilder.begin(
                     source.getName() + "_celeritas_legacy_compat",
                     this.celeritas$getLegacyCompatibilityVertexSource(),
@@ -258,6 +268,8 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             this.celeritas$addLegacyCompatibilityUniforms(builder);
 
             this.vintageEntityCompatProgram = builder.build();
+            this.vintageEntityCompatColorUniformLocation = GL20.glGetUniformLocation(
+                    this.vintageEntityCompatProgram.getProgramId(), "entityColor");
             this.vintageEntityCompatFramebuffer = this.renderTargets.createGbufferFramebuffer(this.flippedAfterPrepare, drawBuffers);
             this.vintageEntityCompatBlendOverride = source.getDirectives().getBlendModeOverride().orElse(ProgramId.Entities.getBlendModeOverride());
             this.vintageEntityCompatBufferBlendOverrides = this.celeritas$createBufferBlendOverrides(source);
@@ -272,6 +284,7 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             this.vintageEntityCompatBlendOverride = null;
             this.vintageEntityCompatBufferBlendOverrides = Collections.emptyList();
             this.vintageEntityPreferShaderProgram = false;
+            this.vintageEntityCompatColorUniformLocation = -1;
             IRIS_LOGGER.warn("Failed to create the 1.12 legacy entity compatibility shader. Trying the shader pack entity program instead.", e);
         }
     }
@@ -525,6 +538,8 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
     private void celeritas$addLegacyCompatibilityUniforms(ProgramBuilder builder) {
         builder.uniform1f(UniformUpdateFrequency.PER_FRAME, "celeritasDaylight", this::celeritas$getDaylightFactor);
         builder.uniform1b(UniformUpdateFrequency.PER_FRAME, "celeritasNoSkylightDimension", this::celeritas$isNoSkylightDimension);
+        builder.uniformMatrix(UniformUpdateFrequency.PER_FRAME, "gbufferModelViewInverse",
+                () -> new Matrix4f(CapturedRenderingState.INSTANCE.getGbufferModelView()).invert());
     }
 
     private float celeritas$getDaylightFactor() {
@@ -677,6 +692,8 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
                 .append("uniform sampler2D lightmap;\n")
                 .append("uniform float celeritasDaylight;\n")
                 .append("uniform bool celeritasNoSkylightDimension;\n")
+                .append(entityPass ? "uniform vec4 entityColor;\n" : "")
+                .append(pbrFresnelBlockLayout ? "uniform mat4 gbufferModelViewInverse;\n" : "")
                 .append("const bool celeritasClampEntityLight = ").append(clampEntityLight ? "true" : "false").append(";\n")
                 .append("const bool celeritasDirectLightmapColor = ").append(directLightmapColor ? "true" : "false").append(";\n")
                 .append("const bool celeritasAttenuateSkyLight = ").append(attenuateSkyLight ? "true" : "false").append(";\n")
@@ -698,7 +715,20 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
                 .append("    float compatLight = max(compatBlockLight, compatSkyLight);\n")
                 .append("    vec2 compatLightCoord = vec2(0.03125 + compatBlockLight * 0.9375, 0.03125 + compatSkyLight * 0.9375);\n")
                 .append("    vec3 lightColor = texture2D(lightmap, clamp(compatLightCoord, vec2(0.0), vec2(1.0))).rgb;\n")
-                .append("    vec3 compatLighting = celeritasDirectLightmapColor ? lightColor : lightColor * (0.18 + 0.82 * compatLight);\n")
+                .append("    vec3 compatLighting = celeritasDirectLightmapColor ? lightColor : lightColor * (0.18 + 0.82 * compatLight);\n");
+
+        if (entityPass) {
+            source.append("    color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);\n")
+                    // Match the two directional lights and ambient term used by
+                    // Minecraft 1.12's fixed-function living-entity renderer.
+                    .append("    vec3 compatNormal = normalize(vNormal);\n")
+                    .append("    float compatDiffuse0 = max(dot(compatNormal, normalize(vec3(0.2, 1.0, -0.7))), 0.0);\n")
+                    .append("    float compatDiffuse1 = max(dot(compatNormal, normalize(vec3(-0.2, 1.0, 0.7))), 0.0);\n")
+                    .append("    float compatDirectional = clamp(0.4 + 0.6 * compatDiffuse0 + 0.6 * compatDiffuse1, 0.0, 1.0);\n")
+                    .append("    compatLighting *= compatDirectional;\n");
+        }
+
+        source
                 .append("    color.rgb *= max(compatLighting, vec3(0.015));\n")
                 .append("    vec3 translucentMult = mix(vec3(0.666), color.rgb * (1.0 - pow(color.a, 4.0)), color.a);\n");
 
@@ -751,8 +781,10 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
                 return "vec4(normalize(vNormal), 1.0)";
             case 6:
                 if (pbrFresnelBlockLayout) {
-                    // Legacy TESRs have normals but no Iris tangent/material attributes.
-                    return "vec4(normalize(vNormal).xy * 0.5 + 0.5, float(gl_FragCoord.z < 1.0), 1.0)";
+                    // Lumina's 0/3/6/7 PBR layout stores smoothness, material mask,
+                    // and sky light here. Treat legacy entities as non-reflective
+                    // instead of accidentally decoding a normal as a metal material.
+                    return "vec4(0.0, 0.0, compatSkyLight, 1.0)";
                 }
                 if (oldComplementaryLayout) {
                     return "vec4(normalize(vNormal).xy * 0.5 + 0.5, 0.0, 1.0)";
@@ -760,8 +792,9 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
                 return "vec4(0.0, 0.0, compatSkyLight, 1.0)";
             case 7:
                 if (pbrFresnelBlockLayout) {
-                    // White means maximum Fresnel in this contract and makes TESRs glow by angle.
-                    return "vec4(0.0, 0.0, 0.0, 1.0)";
+                    // This layout expects a world-space normal. vNormal is in view
+                    // space, so undo only the camera transform used by the gbuffer.
+                    return "vec4(normalize(mat3(gbufferModelViewInverse) * vNormal), 1.0)";
                 }
                 return "vec4(1.0)";
             default:
@@ -817,10 +850,11 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
         return true;
     }
 
-    public void updateVintageEntityUniforms() {
+    public void updateVintageEntityUniforms(@Nullable Entity entity) {
         if (this.vintageEntityCompatRenderingActive) {
             this.vintageEntityCompatProgram.use();
             this.bindVintageEntityLightmap();
+            this.celeritas$updateVintageEntityColor(entity, this.vintageEntityCompatColorUniformLocation);
             return;
         }
 
@@ -828,6 +862,26 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             this.vintageEntityProgram.use();
             this.bindVintageEntityLightmap();
             GbufferPrograms.runFallbackEntityListener();
+            this.celeritas$updateVintageEntityColor(entity, this.vintageEntityColorUniformLocation);
+        }
+    }
+
+    private void celeritas$updateVintageEntityColor(@Nullable Entity entity, int uniformLocation) {
+        if (uniformLocation < 0) {
+            return;
+        }
+
+        // Minecraft 1.12 implements the living-entity damage flash with the
+        // fixed-function texture combiner. Shader-pack entity programs bypass that
+        // combiner and instead expect OptiFine's entityColor uniform. Mirror the
+        // exact vanilla hurt/death overlay here so packs such as Lumina receive it.
+        if (entity instanceof EntityLivingBase living
+                && (living.hurtTime > 0 || living.deathTime > 0)) {
+            IrisRenderSystem.uniform4f(uniformLocation,
+                    1.0F, 0.0F, 0.0F, 0.3F);
+        } else {
+            IrisRenderSystem.uniform4f(uniformLocation,
+                    0.0F, 0.0F, 0.0F, 0.0F);
         }
     }
 

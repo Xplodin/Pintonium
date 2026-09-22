@@ -1,0 +1,12 @@
+[{
+  "modid": "bettercaves",
+  "name": "YUNG's Better Caves",
+  "description": "Overhauled cave generation, underground lakes and rivers, lava oceans, and more!",
+  "version": "1.12.2-2.0.4",
+  "mcversion": "1.12.2",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/yungs-better-caves",
+  "updateJSON": "https://raw.githubusercontent.com/yungnickyoung/YUNGs-Better-Caves/1.12.2/versions.json",
+  "authorList": ["YUNGNICKYOUNG"],
+  "credits": "Special thanks to kilo from the Rebirth of the Night team for supporting me on Patreon!",
+  "logoFile": "BetterCavesLogo.png"
+}]

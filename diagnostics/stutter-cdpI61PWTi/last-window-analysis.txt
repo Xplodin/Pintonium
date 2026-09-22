@@ -1,0 +1,120 @@
+Start: 2026-09-14T00:33:31.090Z
+End: 2026-09-14T00:34:16.793Z
+Duration ms: 45703
+Interval: 4000; mode: EXECUTION
+Thread selector: # com.cleanroommc.flare.proto.FlareSamplerProtos$SamplerMetadata$ThreadDumper@20aeba
+ids: 498
+type: SPECIFIC
+type_value: 1
+Aggregator: # com.cleanroommc.flare.proto.FlareSamplerProtos$SamplerMetadata$DataAggregator@a01fc
+thread_grouper: BY_POOL
+thread_grouper_value: 1
+tick_length_threshold: 0
+Platform: # com.cleanroommc.flare.proto.FlareProtos$PlatformMetadata@bf893c09
+minecraft_version: "1.12.2"
+name: "Cleanroom"
+spark_version: 2
+type: CLIENT
+type_value: 1
+version: "0.6.13-alpha"
+Memory: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Memory@d8866076
+heap {
+  total: 12784238592
+  used: 12756975616
+}
+TPS: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Tps@c6d2488b
+last15_m: 12.400740021215409
+last1_m: 4.258123162297835
+last5_m: 9.429718766162715
+MSPT: # com.cleanroommc.flare.proto.FlareProtos$PlatformStatistics$Mspt@9148d027
+last1_m {
+  max: 3314.4104
+  mean: 31.007050500000002
+  median: 12.7938
+  min: 7.3728
+  percentile95: 71.0218
+}
+last5_m {
+  max: 3314.4104
+  mean: 23.26723105
+  median: 13.4516
+  min: 7.3728
+  percentile95: 36.4179
+}
+GC: {}
+CPU: # com.cleanroommc.flare.proto.FlareProtos$SystemStatistics$Cpu@b0ffb6fe
+model_name: "AMD Ryzen 9 5900XT 16-Core Processor"
+process_usage {
+  last15_m: 0.16940270899611704
+  last1_m: 0.20114103840731154
+}
+system_usage {
+  last15_m: 0.2375898995583121
+  last1_m: 0.2662164975179127
+}
+threads: 32
+RAW thread times: [8408.0, 7580.0, 10268.0, 7172.0, 4976.0]; windows: [178934601, 178934602, 178934603, 178934604, 178934605]
+RAW root java.lang.Thread.run [8412.0, 7580.0, 10268.0, 7172.0, 4976.0]
+RAW child java.lang.Thread.runWith [8412.0, 7580.0, 10268.0, 7172.0, 4976.0]
+RAW grandchild net.minecraft.server.MinecraftServer.run [33576.0, 30312.0, 20532.0, 14344.0, 4976.0]
+
+THREAD Server thread: 4976.000 ms; 15231 nodes; 4976.000 ms roots
+Window index: 4; parent/child time inconsistencies: 0; max excess ms: 0.0
+TOP INCLUSIVE (overlapping parent/child frames):
+ 100.00%   4976.000 ms SELF     0.000 ms java.lang.Thread.runWith
+ 100.00%   4976.000 ms SELF     0.000 ms java.lang.Thread.run
+ 100.00%   4976.000 ms SELF     0.000 ms net.minecraft.server.MinecraftServer.run
+  99.92%   4972.000 ms SELF     0.000 ms net.minecraft.server.MinecraftServer.func_71217_p
+  99.92%   4972.000 ms SELF     0.000 ms net.minecraft.server.integrated.IntegratedServer.func_71217_p
+  74.84%   3724.000 ms SELF   496.000 ms net.minecraftforge.fml.common.eventhandler.EventBus.post
+  74.36%   3700.000 ms SELF   368.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke
+  49.12%   2444.000 ms SELF     0.000 ms net.minecraftforge.fml.common.FMLCommonHandler.onPostServerTick
+  49.04%   2440.000 ms SELF     4.000 ms net.minecraft.server.MinecraftServer.func_71190_q
+  34.08%   1696.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.compile
+  34.08%   1696.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIORecipeCatalogService.advanceCapture
+  34.08%   1696.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.access$3500
+  34.08%   1696.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$RecipeOutputIndex$Capture.process
+  34.08%   1696.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIORecipeCatalogService.onServerTick
+  34.08%   1696.000 ms SELF     0.000 ms net.minecraftforge.fml.common.eventhandler.EventListenerFactory$$Lambda/0x00000000b1c1c800.accept
+  33.04%   1644.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.representativePattern
+  32.96%   1640.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.createPattern
+  31.75%   1580.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.addCandidateGroups
+  28.14%   1400.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.outputsFor
+  27.57%   1372.000 ms SELF     0.000 ms mekanism.qioprocessing.common.planning.QIOWorkbenchRecipeCatalog$LogicalRecipe.ensureCandidateOutputProfiles
+  27.33%   1360.000 ms SELF     4.000 ms net.minecraftforge.event.ForgeEventFactory.gatherCapabilities
+  22.03%   1096.000 ms SELF     0.000 ms mekanism.qioprocessing.api.resource.PortableResourceDescriptor.itemIgnoringCapabilities
+  21.95%   1092.000 ms SELF    16.000 ms net.minecraft.item.ItemStack.func_77946_l
+  21.70%   1080.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceCodecs$ItemStackCodec.normalize
+  20.58%   1024.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.<init>
+  18.97%    944.000 ms SELF     0.000 ms mekanism.api.qio.resource.QIOResourceDescriptor.createSemanticIdentity
+  17.28%    860.000 ms SELF   200.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0
+  17.28%    860.000 ms SELF     0.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler$$Lambda/0x00000000aa184400.accept
+  16.16%    804.000 ms SELF     0.000 ms net.minecraft.world.WorldServer.func_72939_s
+  16.16%    804.000 ms SELF     4.000 ms net.minecraft.world.World.func_72939_s
+  15.84%    788.000 ms SELF     4.000 ms net.minecraft.world.World.func_72870_g
+  15.84%    788.000 ms SELF     8.000 ms net.minecraft.world.WorldServer.func_72866_a
+TOP SELF:
+   9.97%    496.000 ms net.minecraftforge.fml.common.eventhandler.EventBus.post
+   7.40%    368.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke
+   4.58%    228.000 ms net.minecraft.world.chunk.BlockStatePaletteHashMap.func_186039_a
+   4.02%    200.000 ms net.minecraftforge.fml.common.eventhandler.ASMEventHandler.lambda$new$0
+   3.22%    160.000 ms java.lang.StringBuilder.append
+   2.41%    120.000 ms net.minecraft.block.state.BlockStateContainer$StateImplementation.func_185904_a
+   2.41%    120.000 ms net.minecraft.world.chunk.BlockStateContainer.func_186016_a
+   2.09%    104.000 ms net.minecraft.network.datasync.EntityDataManager.func_187225_a
+   2.01%    100.000 ms net.minecraftforge.common.capabilities.CapabilityDispatcher.getCapability
+   1.93%     96.000 ms java.util.ArrayList.indexOfRange
+   1.85%     92.000 ms net.minecraft.world.World.func_72964_e
+   1.77%     88.000 ms net.minecraft.world.chunk.Chunk.func_186032_a
+   1.77%     88.000 ms net.minecraft.world.WorldServer.func_147456_g
+   1.61%     80.000 ms net.minecraft.util.ResourceLocation.redirect$chg001$stellarcore$injectInit
+   1.37%     68.000 ms jdk.internal.misc.Unsafe.park
+   1.05%     52.000 ms java.lang.String.toLowerCase
+   0.96%     48.000 ms java.lang.StringBuilder.toString
+   0.96%     48.000 ms com.xcompwiz.mystcraft.world.chunk.ChunkPrimerMyst.func_177855_a
+   0.88%     44.000 ms github.kasuminova.stellarcore.common.util.NBTTagBackingMap.put
+   0.88%     44.000 ms java.lang.StackStreamFactory$AbstractStackWalker.fetchStackFrames
+   0.80%     40.000 ms github.kasuminova.stellarcore.common.pool.LowerCaseStringPool.canonicalize
+   0.80%     40.000 ms java.lang.StackStreamFactory$AbstractStackWalker.callStackWalk
+   0.80%     40.000 ms jdk.internal.misc.Unsafe.unpark
+   0.72%     36.000 ms mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync.isBlacklisted

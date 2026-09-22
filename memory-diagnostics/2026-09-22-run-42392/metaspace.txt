@@ -1,0 +1,53 @@
+42392:
+Metaspace        used 562852K, committed 565504K, reserved 1507328K
+ class space     used 142389K, committed 143552K, reserved 1048576K
+
+Usage:
+  Non-class:    410.61 MB used.
+      Class:    139.05 MB used.
+       Both:    549.66 MB used.
+
+Virtual space:
+  Non-class space:      448.00 MB reserved,     412.06 MB ( 92%) committed,  7 nodes.
+      Class space:        1.00 GB reserved,     140.19 MB ( 14%) committed,  1 nodes.
+             Both:        1.44 GB reserved,     552.25 MB ( 38%) committed. 
+
+Chunk freelists:
+   Non-Class:  3.47 MB
+       Class:  3.61 MB
+        Both:  7.08 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 920.31 MB
+CDS: off
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+UseCompressedClassPointers 1, UseCompactObjectHeaders 1
+Narrow klass pointer bits 22, Max shift 10
+Narrow klass base: 0x0000000014000000, Narrow klass shift: 9
+Encoding Range: [0x0000000014000000 - 0x0000000094000000), (2147483648 bytes)
+Klass Range:    [0x0000000014000000 - 0x0000000054000000), (1073741824 bytes)
+Klass ID Range:  [1 - 2097152) (2097151)
+Protection zone: [0x0000000014000000 - 0x0000000014010000), (65536 bytes)
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 66.
+num_arena_births: 4312.
+num_arena_deaths: 78.
+num_vsnodes_births: 8.
+num_vsnodes_deaths: 0.
+num_space_committed: 8830.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 151.
+num_chunks_taken_from_freelist: 23421.
+num_chunk_merges: 91.
+num_chunk_splits: 19067.
+num_chunks_enlarged: 16316.
+num_inconsistent_stats: 0.
+

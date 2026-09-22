@@ -1,0 +1,102 @@
+[
+  {
+    "name": "intro",
+    "type": "image with text below",
+    "data": "taiga/intro.json"
+  },
+  {
+    "name": "firstwords",
+    "type": "image with text below",
+    "data": "taiga/firstwords.json"
+  },
+  {
+    "name": "abyssum",
+    "type": "taigaore",
+    "data": "ore/abyssum.json"
+  },
+  {
+    "name": "aurorium",
+    "type": "taigaore",
+    "data": "ore/aurorium.json"
+  },
+  {
+    "name": "basalt",
+    "type": "taigaore",
+    "data": "ore/basalt.json"
+  },
+  {
+    "name": "dilithium",
+    "type": "taigaore",
+    "data": "ore/dilithium.json"
+  },
+  {
+    "name": "duranite",
+    "type": "taigaore",
+    "data": "ore/duranite.json"
+  },
+  {
+    "name": "eezo",
+    "type": "taigaore",
+    "data": "ore/eezo.json"
+  },
+  {
+    "name": "jauxum",
+    "type": "taigaore",
+    "data": "ore/jauxum.json"
+  },
+  {
+    "name": "karmesine",
+    "type": "taigaore",
+    "data": "ore/karmesine.json"
+  },
+  {
+    "name": "meteorite",
+    "type": "taigaore",
+    "data": "ore/meteorite.json"
+  },
+  {
+    "name": "obsidiorite",
+    "type": "taigaore",
+    "data": "ore/obsidiorite.json"
+  },
+  {
+    "name": "osram",
+    "type": "taigaore",
+    "data": "ore/osram.json"
+  },
+  {
+    "name": "ovium",
+    "type": "taigaore",
+    "data": "ore/ovium.json"
+  },
+  {
+    "name": "palladium",
+    "type": "taigaore",
+    "data": "ore/palladium.json"
+  },
+  {
+    "name": "prometheum",
+    "type": "taigaore",
+    "data": "ore/prometheum.json"
+  },
+  {
+    "name": "tiberium",
+    "type": "taigaore",
+    "data": "ore/tiberium.json"
+  },
+  {
+    "name": "uru",
+    "type": "taigaore",
+    "data": "ore/uru.json"
+  },
+  {
+    "name": "valyrium",
+    "type": "taigaore",
+    "data": "ore/valyrium.json"
+  },
+  {
+    "name": "vibranium",
+    "type": "taigaore",
+    "data": "ore/vibranium.json"
+  }
+]

@@ -1,0 +1,46 @@
+
+                              Garbage Collections
+
+Start    GC ID Type                  Heap Before GC Heap After GC Longest Pause
+-------- ----- --------------------- -------------- ------------- -------------
+14:24:08    10 Unknown                       5.2 GB        3.3 GB     0.0612 ms
+14:24:35    11 Unknown                      17.0 GB        5.7 GB     0.0157 ms
+14:24:40    12 Unknown                       8.4 GB       14.1 GB     0.0166 ms
+14:24:43    13 Unknown                      14.1 GB        7.6 GB     0.0224 ms
+14:24:45    14 Unknown                       8.6 GB        5.5 GB     0.0175 ms
+14:24:46    15 Unknown                       5.6 GB        5.4 GB     0.0193 ms
+14:24:48    16 Unknown                       9.9 GB        5.9 GB     0.0171 ms
+14:24:59    17 Unknown                      11.7 GB        4.8 GB     0.0171 ms
+14:25:03    18 Unknown                       6.3 GB        5.8 GB     0.0157 ms
+14:25:05    19 Unknown                       8.3 GB        7.0 GB     0.0180 ms
+14:25:09    20 Unknown                      15.3 GB        7.5 GB     0.0205 ms
+14:25:13    21 Unknown                       9.4 GB        5.8 GB     0.0151 ms
+14:25:24    22 Unknown                      14.4 GB        6.4 GB     0.0173 ms
+14:25:27    23 Unknown                       7.4 GB        6.5 GB     0.0242 ms
+14:25:41    24 Unknown                      15.5 GB       11.2 GB     0.0388 ms
+14:25:44    25 Unknown                       9.5 GB        9.1 GB     0.0208 ms
+14:25:52    26 Unknown                      12.6 GB        9.9 GB     0.0211 ms
+14:25:57    27 Unknown                      12.5 GB        7.8 GB     0.0222 ms
+14:26:05    28 Unknown                      12.9 GB       11.3 GB     0.0168 ms
+14:26:08    29 Unknown                      12.3 GB        9.7 GB     0.0225 ms
+14:26:09    30 Unknown                      10.9 GB        8.4 GB     0.0174 ms
+14:26:10    31 Unknown                       9.7 GB        8.4 GB     0.0259 ms
+14:26:11    32 Unknown                       9.3 GB        7.5 GB     0.0256 ms
+14:26:25    33 Unknown                      14.2 GB       12.2 GB     0.0217 ms
+14:26:28    34 Unknown                      12.7 GB        9.3 GB     0.0184 ms
+14:26:34    35 Unknown                      11.2 GB        8.2 GB     0.0241 ms
+14:26:40    36 Unknown                      13.2 GB       10.0 GB     0.0165 ms
+14:26:47    37 Unknown                      12.9 GB        8.8 GB     0.0163 ms
+14:26:57    38 Unknown                      15.2 GB       10.0 GB     0.0156 ms
+14:27:04    39 Unknown                      15.5 GB       11.8 GB     0.0165 ms
+14:27:11    40 Unknown                      15.2 GB        9.8 GB     0.0233 ms
+14:27:19    41 Unknown                      15.2 GB        9.7 GB     0.0167 ms
+14:27:29    42 Unknown                      16.2 GB        8.6 GB     0.0167 ms
+14:27:37    43 Unknown                      15.3 GB        8.6 GB     0.0249 ms
+14:27:44    44 Unknown                      14.8 GB        8.7 GB     0.0195 ms
+14:27:53    45 Unknown                      16.6 GB        8.7 GB     0.0200 ms
+14:28:03    46 Unknown                      18.2 GB        8.6 GB     0.0168 ms
+14:28:15    47 Unknown                      19.0 GB        8.6 GB     0.0268 ms
+14:28:26    48 Unknown                      19.0 GB        8.7 GB     0.0203 ms
+14:28:38    49 Unknown                      19.0 GB        8.7 GB     0.0165 ms
+14:28:51    50 Unknown                      19.0 GB        9.3 GB     0.0193 ms

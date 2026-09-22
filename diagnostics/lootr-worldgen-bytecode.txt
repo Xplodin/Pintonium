@@ -1,0 +1,1171 @@
+Compiled from "ChestUtil.java"
+public class noobanidus.mods.lootr.util.ChestUtil {
+  public static java.util.Random random;
+
+  public static java.util.Set<java.lang.Class<?>> tileClasses;
+
+  public noobanidus.mods.lootr.util.ChestUtil();
+    Code:
+         0: aload_0
+         1: invokespecial #19                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static boolean handleLootSneak(net.minecraft.block.Block, net.minecraft.world.World, net.minecraft.util.math.BlockPos, net.minecraft.entity.player.EntityPlayer);
+    Code:
+         0: aload_1
+         1: getfield      #29                 // Field net/minecraft/world/World.field_72995_K:Z
+         4: ifeq          9
+         7: iconst_0
+         8: ireturn
+         9: aload_3
+        10: invokevirtual #35                 // Method net/minecraft/entity/player/EntityPlayer.func_175149_v:()Z
+        13: ifeq          22
+        16: aload_3
+        17: invokevirtual #38                 // Method net/minecraft/entity/player/EntityPlayer.func_71053_j:()V
+        20: iconst_0
+        21: ireturn
+        22: aload_1
+        23: aload_2
+        24: invokevirtual #42                 // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+        27: astore        4
+        29: aload         4
+        31: instanceof    #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        34: ifeq          73
+        37: aload         4
+        39: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        42: invokeinterface #48,  1           // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getOpeners:()Ljava/util/Set;
+        47: astore        5
+        49: aload         5
+        51: aload_3
+        52: invokevirtual #52                 // Method net/minecraft/entity/player/EntityPlayer.func_110124_au:()Ljava/util/UUID;
+        55: invokeinterface #58,  2           // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+        60: pop
+        61: aload         4
+        63: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        66: invokeinterface #61,  1           // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.updatePacketViaState:()V
+        71: iconst_1
+        72: ireturn
+        73: iconst_0
+        74: ireturn
+
+  public static void handleLootCartSneak(net.minecraft.world.World, noobanidus.mods.lootr.entity.LootrChestMinecartEntity, net.minecraft.entity.player.EntityPlayer);
+    Code:
+         0: aload_0
+         1: getfield      #29                 // Field net/minecraft/world/World.field_72995_K:Z
+         4: ifeq          8
+         7: return
+         8: aload_2
+         9: invokevirtual #35                 // Method net/minecraft/entity/player/EntityPlayer.func_175149_v:()Z
+        12: ifeq          16
+        15: return
+        16: aload_1
+        17: invokevirtual #80                 // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.getOpeners:()Ljava/util/Set;
+        20: aload_2
+        21: invokevirtual #52                 // Method net/minecraft/entity/player/EntityPlayer.func_110124_au:()Ljava/util/UUID;
+        24: invokeinterface #58,  2           // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+        29: pop
+        30: new           #82                 // class noobanidus/mods/lootr/networking/CloseCart
+        33: dup
+        34: aload_1
+        35: invokevirtual #86                 // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_145782_y:()I
+        38: invokespecial #89                 // Method noobanidus/mods/lootr/networking/CloseCart."<init>":(I)V
+        41: astore_3
+        42: aload_1
+        43: aload_3
+        44: invokestatic  #95                 // Method noobanidus/mods/lootr/networking/PacketHandler.sendToAllTracking:(Lnet/minecraft/entity/Entity;Lnet/minecraftforge/fml/common/network/simpleimpl/IMessage;)V
+        47: return
+
+  public static boolean handleLootChest(net.minecraft.block.Block, net.minecraft.world.World, net.minecraft.util.math.BlockPos, net.minecraft.entity.player.EntityPlayer);
+    Code:
+         0: aload_1
+         1: getfield      #29                 // Field net/minecraft/world/World.field_72995_K:Z
+         4: ifeq          9
+         7: iconst_0
+         8: ireturn
+         9: aload_3
+        10: invokevirtual #35                 // Method net/minecraft/entity/player/EntityPlayer.func_175149_v:()Z
+        13: ifeq          22
+        16: aload_3
+        17: invokevirtual #38                 // Method net/minecraft/entity/player/EntityPlayer.func_71053_j:()V
+        20: iconst_0
+        21: ireturn
+        22: aload_1
+        23: aload_2
+        24: invokevirtual #42                 // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+        27: astore        4
+        29: aload         4
+        31: instanceof    #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        34: ifeq          545
+        37: aload         4
+        39: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        42: invokeinterface #103,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getTileId:()Ljava/util/UUID;
+        47: astore        5
+        49: aload         5
+        51: invokestatic  #109                // Method noobanidus/mods/lootr/data/DataStorage.isDecayed:(Ljava/util/UUID;)Z
+        54: ifeq          112
+        57: aload_1
+        58: aload_2
+        59: iconst_1
+        60: invokevirtual #113                // Method net/minecraft/world/World.func_175655_b:(Lnet/minecraft/util/math/BlockPos;Z)Z
+        63: pop
+        64: aload         5
+        66: invokestatic  #117                // Method noobanidus/mods/lootr/data/DataStorage.removeDecayed:(Ljava/util/UUID;)V
+        69: aload_3
+        70: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+        73: dup
+        74: ldc           #121                // String lootr.message.decayed
+        76: iconst_0
+        77: anewarray     #4                  // class java/lang/Object
+        80: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+        83: new           #126                // class net/minecraft/util/text/Style
+        86: dup
+        87: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+        90: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+        93: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+        96: iconst_1
+        97: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       100: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       103: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       106: iconst_1
+       107: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       110: iconst_0
+       111: ireturn
+       112: aload         5
+       114: invokestatic  #161                // Method noobanidus/mods/lootr/data/DataStorage.getDecayValue:(Ljava/util/UUID;)I
+       117: istore        6
+       119: iload         6
+       121: ifle          187
+       124: iload         6
+       126: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       129: ifeq          187
+       132: aload_3
+       133: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       136: dup
+       137: ldc           #169                // String lootr.message.decay_in
+       139: iconst_1
+       140: anewarray     #4                  // class java/lang/Object
+       143: dup
+       144: iconst_0
+       145: iload         6
+       147: bipush        20
+       149: idiv
+       150: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       153: aastore
+       154: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       157: new           #126                // class net/minecraft/util/text/Style
+       160: dup
+       161: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       164: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       167: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       170: iconst_1
+       171: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       174: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       177: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       180: iconst_1
+       181: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       184: goto          266
+       187: iload         6
+       189: iconst_m1
+       190: if_icmpne     266
+       193: aload_1
+       194: aload         4
+       196: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       199: invokestatic  #178                // Method noobanidus/mods/lootr/config/ConfigManager.isDecaying:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/api/tile/ILootTile;)Z
+       202: ifeq          266
+       205: aload         5
+       207: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       210: invokestatic  #184                // Method noobanidus/mods/lootr/data/DataStorage.setDecaying:(Ljava/util/UUID;I)V
+       213: aload_3
+       214: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       217: dup
+       218: ldc           #186                // String lootr.message.decay_start
+       220: iconst_1
+       221: anewarray     #4                  // class java/lang/Object
+       224: dup
+       225: iconst_0
+       226: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       229: bipush        20
+       231: idiv
+       232: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       235: aastore
+       236: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       239: new           #126                // class net/minecraft/util/text/Style
+       242: dup
+       243: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       246: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       249: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       252: iconst_1
+       253: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       256: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       259: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       262: iconst_1
+       263: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       266: aload         5
+       268: invokestatic  #189                // Method noobanidus/mods/lootr/data/DataStorage.isRefreshed:(Ljava/util/UUID;)Z
+       271: ifeq          339
+       274: aload_1
+       275: aload         4
+       277: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       280: invokeinterface #103,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getTileId:()Ljava/util/UUID;
+       285: aload_3
+       286: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       289: aload_2
+       290: invokestatic  #195                // Method noobanidus/mods/lootr/data/DataStorage.refreshInventory:(Lnet/minecraft/world/World;Ljava/util/UUID;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/util/math/BlockPos;)V
+       293: aload         5
+       295: invokestatic  #198                // Method noobanidus/mods/lootr/data/DataStorage.removeRefreshed:(Ljava/util/UUID;)V
+       298: aload_3
+       299: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       302: dup
+       303: ldc           #200                // String lootr.message.refreshed
+       305: iconst_0
+       306: anewarray     #4                  // class java/lang/Object
+       309: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       312: new           #126                // class net/minecraft/util/text/Style
+       315: dup
+       316: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       319: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       322: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       325: iconst_1
+       326: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       329: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       332: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       335: iconst_1
+       336: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       339: aload         5
+       341: invokestatic  #206                // Method noobanidus/mods/lootr/data/DataStorage.getRefreshValue:(Ljava/util/UUID;)I
+       344: istore        6
+       346: iload         6
+       348: ifle          414
+       351: iload         6
+       353: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       356: ifeq          414
+       359: aload_3
+       360: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       363: dup
+       364: ldc           #208                // String lootr.message.refresh_in
+       366: iconst_1
+       367: anewarray     #4                  // class java/lang/Object
+       370: dup
+       371: iconst_0
+       372: iload         6
+       374: bipush        20
+       376: idiv
+       377: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       380: aastore
+       381: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       384: new           #126                // class net/minecraft/util/text/Style
+       387: dup
+       388: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       391: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       394: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       397: iconst_1
+       398: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       401: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       404: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       407: iconst_1
+       408: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       411: goto          493
+       414: iload         6
+       416: iconst_m1
+       417: if_icmpne     493
+       420: aload_1
+       421: aload         4
+       423: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       426: invokestatic  #211                // Method noobanidus/mods/lootr/config/ConfigManager.isRefreshing:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/api/tile/ILootTile;)Z
+       429: ifeq          493
+       432: aload         5
+       434: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       437: invokestatic  #216                // Method noobanidus/mods/lootr/data/DataStorage.setRefreshing:(Ljava/util/UUID;I)V
+       440: aload_3
+       441: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       444: dup
+       445: ldc           #218                // String lootr.message.refresh_start
+       447: iconst_1
+       448: anewarray     #4                  // class java/lang/Object
+       451: dup
+       452: iconst_0
+       453: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       456: bipush        20
+       458: idiv
+       459: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       462: aastore
+       463: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       466: new           #126                // class net/minecraft/util/text/Style
+       469: dup
+       470: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       473: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       476: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       479: iconst_1
+       480: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       483: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       486: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       489: iconst_1
+       490: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       493: aload_1
+       494: aload         4
+       496: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       499: invokeinterface #103,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getTileId:()Ljava/util/UUID;
+       504: aload_2
+       505: aload_3
+       506: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       509: aload         4
+       511: checkcast     #220                // class net/minecraft/tileentity/TileEntityLockableLoot
+       514: aload         4
+       516: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       519: dup
+       520: invokestatic  #226                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       523: pop
+       524: invokedynamic #242,  0            // InvokeDynamic #0:fillWithLoot:(Lnoobanidus/mods/lootr/api/tile/ILootTile;)Lnoobanidus/mods/lootr/api/LootFiller;
+       529: invokestatic  #246                // Method noobanidus/mods/lootr/data/DataStorage.getInventory:(Lnet/minecraft/world/World;Ljava/util/UUID;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/tileentity/TileEntityLockableLoot;Lnoobanidus/mods/lootr/api/LootFiller;)Lnoobanidus/mods/lootr/data/SpecialChestInventory;
+       532: astore        7
+       534: aload_3
+       535: aload         7
+       537: checkcast     #248                // class net/minecraft/inventory/IInventory
+       540: invokevirtual #252                // Method net/minecraft/entity/player/EntityPlayer.func_71007_a:(Lnet/minecraft/inventory/IInventory;)V
+       543: iconst_1
+       544: ireturn
+       545: iconst_0
+       546: ireturn
+
+  public static void handleLootCart(net.minecraft.world.World, noobanidus.mods.lootr.entity.LootrChestMinecartEntity, net.minecraft.entity.player.EntityPlayer);
+    Code:
+         0: aload_0
+         1: getfield      #29                 // Field net/minecraft/world/World.field_72995_K:Z
+         4: ifne          504
+         7: aload_2
+         8: invokevirtual #35                 // Method net/minecraft/entity/player/EntityPlayer.func_175149_v:()Z
+        11: ifeq          21
+        14: aload_2
+        15: invokevirtual #38                 // Method net/minecraft/entity/player/EntityPlayer.func_71053_j:()V
+        18: goto          504
+        21: aload_1
+        22: invokevirtual #261                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_110124_au:()Ljava/util/UUID;
+        25: astore_3
+        26: aload_3
+        27: invokestatic  #109                // Method noobanidus/mods/lootr/data/DataStorage.isDecayed:(Ljava/util/UUID;)Z
+        30: ifeq          90
+        33: aload_1
+        34: getstatic     #267                // Field net/minecraft/util/DamageSource.field_76380_i:Lnet/minecraft/util/DamageSource;
+        37: ldc_w         #268                // float 3.4028235E38f
+        40: invokevirtual #272                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_70097_a:(Lnet/minecraft/util/DamageSource;F)Z
+        43: pop
+        44: aload_3
+        45: invokestatic  #117                // Method noobanidus/mods/lootr/data/DataStorage.removeDecayed:(Ljava/util/UUID;)V
+        48: aload_2
+        49: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+        52: dup
+        53: ldc           #121                // String lootr.message.decayed
+        55: iconst_0
+        56: anewarray     #4                  // class java/lang/Object
+        59: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+        62: new           #126                // class net/minecraft/util/text/Style
+        65: dup
+        66: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+        69: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+        72: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+        75: iconst_1
+        76: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+        79: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+        82: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+        85: iconst_1
+        86: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+        89: return
+        90: aload_3
+        91: invokestatic  #161                // Method noobanidus/mods/lootr/data/DataStorage.getDecayValue:(Ljava/util/UUID;)I
+        94: istore        4
+        96: iload         4
+        98: ifle          164
+       101: iload         4
+       103: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       106: ifeq          164
+       109: aload_2
+       110: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       113: dup
+       114: ldc           #169                // String lootr.message.decay_in
+       116: iconst_1
+       117: anewarray     #4                  // class java/lang/Object
+       120: dup
+       121: iconst_0
+       122: iload         4
+       124: bipush        20
+       126: idiv
+       127: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       130: aastore
+       131: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       134: new           #126                // class net/minecraft/util/text/Style
+       137: dup
+       138: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       141: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       144: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       147: iconst_1
+       148: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       151: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       154: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       157: iconst_1
+       158: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       161: goto          238
+       164: iload         4
+       166: iconst_m1
+       167: if_icmpne     238
+       170: aload_0
+       171: aload_1
+       172: invokestatic  #275                // Method noobanidus/mods/lootr/config/ConfigManager.isDecaying:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/entity/LootrChestMinecartEntity;)Z
+       175: ifeq          238
+       178: aload_3
+       179: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       182: invokestatic  #184                // Method noobanidus/mods/lootr/data/DataStorage.setDecaying:(Ljava/util/UUID;I)V
+       185: aload_2
+       186: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       189: dup
+       190: ldc           #186                // String lootr.message.decay_start
+       192: iconst_1
+       193: anewarray     #4                  // class java/lang/Object
+       196: dup
+       197: iconst_0
+       198: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       201: bipush        20
+       203: idiv
+       204: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       207: aastore
+       208: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       211: new           #126                // class net/minecraft/util/text/Style
+       214: dup
+       215: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       218: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       221: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       224: iconst_1
+       225: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       228: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       231: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       234: iconst_1
+       235: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       238: aload_1
+       239: invokevirtual #80                 // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.getOpeners:()Ljava/util/Set;
+       242: aload_2
+       243: invokevirtual #52                 // Method net/minecraft/entity/player/EntityPlayer.func_110124_au:()Ljava/util/UUID;
+       246: invokeinterface #278,  2          // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+       251: ifne          259
+       254: aload_1
+       255: aload_2
+       256: invokevirtual #282                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.addOpener:(Lnet/minecraft/entity/player/EntityPlayer;)V
+       259: aload_3
+       260: invokestatic  #189                // Method noobanidus/mods/lootr/data/DataStorage.isRefreshed:(Ljava/util/UUID;)Z
+       263: ifeq          324
+       266: aload_0
+       267: aload_1
+       268: aload_2
+       269: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       272: aload_1
+       273: invokevirtual #286                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_180425_c:()Lnet/minecraft/util/math/BlockPos;
+       276: invokestatic  #289                // Method noobanidus/mods/lootr/data/DataStorage.refreshInventory:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/entity/LootrChestMinecartEntity;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/util/math/BlockPos;)V
+       279: aload_3
+       280: invokestatic  #198                // Method noobanidus/mods/lootr/data/DataStorage.removeRefreshed:(Ljava/util/UUID;)V
+       283: aload_2
+       284: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       287: dup
+       288: ldc           #200                // String lootr.message.refreshed
+       290: iconst_0
+       291: anewarray     #4                  // class java/lang/Object
+       294: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       297: new           #126                // class net/minecraft/util/text/Style
+       300: dup
+       301: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       304: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       307: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       310: iconst_1
+       311: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       314: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       317: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       320: iconst_1
+       321: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       324: aload_3
+       325: invokestatic  #206                // Method noobanidus/mods/lootr/data/DataStorage.getRefreshValue:(Ljava/util/UUID;)I
+       328: istore        4
+       330: iload         4
+       332: ifle          398
+       335: iload         4
+       337: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       340: ifeq          398
+       343: aload_2
+       344: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       347: dup
+       348: ldc           #208                // String lootr.message.refresh_in
+       350: iconst_1
+       351: anewarray     #4                  // class java/lang/Object
+       354: dup
+       355: iconst_0
+       356: iload         4
+       358: bipush        20
+       360: idiv
+       361: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       364: aastore
+       365: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       368: new           #126                // class net/minecraft/util/text/Style
+       371: dup
+       372: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       375: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       378: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       381: iconst_1
+       382: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       385: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       388: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       391: iconst_1
+       392: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       395: goto          472
+       398: iload         4
+       400: iconst_m1
+       401: if_icmpne     472
+       404: aload_0
+       405: aload_1
+       406: invokestatic  #291                // Method noobanidus/mods/lootr/config/ConfigManager.isRefreshing:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/entity/LootrChestMinecartEntity;)Z
+       409: ifeq          472
+       412: aload_3
+       413: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       416: invokestatic  #216                // Method noobanidus/mods/lootr/data/DataStorage.setRefreshing:(Ljava/util/UUID;I)V
+       419: aload_2
+       420: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       423: dup
+       424: ldc           #218                // String lootr.message.refresh_start
+       426: iconst_1
+       427: anewarray     #4                  // class java/lang/Object
+       430: dup
+       431: iconst_0
+       432: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       435: bipush        20
+       437: idiv
+       438: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       441: aastore
+       442: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       445: new           #126                // class net/minecraft/util/text/Style
+       448: dup
+       449: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       452: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       455: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       458: iconst_1
+       459: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       462: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       465: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       468: iconst_1
+       469: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       472: aload_0
+       473: aload_1
+       474: aload_2
+       475: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       478: aload_1
+       479: dup
+       480: invokestatic  #226                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       483: pop
+       484: invokedynamic #298,  0            // InvokeDynamic #1:fillWithLoot:(Lnoobanidus/mods/lootr/entity/LootrChestMinecartEntity;)Lnoobanidus/mods/lootr/api/LootFiller;
+       489: aload_1
+       490: invokevirtual #286                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_180425_c:()Lnet/minecraft/util/math/BlockPos;
+       493: invokestatic  #301                // Method noobanidus/mods/lootr/data/DataStorage.getInventory:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/entity/LootrChestMinecartEntity;Lnet/minecraft/entity/player/EntityPlayerMP;Lnoobanidus/mods/lootr/api/LootFiller;Lnet/minecraft/util/math/BlockPos;)Lnoobanidus/mods/lootr/data/SpecialChestInventory;
+       496: astore        5
+       498: aload_2
+       499: aload         5
+       501: invokevirtual #305                // Method net/minecraft/entity/player/EntityPlayer.func_180468_a:(Lnet/minecraft/world/IInteractionObject;)V
+       504: return
+
+  public static boolean handleLootInventory(net.minecraft.block.Block, net.minecraft.world.World, net.minecraft.util.math.BlockPos, net.minecraft.entity.player.EntityPlayer);
+    Code:
+         0: aload_1
+         1: getfield      #29                 // Field net/minecraft/world/World.field_72995_K:Z
+         4: ifeq          9
+         7: iconst_0
+         8: ireturn
+         9: aload_3
+        10: invokevirtual #35                 // Method net/minecraft/entity/player/EntityPlayer.func_175149_v:()Z
+        13: ifeq          22
+        16: aload_3
+        17: invokevirtual #38                 // Method net/minecraft/entity/player/EntityPlayer.func_71053_j:()V
+        20: iconst_0
+        21: ireturn
+        22: aload_1
+        23: aload_2
+        24: invokevirtual #42                 // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+        27: astore        4
+        29: aload         4
+        31: instanceof    #308                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+        34: ifeq          552
+        37: aload         4
+        39: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+        42: invokeinterface #103,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getTileId:()Ljava/util/UUID;
+        47: astore        5
+        49: aload         4
+        51: checkcast     #308                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+        54: astore        6
+        56: aconst_null
+        57: astore        7
+        59: aload         6
+        61: invokevirtual #312                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.getCustomInventory:()Lnet/minecraft/util/NonNullList;
+        64: ifnull        77
+        67: aload         6
+        69: invokevirtual #312                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.getCustomInventory:()Lnet/minecraft/util/NonNullList;
+        72: invokestatic  #316                // Method copyItemList:(Lnet/minecraft/util/NonNullList;)Lnet/minecraft/util/NonNullList;
+        75: astore        7
+        77: aload         5
+        79: invokestatic  #109                // Method noobanidus/mods/lootr/data/DataStorage.isDecayed:(Ljava/util/UUID;)Z
+        82: ifeq          140
+        85: aload_1
+        86: aload_2
+        87: iconst_1
+        88: invokevirtual #113                // Method net/minecraft/world/World.func_175655_b:(Lnet/minecraft/util/math/BlockPos;Z)Z
+        91: pop
+        92: aload         5
+        94: invokestatic  #117                // Method noobanidus/mods/lootr/data/DataStorage.removeDecayed:(Ljava/util/UUID;)V
+        97: aload_3
+        98: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       101: dup
+       102: ldc           #121                // String lootr.message.decayed
+       104: iconst_0
+       105: anewarray     #4                  // class java/lang/Object
+       108: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       111: new           #126                // class net/minecraft/util/text/Style
+       114: dup
+       115: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       118: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       121: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       124: iconst_1
+       125: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       128: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       131: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       134: iconst_1
+       135: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       138: iconst_0
+       139: ireturn
+       140: aload         5
+       142: invokestatic  #161                // Method noobanidus/mods/lootr/data/DataStorage.getDecayValue:(Ljava/util/UUID;)I
+       145: istore        8
+       147: iload         8
+       149: ifle          215
+       152: iload         8
+       154: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       157: ifeq          215
+       160: aload_3
+       161: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       164: dup
+       165: ldc           #169                // String lootr.message.decay_in
+       167: iconst_1
+       168: anewarray     #4                  // class java/lang/Object
+       171: dup
+       172: iconst_0
+       173: iload         8
+       175: bipush        20
+       177: idiv
+       178: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       181: aastore
+       182: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       185: new           #126                // class net/minecraft/util/text/Style
+       188: dup
+       189: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       192: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       195: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       198: iconst_1
+       199: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       202: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       205: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       208: iconst_1
+       209: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       212: goto          294
+       215: iload         8
+       217: iconst_m1
+       218: if_icmpne     294
+       221: aload_1
+       222: aload         4
+       224: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       227: invokestatic  #178                // Method noobanidus/mods/lootr/config/ConfigManager.isDecaying:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/api/tile/ILootTile;)Z
+       230: ifeq          294
+       233: aload         5
+       235: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       238: invokestatic  #184                // Method noobanidus/mods/lootr/data/DataStorage.setDecaying:(Ljava/util/UUID;I)V
+       241: aload_3
+       242: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       245: dup
+       246: ldc           #186                // String lootr.message.decay_start
+       248: iconst_1
+       249: anewarray     #4                  // class java/lang/Object
+       252: dup
+       253: iconst_0
+       254: invokestatic  #180                // Method noobanidus/mods/lootr/config/ConfigManager.getDecayValue:()I
+       257: bipush        20
+       259: idiv
+       260: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       263: aastore
+       264: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       267: new           #126                // class net/minecraft/util/text/Style
+       270: dup
+       271: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       274: getstatic     #133                // Field net/minecraft/util/text/TextFormatting.RED:Lnet/minecraft/util/text/TextFormatting;
+       277: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       280: iconst_1
+       281: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       284: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       287: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       290: iconst_1
+       291: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       294: aload         5
+       296: invokestatic  #189                // Method noobanidus/mods/lootr/data/DataStorage.isRefreshed:(Ljava/util/UUID;)Z
+       299: ifeq          367
+       302: aload_1
+       303: aload         4
+       305: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       308: invokeinterface #103,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getTileId:()Ljava/util/UUID;
+       313: aload_3
+       314: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       317: aload_2
+       318: invokestatic  #195                // Method noobanidus/mods/lootr/data/DataStorage.refreshInventory:(Lnet/minecraft/world/World;Ljava/util/UUID;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/util/math/BlockPos;)V
+       321: aload         5
+       323: invokestatic  #198                // Method noobanidus/mods/lootr/data/DataStorage.removeRefreshed:(Ljava/util/UUID;)V
+       326: aload_3
+       327: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       330: dup
+       331: ldc           #200                // String lootr.message.refreshed
+       333: iconst_0
+       334: anewarray     #4                  // class java/lang/Object
+       337: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       340: new           #126                // class net/minecraft/util/text/Style
+       343: dup
+       344: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       347: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       350: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       353: iconst_1
+       354: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       357: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       360: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       363: iconst_1
+       364: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       367: aload         5
+       369: invokestatic  #206                // Method noobanidus/mods/lootr/data/DataStorage.getRefreshValue:(Ljava/util/UUID;)I
+       372: istore        8
+       374: iload         8
+       376: ifle          442
+       379: iload         8
+       381: invokestatic  #167                // Method noobanidus/mods/lootr/config/ConfigManager.shouldNotify:(I)Z
+       384: ifeq          442
+       387: aload_3
+       388: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       391: dup
+       392: ldc           #208                // String lootr.message.refresh_in
+       394: iconst_1
+       395: anewarray     #4                  // class java/lang/Object
+       398: dup
+       399: iconst_0
+       400: iload         8
+       402: bipush        20
+       404: idiv
+       405: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       408: aastore
+       409: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       412: new           #126                // class net/minecraft/util/text/Style
+       415: dup
+       416: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       419: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       422: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       425: iconst_1
+       426: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       429: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       432: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       435: iconst_1
+       436: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       439: goto          521
+       442: iload         8
+       444: iconst_m1
+       445: if_icmpne     521
+       448: aload_1
+       449: aload         4
+       451: checkcast     #44                 // class noobanidus/mods/lootr/api/tile/ILootTile
+       454: invokestatic  #211                // Method noobanidus/mods/lootr/config/ConfigManager.isRefreshing:(Lnet/minecraft/world/World;Lnoobanidus/mods/lootr/api/tile/ILootTile;)Z
+       457: ifeq          521
+       460: aload         5
+       462: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       465: invokestatic  #216                // Method noobanidus/mods/lootr/data/DataStorage.setRefreshing:(Ljava/util/UUID;I)V
+       468: aload_3
+       469: new           #119                // class net/minecraft/util/text/TextComponentTranslation
+       472: dup
+       473: ldc           #218                // String lootr.message.refresh_start
+       475: iconst_1
+       476: anewarray     #4                  // class java/lang/Object
+       479: dup
+       480: iconst_0
+       481: invokestatic  #213                // Method noobanidus/mods/lootr/config/ConfigManager.getRefreshValue:()I
+       484: bipush        20
+       486: idiv
+       487: invokestatic  #174                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       490: aastore
+       491: invokespecial #124                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       494: new           #126                // class net/minecraft/util/text/Style
+       497: dup
+       498: invokespecial #127                // Method net/minecraft/util/text/Style."<init>":()V
+       501: getstatic     #203                // Field net/minecraft/util/text/TextFormatting.BLUE:Lnet/minecraft/util/text/TextFormatting;
+       504: invokevirtual #137                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       507: iconst_1
+       508: invokestatic  #143                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       511: invokevirtual #147                // Method net/minecraft/util/text/Style.func_150227_a:(Ljava/lang/Boolean;)Lnet/minecraft/util/text/Style;
+       514: invokevirtual #151                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       517: iconst_1
+       518: invokevirtual #155                // Method net/minecraft/entity/player/EntityPlayer.func_146105_b:(Lnet/minecraft/util/text/ITextComponent;Z)V
+       521: aload_1
+       522: aload         6
+       524: invokevirtual #323                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.getTileId:()Ljava/util/UUID;
+       527: aload         7
+       529: aload_3
+       530: checkcast     #191                // class net/minecraft/entity/player/EntityPlayerMP
+       533: aload_2
+       534: aload         6
+       536: invokestatic  #326                // Method noobanidus/mods/lootr/data/DataStorage.getInventory:(Lnet/minecraft/world/World;Ljava/util/UUID;Lnet/minecraft/util/NonNullList;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/tileentity/TileEntityLockableLoot;)Lnoobanidus/mods/lootr/data/SpecialChestInventory;
+       539: astore        9
+       541: aload_3
+       542: aload         9
+       544: checkcast     #248                // class net/minecraft/inventory/IInventory
+       547: invokevirtual #252                // Method net/minecraft/entity/player/EntityPlayer.func_71007_a:(Lnet/minecraft/inventory/IInventory;)V
+       550: iconst_1
+       551: ireturn
+       552: iconst_0
+       553: ireturn
+
+  public static net.minecraft.util.NonNullList<net.minecraft.item.ItemStack> copyItemList(net.minecraft.util.NonNullList<net.minecraft.item.ItemStack>);
+    Code:
+         0: aload_0
+         1: invokevirtual #334                // Method net/minecraft/util/NonNullList.size:()I
+         4: getstatic     #340                // Field net/minecraft/item/ItemStack.field_190927_a:Lnet/minecraft/item/ItemStack;
+         7: invokestatic  #344                // Method net/minecraft/util/NonNullList.func_191197_a:(ILjava/lang/Object;)Lnet/minecraft/util/NonNullList;
+        10: astore_1
+        11: iconst_0
+        12: istore_2
+        13: iload_2
+        14: aload_0
+        15: invokevirtual #334                // Method net/minecraft/util/NonNullList.size:()I
+        18: if_icmpge     44
+        21: aload_1
+        22: iload_2
+        23: aload_0
+        24: iload_2
+        25: invokevirtual #348                // Method net/minecraft/util/NonNullList.get:(I)Ljava/lang/Object;
+        28: checkcast     #336                // class net/minecraft/item/ItemStack
+        31: invokevirtual #352                // Method net/minecraft/item/ItemStack.func_77946_l:()Lnet/minecraft/item/ItemStack;
+        34: invokevirtual #356                // Method net/minecraft/util/NonNullList.set:(ILjava/lang/Object;)Ljava/lang/Object;
+        37: pop
+        38: iinc          2, 1
+        41: goto          13
+        44: aload_1
+        45: areturn
+
+  static {};
+    Code:
+         0: new           #362                // class java/util/Random
+         3: dup
+         4: invokespecial #363                // Method java/util/Random."<init>":()V
+         7: putstatic     #365                // Field random:Ljava/util/Random;
+        10: new           #367                // class java/util/HashSet
+        13: dup
+        14: invokespecial #368                // Method java/util/HashSet."<init>":()V
+        17: putstatic     #370                // Field tileClasses:Ljava/util/Set;
+        20: return
+}
+Compiled from "HandleWorldGen.java"
+public class noobanidus.mods.lootr.event.HandleWorldGen {
+  private static java.util.LinkedList<org.apache.commons.lang3.tuple.Pair<java.lang.ref.WeakReference<net.minecraft.world.World>, net.minecraft.util.math.ChunkPos>> generatedChunks;
+
+  private static boolean stopItemSpawning;
+
+  public noobanidus.mods.lootr.event.HandleWorldGen();
+    Code:
+         0: aload_0
+         1: invokespecial #45                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static void onGenerate(net.minecraftforge.event.terraingen.PopulateChunkEvent$Post);
+    Code:
+         0: getstatic     #58                 // Field noobanidus/mods/lootr/config/ConfigManager.CONVERT_WORLDGEN_INVENTORIES:Z
+         3: ifeq          42
+         6: getstatic     #60                 // Field generatedChunks:Ljava/util/LinkedList;
+         9: new           #62                 // class java/lang/ref/WeakReference
+        12: dup
+        13: aload_0
+        14: invokevirtual #66                 // Method net/minecraftforge/event/terraingen/PopulateChunkEvent$Post.getWorld:()Lnet/minecraft/world/World;
+        17: invokespecial #69                 // Method java/lang/ref/WeakReference."<init>":(Ljava/lang/Object;)V
+        20: new           #71                 // class net/minecraft/util/math/ChunkPos
+        23: dup
+        24: aload_0
+        25: invokevirtual #75                 // Method net/minecraftforge/event/terraingen/PopulateChunkEvent$Post.getChunkX:()I
+        28: aload_0
+        29: invokevirtual #78                 // Method net/minecraftforge/event/terraingen/PopulateChunkEvent$Post.getChunkZ:()I
+        32: invokespecial #81                 // Method net/minecraft/util/math/ChunkPos."<init>":(II)V
+        35: invokestatic  #87                 // Method org/apache/commons/lang3/tuple/Pair.of:(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/tuple/Pair;
+        38: invokevirtual #93                 // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        41: pop
+        42: return
+
+  public static void onItemJoin(net.minecraftforge.event.entity.EntityJoinWorldEvent);
+    Code:
+         0: getstatic     #99                 // Field stopItemSpawning:Z
+         3: ifeq          21
+         6: aload_0
+         7: invokevirtual #105                // Method net/minecraftforge/event/entity/EntityJoinWorldEvent.getEntity:()Lnet/minecraft/entity/Entity;
+        10: instanceof    #107                // class net/minecraft/entity/item/EntityItem
+        13: ifeq          21
+        16: aload_0
+        17: iconst_1
+        18: invokevirtual #111                // Method net/minecraftforge/event/entity/EntityJoinWorldEvent.setCanceled:(Z)V
+        21: return
+
+  public static net.minecraft.tileentity.TileEntity replaceOldLootBlockAt(net.minecraft.world.chunk.Chunk, net.minecraft.util.math.BlockPos, net.minecraft.block.state.IBlockState);
+    Code:
+         0: aload_0
+         1: invokevirtual #119                // Method net/minecraft/world/chunk/Chunk.func_177412_p:()Lnet/minecraft/world/World;
+         4: astore_3
+         5: iconst_1
+         6: putstatic     #99                 // Field stopItemSpawning:Z
+         9: aload_3
+        10: aload_1
+        11: aload_2
+        12: iconst_2
+        13: invokevirtual #125                // Method net/minecraft/world/World.func_180501_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)Z
+        16: pop
+        17: aload_3
+        18: aload_1
+        19: invokevirtual #129                // Method net/minecraft/world/World.func_175713_t:(Lnet/minecraft/util/math/BlockPos;)V
+        22: aload_0
+        23: aload_1
+        24: getstatic     #133                // Field net/minecraft/world/chunk/Chunk$EnumCreateEntityType.IMMEDIATE:Lnet/minecraft/world/chunk/Chunk$EnumCreateEntityType;
+        27: invokevirtual #137                // Method net/minecraft/world/chunk/Chunk.func_177424_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/world/chunk/Chunk$EnumCreateEntityType;)Lnet/minecraft/tileentity/TileEntity;
+        30: astore        4
+        32: iconst_0
+        33: putstatic     #99                 // Field stopItemSpawning:Z
+        36: aload         4
+        38: areturn
+        39: astore        4
+        41: getstatic     #147                // Field noobanidus/mods/lootr/Lootr.LOG:Lorg/apache/logging/log4j/Logger;
+        44: ldc           #149                // String Couldn\'t replace loot block
+        46: aload         4
+        48: invokeinterface #155,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;Ljava/lang/Throwable;)V
+        53: aconst_null
+        54: astore        5
+        56: iconst_0
+        57: putstatic     #99                 // Field stopItemSpawning:Z
+        60: aload         5
+        62: areturn
+        63: astore        6
+        65: iconst_0
+        66: putstatic     #99                 // Field stopItemSpawning:Z
+        69: aload         6
+        71: athrow
+      Exception table:
+         from    to  target type
+             9    32    39   Class java/lang/RuntimeException
+             9    32    63   any
+            39    56    63   any
+            63    65    63   any
+
+  private static void processChunkForWorldgen(net.minecraft.world.chunk.Chunk);
+    Code:
+         0: new           #171                // class java/util/ArrayList
+         3: dup
+         4: aload_0
+         5: invokevirtual #175                // Method net/minecraft/world/chunk/Chunk.func_177434_r:()Ljava/util/Map;
+         8: invokeinterface #181,  1          // InterfaceMethod java/util/Map.values:()Ljava/util/Collection;
+        13: invokespecial #184                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+        16: astore_1
+        17: aload_1
+        18: invokeinterface #190,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        23: astore_2
+        24: aload_2
+        25: invokeinterface #196,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        30: ifeq          325
+        33: aload_2
+        34: invokeinterface #200,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        39: checkcast     #202                // class net/minecraft/tileentity/TileEntity
+        42: astore_3
+        43: aload_3
+        44: instanceof    #204                // class net/minecraft/tileentity/TileEntityLockableLoot
+        47: ifeq          322
+        50: aload_3
+        51: instanceof    #206                // class noobanidus/mods/lootr/api/tile/ILootTile
+        54: ifne          322
+        57: aload_3
+        58: checkcast     #204                // class net/minecraft/tileentity/TileEntityLockableLoot
+        61: astore        4
+        63: aload         4
+        65: getfield      #210                // Field net/minecraft/tileentity/TileEntityLockableLoot.field_184284_m:Lnet/minecraft/util/ResourceLocation;
+        68: ifnonnull     322
+        71: invokestatic  #216                // Method net/minecraft/util/NonNullList.func_191196_a:()Lnet/minecraft/util/NonNullList;
+        74: astore        5
+        76: aload         4
+        78: invokevirtual #219                // Method net/minecraft/tileentity/TileEntityLockableLoot.func_70302_i_:()I
+        81: istore        6
+        83: iconst_0
+        84: istore        7
+        86: iload         7
+        88: iload         6
+        90: if_icmpge     144
+        93: aload         4
+        95: iload         7
+        97: invokevirtual #223                // Method net/minecraft/tileentity/TileEntityLockableLoot.func_70301_a:(I)Lnet/minecraft/item/ItemStack;
+       100: astore        8
+       102: aload         8
+       104: invokevirtual #228                // Method net/minecraft/item/ItemStack.func_190926_b:()Z
+       107: ifeq          117
+       110: iload         6
+       112: bipush        27
+       114: if_icmpgt     128
+       117: aload         5
+       119: aload         8
+       121: invokevirtual #232                // Method net/minecraft/item/ItemStack.func_77946_l:()Lnet/minecraft/item/ItemStack;
+       124: invokevirtual #233                // Method net/minecraft/util/NonNullList.add:(Ljava/lang/Object;)Z
+       127: pop
+       128: aload         4
+       130: iload         7
+       132: getstatic     #237                // Field net/minecraft/item/ItemStack.field_190927_a:Lnet/minecraft/item/ItemStack;
+       135: invokevirtual #241                // Method net/minecraft/tileentity/TileEntityLockableLoot.func_70299_a:(ILnet/minecraft/item/ItemStack;)V
+       138: iinc          7, 1
+       141: goto          86
+       144: aload         5
+       146: invokevirtual #244                // Method net/minecraft/util/NonNullList.size:()I
+       149: ifle          322
+       152: aload_3
+       153: invokevirtual #248                // Method net/minecraft/tileentity/TileEntity.func_174877_v:()Lnet/minecraft/util/math/BlockPos;
+       156: astore        7
+       158: aload         4
+       160: invokevirtual #251                // Method net/minecraft/tileentity/TileEntityLockableLoot.func_174888_l:()V
+       163: aload_0
+       164: aload         7
+       166: invokevirtual #255                // Method net/minecraft/world/chunk/Chunk.func_177435_g:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+       169: astore        8
+       171: getstatic     #261                // Field net/minecraft/util/EnumFacing.SOUTH:Lnet/minecraft/util/EnumFacing;
+       174: astore        9
+       176: aload         8
+       178: invokeinterface #264,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177227_a:()Ljava/util/Collection;
+       183: getstatic     #270                // Field net/minecraft/block/BlockChest.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       186: invokeinterface #275,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+       191: ifeq          209
+       194: aload         8
+       196: getstatic     #270                // Field net/minecraft/block/BlockChest.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       199: invokeinterface #279,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+       204: checkcast     #257                // class net/minecraft/util/EnumFacing
+       207: astore        9
+       209: getstatic     #285                // Field noobanidus/mods/lootr/init/ModBlocks.INVENTORY:Lnoobanidus/mods/lootr/block/LootrChestBlock;
+       212: invokevirtual #291                // Method noobanidus/mods/lootr/block/LootrChestBlock.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+       215: getstatic     #270                // Field net/minecraft/block/BlockChest.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       218: aload         9
+       220: invokeinterface #295,  3          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177226_a:(Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lnet/minecraft/block/state/IBlockState;
+       225: astore        10
+       227: aload_0
+       228: aload         7
+       230: aload         10
+       232: invokestatic  #297                // Method replaceOldLootBlockAt:(Lnet/minecraft/world/chunk/Chunk;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Lnet/minecraft/tileentity/TileEntity;
+       235: astore_3
+       236: aload_3
+       237: instanceof    #299                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+       240: ifeq          264
+       243: aload_3
+       244: checkcast     #299                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+       247: astore        11
+       249: aload         11
+       251: aload         5
+       253: invokevirtual #303                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.setCustomInventory:(Lnet/minecraft/util/NonNullList;)V
+       256: aload         11
+       258: invokevirtual #306                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.func_70296_d:()V
+       261: goto          322
+       264: getstatic     #147                // Field noobanidus/mods/lootr/Lootr.LOG:Lorg/apache/logging/log4j/Logger;
+       267: new           #308                // class java/lang/StringBuilder
+       270: dup
+       271: invokespecial #309                // Method java/lang/StringBuilder."<init>":()V
+       274: ldc_w         #311                // String replacement TE
+       277: invokevirtual #315                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       280: aload_3
+       281: invokevirtual #318                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       284: ldc_w         #320                // String  is not an LootrInventoryTileEntity dim
+       287: invokevirtual #315                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       290: aload_0
+       291: invokevirtual #119                // Method net/minecraft/world/chunk/Chunk.func_177412_p:()Lnet/minecraft/world/World;
+       294: getfield      #324                // Field net/minecraft/world/World.field_73011_w:Lnet/minecraft/world/WorldProvider;
+       297: invokevirtual #329                // Method net/minecraft/world/WorldProvider.getDimension:()I
+       300: invokevirtual #332                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       303: ldc_w         #334                // String  at
+       306: invokevirtual #315                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       309: aload         7
+       311: invokevirtual #318                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       314: invokevirtual #338                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       317: invokeinterface #341,  2          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;)V
+       322: goto          24
+       325: return
+
+  public static void onServerTick(net.minecraftforge.fml.common.gameevent.TickEvent$ServerTickEvent);
+    Code:
+         0: getstatic     #58                 // Field noobanidus/mods/lootr/config/ConfigManager.CONVERT_WORLDGEN_INVENTORIES:Z
+         3: ifeq          77
+         6: aload_0
+         7: getfield      #366                // Field net/minecraftforge/fml/common/gameevent/TickEvent$ServerTickEvent.phase:Lnet/minecraftforge/fml/common/gameevent/TickEvent$Phase;
+        10: getstatic     #369                // Field net/minecraftforge/fml/common/gameevent/TickEvent$Phase.END:Lnet/minecraftforge/fml/common/gameevent/TickEvent$Phase;
+        13: if_acmpne     77
+        16: getstatic     #60                 // Field generatedChunks:Ljava/util/LinkedList;
+        19: invokevirtual #370                // Method java/util/LinkedList.size:()I
+        22: ifle          77
+        25: new           #171                // class java/util/ArrayList
+        28: dup
+        29: invokespecial #371                // Method java/util/ArrayList."<init>":()V
+        32: astore_1
+        33: getstatic     #60                 // Field generatedChunks:Ljava/util/LinkedList;
+        36: aload_1
+        37: invokedynamic #390,  0            // InvokeDynamic #0:test:(Ljava/util/ArrayList;)Ljava/util/function/Predicate;
+        42: invokevirtual #394                // Method java/util/LinkedList.removeIf:(Ljava/util/function/Predicate;)Z
+        45: pop
+        46: aload_1
+        47: invokevirtual #395                // Method java/util/ArrayList.iterator:()Ljava/util/Iterator;
+        50: astore_2
+        51: aload_2
+        52: invokeinterface #196,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        57: ifeq          77
+        60: aload_2
+        61: invokeinterface #200,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        66: checkcast     #17                 // class net/minecraft/world/chunk/Chunk
+        69: astore_3
+        70: aload_3
+        71: invokestatic  #397                // Method processChunkForWorldgen:(Lnet/minecraft/world/chunk/Chunk;)V
+        74: goto          51
+        77: return
+
+  private static boolean lambda$onServerTick$0(java.util.ArrayList, org.apache.commons.lang3.tuple.Pair);
+    Code:
+         0: aload_1
+         1: invokevirtual #404                // Method org/apache/commons/lang3/tuple/Pair.getLeft:()Ljava/lang/Object;
+         4: checkcast     #62                 // class java/lang/ref/WeakReference
+         7: invokevirtual #407                // Method java/lang/ref/WeakReference.get:()Ljava/lang/Object;
+        10: checkcast     #121                // class net/minecraft/world/World
+        13: astore_2
+        14: aload_2
+        15: ifnonnull     20
+        18: iconst_1
+        19: ireturn
+        20: aload_2
+        21: invokevirtual #411                // Method net/minecraft/world/World.func_72863_F:()Lnet/minecraft/world/chunk/IChunkProvider;
+        24: aload_1
+        25: invokevirtual #414                // Method org/apache/commons/lang3/tuple/Pair.getRight:()Ljava/lang/Object;
+        28: checkcast     #71                 // class net/minecraft/util/math/ChunkPos
+        31: getfield      #417                // Field net/minecraft/util/math/ChunkPos.field_77276_a:I
+        34: aload_1
+        35: invokevirtual #414                // Method org/apache/commons/lang3/tuple/Pair.getRight:()Ljava/lang/Object;
+        38: checkcast     #71                 // class net/minecraft/util/math/ChunkPos
+        41: getfield      #420                // Field net/minecraft/util/math/ChunkPos.field_77275_b:I
+        44: invokeinterface #426,  3          // InterfaceMethod net/minecraft/world/chunk/IChunkProvider.func_186026_b:(II)Lnet/minecraft/world/chunk/Chunk;
+        49: astore_3
+        50: aload_3
+        51: ifnonnull     56
+        54: iconst_0
+        55: ireturn
+        56: aload_0
+        57: aload_3
+        58: invokevirtual #427                // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z
+        61: pop
+        62: iconst_1
+        63: ireturn
+
+  static {};
+    Code:
+         0: new           #89                 // class java/util/LinkedList
+         3: dup
+         4: invokespecial #431                // Method java/util/LinkedList."<init>":()V
+         7: putstatic     #60                 // Field generatedChunks:Ljava/util/LinkedList;
+        10: iconst_0
+        11: putstatic     #99                 // Field stopItemSpawning:Z
+        14: return
+}

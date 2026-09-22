@@ -1,0 +1,19 @@
+{
+  "title": "Basalt",
+  "r": 220,
+  "g": 220,
+  "b": 220,
+  "input": {
+    "id": "taiga:basalt_block"
+  },
+  "description": [
+    {
+      "text": "Basalt entsteht bei hohen Temperaturen und sondert sich als Schlacke ab. Da es leichter ist, als Stein, schwimmt es auf der Lava, sodass man beim Abbau vorsichtig sein muss. Man nutzt Basalt zur Stabilisierung von Tiberium."
+    }
+  ],
+  "informations": [
+    "Level: Iron",
+    "Swims on lava",
+    "Used for some alloys"
+  ]
+}

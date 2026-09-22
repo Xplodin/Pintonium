@@ -1,0 +1,258 @@
+Samples: 45766; cumulative estimated allocations: 82.80 GiB (not retained RAM)
+
+Stack signatures (number of samples, not object counts):
+       0 CachedResourcePath
+       0 fastHasResource
+       0 NonBlockingIdentityHashMap.initialize
+     142 java.lang.String.format
+
+Disjoint stack categories (full sampled stack):
+ 62.74%    51.95 GiB cumulative: Other allocations
+ 20.37%    16.87 GiB cumulative: Other VintageFix model/texture/resource paths
+ 16.89%    13.98 GiB cumulative: StellarCore resource discovery and binding
+
+First non-JDK frame:
+ 14.47% top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  7.41% net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  5.13% github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  4.92% net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  3.38% org.objectweb.asm.tree.InsnList.add:227
+  2.66% javax.imageio.ImageIO.read:1422
+  1.87% javax.imageio.ImageTypeSpecifier.createBufferedImage:1067
+  1.85% net.minecraft.client.resources.AbstractResourcePack.func_110589_b:-1
+  1.66% com.hbm.render.loader.HFRWavefrontObject.loadObjModel:100
+  1.34% org.objectweb.asm.ClassReader.readUtf:3737
+  1.31% net.minecraft.util.ResourceLocation.toString:62
+  1.20% net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  1.18% net.minecraft.client.resources.FolderResourcePack.func_191385_d:54
+  1.13% net.minecraft.client.resources.AbstractResourcePack.handler$chj000$stellarcore$injectResourceExists:1055
+  1.13% net.minecraftforge.common.crafting.CraftingHelper.findFiles:797
+  1.12% net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getResource:1160
+  1.12% org.objectweb.asm.ByteVector.enlarge:364
+  0.96% org.objectweb.asm.SymbolTable.put:450
+
+Allocation stack groups:
+
+  1.21% (1.00 GiB cumulative, 3 samples, largest weight 994.9 MiB) [I
+  net.minecraft.client.renderer.texture.TextureUtil.func_110993_a:252
+  net.minecraft.client.renderer.texture.TextureUtil.func_110995_a:243
+  net.minecraft.client.renderer.texture.TextureUtil.func_110989_a:211
+  net.minecraft.client.renderer.texture.SimpleTexture.func_110551_a:46
+  net.minecraft.client.renderer.texture.TextureManager.func_110579_a:69
+  net.minecraft.client.renderer.texture.TextureManager.func_110577_a:44
+  li.cil.oc.client.Textures$.bind:540
+  li.cil.oc.client.Textures$Model$.loader:96
+  li.cil.oc.client.Textures$TextureBundle$$anonfun$init$1.apply:572
+  li.cil.oc.client.Textures$TextureBundle$$anonfun$init$1.apply:572
+  scala.collection.mutable.ResizableArray$class.foreach:59
+  scala.collection.mutable.ArrayBuffer.foreach:48
+  li.cil.oc.client.Textures$TextureBundle.init:572
+  li.cil.oc.client.Textures$.onTextureStitchPre:561
+
+  1.10% (0.91 GiB cumulative, 258 samples, largest weight 22.2 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$chl000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getResource:1162
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_110536_a:-1
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector.lambda$resourceExists$2:132
+  org.embeddedt.vintagefix.dynamicresources.TextureCollector$$Lambda.0x000000001bd1b400.apply:-1
+
+  1.06% (0.88 GiB cumulative, 261 samples, largest weight 22.7 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$chl000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+
+  0.81% (0.67 GiB cumulative, 94 samples, largest weight 59.9 MiB) [B
+  sun.awt.image.ByteInterleavedRaster.setDataElements:602
+  sun.awt.image.ByteInterleavedRaster.setRect:1176
+  com.sun.imageio.plugins.png.PNGImageReader.decodePass:1310
+  com.sun.imageio.plugins.png.PNGImageReader.decodeImage:1379
+  com.sun.imageio.plugins.png.PNGImageReader.readImage:1519
+  com.sun.imageio.plugins.png.PNGImageReader.read:1845
+  javax.imageio.ImageIO.read:1422
+  javax.imageio.ImageIO.read:1319
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+  net.minecraft.client.renderer.texture.TextureMap$$Lambda.0x000000001a591a00.run:-1
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1753
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1745
+
+  0.79% (0.65 GiB cumulative, 176 samples, largest weight 24.7 MiB) [B
+  java.lang.String.<init>:4863
+  java.lang.StringBuilder.toString:478
+  net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+  slimeknights.tconstruct.library.client.CustomTextureCreator.md5d56b8$stellarcore$lambda$stellar_core$parallelCreateMaterialTextures$1$0:603
+  slimeknights.tconstruct.library.client.CustomTextureCreator$$Lambda.0x000000001bd75e00.accept:-1
+  java.util.stream.ForEachOps$ForEachOp$OfRef.accept:186
+
+  0.74% (0.62 GiB cumulative, 171 samples, largest weight 21.0 MiB) [B
+  java.lang.AbstractStringBuilder.ensureCapacityNewCoder:276
+  java.lang.AbstractStringBuilder.append:650
+  java.lang.StringBuilder.append:179
+  net.minecraft.client.resources.AbstractResourcePack.func_110592_c:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  slimeknights.tconstruct.library.client.CustomTextureCreator.exists:254
+  slimeknights.tconstruct.library.client.CustomTextureCreator.stellar_core$createTexture:646
+  slimeknights.tconstruct.library.client.CustomTextureCreator.md5d56b8$stellarcore$lambda$stellar_core$parallelCreateMaterialTextures$1$0:603
+  slimeknights.tconstruct.library.client.CustomTextureCreator$$Lambda.0x000000001bd75e00.accept:-1
+
+  0.68% (0.57 GiB cumulative, 50 samples, largest weight 75.6 MiB) [B
+  javax.imageio.stream.MemoryCache.loadFromStream:103
+  javax.imageio.stream.MemoryCacheImageInputStream.read:110
+  com.sun.imageio.plugins.common.ReaderUtil.tryReadFully:277
+  com.sun.imageio.plugins.tiff.TIFFImageReaderSpi.canDecodeInput:73
+  javax.imageio.ImageIO$CanDecodeInputFilter.filter:527
+  javax.imageio.spi.FilterIterator.advance:852
+  javax.imageio.spi.FilterIterator.<init>:846
+  javax.imageio.spi.ServiceRegistry.getServiceProviders:512
+  javax.imageio.ImageIO.getImageReaders:608
+  javax.imageio.ImageIO.read:1412
+  javax.imageio.ImageIO.read:1319
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+
+  0.65% (0.54 GiB cumulative, 45 samples, largest weight 51.9 MiB) [B
+  java.awt.image.ComponentSampleModel.getBufferSize:253
+  java.awt.image.ComponentSampleModel.createDataBuffer:430
+  java.awt.image.Raster.createWritableRaster:1121
+  javax.imageio.ImageTypeSpecifier.createBufferedImage:1067
+  javax.imageio.ImageReader.getDestination:2877
+  com.sun.imageio.plugins.png.PNGImageReader.readImage:1486
+  com.sun.imageio.plugins.png.PNGImageReader.read:1845
+  javax.imageio.ImageIO.read:1422
+  javax.imageio.ImageIO.read:1319
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+  net.minecraft.client.renderer.texture.TextureMap$$Lambda.0x000000001a591a00.run:-1
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1753
+
+  0.52% (0.43 GiB cumulative, 28 samples, largest weight 46.9 MiB) [B
+  javax.imageio.ImageIO.getCacheDirectory:263
+  javax.imageio.ImageIO.createImageInputStream:315
+  javax.imageio.ImageIO.read:1315
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+  net.minecraft.client.renderer.texture.TextureMap$$Lambda.0x000000001a591a00.run:-1
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1753
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1745
+  java.util.concurrent.ForkJoinTask$InterruptibleTask.exec:1662
+  java.util.concurrent.ForkJoinTask.doExec:511
+  java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec:1450
+  java.util.concurrent.ForkJoinPool.runWorker:2019
+  java.util.concurrent.ForkJoinWorkerThread.run:187
+
+  0.49% (0.41 GiB cumulative, 26 samples, largest weight 230.8 MiB) [Ljava.util.HashMap$Node;
+  java.util.HashMap.resize:711
+  java.util.HashMap.putVal:670
+  java.util.HashMap.put:619
+  sun.net.www.protocol.jar.URLJarFile.getManifest:111
+  top.outlands.foundation.boot.ActualClassLoader.findClass:218
+  java.lang.ClassLoader.loadClass:557
+  top.outlands.foundation.boot.ActualClassLoader.loadClass:297
+  java.lang.ClassLoader.loadClass:490
+  net.tslat.aoa3.common.ClientProxy.registerClientEvents:93
+  net.tslat.aoa3.common.ClientProxy.preInit:39
+  net.tslat.aoa3.advent.AdventOfAscension.fmlPreInit:74
+  java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual:-1
+  java.lang.invoke.LambdaForm$MH.0x0000000014b6c000.invoke:-1
+  java.lang.invoke.Invokers$Holder.invokeExact_MT:-1
+
+  0.49% (0.40 GiB cumulative, 7 samples, largest weight 377.4 MiB) org.objectweb.asm.tree.IntInsnNode
+  org.objectweb.asm.tree.InsnList.add:227
+  org.objectweb.asm.tree.MethodNode.visitIntInsn:346
+  org.objectweb.asm.ClassReader.readCode:2412
+  org.objectweb.asm.ClassReader.readMethod:1512
+  org.objectweb.asm.ClassReader.accept:745
+  org.objectweb.asm.ClassReader.accept:425
+  net.minecraftforge.fml.common.asm.transformers.EventSubscriberTransformer.transform:45
+  net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerWrapper.transform:249
+  top.outlands.foundation.TransformerDelegate.lambda$fillTransformerHolder$1:172
+  top.outlands.foundation.TransformerDelegate$$Lambda.0x000000001439c400.apply:-1
+  top.outlands.foundation.boot.ActualClassLoader.runTransformers:362
+  net.minecraft.launchwrapper.LaunchClassLoader.runTransformers:55
+  top.outlands.foundation.boot.ActualClassLoader.findClass:263
+  java.lang.ClassLoader.loadClass:557
+
+  0.48% (0.39 GiB cumulative, 628 samples, largest weight 21.0 MiB) [B
+  java.lang.StringLatin1.toLowerCase:428
+  java.lang.String.toLowerCase:3704
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.key:117
+  github.kasuminova.stellarcore.client.resource.ZipEntryIndex.lookup:73
+  net.minecraft.client.resources.FileResourcePack.handler$chl000$stellarcore$stellar_core$indexedResourceName:539
+  net.minecraft.client.resources.FileResourcePack.func_110593_b:-1
+  net.minecraft.client.resources.AbstractResourcePack.func_110589_b:54
+  net.minecraft.client.resources.LegacyV2Adapter.func_110589_b:58
+  github.kasuminova.stellarcore.common.util.MutableResourcePackBindings.canDiscover:120
+  net.minecraft.client.resources.SimpleReloadableResourceManager.stellar_core$attachOnMiss:1202
+  net.minecraft.client.resources.SimpleReloadableResourceManager.handler$cho000$stellarcore$stellar_core$getAllResources:1183
+  net.minecraft.client.resources.SimpleReloadableResourceManager.func_135056_b:-1
+  codechicken.lib.model.loader.blockstate.CCBlockStateLoader.canLoad:254
+  codechicken.lib.model.loader.blockstate.CCBlockStateLoader.loadBakery:184
+
+  0.46% (0.38 GiB cumulative, 18 samples, largest weight 300.3 MiB) [B
+  org.objectweb.asm.Type.getDescriptor:508
+  org.objectweb.asm.commons.Remapper.mapMethodDesc:195
+  org.objectweb.asm.commons.MethodRemapper.visitMethodInsn:168
+  org.objectweb.asm.ClassReader.readCode:2447
+  org.objectweb.asm.ClassReader.readMethod:1512
+  org.objectweb.asm.ClassReader.accept:745
+  org.objectweb.asm.ClassReader.accept:425
+  net.minecraftforge.fml.common.asm.transformers.DeobfuscationTransformer.transform:74
+  top.outlands.foundation.TransformerDelegate.lambda$fillTransformerHolder$1:172
+  top.outlands.foundation.TransformerDelegate$$Lambda.0x000000001439c400.apply:-1
+  top.outlands.foundation.boot.ActualClassLoader.runTransformers:362
+  net.minecraft.launchwrapper.LaunchClassLoader.runTransformers:55
+  top.outlands.foundation.boot.ActualClassLoader.findClass:263
+  java.lang.ClassLoader.loadClass:557
+
+  0.42% (0.35 GiB cumulative, 31 samples, largest weight 54.4 MiB) [B
+  com.sun.imageio.plugins.png.PNGImageDataEnumeration.nextElement:86
+  com.sun.imageio.plugins.png.PNGImageDataEnumeration.nextElement:69
+  java.io.SequenceInputStream.peekNextStream:98
+  java.io.SequenceInputStream.<init>:68
+  com.sun.imageio.plugins.png.PNGImageReader.readImage:1454
+  com.sun.imageio.plugins.png.PNGImageReader.read:1845
+  javax.imageio.ImageIO.read:1422
+  javax.imageio.ImageIO.read:1319
+  net.minecraft.client.renderer.texture.TextureUtil.func_177053_a:353
+  net.minecraft.client.renderer.texture.TextureAtlasSprite.func_188539_a:250
+  net.minecraft.client.renderer.texture.TextureMap.md5d56b8$vintagefix$lambda$preloadTextures$0$a:2648
+  net.minecraft.client.renderer.texture.TextureMap$$Lambda.0x000000001a591a00.run:-1
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1753
+  java.util.concurrent.ForkJoinTask$RunnableExecuteAction.compute:1745

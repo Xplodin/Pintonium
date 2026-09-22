@@ -1,0 +1,18 @@
+{
+  "title": "Karmesin",
+  "r": 235,
+  "g": 72,
+  "b": 74,
+  "input": {
+    "id": "taiga:karmesine_ore"
+  },
+  "description": [
+    {
+      "text": "Karmesin ist eines der drei etherischen Erze. Zusammen mit Jauxum und Ovium erzeugt es beim verschmelzen die Verbindung Terrax."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Entsteht in andensit"
+  ]
+}

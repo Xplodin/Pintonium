@@ -1,0 +1,177 @@
+Compiled from "ClientProxy.java"
+public class com.matoon.herosmp.client.ClientProxy extends com.matoon.herosmp.CommonProxy {
+  private volatile net.minecraft.client.audio.ISound currentHungerGamesSound;
+
+  public com.matoon.herosmp.client.ClientProxy();
+    Code:
+         0: aload_0
+         1: invokespecial #36                 // Method com/matoon/herosmp/CommonProxy."<init>":()V
+         4: return
+
+  public void preInit(net.minecraftforge.fml.common.event.FMLPreInitializationEvent);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokespecial #42                 // Method com/matoon/herosmp/CommonProxy.preInit:(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+         5: invokestatic  #47                 // Method com/matoon/herosmp/registry/ModEntities.registerRenderers:()V
+         8: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        11: new           #55                 // class com/matoon/herosmp/events/EventHandler
+        14: dup
+        15: invokespecial #56                 // Method com/matoon/herosmp/events/EventHandler."<init>":()V
+        18: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        21: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        24: new           #12                 // class com/matoon/herosmp/registry/ModItems$ClientRegistrationHandler
+        27: dup
+        28: invokespecial #63                 // Method com/matoon/herosmp/registry/ModItems$ClientRegistrationHandler."<init>":()V
+        31: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        34: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        37: new           #65                 // class com/matoon/herosmp/client/LifeLinkChainRenderer
+        40: dup
+        41: invokespecial #66                 // Method com/matoon/herosmp/client/LifeLinkChainRenderer."<init>":()V
+        44: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        47: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        50: new           #68                 // class com/matoon/herosmp/client/InfPowerUpOverlay
+        53: dup
+        54: invokespecial #69                 // Method com/matoon/herosmp/client/InfPowerUpOverlay."<init>":()V
+        57: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        60: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        63: new           #71                 // class com/matoon/herosmp/client/SnapEffectOverlay
+        66: dup
+        67: invokespecial #72                 // Method com/matoon/herosmp/client/SnapEffectOverlay."<init>":()V
+        70: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        73: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        76: new           #74                 // class com/matoon/herosmp/client/SnapSkinOverlay
+        79: dup
+        80: invokespecial #75                 // Method com/matoon/herosmp/client/SnapSkinOverlay."<init>":()V
+        83: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+        86: new           #77                 // class com/matoon/herosmp/mindstone/MindControlAbilityBarProvider
+        89: dup
+        90: invokespecial #78                 // Method com/matoon/herosmp/mindstone/MindControlAbilityBarProvider."<init>":()V
+        93: invokestatic  #84                 // Method lucraft/mods/lucraftcore/util/abilitybar/AbilityBarHandler.registerProvider:(Llucraft/mods/lucraftcore/util/abilitybar/IAbilityBarProvider;)V
+        96: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+        99: new           #86                 // class com/matoon/herosmp/mindstone/MindControlAuraRenderer
+       102: dup
+       103: invokespecial #87                 // Method com/matoon/herosmp/mindstone/MindControlAuraRenderer."<init>":()V
+       106: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+       109: getstatic     #53                 // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/fml/common/eventhandler/EventBus;
+       112: new           #89                 // class com/matoon/herosmp/mindstone/MindControlPlayerLock
+       115: dup
+       116: invokespecial #90                 // Method com/matoon/herosmp/mindstone/MindControlPlayerLock."<init>":()V
+       119: invokevirtual #62                 // Method net/minecraftforge/fml/common/eventhandler/EventBus.register:(Ljava/lang/Object;)V
+       122: invokestatic  #96                 // Method net/minecraftforge/fml/client/FMLClientHandler.instance:()Lnet/minecraftforge/fml/client/FMLClientHandler;
+       125: invokevirtual #100                // Method net/minecraftforge/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+       128: astore_2
+       129: aload_2
+       130: invokestatic  #104                // Method com/matoon/herosmp/network/PacketHGMusicChunk$Handler.getCacheDir:(Lnet/minecraft/client/Minecraft;)Ljava/io/File;
+       133: astore_3
+       134: ldc           #106                // class net/minecraft/client/Minecraft
+       136: aload_2
+       137: ldc           #108                // String defaultResourcePacks
+       139: ldc           #110                // String field_110449_ao
+       141: invokestatic  #114                // Method net/minecraftforge/fml/relauncher/ReflectionHelper.getPrivateValue:(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+       144: checkcast     #116                // class java/util/List
+       147: astore        4
+       149: aload         4
+       151: new           #118                // class com/matoon/herosmp/hungergames/music/HungerGamesMusicResourcePack
+       154: dup
+       155: aload_3
+       156: invokespecial #121                // Method com/matoon/herosmp/hungergames/music/HungerGamesMusicResourcePack."<init>":(Ljava/io/File;)V
+       159: invokeinterface #125,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       164: pop
+       165: goto          173
+       168: astore_2
+       169: aload_2
+       170: invokevirtual #128                // Method net/minecraftforge/fml/relauncher/ReflectionHelper$UnableToFindFieldException.printStackTrace:()V
+       173: return
+      Exception table:
+         from    to  target type
+           122   165   168   Class net/minecraftforge/fml/relauncher/ReflectionHelper$UnableToFindFieldException
+
+  public void init(net.minecraftforge.fml.common.event.FMLInitializationEvent);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokespecial #143                // Method com/matoon/herosmp/CommonProxy.init:(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+         5: invokestatic  #96                 // Method net/minecraftforge/fml/client/FMLClientHandler.instance:()Lnet/minecraftforge/fml/client/FMLClientHandler;
+         8: invokevirtual #100                // Method net/minecraftforge/fml/client/FMLClientHandler.getClient:()Lnet/minecraft/client/Minecraft;
+        11: astore_2
+        12: aload_2
+        13: ifnull        23
+        16: invokestatic  #146                // Method com/matoon/herosmp/registry/ModItems.registerSpawnEggColors:()V
+        19: aload_2
+        20: invokevirtual #149                // Method net/minecraft/client/Minecraft.func_110436_a:()V
+        23: return
+
+  public void handleHungerGamesMusic(boolean, java.lang.String, java.lang.String);
+    Code:
+         0: invokestatic  #155                // Method net/minecraft/client/Minecraft.func_71410_x:()Lnet/minecraft/client/Minecraft;
+         3: astore        4
+         5: aload         4
+         7: aload_0
+         8: aload         4
+        10: iload_1
+        11: aload_2
+        12: aload_3
+        13: invokedynamic #172,  0            // InvokeDynamic #0:run:(Lcom/matoon/herosmp/client/ClientProxy;Lnet/minecraft/client/Minecraft;ZLjava/lang/String;Ljava/lang/String;)Ljava/lang/Runnable;
+        18: invokevirtual #176                // Method net/minecraft/client/Minecraft.func_152344_a:(Ljava/lang/Runnable;)Lcom/google/common/util/concurrent/ListenableFuture;
+        21: pop
+        22: return
+
+  public void handleClientPacket(net.minecraftforge.fml.common.network.simpleimpl.IMessage);
+    Code:
+         0: aload_1
+         1: invokestatic  #188                // Method com/matoon/herosmp/network/ClientPacketDispatcher.handle:(Lnet/minecraftforge/fml/common/network/simpleimpl/IMessage;)V
+         4: return
+
+  private void lambda$handleHungerGamesMusic$0(net.minecraft.client.Minecraft, boolean, java.lang.String, java.lang.String);
+    Code:
+         0: aload_0
+         1: getfield      #192                // Field currentHungerGamesSound:Lnet/minecraft/client/audio/ISound;
+         4: ifnull        23
+         7: aload_1
+         8: invokevirtual #196                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+        11: aload_0
+        12: getfield      #192                // Field currentHungerGamesSound:Lnet/minecraft/client/audio/ISound;
+        15: invokevirtual #202                // Method net/minecraft/client/audio/SoundHandler.func_147683_b:(Lnet/minecraft/client/audio/ISound;)V
+        18: aload_0
+        19: aconst_null
+        20: putfield      #192                // Field currentHungerGamesSound:Lnet/minecraft/client/audio/ISound;
+        23: iload_2
+        24: ifne          98
+        27: aload_3
+        28: ifnull        98
+        31: aload_3
+        32: invokevirtual #208                // Method java/lang/String.isEmpty:()Z
+        35: ifne          98
+        38: aload         4
+        40: ifnull        98
+        43: aload         4
+        45: invokevirtual #208                // Method java/lang/String.isEmpty:()Z
+        48: ifne          98
+        51: aload_3
+        52: aload         4
+        54: invokestatic  #214                // Method com/matoon/herosmp/hungergames/music/HungerGamesMusicManager.soundLocation:(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/util/ResourceLocation;
+        57: astore        5
+        59: new           #216                // class net/minecraft/client/audio/PositionedSoundRecord
+        62: dup
+        63: aload         5
+        65: getstatic     #222                // Field net/minecraft/util/SoundCategory.MUSIC:Lnet/minecraft/util/SoundCategory;
+        68: fconst_1
+        69: fconst_1
+        70: iconst_0
+        71: iconst_0
+        72: getstatic     #226                // Field net/minecraft/client/audio/ISound$AttenuationType.NONE:Lnet/minecraft/client/audio/ISound$AttenuationType;
+        75: fconst_0
+        76: fconst_0
+        77: fconst_0
+        78: invokespecial #229                // Method net/minecraft/client/audio/PositionedSoundRecord."<init>":(Lnet/minecraft/util/ResourceLocation;Lnet/minecraft/util/SoundCategory;FFZILnet/minecraft/client/audio/ISound$AttenuationType;FFF)V
+        81: astore        6
+        83: aload_1
+        84: invokevirtual #196                // Method net/minecraft/client/Minecraft.func_147118_V:()Lnet/minecraft/client/audio/SoundHandler;
+        87: aload         6
+        89: invokevirtual #232                // Method net/minecraft/client/audio/SoundHandler.func_147682_a:(Lnet/minecraft/client/audio/ISound;)V
+        92: aload_0
+        93: aload         6
+        95: putfield      #192                // Field currentHungerGamesSound:Lnet/minecraft/client/audio/ISound;
+        98: return
+}

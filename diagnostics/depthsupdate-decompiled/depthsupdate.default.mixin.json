@@ -1,0 +1,52 @@
+{
+  "required": true,
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "package": "sayys.depthsupdate.mixin",
+  "plugin": "sayys.depthsupdate.ModMixinConfigPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "target": "@env(DEFAULT)",
+  "client": [
+    "MixinViewFrustum",
+    "MixinRenderGlobal",
+    "MixinRenderGlobalChunkOffset",
+    "MixinNetHandlerPlayClient",
+    "MixinWorldClientImpl",
+    "MixinWorldLighting",
+    "MixinChunkCacheLighting",
+    "IMixinViewFrustum",
+    "MixinDebugRendererChunkBorder",
+    "client.MixinModelPlayer",
+    "client.MixinModelBiped",
+    "client.MixinLayerHeldItem"
+  ],
+  "mixins": [
+    "IMixinBlock",
+    "MixinWorldProvider",
+    "MixinWorld",
+    "MixinChunk",
+    "MixinChunkPrimer",
+    "MixinWorldGenMinable",
+    "MixinAnvilChunkLoader",
+    "MixinPlayerChunkMapEntry",
+    "MixinSPacketChunkData",
+    "MixinChunkCache",
+    "MixinChunkGeneratorOverworld",
+    "MixinMapGenCaves",
+    "MixinMapGenRavine",
+    "MixinBlockMatcher",
+    "MixinIFluidStatePrimer",
+    "MixinWorldEntitySpawner",
+    "MixinEntity",
+    "MixinChunkProviderServer",
+    "MixinMinecraftServer",
+    "MixinBlockSkull",
+    "MixinWalkNodeProcessor",
+    "MixinEntityBoat",
+    "MixinBlockFalling"
+  ],
+  "server": [],
+  "setSourceFile": true,
+  "minVersion": "0.8.7"
+}

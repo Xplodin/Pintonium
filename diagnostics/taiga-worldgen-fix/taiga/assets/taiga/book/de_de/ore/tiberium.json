@@ -1,0 +1,19 @@
+{
+  "title": "Tiberium",
+  "r": 212,
+  "g": 255,
+  "b": 0,
+  "input": {
+    "id": "taiga:tiberium_ore"
+  },
+  "description": [
+    {
+      "text": "Wenn man den Nether erforscht fallen die vielen Tiberiumadern auf. Dieses kristalline Erz ist äußerst instabil und gefährlich. Es kann urplötzlich explodieren und benötigt daher einen Stabilisator für den weiteren Nutzen."
+    }
+  ],
+  "informations": [
+    "Level: Stone",
+    "Explosiv",
+    "Kristallin"
+  ]
+}

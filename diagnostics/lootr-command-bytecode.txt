@@ -1,0 +1,836 @@
+Compiled from "LootrCommand.java"
+public class noobanidus.mods.lootr.command.LootrCommand implements net.minecraft.command.ICommand {
+  private static java.util.List<net.minecraft.util.ResourceLocation> tables;
+
+  private static java.util.List<java.lang.String> tableNames;
+
+  private static final java.util.Map<java.lang.String, java.util.UUID> profileMap;
+
+  public noobanidus.mods.lootr.command.LootrCommand();
+    Code:
+         0: aload_0
+         1: invokespecial #29                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  public java.lang.String func_71517_b();
+    Code:
+         0: ldc           #36                 // String lootr
+         2: areturn
+
+  public java.lang.String func_71518_a(net.minecraft.command.ICommandSender);
+    Code:
+         0: ldc           #40                 // String lootr.commands.usage
+         2: areturn
+
+  public java.util.List<java.lang.String> func_71514_a();
+    Code:
+         0: invokestatic  #50                 // Method com/google/common/collect/ImmutableList.of:()Lcom/google/common/collect/ImmutableList;
+         3: areturn
+
+  private static java.lang.String getArgIfExists(java.lang.String[], int);
+    Code:
+         0: aload_0
+         1: arraylength
+         2: iload_1
+         3: iconst_1
+         4: iadd
+         5: if_icmplt     12
+         8: aload_0
+         9: iload_1
+        10: aaload
+        11: areturn
+        12: aconst_null
+        13: areturn
+
+  private static java.lang.String getArgAt(java.lang.String[], int) throws net.minecraft.command.CommandException;
+    Code:
+         0: aload_0
+         1: arraylength
+         2: iload_1
+         3: iconst_1
+         4: iadd
+         5: if_icmplt     12
+         8: aload_0
+         9: iload_1
+        10: aaload
+        11: areturn
+        12: new           #62                 // class net/minecraft/command/WrongUsageException
+        15: dup
+        16: ldc           #40                 // String lootr.commands.usage
+        18: iconst_0
+        19: anewarray     #4                  // class java/lang/Object
+        22: invokespecial #65                 // Method net/minecraft/command/WrongUsageException."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+        25: athrow
+
+  private void clearPlayerProfile(net.minecraft.command.ICommandSender, java.lang.String);
+    Code:
+         0: aload_1
+         1: invokeinterface #73,  1           // InterfaceMethod net/minecraft/command/ICommandSender.func_184102_h:()Lnet/minecraft/server/MinecraftServer;
+         6: invokevirtual #79                 // Method net/minecraft/server/MinecraftServer.func_152358_ax:()Lnet/minecraft/server/management/PlayerProfileCache;
+         9: aload_2
+        10: invokevirtual #85                 // Method net/minecraft/server/management/PlayerProfileCache.func_152655_a:(Ljava/lang/String;)Lcom/mojang/authlib/GameProfile;
+        13: astore_3
+        14: aload_3
+        15: ifnonnull     56
+        18: aload_1
+        19: new           #87                 // class net/minecraft/util/text/TextComponentString
+        22: dup
+        23: new           #89                 // class java/lang/StringBuilder
+        26: dup
+        27: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+        30: ldc           #92                 // String Invalid player name:
+        32: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        35: aload_2
+        36: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        39: ldc           #98                 // String , profile not found in the cache.
+        41: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        44: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        47: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+        50: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+        55: return
+        56: aload_1
+        57: new           #87                 // class net/minecraft/util/text/TextComponentString
+        60: dup
+        61: aload_3
+        62: invokevirtual #114                // Method com/mojang/authlib/GameProfile.getId:()Ljava/util/UUID;
+        65: invokestatic  #120                // Method noobanidus/mods/lootr/data/DataStorage.clearInventories:(Ljava/util/UUID;)Z
+        68: ifeq          93
+        71: new           #89                 // class java/lang/StringBuilder
+        74: dup
+        75: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+        78: ldc           #122                // String Cleared stored inventories for
+        80: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        83: aload_2
+        84: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        87: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        90: goto          117
+        93: new           #89                 // class java/lang/StringBuilder
+        96: dup
+        97: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+       100: ldc           #126                // String No stored inventories for
+       102: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       105: aload_2
+       106: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       109: ldc           #128                // String  to clear
+       111: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       114: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       117: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       120: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       125: return
+
+  private static net.minecraft.block.Block getBlockFromArg(java.lang.String);
+    Code:
+         0: aload_0
+         1: astore_1
+         2: iconst_m1
+         3: istore_2
+         4: aload_1
+         5: invokevirtual #139                // Method java/lang/String.hashCode:()I
+         8: lookupswitch  { // 3
+                 3046176: 58
+                94627585: 44
+              2072515372: 72
+                 default: 83
+            }
+        44: aload_1
+        45: ldc           #141                // String chest
+        47: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        50: ifeq          83
+        53: iconst_0
+        54: istore_2
+        55: goto          83
+        58: aload_1
+        59: ldc           #147                // String cart
+        61: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        64: ifeq          83
+        67: iconst_1
+        68: istore_2
+        69: goto          83
+        72: aload_1
+        73: ldc           #149                // String shulker
+        75: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        78: ifeq          83
+        81: iconst_2
+        82: istore_2
+        83: iload_2
+        84: tableswitch   { // 0 to 2
+                       0: 112
+                       1: 116
+                       2: 118
+                 default: 122
+            }
+       112: getstatic     #155                // Field noobanidus/mods/lootr/init/ModBlocks.CHEST:Lnoobanidus/mods/lootr/block/LootrChestBlock;
+       115: areturn
+       116: aconst_null
+       117: areturn
+       118: getstatic     #159                // Field noobanidus/mods/lootr/init/ModBlocks.SHULKER:Lnoobanidus/mods/lootr/block/LootrShulkerBlock;
+       121: areturn
+       122: new           #161                // class java/lang/IllegalArgumentException
+       125: dup
+       126: aload_0
+       127: invokespecial #162                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+       130: athrow
+
+  public void func_184881_a(net.minecraft.server.MinecraftServer, net.minecraft.command.ICommandSender, java.lang.String[]) throws net.minecraft.command.CommandException;
+    Code:
+         0: aload_3
+         1: iconst_0
+         2: invokestatic  #167                // Method getArgAt:([Ljava/lang/String;I)Ljava/lang/String;
+         5: astore        4
+         7: aload         4
+         9: astore        5
+        11: iconst_m1
+        12: istore        6
+        14: aload         5
+        16: invokevirtual #139                // Method java/lang/String.hashCode:()I
+        19: lookupswitch  { // 6
+             -1349088399: 156
+             -1263188260: 140
+                 3046176: 108
+                94627585: 92
+                94746189: 76
+              2072515372: 124
+                 default: 169
+            }
+        76: aload         5
+        78: ldc           #169                // String clear
+        80: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        83: ifeq          169
+        86: iconst_0
+        87: istore        6
+        89: goto          169
+        92: aload         5
+        94: ldc           #141                // String chest
+        96: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        99: ifeq          169
+       102: iconst_1
+       103: istore        6
+       105: goto          169
+       108: aload         5
+       110: ldc           #147                // String cart
+       112: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       115: ifeq          169
+       118: iconst_2
+       119: istore        6
+       121: goto          169
+       124: aload         5
+       126: ldc           #149                // String shulker
+       128: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       131: ifeq          169
+       134: iconst_3
+       135: istore        6
+       137: goto          169
+       140: aload         5
+       142: ldc           #171                // String openers
+       144: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       147: ifeq          169
+       150: iconst_4
+       151: istore        6
+       153: goto          169
+       156: aload         5
+       158: ldc           #173                // String custom
+       160: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       163: ifeq          169
+       166: iconst_5
+       167: istore        6
+       169: iload         6
+       171: tableswitch   { // 0 to 5
+                       0: 208
+                       1: 221
+                       2: 221
+                       3: 221
+                       4: 258
+                       5: 612
+                 default: 823
+            }
+       208: aload_0
+       209: aload_2
+       210: aload_3
+       211: iconst_1
+       212: invokestatic  #167                // Method getArgAt:([Ljava/lang/String;I)Ljava/lang/String;
+       215: invokespecial #175                // Method clearPlayerProfile:(Lnet/minecraft/command/ICommandSender;Ljava/lang/String;)V
+       218: goto          837
+       221: aload_3
+       222: iconst_1
+       223: invokestatic  #177                // Method getArgIfExists:([Ljava/lang/String;I)Ljava/lang/String;
+       226: astore        7
+       228: aload_2
+       229: aload         4
+       231: invokestatic  #179                // Method getBlockFromArg:(Ljava/lang/String;)Lnet/minecraft/block/Block;
+       234: aload         7
+       236: ifnull        251
+       239: new           #181                // class net/minecraft/util/ResourceLocation
+       242: dup
+       243: aload         7
+       245: invokespecial #182                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;)V
+       248: goto          252
+       251: aconst_null
+       252: invokestatic  #189                // Method createBlock:(Lnet/minecraft/command/ICommandSender;Lnet/minecraft/block/Block;Lnet/minecraft/util/ResourceLocation;)V
+       255: goto          837
+       258: aload_3
+       259: arraylength
+       260: iconst_4
+       261: if_icmpge     278
+       264: new           #62                 // class net/minecraft/command/WrongUsageException
+       267: dup
+       268: ldc           #40                 // String lootr.commands.usage
+       270: iconst_0
+       271: anewarray     #4                  // class java/lang/Object
+       274: invokespecial #65                 // Method net/minecraft/command/WrongUsageException."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       277: athrow
+       278: aload_2
+       279: invokeinterface #193,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_174791_d:()Lnet/minecraft/util/math/Vec3d;
+       284: astore        7
+       286: iconst_1
+       287: istore        8
+       289: aload         7
+       291: getfield      #199                // Field net/minecraft/util/math/Vec3d.field_72450_a:D
+       294: aload_3
+       295: iload         8
+       297: iinc          8, 1
+       300: aaload
+       301: iconst_1
+       302: invokestatic  #203                // Method net/minecraft/command/CommandBase.func_175770_a:(DLjava/lang/String;Z)Lnet/minecraft/command/CommandBase$CoordinateArg;
+       305: astore        9
+       307: aload         7
+       309: getfield      #206                // Field net/minecraft/util/math/Vec3d.field_72448_b:D
+       312: aload_3
+       313: iload         8
+       315: iinc          8, 1
+       318: aaload
+       319: sipush        -4096
+       322: sipush        4096
+       325: iconst_0
+       326: invokestatic  #210                // Method net/minecraft/command/CommandBase.func_175767_a:(DLjava/lang/String;IIZ)Lnet/minecraft/command/CommandBase$CoordinateArg;
+       329: astore        10
+       331: aload         7
+       333: getfield      #213                // Field net/minecraft/util/math/Vec3d.field_72449_c:D
+       336: aload_3
+       337: iload         8
+       339: iinc          8, 1
+       342: aaload
+       343: iconst_1
+       344: invokestatic  #203                // Method net/minecraft/command/CommandBase.func_175770_a:(DLjava/lang/String;Z)Lnet/minecraft/command/CommandBase$CoordinateArg;
+       347: astore        11
+       349: new           #215                // class net/minecraft/util/math/BlockPos
+       352: dup
+       353: aload         9
+       355: invokevirtual #219                // Method net/minecraft/command/CommandBase$CoordinateArg.func_179628_a:()D
+       358: aload         10
+       360: invokevirtual #219                // Method net/minecraft/command/CommandBase$CoordinateArg.func_179628_a:()D
+       363: aload         11
+       365: invokevirtual #219                // Method net/minecraft/command/CommandBase$CoordinateArg.func_179628_a:()D
+       368: invokespecial #222                // Method net/minecraft/util/math/BlockPos."<init>":(DDD)V
+       371: astore        12
+       373: aload_2
+       374: invokeinterface #226,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_130014_f_:()Lnet/minecraft/world/World;
+       379: astore        13
+       381: aload         13
+       383: aload         12
+       385: invokevirtual #232                // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+       388: astore        14
+       390: aload         14
+       392: instanceof    #234                // class noobanidus/mods/lootr/api/tile/ILootTile
+       395: ifeq          575
+       398: aload         14
+       400: checkcast     #234                // class noobanidus/mods/lootr/api/tile/ILootTile
+       403: invokeinterface #238,  1          // InterfaceMethod noobanidus/mods/lootr/api/tile/ILootTile.getOpeners:()Ljava/util/Set;
+       408: astore        15
+       410: aload_2
+       411: new           #87                 // class net/minecraft/util/text/TextComponentString
+       414: dup
+       415: new           #89                 // class java/lang/StringBuilder
+       418: dup
+       419: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+       422: ldc           #240                // String Tile at location
+       424: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       427: aload         12
+       429: invokevirtual #243                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       432: ldc           #245                // String  has
+       434: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       437: aload         15
+       439: invokeinterface #250,  1          // InterfaceMethod java/util/Set.size:()I
+       444: invokevirtual #253                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       447: ldc           #255                // String  openers. UUIDs as follows:
+       449: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       452: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       455: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       458: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       463: aload         15
+       465: invokeinterface #259,  1          // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+       470: astore        16
+       472: aload         16
+       474: invokeinterface #267,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       479: ifeq          572
+       482: aload         16
+       484: invokeinterface #271,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       489: checkcast     #273                // class java/util/UUID
+       492: astore        17
+       494: aload_2
+       495: invokeinterface #73,  1           // InterfaceMethod net/minecraft/command/ICommandSender.func_184102_h:()Lnet/minecraft/server/MinecraftServer;
+       500: invokevirtual #79                 // Method net/minecraft/server/MinecraftServer.func_152358_ax:()Lnet/minecraft/server/management/PlayerProfileCache;
+       503: aload         17
+       505: invokevirtual #277                // Method net/minecraft/server/management/PlayerProfileCache.func_152652_a:(Ljava/util/UUID;)Lcom/mojang/authlib/GameProfile;
+       508: astore        18
+       510: aload_2
+       511: new           #87                 // class net/minecraft/util/text/TextComponentString
+       514: dup
+       515: new           #89                 // class java/lang/StringBuilder
+       518: dup
+       519: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+       522: ldc_w         #279                // String UUID:
+       525: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       528: aload         17
+       530: invokevirtual #243                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       533: ldc_w         #281                // String , user profile:
+       536: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       539: aload         18
+       541: ifnonnull     550
+       544: ldc_w         #283                // String null
+       547: goto          555
+       550: aload         18
+       552: invokevirtual #286                // Method com/mojang/authlib/GameProfile.getName:()Ljava/lang/String;
+       555: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       558: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       561: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       564: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       569: goto          472
+       572: goto          837
+       575: aload_2
+       576: new           #87                 // class net/minecraft/util/text/TextComponentString
+       579: dup
+       580: new           #89                 // class java/lang/StringBuilder
+       583: dup
+       584: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+       587: ldc_w         #288                // String No Lootr tile exists at location:
+       590: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       593: aload         12
+       595: invokevirtual #243                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       598: invokevirtual #101                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       601: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       604: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       609: goto          837
+       612: aload_2
+       613: invokeinterface #292,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_180425_c:()Lnet/minecraft/util/math/BlockPos;
+       618: astore        7
+       620: aload_2
+       621: invokeinterface #226,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_130014_f_:()Lnet/minecraft/world/World;
+       626: astore        8
+       628: aload         8
+       630: aload         7
+       632: invokevirtual #296                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+       635: astore        9
+       637: aload         9
+       639: invokeinterface #302,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+       644: getstatic     #308                // Field net/minecraft/init/Blocks.field_150486_ae:Lnet/minecraft/block/BlockChest;
+       647: if_acmpeq     666
+       650: aload         7
+       652: invokevirtual #311                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+       655: astore        7
+       657: aload         8
+       659: aload         7
+       661: invokevirtual #296                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+       664: astore        9
+       666: aload         9
+       668: invokeinterface #302,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+       673: getstatic     #308                // Field net/minecraft/init/Blocks.field_150486_ae:Lnet/minecraft/block/BlockChest;
+       676: if_acmpeq     698
+       679: aload_2
+       680: new           #87                 // class net/minecraft/util/text/TextComponentString
+       683: dup
+       684: ldc_w         #313                // String Please stand on the chest you wish to convert.
+       687: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       690: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       695: goto          837
+       698: aload         8
+       700: aload         7
+       702: invokevirtual #232                // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+       705: invokestatic  #319                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+       708: checkcast     #321                // class net/minecraft/tileentity/TileEntityChest
+       711: getfield      #325                // Field net/minecraft/tileentity/TileEntityChest.field_145985_p:Lnet/minecraft/util/NonNullList;
+       714: astore        10
+       716: aload         10
+       718: invokestatic  #331                // Method noobanidus/mods/lootr/util/ChestUtil.copyItemList:(Lnet/minecraft/util/NonNullList;)Lnet/minecraft/util/NonNullList;
+       721: astore        11
+       723: aload         8
+       725: aload         7
+       727: invokevirtual #335                // Method net/minecraft/world/World.func_175713_t:(Lnet/minecraft/util/math/BlockPos;)V
+       730: aload         8
+       732: aload         7
+       734: getstatic     #338                // Field noobanidus/mods/lootr/init/ModBlocks.INVENTORY:Lnoobanidus/mods/lootr/block/LootrChestBlock;
+       737: invokevirtual #344                // Method noobanidus/mods/lootr/block/LootrChestBlock.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+       740: getstatic     #350                // Field net/minecraft/block/BlockChest.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       743: aload         9
+       745: getstatic     #350                // Field net/minecraft/block/BlockChest.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       748: invokeinterface #354,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+       753: checkcast     #356                // class net/minecraft/util/EnumFacing
+       756: invokeinterface #360,  3          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177226_a:(Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lnet/minecraft/block/state/IBlockState;
+       761: invokevirtual #364                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+       764: pop
+       765: aload         8
+       767: aload         7
+       769: invokevirtual #232                // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+       772: astore        12
+       774: aload         12
+       776: instanceof    #366                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+       779: ifne          801
+       782: aload_2
+       783: new           #87                 // class net/minecraft/util/text/TextComponentString
+       786: dup
+       787: ldc_w         #368                // String Unable to convert chest, BlockState is not a Lootr Inventory block.
+       790: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       793: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       798: goto          820
+       801: aload         12
+       803: checkcast     #366                // class noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity
+       806: astore        13
+       808: aload         13
+       810: aload         11
+       812: invokevirtual #374                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.setCustomInventory:(Lnet/minecraft/util/NonNullList;)V
+       815: aload         13
+       817: invokevirtual #377                // Method noobanidus/mods/lootr/block/tile/LootrInventoryTileEntity.func_70296_d:()V
+       820: goto          837
+       823: new           #62                 // class net/minecraft/command/WrongUsageException
+       826: dup
+       827: ldc           #40                 // String lootr.commands.usage
+       829: iconst_0
+       830: anewarray     #4                  // class java/lang/Object
+       833: invokespecial #65                 // Method net/minecraft/command/WrongUsageException."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       836: athrow
+       837: return
+
+  public boolean func_184882_a(net.minecraft.server.MinecraftServer, net.minecraft.command.ICommandSender);
+    Code:
+         0: aload_2
+         1: iconst_2
+         2: aload_0
+         3: invokevirtual #411                // Method func_71517_b:()Ljava/lang/String;
+         6: invokeinterface #415,  3          // InterfaceMethod net/minecraft/command/ICommandSender.func_70003_b:(ILjava/lang/String;)Z
+        11: ireturn
+
+  public java.util.List<java.lang.String> func_184883_a(net.minecraft.server.MinecraftServer, net.minecraft.command.ICommandSender, java.lang.String[], net.minecraft.util.math.BlockPos);
+    Code:
+         0: aload_3
+         1: arraylength
+         2: ifne          19
+         5: ldc           #141                // String chest
+         7: ldc           #149                // String shulker
+         9: ldc           #147                // String cart
+        11: ldc           #169                // String clear
+        13: ldc           #171                // String openers
+        15: invokestatic  #420                // Method com/google/common/collect/ImmutableList.of:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+        18: areturn
+        19: aload_3
+        20: iconst_0
+        21: aaload
+        22: astore        5
+        24: aload         5
+        26: ldc           #141                // String chest
+        28: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        31: ifne          54
+        34: aload         5
+        36: ldc           #149                // String shulker
+        38: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        41: ifne          54
+        44: aload         5
+        46: ldc           #147                // String cart
+        48: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        51: ifeq          58
+        54: invokestatic  #423                // Method getTableNames:()Ljava/util/List;
+        57: areturn
+        58: invokestatic  #50                 // Method com/google/common/collect/ImmutableList.of:()Lcom/google/common/collect/ImmutableList;
+        61: areturn
+
+  public boolean func_82358_a(java.lang.String[], int);
+    Code:
+         0: aload_1
+         1: arraylength
+         2: iconst_1
+         3: if_icmplt     26
+         6: aload_1
+         7: iconst_0
+         8: aaload
+         9: ldc           #169                // String clear
+        11: invokevirtual #145                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        14: ifeq          26
+        17: iload_2
+        18: iconst_1
+        19: if_icmpne     26
+        22: iconst_1
+        23: goto          27
+        26: iconst_0
+        27: ireturn
+
+  public int compareTo(net.minecraft.command.ICommand);
+    Code:
+         0: iconst_0
+         1: ireturn
+
+  private static java.util.List<net.minecraft.util.ResourceLocation> getTables();
+    Code:
+         0: getstatic     #434                // Field tables:Ljava/util/List;
+         3: ifnonnull     51
+         6: new           #436                // class java/util/ArrayList
+         9: dup
+        10: invokestatic  #441                // Method net/minecraft/world/storage/loot/LootTableList.func_186374_a:()Ljava/util/Set;
+        13: invokespecial #444                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+        16: putstatic     #434                // Field tables:Ljava/util/List;
+        19: getstatic     #434                // Field tables:Ljava/util/List;
+        22: invokeinterface #450,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        27: invokedynamic #466,  0            // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        32: invokeinterface #472,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        37: invokestatic  #478                // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+        40: invokeinterface #482,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        45: checkcast     #446                // class java/util/List
+        48: putstatic     #484                // Field tableNames:Ljava/util/List;
+        51: getstatic     #434                // Field tables:Ljava/util/List;
+        54: areturn
+
+  private static java.util.List<java.lang.String> getTableNames();
+    Code:
+         0: invokestatic  #486                // Method getTables:()Ljava/util/List;
+         3: pop
+         4: getstatic     #484                // Field tableNames:Ljava/util/List;
+         7: areturn
+
+  public static void createBlock(net.minecraft.command.ICommandSender, net.minecraft.block.Block, net.minecraft.util.ResourceLocation);
+    Code:
+         0: aload_0
+         1: invokeinterface #226,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_130014_f_:()Lnet/minecraft/world/World;
+         6: astore_3
+         7: new           #215                // class net/minecraft/util/math/BlockPos
+        10: dup
+        11: aload_0
+        12: invokeinterface #292,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_180425_c:()Lnet/minecraft/util/math/BlockPos;
+        17: invokespecial #489                // Method net/minecraft/util/math/BlockPos."<init>":(Lnet/minecraft/util/math/Vec3i;)V
+        20: astore        4
+        22: aload_2
+        23: ifnonnull     53
+        26: invokestatic  #486                // Method getTables:()Ljava/util/List;
+        29: aload_3
+        30: getfield      #493                // Field net/minecraft/world/World.field_73012_v:Ljava/util/Random;
+        33: invokestatic  #486                // Method getTables:()Ljava/util/List;
+        36: invokeinterface #494,  1          // InterfaceMethod java/util/List.size:()I
+        41: invokevirtual #500                // Method java/util/Random.nextInt:(I)I
+        44: invokeinterface #504,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+        49: checkcast     #181                // class net/minecraft/util/ResourceLocation
+        52: astore_2
+        53: aload_1
+        54: ifnonnull     236
+        57: new           #506                // class noobanidus/mods/lootr/entity/LootrChestMinecartEntity
+        60: dup
+        61: aload_3
+        62: aload         4
+        64: invokevirtual #509                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+        67: i2d
+        68: ldc2_w        #510                // double 0.5d
+        71: dadd
+        72: aload         4
+        74: invokevirtual #514                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+        77: i2d
+        78: ldc2_w        #510                // double 0.5d
+        81: dadd
+        82: aload         4
+        84: invokevirtual #517                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+        87: i2d
+        88: ldc2_w        #510                // double 0.5d
+        91: dadd
+        92: invokespecial #520                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity."<init>":(Lnet/minecraft/world/World;DDD)V
+        95: astore        5
+        97: aload_0
+        98: invokeinterface #524,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_174793_f:()Lnet/minecraft/entity/Entity;
+       103: astore        6
+       105: aload         6
+       107: ifnull        120
+       110: aload         5
+       112: aload         6
+       114: getfield      #530                // Field net/minecraft/entity/Entity.field_70177_z:F
+       117: putfield      #531                // Field noobanidus/mods/lootr/entity/LootrChestMinecartEntity.field_70177_z:F
+       120: aload         5
+       122: aload_2
+       123: aload_3
+       124: getfield      #493                // Field net/minecraft/world/World.field_73012_v:Ljava/util/Random;
+       127: invokevirtual #535                // Method java/util/Random.nextLong:()J
+       130: invokevirtual #539                // Method noobanidus/mods/lootr/entity/LootrChestMinecartEntity.func_184289_a:(Lnet/minecraft/util/ResourceLocation;J)V
+       133: aload_3
+       134: aload         5
+       136: invokevirtual #543                // Method net/minecraft/world/World.func_72838_d:(Lnet/minecraft/entity/Entity;)Z
+       139: pop
+       140: aload_0
+       141: new           #545                // class net/minecraft/util/text/TextComponentTranslation
+       144: dup
+       145: ldc_w         #547                // String lootr.commands.summon
+       148: iconst_2
+       149: anewarray     #4                  // class java/lang/Object
+       152: dup
+       153: iconst_0
+       154: new           #545                // class net/minecraft/util/text/TextComponentTranslation
+       157: dup
+       158: ldc_w         #549                // String lootr.commands.blockpos
+       161: iconst_3
+       162: anewarray     #4                  // class java/lang/Object
+       165: dup
+       166: iconst_0
+       167: aload         4
+       169: invokevirtual #509                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+       172: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       175: aastore
+       176: dup
+       177: iconst_1
+       178: aload         4
+       180: invokevirtual #514                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+       183: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       186: aastore
+       187: dup
+       188: iconst_2
+       189: aload         4
+       191: invokevirtual #517                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+       194: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       197: aastore
+       198: invokespecial #556                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       201: new           #558                // class net/minecraft/util/text/Style
+       204: dup
+       205: invokespecial #559                // Method net/minecraft/util/text/Style."<init>":()V
+       208: getstatic     #565                // Field net/minecraft/util/text/TextFormatting.GREEN:Lnet/minecraft/util/text/TextFormatting;
+       211: invokevirtual #569                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       214: invokevirtual #573                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       217: aastore
+       218: dup
+       219: iconst_1
+       220: aload_2
+       221: invokevirtual #459                // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+       224: aastore
+       225: invokespecial #556                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       228: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       233: goto          480
+       236: aload_1
+       237: invokevirtual #574                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+       240: astore        5
+       242: aload_0
+       243: invokeinterface #524,  1          // InterfaceMethod net/minecraft/command/ICommandSender.func_174793_f:()Lnet/minecraft/entity/Entity;
+       248: astore        6
+       250: aload         6
+       252: ifnull        343
+       255: aconst_null
+       256: astore        7
+       258: aconst_null
+       259: astore        8
+       261: aload         5
+       263: invokeinterface #578,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177227_a:()Ljava/util/Collection;
+       268: getstatic     #579                // Field noobanidus/mods/lootr/block/LootrChestBlock.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       271: invokeinterface #584,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+       276: ifeq          297
+       279: getstatic     #579                // Field noobanidus/mods/lootr/block/LootrChestBlock.field_176459_a:Lnet/minecraft/block/properties/PropertyDirection;
+       282: astore        7
+       284: aload         6
+       286: invokevirtual #588                // Method net/minecraft/entity/Entity.func_174811_aO:()Lnet/minecraft/util/EnumFacing;
+       289: invokevirtual #591                // Method net/minecraft/util/EnumFacing.func_176734_d:()Lnet/minecraft/util/EnumFacing;
+       292: astore        8
+       294: goto          320
+       297: aload         5
+       299: invokeinterface #578,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177227_a:()Ljava/util/Collection;
+       304: getstatic     #599                // Field noobanidus/mods/lootr/block/LootrShulkerBlock.field_190957_a:Lnet/minecraft/block/properties/PropertyEnum;
+       307: invokeinterface #584,  2          // InterfaceMethod java/util/Collection.contains:(Ljava/lang/Object;)Z
+       312: ifeq          320
+       315: getstatic     #599                // Field noobanidus/mods/lootr/block/LootrShulkerBlock.field_190957_a:Lnet/minecraft/block/properties/PropertyEnum;
+       318: astore        7
+       320: aload         7
+       322: ifnull        343
+       325: aload         8
+       327: ifnull        343
+       330: aload         5
+       332: aload         7
+       334: aload         8
+       336: invokeinterface #360,  3          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177226_a:(Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lnet/minecraft/block/state/IBlockState;
+       341: astore        5
+       343: aload_3
+       344: aload         4
+       346: aload         5
+       348: iconst_2
+       349: invokevirtual #603                // Method net/minecraft/world/World.func_180501_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)Z
+       352: pop
+       353: aload_3
+       354: aload         4
+       356: invokevirtual #232                // Method net/minecraft/world/World.func_175625_s:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/tileentity/TileEntity;
+       359: checkcast     #605                // class net/minecraft/tileentity/TileEntityLockableLoot
+       362: aload_2
+       363: aload_3
+       364: getfield      #493                // Field net/minecraft/world/World.field_73012_v:Ljava/util/Random;
+       367: invokevirtual #535                // Method java/util/Random.nextLong:()J
+       370: invokevirtual #608                // Method net/minecraft/tileentity/TileEntityLockableLoot.func_189404_a:(Lnet/minecraft/util/ResourceLocation;J)V
+       373: aload_0
+       374: new           #545                // class net/minecraft/util/text/TextComponentTranslation
+       377: dup
+       378: ldc_w         #610                // String lootr.commands.create
+       381: iconst_3
+       382: anewarray     #4                  // class java/lang/Object
+       385: dup
+       386: iconst_0
+       387: new           #87                 // class net/minecraft/util/text/TextComponentString
+       390: dup
+       391: aload_1
+       392: invokevirtual #613                // Method net/minecraft/block/Block.func_149732_F:()Ljava/lang/String;
+       395: invokespecial #104                // Method net/minecraft/util/text/TextComponentString."<init>":(Ljava/lang/String;)V
+       398: aastore
+       399: dup
+       400: iconst_1
+       401: new           #545                // class net/minecraft/util/text/TextComponentTranslation
+       404: dup
+       405: ldc_w         #549                // String lootr.commands.blockpos
+       408: iconst_3
+       409: anewarray     #4                  // class java/lang/Object
+       412: dup
+       413: iconst_0
+       414: aload         4
+       416: invokevirtual #509                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+       419: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       422: aastore
+       423: dup
+       424: iconst_1
+       425: aload         4
+       427: invokevirtual #514                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+       430: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       433: aastore
+       434: dup
+       435: iconst_2
+       436: aload         4
+       438: invokevirtual #517                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+       441: invokestatic  #555                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       444: aastore
+       445: invokespecial #556                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       448: new           #558                // class net/minecraft/util/text/Style
+       451: dup
+       452: invokespecial #559                // Method net/minecraft/util/text/Style."<init>":()V
+       455: getstatic     #565                // Field net/minecraft/util/text/TextFormatting.GREEN:Lnet/minecraft/util/text/TextFormatting;
+       458: invokevirtual #569                // Method net/minecraft/util/text/Style.func_150238_a:(Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;
+       461: invokevirtual #573                // Method net/minecraft/util/text/TextComponentTranslation.func_150255_a:(Lnet/minecraft/util/text/Style;)Lnet/minecraft/util/text/ITextComponent;
+       464: aastore
+       465: dup
+       466: iconst_2
+       467: aload_2
+       468: invokevirtual #459                // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+       471: aastore
+       472: invokespecial #556                // Method net/minecraft/util/text/TextComponentTranslation."<init>":(Ljava/lang/String;[Ljava/lang/Object;)V
+       475: invokeinterface #108,  2          // InterfaceMethod net/minecraft/command/ICommandSender.func_145747_a:(Lnet/minecraft/util/text/ITextComponent;)V
+       480: return
+
+  public int compareTo(java.lang.Object);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #6                  // class net/minecraft/command/ICommand
+         5: invokevirtual #627                // Method compareTo:(Lnet/minecraft/command/ICommand;)I
+         8: ireturn
+
+  static {};
+    Code:
+         0: aconst_null
+         1: putstatic     #434                // Field tables:Ljava/util/List;
+         4: aconst_null
+         5: putstatic     #484                // Field tableNames:Ljava/util/List;
+         8: new           #630                // class java/util/HashMap
+        11: dup
+        12: invokespecial #631                // Method java/util/HashMap."<init>":()V
+        15: putstatic     #633                // Field profileMap:Ljava/util/Map;
+        18: return
+}

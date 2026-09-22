@@ -1,0 +1,496 @@
+Compiled from "ExtractorRecipeHandler.java"
+public class lucraft.mods.lucraftcore.utilities.recipes.ExtractorRecipeHandler {
+  private static com.google.gson.Gson GSON;
+
+  private static int id;
+
+  private static net.minecraft.util.registry.RegistryNamespaced<net.minecraft.util.ResourceLocation, lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe> RECIPES;
+
+  public static java.util.Map<net.minecraft.util.ResourceLocation, com.google.gson.JsonObject> cachedRecipes;
+
+  public static java.util.Map<java.lang.String, lucraft.mods.lucraftcore.addonpacks.AddonPackRecipeReader$JsonContextExt> cachedContexts;
+
+  public static java.util.Map<java.lang.String, com.google.gson.JsonObject[]> cachedJsonContexts;
+
+  public lucraft.mods.lucraftcore.utilities.recipes.ExtractorRecipeHandler();
+    Code:
+         0: aload_0
+         1: invokespecial #41                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static void registerRecipe(lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe);
+    Code:
+         0: aload_0
+         1: ifnonnull     15
+         4: getstatic     #51                 // Field lucraft/mods/lucraftcore/LucraftCore.LOGGER:Lorg/apache/logging/log4j/Logger;
+         7: ldc           #53                 // String Tried to register null extractor recipe!
+         9: invokeinterface #59,  2           // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;)V
+        14: return
+        15: aload_0
+        16: invokeinterface #65,  1           // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+        21: ifnonnull     35
+        24: getstatic     #51                 // Field lucraft/mods/lucraftcore/LucraftCore.LOGGER:Lorg/apache/logging/log4j/Logger;
+        27: ldc           #67                 // String Tried to register extractor recipe without registry name!
+        29: invokeinterface #59,  2           // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;)V
+        34: return
+        35: getstatic     #69                 // Field RECIPES:Lnet/minecraft/util/registry/RegistryNamespaced;
+        38: aload_0
+        39: invokeinterface #65,  1           // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+        44: invokevirtual #75                 // Method net/minecraft/util/registry/RegistryNamespaced.func_148741_d:(Ljava/lang/Object;)Z
+        47: ifeq          91
+        50: getstatic     #51                 // Field lucraft/mods/lucraftcore/LucraftCore.LOGGER:Lorg/apache/logging/log4j/Logger;
+        53: new           #77                 // class java/lang/StringBuilder
+        56: dup
+        57: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+        60: ldc           #80                 // String An extractor recipe with the registry name \'
+        62: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        65: aload_0
+        66: invokeinterface #65,  1           // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+        71: invokevirtual #90                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+        74: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        77: ldc           #92                 // String \' already exists!
+        79: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        82: invokevirtual #93                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        85: invokeinterface #59,  2           // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;)V
+        90: return
+        91: getstatic     #69                 // Field RECIPES:Lnet/minecraft/util/registry/RegistryNamespaced;
+        94: getstatic     #95                 // Field id:I
+        97: dup
+        98: iconst_1
+        99: iadd
+       100: putstatic     #95                 // Field id:I
+       103: aload_0
+       104: invokeinterface #65,  1           // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+       109: aload_0
+       110: invokevirtual #99                 // Method net/minecraft/util/registry/RegistryNamespaced.func_177775_a:(ILjava/lang/Object;Ljava/lang/Object;)V
+       113: return
+
+  public static lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe getRecipe(net.minecraft.util.ResourceLocation);
+    Code:
+         0: getstatic     #69                 // Field RECIPES:Lnet/minecraft/util/registry/RegistryNamespaced;
+         3: aload_0
+         4: invokevirtual #107                // Method net/minecraft/util/registry/RegistryNamespaced.func_82594_a:(Ljava/lang/Object;)Ljava/lang/Object;
+         7: checkcast     #61                 // class lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe
+        10: areturn
+
+  public static java.util.List<lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe> getRecipes();
+    Code:
+         0: getstatic     #69                 // Field RECIPES:Lnet/minecraft/util/registry/RegistryNamespaced;
+         3: invokestatic  #117                // Method com/google/common/collect/ImmutableList.copyOf:(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList;
+         6: areturn
+
+  public static lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe findExtractorRecipe(net.minecraft.item.ItemStack, net.minecraft.item.ItemStack, net.minecraftforge.fluids.FluidStack, int);
+    Code:
+         0: invokestatic  #121                // Method getRecipes:()Ljava/util/List;
+         3: invokeinterface #127,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+         8: astore        4
+        10: aload         4
+        12: invokeinterface #133,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        17: ifeq          50
+        20: aload         4
+        22: invokeinterface #137,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        27: checkcast     #61                 // class lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe
+        30: astore        5
+        32: aload         5
+        34: aload_0
+        35: aload_1
+        36: aload_2
+        37: iload_3
+        38: invokestatic  #141                // Method matches:(Llucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;Lnet/minecraftforge/fluids/FluidStack;I)Z
+        41: ifeq          47
+        44: aload         5
+        46: areturn
+        47: goto          10
+        50: aconst_null
+        51: areturn
+
+  public static boolean matches(lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe, net.minecraft.item.ItemStack, net.minecraft.item.ItemStack, net.minecraftforge.fluids.FluidStack, int);
+    Code:
+         0: iload         4
+         2: aload_0
+         3: invokeinterface #151,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getRequiredEnergy:()I
+         8: if_icmpge     13
+        11: iconst_0
+        12: ireturn
+        13: aload_0
+        14: invokeinterface #155,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputFluid:()Lnet/minecraftforge/fluids/FluidStack;
+        19: ifnull        64
+        22: aload_3
+        23: ifnonnull     28
+        26: iconst_0
+        27: ireturn
+        28: aload_0
+        29: invokeinterface #155,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputFluid:()Lnet/minecraftforge/fluids/FluidStack;
+        34: invokevirtual #161                // Method net/minecraftforge/fluids/FluidStack.getFluid:()Lnet/minecraftforge/fluids/Fluid;
+        37: aload_3
+        38: invokevirtual #161                // Method net/minecraftforge/fluids/FluidStack.getFluid:()Lnet/minecraftforge/fluids/Fluid;
+        41: if_acmpeq     46
+        44: iconst_0
+        45: ireturn
+        46: aload_3
+        47: getfield      #164                // Field net/minecraftforge/fluids/FluidStack.amount:I
+        50: aload_0
+        51: invokeinterface #155,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputFluid:()Lnet/minecraftforge/fluids/FluidStack;
+        56: getfield      #164                // Field net/minecraftforge/fluids/FluidStack.amount:I
+        59: if_icmpge     64
+        62: iconst_0
+        63: ireturn
+        64: aload_0
+        65: invokeinterface #168,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputContainer:()Lnet/minecraft/item/crafting/Ingredient;
+        70: ifnull        88
+        73: aload_0
+        74: invokeinterface #168,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputContainer:()Lnet/minecraft/item/crafting/Ingredient;
+        79: aload_2
+        80: invokevirtual #174                // Method net/minecraft/item/crafting/Ingredient.apply:(Lnet/minecraft/item/ItemStack;)Z
+        83: ifne          88
+        86: iconst_0
+        87: ireturn
+        88: aload_0
+        89: invokeinterface #177,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInput:()Lnet/minecraft/item/crafting/Ingredient;
+        94: aload_1
+        95: invokevirtual #174                // Method net/minecraft/item/crafting/Ingredient.apply:(Lnet/minecraft/item/ItemStack;)Z
+        98: ifeq          118
+       101: aload_1
+       102: invokevirtual #182                // Method net/minecraft/item/ItemStack.func_190916_E:()I
+       105: aload_0
+       106: invokeinterface #185,  1          // InterfaceMethod lucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe.getInputAmount:()I
+       111: if_icmplt     118
+       114: iconst_1
+       115: goto          119
+       118: iconst_0
+       119: ireturn
+
+  public static lucraft.mods.lucraftcore.utilities.recipes.IExtractorRecipe parseFromJson(com.google.gson.JsonObject, net.minecraftforge.common.crafting.JsonContext, net.minecraft.util.ResourceLocation);
+    Code:
+         0: aload_0
+         1: ldc           #189                // String input_fluid
+         3: invokestatic  #195                // Method net/minecraft/util/JsonUtils.func_151204_g:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Z
+         6: ifeq          21
+         9: aload_0
+        10: ldc           #189                // String input_fluid
+        12: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+        15: invokestatic  #204                // Method lucraft/mods/lucraftcore/util/fluids/LCFluidUtil.parseFromJson:(Lcom/google/gson/JsonObject;)Lnet/minecraftforge/fluids/FluidStack;
+        18: goto          22
+        21: aconst_null
+        22: astore_3
+        23: aload_0
+        24: ldc           #205                // String energy
+        26: iconst_0
+        27: invokestatic  #209                // Method net/minecraft/util/JsonUtils.func_151208_a:(Lcom/google/gson/JsonObject;Ljava/lang/String;I)I
+        30: istore        4
+        32: aload_0
+        33: ldc           #210                // String input
+        35: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+        38: aload_1
+        39: invokestatic  #216                // Method net/minecraftforge/common/crafting/CraftingHelper.getIngredient:(Lcom/google/gson/JsonElement;Lnet/minecraftforge/common/crafting/JsonContext;)Lnet/minecraft/item/crafting/Ingredient;
+        42: astore        5
+        44: aload_0
+        45: ldc           #218                // String input_amount
+        47: iconst_1
+        48: invokestatic  #209                // Method net/minecraft/util/JsonUtils.func_151208_a:(Lcom/google/gson/JsonObject;Ljava/lang/String;I)I
+        51: iconst_0
+        52: bipush        64
+        54: invokestatic  #224                // Method net/minecraft/util/math/MathHelper.func_76125_a:(III)I
+        57: istore        6
+        59: aload_0
+        60: ldc           #226                // String input_container
+        62: invokestatic  #195                // Method net/minecraft/util/JsonUtils.func_151204_g:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Z
+        65: ifeq          81
+        68: aload_0
+        69: ldc           #226                // String input_container
+        71: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+        74: aload_1
+        75: invokestatic  #216                // Method net/minecraftforge/common/crafting/CraftingHelper.getIngredient:(Lcom/google/gson/JsonElement;Lnet/minecraftforge/common/crafting/JsonContext;)Lnet/minecraft/item/crafting/Ingredient;
+        78: goto          82
+        81: aconst_null
+        82: astore        7
+        84: aload_0
+        85: ldc           #232                // String outputs
+        87: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+        90: astore        8
+        92: aload         8
+        94: ldc           #234                // String primary
+        96: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+        99: astore        9
+       101: aload         9
+       103: aload_1
+       104: invokestatic  #238                // Method net/minecraftforge/common/crafting/CraftingHelper.getItemStack:(Lcom/google/gson/JsonObject;Lnet/minecraftforge/common/crafting/JsonContext;)Lnet/minecraft/item/ItemStack;
+       107: astore        10
+       109: aload         9
+       111: ldc           #240                // String chance
+       113: fconst_1
+       114: invokestatic  #244                // Method net/minecraft/util/JsonUtils.func_151221_a:(Lcom/google/gson/JsonObject;Ljava/lang/String;F)F
+       117: fconst_0
+       118: fconst_1
+       119: invokestatic  #248                // Method net/minecraft/util/math/MathHelper.func_76131_a:(FFF)F
+       122: fstore        11
+       124: getstatic     #251                // Field net/minecraft/item/ItemStack.field_190927_a:Lnet/minecraft/item/ItemStack;
+       127: astore        12
+       129: fconst_0
+       130: fstore        13
+       132: aload         8
+       134: ldc           #253                // String secondary
+       136: invokestatic  #195                // Method net/minecraft/util/JsonUtils.func_151204_g:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Z
+       139: ifeq          174
+       142: aload         8
+       144: ldc           #253                // String secondary
+       146: invokestatic  #199                // Method net/minecraft/util/JsonUtils.func_152754_s:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonObject;
+       149: astore        14
+       151: aload         14
+       153: aload_1
+       154: invokestatic  #238                // Method net/minecraftforge/common/crafting/CraftingHelper.getItemStack:(Lcom/google/gson/JsonObject;Lnet/minecraftforge/common/crafting/JsonContext;)Lnet/minecraft/item/ItemStack;
+       157: astore        12
+       159: aload         14
+       161: ldc           #240                // String chance
+       163: fconst_1
+       164: invokestatic  #244                // Method net/minecraft/util/JsonUtils.func_151221_a:(Lcom/google/gson/JsonObject;Ljava/lang/String;F)F
+       167: fconst_0
+       168: fconst_1
+       169: invokestatic  #248                // Method net/minecraft/util/math/MathHelper.func_76131_a:(FFF)F
+       172: fstore        13
+       174: aload         5
+       176: ifnull        188
+       179: aload         5
+       181: invokevirtual #257                // Method net/minecraft/item/crafting/Ingredient.func_193365_a:()[Lnet/minecraft/item/ItemStack;
+       184: arraylength
+       185: ifgt          190
+       188: aconst_null
+       189: areturn
+       190: aload_0
+       191: ldc_w         #259                // String conditions
+       194: invokestatic  #195                // Method net/minecraft/util/JsonUtils.func_151204_g:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Z
+       197: ifeq          220
+       200: aload_0
+       201: ldc_w         #259                // String conditions
+       204: invokestatic  #263                // Method net/minecraft/util/JsonUtils.func_151214_t:(Lcom/google/gson/JsonObject;Ljava/lang/String;)Lcom/google/gson/JsonArray;
+       207: astore        14
+       209: aload         14
+       211: aload_1
+       212: invokestatic  #267                // Method net/minecraftforge/common/crafting/CraftingHelper.processConditions:(Lcom/google/gson/JsonArray;Lnet/minecraftforge/common/crafting/JsonContext;)Z
+       215: ifne          220
+       218: aconst_null
+       219: areturn
+       220: new           #269                // class lucraft/mods/lucraftcore/utilities/recipes/ExtractorRecipe
+       223: dup
+       224: aload         5
+       226: iload         6
+       228: aload         7
+       230: aload_3
+       231: aload         10
+       233: fload         11
+       235: aload         12
+       237: fload         13
+       239: iload         4
+       241: invokespecial #272                // Method lucraft/mods/lucraftcore/utilities/recipes/ExtractorRecipe."<init>":(Lnet/minecraft/item/crafting/Ingredient;ILnet/minecraft/item/crafting/Ingredient;Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraft/item/ItemStack;FLnet/minecraft/item/ItemStack;FI)V
+       244: aload_2
+       245: invokevirtual #276                // Method lucraft/mods/lucraftcore/utilities/recipes/ExtractorRecipe.setRegistryName:(Lnet/minecraft/util/ResourceLocation;)Llucraft/mods/lucraftcore/utilities/recipes/ExtractorRecipe;
+       248: areturn
+
+  public static void onRead(lucraft.mods.lucraftcore.addonpacks.AddonPackReadEvent);
+    Code:
+         0: aload_0
+         1: invokevirtual #301                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getDirectory:()Ljava/lang/String;
+         4: ldc_w         #303                // String extractor_recipes
+         7: invokevirtual #308                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        10: ifeq          129
+        13: aload_0
+        14: invokevirtual #311                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getFileName:()Ljava/lang/String;
+        17: invokestatic  #317                // Method org/apache/commons/io/FilenameUtils.getExtension:(Ljava/lang/String;)Ljava/lang/String;
+        20: ldc_w         #318                // String json
+        23: invokevirtual #322                // Method java/lang/String.equalsIgnoreCase:(Ljava/lang/String;)Z
+        26: ifeq          129
+        29: new           #324                // class java/io/BufferedReader
+        32: dup
+        33: new           #326                // class java/io/InputStreamReader
+        36: dup
+        37: aload_0
+        38: invokevirtual #330                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getInputStream:()Ljava/io/InputStream;
+        41: getstatic     #336                // Field java/nio/charset/StandardCharsets.UTF_8:Ljava/nio/charset/Charset;
+        44: invokespecial #339                // Method java/io/InputStreamReader."<init>":(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+        47: invokespecial #342                // Method java/io/BufferedReader."<init>":(Ljava/io/Reader;)V
+        50: astore_1
+        51: aload_0
+        52: invokevirtual #311                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getFileName:()Ljava/lang/String;
+        55: ldc_w         #344                // String _constants.json
+        58: invokevirtual #347                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+        61: ifeq          98
+        64: getstatic     #349                // Field GSON:Lcom/google/gson/Gson;
+        67: aload_1
+        68: ldc_w         #351                // class "[Lcom/google/gson/JsonObject;"
+        71: invokestatic  #355                // Method net/minecraft/util/JsonUtils.func_193839_a:(Lcom/google/gson/Gson;Ljava/io/Reader;Ljava/lang/Class;)Ljava/lang/Object;
+        74: checkcast     #351                // class "[Lcom/google/gson/JsonObject;"
+        77: astore_2
+        78: getstatic     #357                // Field cachedJsonContexts:Ljava/util/Map;
+        81: aload_0
+        82: invokevirtual #360                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getResourceLocation:()Lnet/minecraft/util/ResourceLocation;
+        85: invokevirtual #363                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+        88: aload_2
+        89: invokeinterface #369,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        94: pop
+        95: goto          125
+        98: getstatic     #349                // Field GSON:Lcom/google/gson/Gson;
+       101: aload_1
+       102: ldc           #228                // class com/google/gson/JsonObject
+       104: invokestatic  #355                // Method net/minecraft/util/JsonUtils.func_193839_a:(Lcom/google/gson/Gson;Ljava/io/Reader;Ljava/lang/Class;)Ljava/lang/Object;
+       107: checkcast     #228                // class com/google/gson/JsonObject
+       110: astore_2
+       111: getstatic     #371                // Field cachedRecipes:Ljava/util/Map;
+       114: aload_0
+       115: invokevirtual #360                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackReadEvent.getResourceLocation:()Lnet/minecraft/util/ResourceLocation;
+       118: aload_2
+       119: invokeinterface #369,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       124: pop
+       125: aload_1
+       126: invokestatic  #376                // Method org/apache/commons/io/IOUtils.closeQuietly:(Ljava/io/Reader;)V
+       129: return
+
+  public static void onRegisterRecipes(net.minecraftforge.event.RegistryEvent$Register<net.minecraft.item.crafting.IRecipe>);
+    Code:
+         0: getstatic     #357                // Field cachedJsonContexts:Ljava/util/Map;
+         3: invokeinterface #388,  1          // InterfaceMethod java/util/Map.keySet:()Ljava/util/Set;
+         8: invokeinterface #391,  1          // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        13: astore_1
+        14: aload_1
+        15: invokeinterface #133,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        20: ifeq          72
+        23: aload_1
+        24: invokeinterface #137,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        29: checkcast     #305                // class java/lang/String
+        32: astore_2
+        33: new           #10                 // class lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt
+        36: dup
+        37: aload_2
+        38: invokespecial #393                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt."<init>":(Ljava/lang/String;)V
+        41: astore_3
+        42: aload_3
+        43: getstatic     #357                // Field cachedJsonContexts:Ljava/util/Map;
+        46: aload_2
+        47: invokeinterface #396,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        52: checkcast     #351                // class "[Lcom/google/gson/JsonObject;"
+        55: invokevirtual #400                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt.loadConstants:([Lcom/google/gson/JsonObject;)V
+        58: getstatic     #402                // Field cachedContexts:Ljava/util/Map;
+        61: aload_2
+        62: aload_3
+        63: invokeinterface #369,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        68: pop
+        69: goto          14
+        72: getstatic     #371                // Field cachedRecipes:Ljava/util/Map;
+        75: invokeinterface #388,  1          // InterfaceMethod java/util/Map.keySet:()Ljava/util/Set;
+        80: invokeinterface #391,  1          // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        85: astore_1
+        86: aload_1
+        87: invokeinterface #133,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        92: ifeq          285
+        95: aload_1
+        96: invokeinterface #137,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       101: checkcast     #86                 // class net/minecraft/util/ResourceLocation
+       104: astore_2
+       105: getstatic     #402                // Field cachedContexts:Ljava/util/Map;
+       108: aload_2
+       109: invokevirtual #363                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+       112: invokeinterface #405,  2          // InterfaceMethod java/util/Map.containsKey:(Ljava/lang/Object;)Z
+       117: ifeq          138
+       120: getstatic     #402                // Field cachedContexts:Ljava/util/Map;
+       123: aload_2
+       124: invokevirtual #363                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+       127: invokeinterface #396,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+       132: checkcast     #10                 // class lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt
+       135: goto          149
+       138: new           #10                 // class lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt
+       141: dup
+       142: aload_2
+       143: invokevirtual #363                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+       146: invokespecial #393                // Method lucraft/mods/lucraftcore/addonpacks/AddonPackRecipeReader$JsonContextExt."<init>":(Ljava/lang/String;)V
+       149: astore_3
+       150: getstatic     #371                // Field cachedRecipes:Ljava/util/Map;
+       153: aload_2
+       154: invokeinterface #396,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+       159: checkcast     #228                // class com/google/gson/JsonObject
+       162: aload_3
+       163: aload_2
+       164: invokestatic  #407                // Method parseFromJson:(Lcom/google/gson/JsonObject;Lnet/minecraftforge/common/crafting/JsonContext;Lnet/minecraft/util/ResourceLocation;)Llucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe;
+       167: astore        4
+       169: aload         4
+       171: ifnull        182
+       174: aload         4
+       176: invokestatic  #409                // Method registerRecipe:(Llucraft/mods/lucraftcore/utilities/recipes/IExtractorRecipe;)V
+       179: goto          219
+       182: getstatic     #51                 // Field lucraft/mods/lucraftcore/LucraftCore.LOGGER:Lorg/apache/logging/log4j/Logger;
+       185: new           #77                 // class java/lang/StringBuilder
+       188: dup
+       189: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+       192: ldc_w         #411                // String Wasn\'t able to register extractor recipe \'
+       195: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       198: aload_2
+       199: invokevirtual #90                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+       202: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       205: ldc_w         #413                // String \'!
+       208: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       211: invokevirtual #93                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       214: invokeinterface #59,  2           // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;)V
+       219: getstatic     #402                // Field cachedContexts:Ljava/util/Map;
+       222: aload_2
+       223: invokevirtual #363                // Method net/minecraft/util/ResourceLocation.func_110624_b:()Ljava/lang/String;
+       226: aload_3
+       227: invokeinterface #369,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       232: pop
+       233: goto          282
+       236: astore_3
+       237: getstatic     #51                 // Field lucraft/mods/lucraftcore/LucraftCore.LOGGER:Lorg/apache/logging/log4j/Logger;
+       240: new           #77                 // class java/lang/StringBuilder
+       243: dup
+       244: invokespecial #78                 // Method java/lang/StringBuilder."<init>":()V
+       247: ldc_w         #411                // String Wasn\'t able to register extractor recipe \'
+       250: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       253: aload_2
+       254: invokevirtual #90                 // Method net/minecraft/util/ResourceLocation.toString:()Ljava/lang/String;
+       257: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       260: ldc_w         #415                // String \':
+       263: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       266: aload_3
+       267: invokevirtual #418                // Method java/lang/Exception.getLocalizedMessage:()Ljava/lang/String;
+       270: invokevirtual #84                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       273: invokevirtual #93                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       276: aload_3
+       277: invokeinterface #421,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;Ljava/lang/Throwable;)V
+       282: goto          86
+       285: getstatic     #357                // Field cachedJsonContexts:Ljava/util/Map;
+       288: invokeinterface #424,  1          // InterfaceMethod java/util/Map.clear:()V
+       293: getstatic     #402                // Field cachedContexts:Ljava/util/Map;
+       296: invokeinterface #424,  1          // InterfaceMethod java/util/Map.clear:()V
+       301: getstatic     #371                // Field cachedRecipes:Ljava/util/Map;
+       304: invokeinterface #424,  1          // InterfaceMethod java/util/Map.clear:()V
+       309: return
+      Exception table:
+         from    to  target type
+           105   233   236   Class java/lang/Exception
+
+  static {};
+    Code:
+         0: new           #434                // class com/google/gson/GsonBuilder
+         3: dup
+         4: invokespecial #435                // Method com/google/gson/GsonBuilder."<init>":()V
+         7: invokevirtual #439                // Method com/google/gson/GsonBuilder.setPrettyPrinting:()Lcom/google/gson/GsonBuilder;
+        10: invokevirtual #442                // Method com/google/gson/GsonBuilder.disableHtmlEscaping:()Lcom/google/gson/GsonBuilder;
+        13: invokevirtual #446                // Method com/google/gson/GsonBuilder.create:()Lcom/google/gson/Gson;
+        16: putstatic     #349                // Field GSON:Lcom/google/gson/Gson;
+        19: iconst_0
+        20: putstatic     #95                 // Field id:I
+        23: new           #71                 // class net/minecraft/util/registry/RegistryNamespaced
+        26: dup
+        27: invokespecial #447                // Method net/minecraft/util/registry/RegistryNamespaced."<init>":()V
+        30: putstatic     #69                 // Field RECIPES:Lnet/minecraft/util/registry/RegistryNamespaced;
+        33: new           #449                // class java/util/HashMap
+        36: dup
+        37: invokespecial #450                // Method java/util/HashMap."<init>":()V
+        40: putstatic     #371                // Field cachedRecipes:Ljava/util/Map;
+        43: new           #449                // class java/util/HashMap
+        46: dup
+        47: invokespecial #450                // Method java/util/HashMap."<init>":()V
+        50: putstatic     #402                // Field cachedContexts:Ljava/util/Map;
+        53: new           #449                // class java/util/HashMap
+        56: dup
+        57: invokespecial #450                // Method java/util/HashMap."<init>":()V
+        60: putstatic     #357                // Field cachedJsonContexts:Ljava/util/Map;
+        63: return
+}

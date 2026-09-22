@@ -1,0 +1,6 @@
+{
+  "Time": "2026-09-13T15:35:18.6474687-04:00",
+  "WorkingSetGiB": 16.871,
+  "PeakWorkingSetGiB": 16.935,
+  "Heap": "40404:\nZHeap            used 9860M, capacity 14146M, max capacity 20576M\n Cache           4286M (73)\n  size classes   2M (8), 4M (19), 8M (9), 16M (9), 32M (6), 64M (10), 128M (9), 256M (3)"
+}

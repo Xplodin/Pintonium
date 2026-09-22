@@ -1,0 +1,19 @@
+{
+  "title": "Element Zero",
+  "r": 56,
+  "g": 89,
+  "b": 106,
+  "input": {
+    "id": "taiga:eezo_ore"
+  },
+  "description": [
+    {
+      "text": "Hin und wieder erzeugen Sonnenstürme enorm starke Magnetwellen, die bis unter die Erdoberfläche reichen. Das Void wird davon in Wallung versetzt und reicht selten bis an den Bedrock, wo es zu Element Zero fusioniert."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Selten",
+    "Achtung: Beim Abbau nicht ins Void stürzen"
+  ]
+}

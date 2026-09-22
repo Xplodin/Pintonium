@@ -1,0 +1,12 @@
+.\memory-diagnostics\2026-09-13\run-13572\loading.jfr
+Total samples: 49866
+Resource-path samples: 13681
+Resource path with String.format: 13681
+Resource path with string builder: 3943
+
+C:\Users\somet\OneDrive\Documents\celeritest\memory-diagnostics\2026-09-13\run-40404-patched\patch-check.jfr
+Total samples: 12363
+Resource-path samples: 588
+Resource path with String.format: 0
+Resource path with string builder: 559
+

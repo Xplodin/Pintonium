@@ -1,0 +1,22 @@
+
+                              Garbage Collections
+
+Start    GC ID Type                  Heap Before GC Heap After GC Longest Pause
+-------- ----- --------------------- -------------- ------------- -------------
+14:53:31    10 Unknown                      14.1 GB        4.4 GB     0.0194 ms
+14:53:46    11 Unknown                      12.3 GB        9.4 GB     0.0177 ms
+14:53:50    12 Unknown                      11.3 GB        5.0 GB     0.0198 ms
+14:54:03    13 Unknown                       8.7 GB        2.7 GB     0.0152 ms
+14:54:05    14 Unknown                       3.3 GB        2.7 GB     0.0230 ms
+14:54:17    15 Unknown                      10.2 GB       13.1 GB     0.0193 ms
+14:54:23    16 Unknown                      13.2 GB        3.7 GB     0.0169 ms
+14:54:41    17 Unknown                      15.5 GB        4.2 GB     0.0155 ms
+14:54:57    18 Unknown                      14.9 GB        7.2 GB     0.0215 ms
+14:55:03    19 Unknown                       8.9 GB        7.8 GB     0.0180 ms
+14:55:08    20 Unknown                      12.0 GB        5.9 GB     0.0207 ms
+14:55:14    21 Unknown                      10.1 GB        6.5 GB     0.0245 ms
+14:55:18    22 Unknown                      12.3 GB        7.0 GB     0.0207 ms
+14:55:27    23 Unknown                      12.1 GB        5.0 GB     0.0158 ms
+14:55:33    24 Unknown                       6.4 GB        5.0 GB     0.0157 ms
+14:55:44    25 Unknown                       8.5 GB       14.3 GB     0.0401 ms
+14:55:58    26 Unknown                      18.0 GB        6.8 GB     0.0251 ms

@@ -1,0 +1,18 @@
+{
+  "title": "Aurorium",
+  "r": 239,
+  "g": 174,
+  "b": 148,
+  "input": {
+    "id": "taiga:aurorium_ore"
+  },
+  "description": [
+    {
+      "text": "Aurorium ist nicht sehr häufig im Ende zu finden, aber mit ein wenig Fleiß und Geduld findet man genug. Aktuell besitzt Aurorium keine gesonderen Features."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Selten"
+  ]
+}

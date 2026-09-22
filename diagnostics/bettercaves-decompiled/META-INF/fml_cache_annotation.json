@@ -1,0 +1,3062 @@
+{
+  "com/yungnickyoung/minecraft/bettercaves/BetterCaves": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/BetterCaves",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/fml/common/Mod;",
+        "target": "com/yungnickyoung/minecraft/bettercaves/BetterCaves",
+        "values": {
+          "acceptableRemoteVersions": {
+            "value": "*"
+          },
+          "acceptedMinecraftVersions": {
+            "value": "[1.12.2]"
+          },
+          "modid": {
+            "value": "bettercaves"
+          },
+          "name": {
+            "value": "YUNG\u0027s Better Caves"
+          },
+          "useMetadata": {
+            "type": "BOOL",
+            "value": "true"
+          },
+          "version": {
+            "value": "1.12.2"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/fml/common/SidedProxy;",
+        "target": "proxy",
+        "values": {
+          "clientSide": {
+            "value": "com.yungnickyoung.minecraft.bettercaves.proxy.ClientProxy"
+          },
+          "serverSide": {
+            "value": "com.yungnickyoung.minecraft.bettercaves.proxy.ServerProxy"
+          }
+        }
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V"
+      },
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/Mod$EventHandler;",
+        "target": "init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ConfigBedrockGen": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ConfigBedrockGen",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "flattenBedrock",
+        "value": {
+          "value": "Flatten Bedrock"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "flattenBedrock",
+        "value": {
+          "values": [
+            "Replaces the usual bedrock generation pattern with flat layers.\n    Activates in all whitelisted dimension, where applicable. The End is unaffected."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "flattenBedrock"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "bedrockWidth",
+        "value": {
+          "value": "Bedrock Layer Width"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "bedrockWidth",
+        "value": {
+          "values": [
+            "The width of the bedrock layer. Only works if Flatten Bedrock is true."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "bedrockWidth"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "bedrockWidth",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "256"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ConfigDebug": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ConfigDebug",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "debugVisualizer",
+        "value": {
+          "value": "Enable DEBUG Visualizer"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "debugVisualizer",
+        "value": {
+          "values": [
+            "The visualizer creates worlds where there are no blocks except those indicating where caves\n    and caverns would be carved out in a regular world. This is useful for visualizing the kinds of\n    caves and caverns your current config options will create.\n    Type 1 Cave: Wooden Planks\n    Type 2 Cave: Cobblestone\n    Lava Cavern: Redstone Block\n    Floored Cavern: Gold Block\n    Surface Cave: Emerald Block\n    Vanilla Cave: Bricks\nDefault: false"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ConfigMisc": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ConfigMisc",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "liquidAltitude",
+        "value": {
+          "value": "Liquid Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "liquidAltitude",
+        "value": {
+          "values": [
+            "Lava (or water in water regions) spawns at and below this y-coordinate.\nDefault: 10"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "liquidAltitude",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "liquidAltitude"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "lavaBlock",
+        "value": {
+          "value": "Lava Block"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "lavaBlock",
+        "value": {
+          "values": [
+            "The block used for lava generation at and below the Liquid Altitude.\n    Defaults to regular lava if an invalid block is given.\nDefault: minecraft:lava"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "lavaBlock"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "waterBlock",
+        "value": {
+          "value": "Water Block"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "waterBlock",
+        "value": {
+          "values": [
+            "The block used for water generation in water caves/caverns at and below the Liquid Altitude.\n    Defaults to regular water if an invalid block is given.\nDefault: minecraft:water"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "waterBlock"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "replaceFloatingGravel",
+        "value": {
+          "value": "Prevent Cascading Gravel"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "replaceFloatingGravel",
+        "value": {
+          "values": [
+            "Replace naturally generated floating gravel on the ocean floor with andesite.\n    Can prevent lag due to cascading gravel falling into caverns under the ocean.\nDefault: true"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "replaceFloatingGravel"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "overrideSurfaceDetection",
+        "value": {
+          "value": "Override Surface Detection"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "overrideSurfaceDetection",
+        "value": {
+          "values": [
+            "Ignores surface detection for closing off caves and caverns, forcing them to spawn\n    up until their max height. Useful for Nether-like dimensions with no real \"surface\".\nDefault: false"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "overrideSurfaceDetection"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enableFloodedUnderground",
+        "value": {
+          "value": "Enable Flooded Underground"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enableFloodedUnderground",
+        "value": {
+          "values": [
+            "Set to true to enable flooded underground in ocean biomes.\nDefault: true"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ConfigUndergroundGen": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ConfigUndergroundGen",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caves",
+        "value": {
+          "value": "Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caves",
+        "value": {
+          "values": [
+            "Settings used in the generation of caves."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caverns",
+        "value": {
+          "value": "Caverns"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caverns",
+        "value": {
+          "values": [
+            "Settings used in the generation of caverns. Caverns are spacious caves at low altitudes."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "waterRegions",
+        "value": {
+          "value": "Water Regions"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "waterRegions",
+        "value": {
+          "values": [
+            "Settings used in the generation of water regions."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "ravines",
+        "value": {
+          "value": "Ravines"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "ravines",
+        "value": {
+          "values": [
+            "Settings used for ravine generation."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "miscellaneous",
+        "value": {
+          "value": "Miscellaneous"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "miscellaneous",
+        "value": {
+          "values": [
+            "Miscellaneous settings used in cave and cavern generation."
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ConfigWaterRegions": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ConfigWaterRegions",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "waterRegionSpawnChance",
+        "value": {
+          "value": "Water Region Spawn Chance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "waterRegionSpawnChance",
+        "value": {
+          "values": [
+            "Percent chance of a region having water instead of lava at low altitudes.\nDefault: 40%"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "waterRegionSpawnChance",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "waterRegionSpawnChance"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "waterRegionSize",
+        "value": {
+          "value": "Water Region Size"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "waterRegionSize",
+        "value": {
+          "values": [
+            "Determines how large water regions are.\nDefault: Medium (recommended)."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "waterRegionSize"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "waterRegionCustomSize",
+        "value": {
+          "value": "Water Region Size Custom Value"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "waterRegionCustomSize",
+        "value": {
+          "values": [
+            "Custom value for water region size. Smaller value \u003d larger regions. This value is very sensitive to change.\n    ONLY WORKS IF Water Region Size IS Custom.\n    Provided values:\n        Small: 0.008\n        Medium: 0.004\n        Large: 0.0028\n        ExtraLarge: 0.001\nDefault: 0.004"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "waterRegionCustomSize",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "0.05"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "waterRegionCustomSize"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/Configuration": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/Configuration",
+    "annotations": [
+      {
+        "type": "CLASS",
+        "name": "Lnet/minecraftforge/common/config/Config;",
+        "target": "com/yungnickyoung/minecraft/bettercaves/config/Configuration",
+        "values": {
+          "modid": {
+            "value": "bettercaves"
+          },
+          "name": {
+            "value": "bettercaves-1_12_2"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveSettings",
+        "value": {
+          "value": "Underground Generation"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveSettings",
+        "value": {
+          "values": [
+            "Configure settings related to caves, caverns, ravines and more."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "bedrockSettings",
+        "value": {
+          "value": "Bedrock Generation"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "bedrockSettings",
+        "value": {
+          "values": [
+            "Configure how bedrock generates in the overworld and nether."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "debugsettings",
+        "value": {
+          "value": "Debug settings"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "debugsettings",
+        "value": {
+          "values": [
+            "Don\u0027t mess with these settings for normal gameplay."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "whitelistedDimensionIDs",
+        "value": {
+          "value": "Whitelisted Dimension IDs"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "whitelistedDimensionIDs",
+        "value": {
+          "values": [
+            "List of ID\u0027s of dimensions that will have Better Caves. Ignored if Global Whitelisting is enabled."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "whitelistedDimensionIDs"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enableGlobalWhitelist",
+        "value": {
+          "value": "Enable Global Whitelist"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enableGlobalWhitelist",
+        "value": {
+          "values": [
+            "Automatically enables Better Caves in every possible dimension, except for the End.\n    If this is enabled, the Whitelisted Dimension IDs option is ignored.\nDefault: false"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "enableGlobalWhitelist"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCaves": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCaves",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cubicCave",
+        "value": {
+          "value": "Type 1 Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cubicCave",
+        "value": {
+          "values": [
+            "Settings used in the generation of type 1 caves, which are more worm-like."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "simplexCave",
+        "value": {
+          "value": "Type 2 Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "simplexCave",
+        "value": {
+          "values": [
+            "Settings used in the generation of type 2 caves, which tend to be more open and spacious."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "surfaceCave",
+        "value": {
+          "value": "Surface Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "surfaceCave",
+        "value": {
+          "values": [
+            "Settings used in the generation of vanilla-like caves near the surface."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "vanillaCave",
+        "value": {
+          "value": "Vanilla Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "vanillaCave",
+        "value": {
+          "values": [
+            "Settings controlling vanilla Minecraft cave generation."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveSpawnChance",
+        "value": {
+          "value": "Cave Spawn Chance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveSpawnChance",
+        "value": {
+          "values": [
+            "Percent chance of caves spawning in a given region.\nDefault: caves spawn in 100% of regions."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "caveSpawnChance",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveSpawnChance"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveRegionSize",
+        "value": {
+          "value": "Cave Region Size"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveRegionSize",
+        "value": {
+          "values": [
+            "Determines how large cave regions are.\n    Controls how long a cave system of a certain cave type extends before intersecting with a cave system of another type.\n    Larger \u003d more cave interconnectivity for a given area, but less variation.\nDefault: Small (recommended)."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveRegionSize"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "customRegionSize",
+        "value": {
+          "value": "Cave Region Size Custom Value"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "customRegionSize",
+        "value": {
+          "values": [
+            "Custom value for cave region size. Smaller value \u003d larger regions. This value is very sensitive to change.\n    ONLY WORKS IF Cave Region Size IS Custom.\n    Provided values:\n        Small: 0.008\n        Medium: 0.005\n        Large: 0.0032\n        ExtraLarge: 0.001\nDefault: 0.008"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "customRegionSize",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "0.05"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "customRegionSize"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCubicCave": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCubicCave",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveBottom",
+        "value": {
+          "value": "Type 1 Cave Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which type 1 caves can generate.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveTop",
+        "value": {
+          "value": "Type 1 Cave Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which type 1 caves can generate.\nDefault: 80"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveSurfaceCutoff",
+        "value": {
+          "value": "Type 1 Cave Surface Cutoff Depth"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveSurfaceCutoff",
+        "value": {
+          "values": [
+            "The depth from a given point on the surface at which type 1 caves start to close off.\n    Will use the Max Cave Altitude instead of surface height if it is lower.\n    Will use the Max Cave Altitude no matter what if Override Surface Detection is enabled.\nDefault: 15 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveSurfaceCutoff",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveSurfaceCutoff"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yCompression",
+        "value": {
+          "value": "Compression - Vertical"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yCompression",
+        "value": {
+          "values": [
+            "Stretches caves vertically. Lower value \u003d taller caves with steeper drops.\nDefault: 5.0 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "yCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "xzCompression",
+        "value": {
+          "value": "Compression - Horizontal"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "xzCompression",
+        "value": {
+          "values": [
+            "Stretches caves horizontally. Lower value \u003d wider caves.\nDefault: 1.6 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "xzCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "xzCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavePriority",
+        "value": {
+          "value": "Type 1 Cave Priority"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavePriority",
+        "value": {
+          "values": [
+            "Determines how frequently Type 1 Caves spawn. 0 \u003d will not spawn at all.\nDefault: 10"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavePriority",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "10"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavePriority"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Ignore;",
+        "target": "advancedSettings"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "advancedSettings",
+        "value": {
+          "value": "Advanced Settings"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "advancedSettings",
+        "value": {
+          "values": [
+            "Don\u0027t mess with these if you don\u0027t know what you\u0027re doing."
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCubicCave$Advanced": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigCubicCave$Advanced",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseThreshold",
+        "value": {
+          "value": "Noise Threshold"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseThreshold",
+        "value": {
+          "values": [
+            "Noise threshold for determining which blocks get mined out as part of cave generation\n    Blocks with generated noise values greater than this threshold will be dug out.\nDefault: 0.95"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "noiseThreshold",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "-1.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "noiseThreshold"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalOctaves",
+        "value": {
+          "value": "Fractal Octaves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalOctaves",
+        "value": {
+          "values": [
+            "The number of octaves used for ridged multi-fractal noise generation.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalOctaves"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalGain",
+        "value": {
+          "value": "Fractal Gain"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalGain",
+        "value": {
+          "values": [
+            "The gain for successive octaves of ridged multi-fractal noise generation.\nDefault: 0.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalGain"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalFrequency",
+        "value": {
+          "value": "Fractal Frequency"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalFrequency",
+        "value": {
+          "values": [
+            "The frequency for ridged multi-fractal noise generation.\n    This determines how spread out or tightly knit cave systems are.\nDefault: 0.03"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalFrequency"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "numGenerators",
+        "value": {
+          "value": "Number of Generators"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "numGenerators",
+        "value": {
+          "values": [
+            "The number of noise generation functions used.\n    The intersection of these functions is used to calculate a single noise value.\n    Increasing this may decrease performance.\nDefault: 2"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "numGenerators"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjust",
+        "value": {
+          "value": "Enable y-adjustment"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjust",
+        "value": {
+          "values": [
+            "Enable y-adjustment, giving players more headroom in caves.\nDefault: true"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjustF1",
+        "value": {
+          "value": "y-adjustment Variable 1"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjustF1",
+        "value": {
+          "values": [
+            "Adjustment factor affecting the block immediately above a given block.\n    Higher value will tend to increase the headroom in caves.\nDefault: 0.9"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yAdjustF1",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjustF2",
+        "value": {
+          "value": "y-adjustment Variable 2"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjustF2",
+        "value": {
+          "values": [
+            "Adjustment factor affecting the block two blocks above a given block.\n    Higher value will tend to increase the headroom in caves.\nDefault: 0.9"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yAdjustF2",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseType",
+        "value": {
+          "value": "Noise Type"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseType",
+        "value": {
+          "values": [
+            "Type of noise to use for this cave. \nDefault: CubicFractal"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSimplexCave": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSimplexCave",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveBottom",
+        "value": {
+          "value": "Type 2 Cave Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which type 2 caves can generate.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveTop",
+        "value": {
+          "value": "Type 2 Cave Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which type 2 caves can generate.\nDefault: 80"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveSurfaceCutoff",
+        "value": {
+          "value": "Type 2 Cave Surface Cutoff Depth"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveSurfaceCutoff",
+        "value": {
+          "values": [
+            "The depth from a given point on the surface at which type 2 caves start to close off.\n    Will use the Max Cave Altitude instead of surface height if it is lower.\n    Will use the Max Cave Altitude no matter what if Override Surface Detection is enabled.\nDefault: 15 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveSurfaceCutoff",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveSurfaceCutoff"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yCompression",
+        "value": {
+          "value": "Compression - Vertical"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yCompression",
+        "value": {
+          "values": [
+            "Stretches caves vertically. Lower value \u003d taller caves with steeper drops.\nDefault: 2.2 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "yCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "xzCompression",
+        "value": {
+          "value": "Compression - Horizontal"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "xzCompression",
+        "value": {
+          "values": [
+            "Stretches caves horizontally. Lower value \u003d wider caves.\nDefault: 0.9 (recommended)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "xzCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "xzCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavePriority",
+        "value": {
+          "value": "Type 2 Cave Priority"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavePriority",
+        "value": {
+          "values": [
+            "Determines how frequently Type 2 Caves spawn. 0 \u003d will not spawn at all.\nDefault: 5"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavePriority",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "10"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavePriority"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Ignore;",
+        "target": "advancedSettings"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "advancedSettings",
+        "value": {
+          "value": "Advanced Settings"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "advancedSettings",
+        "value": {
+          "values": [
+            "Don\u0027t mess with these if you don\u0027t know what you\u0027re doing."
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSimplexCave$Advanced": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSimplexCave$Advanced",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseThreshold",
+        "value": {
+          "value": "Noise Threshold"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseThreshold",
+        "value": {
+          "values": [
+            "Noise threshold for determining which blocks get mined out as part of cave generation\n    Blocks with generated noise values greater than this threshold will be dug out.\nDefault: 0.82f"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "noiseThreshold",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "-1.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "noiseThreshold"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalOctaves",
+        "value": {
+          "value": "Fractal Octaves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalOctaves",
+        "value": {
+          "values": [
+            "The number of octaves used for ridged multi-fractal noise generation.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalOctaves"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalGain",
+        "value": {
+          "value": "Fractal Gain"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalGain",
+        "value": {
+          "values": [
+            "The gain for successive octaves of ridged multi-fractal noise generation.\nDefault: 0.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalGain"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalFrequency",
+        "value": {
+          "value": "Fractal Frequency"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalFrequency",
+        "value": {
+          "values": [
+            "The frequency for ridged multi-fractal noise generation.\n    This determines how spread out or tightly knit cave systems are.\nDefault: 0.025"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalFrequency"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "numGenerators",
+        "value": {
+          "value": "Number of Generators"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "numGenerators",
+        "value": {
+          "values": [
+            "The number of noise generation functions used.\n    The intersection of these functions is used to calculate a single noise value.\n    Increasing this may decrease performance.\nDefault: 2"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "numGenerators"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjust",
+        "value": {
+          "value": "Enable y-adjustment"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjust",
+        "value": {
+          "values": [
+            "Enable y-adjustment, giving players more headroom in caves.\nDefault: true"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjustF1",
+        "value": {
+          "value": "y-adjustment Variable 1"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjustF1",
+        "value": {
+          "values": [
+            "Adjustment factor affecting the block immediately above a given block.\n    Higher value will tend to increase the headroom in caves.\nDefault: 0.95"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yAdjustF1",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yAdjustF2",
+        "value": {
+          "value": "y-adjustment Variable 2"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yAdjustF2",
+        "value": {
+          "values": [
+            "Adjustment factor affecting the block two blocks above a given block.\n    Higher value will tend to increase the headroom in caves.\nDefault: 0.5"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yAdjustF2",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseType",
+        "value": {
+          "value": "Noise Type"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseType",
+        "value": {
+          "values": [
+            "This value is currently unused for Type 2 caves. "
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSurfaceCave": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigSurfaceCave",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enableSurfaceCaves",
+        "value": {
+          "value": "Enable Surface Caves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enableSurfaceCaves",
+        "value": {
+          "values": [
+            "Set to true to enable vanilla-like caves which provide nice, natural-looking openings at the surface.\nDefault: true"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveBottom",
+        "value": {
+          "value": "Surface Cave Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which surface caves can generate.\nDefault: 40"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveTop",
+        "value": {
+          "value": "Surface Cave Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which surface caves can generate.\nDefault: 128"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveDensity",
+        "value": {
+          "value": "Surface Cave Density"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveDensity",
+        "value": {
+          "values": [
+            "The density of surface caves. Higher \u003d more caves, closer together. \nDefault: 17"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveDensity",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "100"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveDensity"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigVanillaCave": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cave/ConfigVanillaCave",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveBottom",
+        "value": {
+          "value": "Vanilla Cave Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which vanilla caves can generate.\nDefault: 8"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveTop",
+        "value": {
+          "value": "Vanilla Cave Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which vanilla caves can generate.\nDefault: 128"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "caveDensity",
+        "value": {
+          "value": "Vanilla Cave Density"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "caveDensity",
+        "value": {
+          "values": [
+            "The density of vanilla caves. Higher \u003d more caves, closer together. \nDefault: 14 (value used in vanilla)"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "caveDensity",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "100"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "caveDensity"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavePriority",
+        "value": {
+          "value": "Vanilla Cave Priority"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavePriority",
+        "value": {
+          "values": [
+            "Determines how frequently vanilla caves spawn. 0 \u003d will not spawn at all.\nDefault: 0"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavePriority",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "10"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavePriority"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigCaverns": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigCaverns",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "liquidCavern",
+        "value": {
+          "value": "Liquid Caverns"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "liquidCavern",
+        "value": {
+          "values": [
+            "Settings used in the generation of Liquid Caverns found at low altitudes.\n    These are caverns where the floor is predominantly water or lava."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "flooredCavern",
+        "value": {
+          "value": "Floored Caverns"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "flooredCavern",
+        "value": {
+          "values": [
+            "Parameters used in the generation of Floored Caverns.\n    These have much more ground to walk on than Liquid Caverns."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernSpawnChance",
+        "value": {
+          "value": "Cavern Spawn Chance"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernSpawnChance",
+        "value": {
+          "values": [
+            "Percent chance of caverns spawning in a given region.\nDefault: caverns spawn in 25% of regions."
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "cavernSpawnChance",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernSpawnChance"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernRegionSize",
+        "value": {
+          "value": "Cavern Region Size"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernRegionSize",
+        "value": {
+          "values": [
+            "Determines how large cavern regions are. This controls the average size of caverns.\nDefault: Small"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernRegionSize"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "customRegionSize",
+        "value": {
+          "value": "Cavern Region Size Custom Value"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "customRegionSize",
+        "value": {
+          "values": [
+            "Custom value for cavern region size. Only works if Cavern Region Size is set to Custom.     Smaller value \u003d larger regions. This value is very sensitive to change.\n    Provided values:\n        Small: 0.01\n        Medium: 0.007\n        Large: 0.005\n        ExtraLarge: 0.001\nDefault: 0.01"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "customRegionSize",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "0.05"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "customRegionSize"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigFlooredCavern": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigFlooredCavern",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernBottom",
+        "value": {
+          "value": "Floored Cavern Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which Floored Caverns can generate.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernTop",
+        "value": {
+          "value": "Floored Cavern Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which Floored Caverns can generate.\n    Caverns will attempt to close off anyway if this value is greater than the surface\u0027s altitude.\nDefault: 35"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yCompression",
+        "value": {
+          "value": "Compression - Vertical"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yCompression",
+        "value": {
+          "values": [
+            "Stretches caverns vertically. Lower value \u003d more open caverns with larger features.\nDefault: 1.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "yCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "xzCompression",
+        "value": {
+          "value": "Compression - Horizontal"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "xzCompression",
+        "value": {
+          "values": [
+            "Stretches caverns horizontally. Lower value \u003d more open caverns with larger features.\nDefault: 0.7"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "xzCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "xzCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernPriority",
+        "value": {
+          "value": "Floored Cavern Priority"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernPriority",
+        "value": {
+          "values": [
+            "Determines how frequently Floored Caverns spawn. 0 \u003d will not spawn at all.\nDefault: 10"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernPriority",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "10"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernPriority"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Ignore;",
+        "target": "advancedSettings"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "advancedSettings",
+        "value": {
+          "value": "Advanced Settings"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "advancedSettings",
+        "value": {
+          "values": [
+            "Don\u0027t mess with these if you don\u0027t know what you\u0027re doing."
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigFlooredCavern$Advanced": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigFlooredCavern$Advanced",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseThreshold",
+        "value": {
+          "value": "Noise Threshold"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseThreshold",
+        "value": {
+          "values": [
+            "Noise threshold for determining which blocks get mined out as part of cavern generation\n    Blocks with generated noise values lower than this threshold will be dug out.\nDefault: 0.6"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "noiseThreshold",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "-1.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "noiseThreshold"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalOctaves",
+        "value": {
+          "value": "Fractal Octaves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalOctaves",
+        "value": {
+          "values": [
+            "The number of octaves used for ridged multi-fractal noise generation.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalOctaves"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalGain",
+        "value": {
+          "value": "Fractal Gain"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalGain",
+        "value": {
+          "values": [
+            "The gain for successive octaves of ridged multi-fractal noise generation.\nDefault: 0.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalGain"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalFrequency",
+        "value": {
+          "value": "Fractal Frequency"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalFrequency",
+        "value": {
+          "values": [
+            "The frequency for ridged multi-fractal noise generation.\n    This determines how spread out or tightly knit the formations in caverns are.\nDefault: 0.028"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalFrequency"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "numGenerators",
+        "value": {
+          "value": "Number of Generators"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "numGenerators",
+        "value": {
+          "values": [
+            "The number of noise generation functions used.\n    The intersection of these functions is used to calculate a single noise value.\n    Increasing this may decrease performance.\nDefault: 2"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "numGenerators"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseType",
+        "value": {
+          "value": "Noise Type"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseType",
+        "value": {
+          "values": [
+            "Type of noise to use for this cavern. \nDefault: SimplexFractal"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigLiquidCavern": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigLiquidCavern",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernBottom",
+        "value": {
+          "value": "Liquid Cavern Minimum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernBottom",
+        "value": {
+          "values": [
+            "The minimum y-coordinate at which Liquid Caverns can generate.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernBottom",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernBottom"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernTop",
+        "value": {
+          "value": "Liquid Cavern Maximum Altitude"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernTop",
+        "value": {
+          "values": [
+            "The maximum y-coordinate at which Liquid Caverns can generate.\n    Caverns will attempt to close off anyway if this value is greater than the surface\u0027s altitude.\nDefault: 35"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernTop",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "255"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernTop"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "yCompression",
+        "value": {
+          "value": "Compression - Vertical"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "yCompression",
+        "value": {
+          "values": [
+            "Stretches caverns vertically. Lower value \u003d more open caverns with larger features.\nDefault: 1.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "yCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "yCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "xzCompression",
+        "value": {
+          "value": "Compression - Horizontal"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "xzCompression",
+        "value": {
+          "values": [
+            "Stretches caverns horizontally. Lower value \u003d more open caverns with larger features.\nDefault: 0.7"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "xzCompression",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "100.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "0.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "xzCompression"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "cavernPriority",
+        "value": {
+          "value": "Liquid Cavern Priority"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "cavernPriority",
+        "value": {
+          "values": [
+            "Determines how frequently Liquid Caverns spawn. 0 \u003d will not spawn at all.\nDefault: 10"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeInt;",
+        "target": "cavernPriority",
+        "values": {
+          "max": {
+            "type": "INT",
+            "value": "10"
+          },
+          "min": {
+            "type": "INT",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "cavernPriority"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Ignore;",
+        "target": "advancedSettings"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "advancedSettings",
+        "value": {
+          "value": "Advanced Settings"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "advancedSettings",
+        "value": {
+          "values": [
+            "Don\u0027t mess with these if you don\u0027t know what you\u0027re doing."
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigLiquidCavern$Advanced": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/cavern/ConfigLiquidCavern$Advanced",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseThreshold",
+        "value": {
+          "value": "Noise Threshold"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseThreshold",
+        "value": {
+          "values": [
+            "Noise threshold for determining which blocks get mined out as part of cavern generation\n    Blocks with generated noise values lower than this threshold will be dug out.\nDefault: 0.6"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RangeDouble;",
+        "target": "noiseThreshold",
+        "values": {
+          "max": {
+            "type": "DOUBLE",
+            "value": "1.0"
+          },
+          "min": {
+            "type": "DOUBLE",
+            "value": "-1.0"
+          }
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "noiseThreshold"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalOctaves",
+        "value": {
+          "value": "Fractal Octaves"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalOctaves",
+        "value": {
+          "values": [
+            "The number of octaves used for ridged multi-fractal noise generation.\nDefault: 1"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalOctaves"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalGain",
+        "value": {
+          "value": "Fractal Gain"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalGain",
+        "value": {
+          "values": [
+            "The gain for successive octaves of ridged multi-fractal noise generation.\nDefault: 0.3"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalGain"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "fractalFrequency",
+        "value": {
+          "value": "Fractal Frequency"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "fractalFrequency",
+        "value": {
+          "values": [
+            "The frequency for ridged multi-fractal noise generation.\n    This determines how spread out or tightly knit the formations in caverns are.\nDefault: 0.03"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "fractalFrequency"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "numGenerators",
+        "value": {
+          "value": "Number of Generators"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "numGenerators",
+        "value": {
+          "values": [
+            "The number of noise generation functions used.\n    The intersection of these functions is used to calculate a single noise value.\n    Increasing this may decrease performance.\nDefault: 2"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$RequiresWorldRestart;",
+        "target": "numGenerators"
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "noiseType",
+        "value": {
+          "value": "Noise Type"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "noiseType",
+        "value": {
+          "values": [
+            "Type of noise to use for this cavern. \nDefault: SimplexFractal"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/config/ravine/ConfigRavine": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/config/ravine/ConfigRavine",
+    "annotations": [
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enableVanillaRavines",
+        "value": {
+          "value": "Enable Ravines"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enableVanillaRavines",
+        "value": {
+          "values": [
+            "Set to true to enable ravine generation.\nDefault: true"
+          ]
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Name;",
+        "target": "enableFloodedRavines",
+        "value": {
+          "value": "Enable Flooded Ravines"
+        }
+      },
+      {
+        "type": "FIELD",
+        "name": "Lnet/minecraftforge/common/config/Config$Comment;",
+        "target": "enableFloodedRavines",
+        "value": {
+          "values": [
+            "Set to true to enable flooded ravines in ocean biomes.\nDefault: true"
+          ]
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/event/EventBetterCaveGen": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/event/EventBetterCaveGen",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onInitMapGenEvent(Lnet/minecraftforge/event/terraingen/InitMapGenEvent;)V",
+        "values": {
+          "priority": {
+            "type": "ENUM",
+            "value": "Lnet/minecraftforge/fml/common/eventhandler/EventPriority;/NORMAL"
+          }
+        }
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/event/EventConfigReload": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/event/EventConfigReload",
+    "annotations": [
+      {
+        "type": "METHOD",
+        "name": "Lnet/minecraftforge/fml/common/eventhandler/SubscribeEvent;",
+        "target": "onConfigReload(Lnet/minecraftforge/fml/client/event/ConfigChangedEvent$OnConfigChangedEvent;)V"
+      }
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/noise/FastNoise": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/noise/FastNoise",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/noise/INoiseLibrary"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/noise/OpenSimplex2S": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/noise/OpenSimplex2S",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/noise/INoiseLibrary"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/proxy/ClientProxy": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/proxy/ClientProxy",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/proxy/IProxy"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/proxy/ServerProxy": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/proxy/ServerProxy",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/proxy/IProxy"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/world/carver/cave/CaveCarver": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/world/carver/cave/CaveCarver",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/world/carver/ICarver"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/world/carver/cavern/CavernCarver": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/world/carver/cavern/CavernCarver",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/world/carver/ICarver"
+    ]
+  },
+  "com/yungnickyoung/minecraft/bettercaves/world/carver/vanilla/VanillaCaveCarver": {
+    "name": "com/yungnickyoung/minecraft/bettercaves/world/carver/vanilla/VanillaCaveCarver",
+    "interfaces": [
+      "com/yungnickyoung/minecraft/bettercaves/world/carver/ICarver"
+    ]
+  }
+}

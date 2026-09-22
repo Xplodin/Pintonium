@@ -1,0 +1,14 @@
+{
+  "selectedVersion": "0.6.13-alpha",
+  "latestVersion": "0.6.13-alpha",
+  "targetJavaVersion": 25,
+  "targetVendor": "GraalVM Community",
+  "javaPath": "C:\\Users\\somet\\.cleanroom\\java\\graalvm-community-jdk-25i2-25.0.4_windows-x64_bin\\graalvm-community-25.2.4+7.1\\bin\\javaw.exe",
+  "args": "-XX:+AlwaysPreTouch -XX:+UseCompactObjectHeaders -XX:+UseZGC",
+  "autoSetup": true,
+  "enableRelauncher": true,
+  "fetchUpdates": true,
+  "clearCleanroomFolder": false,
+  "clearJavaProvisionFolder": false,
+  "darkMode": true
+}

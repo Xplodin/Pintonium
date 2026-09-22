@@ -1,0 +1,991 @@
+Compiled from "Generator.java"
+public class com.sosnitzka.taiga.util.Generator {
+  public com.sosnitzka.taiga.util.Generator();
+    Code:
+       0: aload_0
+       1: invokespecial #14                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void generateOre(net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aconst_null
+       3: aconst_null
+       4: aload_2
+       5: iload_3
+       6: iload         4
+       8: aload         5
+      10: iload         6
+      12: bipush        100
+      14: iload         7
+      16: iload         8
+      18: iload         9
+      20: iload         10
+      22: aconst_null
+      23: invokestatic  #21                 // Method generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+      26: return
+
+  public static void generateOre(net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int, int, int, java.util.List<net.minecraft.world.biome.Biome>);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aconst_null
+       3: aconst_null
+       4: aload_2
+       5: iload_3
+       6: iload         4
+       8: aload         5
+      10: iload         6
+      12: iload         7
+      14: iload         8
+      16: iload         9
+      18: iload         10
+      20: iload         11
+      22: aload         12
+      24: invokestatic  #21                 // Method generateOre:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;Ljava/util/Random;IILnet/minecraft/world/World;IIIIIILjava/util/List;)V
+      27: return
+
+  public static void generateOre(net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, net.minecraft.block.properties.IProperty, java.lang.Comparable, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int, int, int, java.util.List<net.minecraft.world.biome.Biome>);
+    Code:
+       0: iload         12
+       2: aload         4
+       4: iload         13
+       6: iload         12
+       8: isub
+       9: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      12: iadd
+      13: istore        15
+      15: iload         11
+      17: iload         10
+      19: isub
+      20: istore        16
+      22: iconst_0
+      23: istore        17
+      25: iload         17
+      27: iload         8
+      29: if_icmpge     163
+      32: ldc           #50                 // float 0.01f
+      34: iload         9
+      36: i2f
+      37: fmul
+      38: aload         4
+      40: invokevirtual #54                 // Method java/util/Random.nextFloat:()F
+      43: fcmpl
+      44: iflt          157
+      47: iload         5
+      49: aload         4
+      51: bipush        16
+      53: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      56: iadd
+      57: istore        18
+      59: aload         4
+      61: iload         16
+      63: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      66: iload         10
+      68: iadd
+      69: istore        19
+      71: iload         6
+      73: aload         4
+      75: bipush        16
+      77: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      80: iadd
+      81: istore        20
+      83: new           #56                 // class net/minecraft/util/math/BlockPos
+      86: dup
+      87: iload         18
+      89: iload         19
+      91: iload         20
+      93: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+      96: astore        21
+      98: aload         14
+     100: ifnull        120
+     103: aload         14
+     105: aload         7
+     107: aload         21
+     109: invokevirtual #65                 // Method net/minecraft/world/World.func_180494_b:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/world/biome/Biome;
+     112: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     117: ifeq          157
+     120: new           #79                 // class com/sosnitzka/taiga/world/WorldGenMinable
+     123: dup
+     124: aload_0
+     125: iload         15
+     127: aload_1
+     128: aload_2
+     129: aload_3
+     130: invokestatic  #85                 // Method com/sosnitzka/taiga/util/StateMatcher.forState:(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lcom/sosnitzka/taiga/util/StateMatcher;
+     133: invokespecial #88                 // Method com/sosnitzka/taiga/world/WorldGenMinable."<init>":(Lnet/minecraft/block/state/IBlockState;ILjava/util/function/Predicate;)V
+     136: aload         7
+     138: aload         4
+     140: new           #56                 // class net/minecraft/util/math/BlockPos
+     143: dup
+     144: iload         18
+     146: iload         19
+     148: iload         20
+     150: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     153: invokevirtual #92                 // Method com/sosnitzka/taiga/world/WorldGenMinable.func_180709_b:(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z
+     156: pop
+     157: iinc          17, 1
+     160: goto          25
+     163: return
+
+  public static void generateOre(java.util.List<net.minecraft.block.state.IBlockState>, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int);
+    Code:
+       0: aload_2
+       1: invokevirtual #54                 // Method java/util/Random.nextFloat:()F
+       4: ldc2_w        #107                // double 0.01d
+       7: iload         9
+       9: i2d
+      10: dmul
+      11: d2f
+      12: fcmpg
+      13: ifge          33
+      16: aload_0
+      17: aload_1
+      18: aload_2
+      19: iload_3
+      20: iload         4
+      22: aload         5
+      24: iload         6
+      26: iload         7
+      28: iload         8
+      30: invokestatic  #112                // Method generateOreDescending:(Ljava/util/List;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;IILnet/minecraft/world/World;III)V
+      33: return
+
+  public static void generateOreDescending(java.util.List<net.minecraft.block.state.IBlockState>, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int);
+    Code:
+       0: iconst_0
+       1: istore        9
+       3: iload         9
+       5: iload         6
+       7: if_icmpge     204
+      10: iload_3
+      11: aload_2
+      12: bipush        16
+      14: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      17: iadd
+      18: istore        10
+      20: iload         4
+      22: aload_2
+      23: bipush        16
+      25: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      28: iadd
+      29: istore        11
+      31: new           #56                 // class net/minecraft/util/math/BlockPos
+      34: dup
+      35: iload         10
+      37: iload         8
+      39: iload         11
+      41: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+      44: astore        12
+      46: aload_0
+      47: aload         5
+      49: aload         12
+      51: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      54: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+      59: ifeq          84
+      62: aload_0
+      63: aload         5
+      65: aload         12
+      67: invokevirtual #124                // Method net/minecraft/util/math/BlockPos.func_177984_a:()Lnet/minecraft/util/math/BlockPos;
+      70: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      73: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+      78: ifeq          84
+      81: goto          198
+      84: aload_0
+      85: aload         5
+      87: aload         12
+      89: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      92: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+      97: ifeq          128
+     100: aload_0
+     101: aload         5
+     103: aload         12
+     105: invokevirtual #124                // Method net/minecraft/util/math/BlockPos.func_177984_a:()Lnet/minecraft/util/math/BlockPos;
+     108: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     111: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     116: ifne          128
+     119: aload         5
+     121: aload         12
+     123: aload_1
+     124: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     127: pop
+     128: aload_0
+     129: aload         5
+     131: aload         12
+     133: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     136: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     139: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     144: ifne          167
+     147: aload         12
+     149: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     152: iload         7
+     154: if_icmple     167
+     157: aload         12
+     159: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     162: astore        12
+     164: goto          128
+     167: aload_0
+     168: aload         5
+     170: aload         12
+     172: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     175: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     178: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     183: ifeq          198
+     186: aload         5
+     188: aload         12
+     190: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     193: aload_1
+     194: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     197: pop
+     198: iinc          9, 1
+     201: goto          3
+     204: return
+
+  public static void generateOreStoneVariant(net.minecraft.block.state.IBlockState, net.minecraft.block.BlockStone$EnumType, java.util.Random, int, int, net.minecraft.world.World, int);
+    Code:
+       0: iconst_1
+       1: anewarray     #7                  // class net/minecraft/block/BlockStone$EnumType
+       4: dup
+       5: iconst_0
+       6: aload_1
+       7: aastore
+       8: invokestatic  #143                // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+      11: astore        7
+      13: iconst_0
+      14: istore        8
+      16: iload         8
+      18: iload         6
+      20: if_icmpge     383
+      23: iload_3
+      24: aload_2
+      25: bipush        16
+      27: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      30: iadd
+      31: istore        9
+      33: iload         4
+      35: aload_2
+      36: bipush        16
+      38: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      41: iadd
+      42: istore        10
+      44: new           #56                 // class net/minecraft/util/math/BlockPos
+      47: dup
+      48: iload         9
+      50: aload_2
+      51: bipush        64
+      53: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      56: bipush        32
+      58: iadd
+      59: iload         10
+      61: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+      64: astore        11
+      66: aload         5
+      68: aload         11
+      70: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      73: astore        12
+      75: aload         12
+      77: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+      82: getstatic     #153                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+      85: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      88: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+      93: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+      96: ifeq          131
+      99: aload         7
+     101: aload         12
+     103: getstatic     #166                // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     106: invokeinterface #170,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     111: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     116: ifeq          211
+     119: aload         5
+     121: aload         11
+     123: aload_0
+     124: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     127: pop
+     128: goto          211
+     131: aload         11
+     133: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     136: iflt          211
+     139: aload         11
+     141: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     144: astore        11
+     146: aload         5
+     148: aload         11
+     150: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     153: astore        12
+     155: aload         12
+     157: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     162: getstatic     #153                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     165: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     168: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     173: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     176: ifeq          131
+     179: aload         7
+     181: aload         12
+     183: getstatic     #166                // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     186: invokeinterface #170,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     191: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     196: ifeq          131
+     199: aload         5
+     201: aload         11
+     203: aload_0
+     204: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     207: pop
+     208: goto          211
+     211: new           #56                 // class net/minecraft/util/math/BlockPos
+     214: dup
+     215: iload         9
+     217: aload_2
+     218: bipush        32
+     220: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     223: iload         10
+     225: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     228: astore        11
+     230: aload         5
+     232: aload         11
+     234: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     237: astore        12
+     239: aload         12
+     241: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     246: getstatic     #153                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     249: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     252: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     257: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     260: ifeq          295
+     263: aload         7
+     265: aload         12
+     267: getstatic     #166                // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     270: invokeinterface #170,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     275: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     280: ifeq          377
+     283: aload         5
+     285: aload         11
+     287: aload_0
+     288: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     291: pop
+     292: goto          377
+     295: aload         11
+     297: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     300: bipush        96
+     302: if_icmpgt     377
+     305: aload         11
+     307: invokevirtual #124                // Method net/minecraft/util/math/BlockPos.func_177984_a:()Lnet/minecraft/util/math/BlockPos;
+     310: astore        11
+     312: aload         5
+     314: aload         11
+     316: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     319: astore        12
+     321: aload         12
+     323: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     328: getstatic     #153                // Field net/minecraft/init/Blocks.field_150348_b:Lnet/minecraft/block/Block;
+     331: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     334: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     339: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     342: ifeq          295
+     345: aload         7
+     347: aload         12
+     349: getstatic     #166                // Field net/minecraft/block/BlockStone.field_176247_a:Lnet/minecraft/block/properties/PropertyEnum;
+     352: invokeinterface #170,  2          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177229_b:(Lnet/minecraft/block/properties/IProperty;)Ljava/lang/Comparable;
+     357: invokeinterface #71,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+     362: ifeq          295
+     365: aload         5
+     367: aload         11
+     369: aload_0
+     370: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     373: pop
+     374: goto          377
+     377: iinc          8, 2
+     380: goto          16
+     383: return
+
+  public static void generateOreBottom(net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int);
+    Code:
+       0: iconst_0
+       1: istore        9
+       3: iload         9
+       5: iload         6
+       7: if_icmpge     145
+      10: iload_3
+      11: aload_2
+      12: bipush        16
+      14: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      17: iadd
+      18: istore        10
+      20: iconst_0
+      21: istore        11
+      23: iload         4
+      25: aload_2
+      26: bipush        16
+      28: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      31: iadd
+      32: istore        12
+      34: new           #56                 // class net/minecraft/util/math/BlockPos
+      37: dup
+      38: iload         10
+      40: iload         11
+      42: iload         12
+      44: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+      47: astore        13
+      49: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+      52: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      55: aload         5
+      57: aload         13
+      59: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      62: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+      65: ifeq          139
+      68: aload         5
+      70: aload         13
+      72: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+      75: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+      78: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+      81: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+      84: ifeq          107
+      87: aload         13
+      89: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+      92: iload         8
+      94: if_icmpge     107
+      97: aload         13
+      99: invokevirtual #124                // Method net/minecraft/util/math/BlockPos.func_177984_a:()Lnet/minecraft/util/math/BlockPos;
+     102: astore        13
+     104: goto          68
+     107: aload         5
+     109: aload         13
+     111: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     114: aload_0
+     115: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     118: ifeq          139
+     121: aload         5
+     123: aload         13
+     125: aload_2
+     126: iload         7
+     128: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     131: invokevirtual #184                // Method net/minecraft/util/math/BlockPos.func_177981_b:(I)Lnet/minecraft/util/math/BlockPos;
+     134: aload_1
+     135: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     138: pop
+     139: iinc          9, 1
+     142: goto          3
+     145: return
+
+  public static void generateCube(boolean, net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int, int);
+    Code:
+       0: iconst_0
+       1: istore        12
+       3: iload         12
+       5: iload         7
+       7: if_icmpge     434
+      10: aload_3
+      11: invokevirtual #54                 // Method java/util/Random.nextFloat:()F
+      14: f2d
+      15: ldc2_w        #107                // double 0.01d
+      18: iload         8
+      20: i2d
+      21: dmul
+      22: dcmpg
+      23: ifge          428
+      26: aload_3
+      27: iconst_1
+      28: iload         11
+      30: invokestatic  #192                // Method com/sosnitzka/taiga/util/Utils.nextInt:(Ljava/util/Random;II)I
+      33: istore        13
+      35: aload_3
+      36: iconst_2
+      37: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      40: istore        14
+      42: iload         4
+      44: aload_3
+      45: bipush        16
+      47: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      50: iadd
+      51: istore        15
+      53: aload_3
+      54: iload         9
+      56: iload         10
+      58: invokestatic  #192                // Method com/sosnitzka/taiga/util/Utils.nextInt:(Ljava/util/Random;II)I
+      61: istore        16
+      63: iload         5
+      65: aload_3
+      66: bipush        16
+      68: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+      71: iadd
+      72: istore        17
+      74: new           #56                 // class net/minecraft/util/math/BlockPos
+      77: dup
+      78: iload         15
+      80: iload         16
+      82: iload         17
+      84: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+      87: astore        18
+      89: iload_0
+      90: ifne          166
+      93: aload         6
+      95: aload         18
+      97: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     100: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     103: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     106: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     109: ifeq          166
+     112: aload         6
+     114: aload         18
+     116: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     119: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     122: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     125: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     128: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     131: ifeq          166
+     134: aload         6
+     136: aload         18
+     138: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     141: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     144: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     147: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     150: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     153: ifeq          166
+     156: aload         18
+     158: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     161: astore        18
+     163: goto          134
+     166: aload         18
+     168: aload_3
+     169: iconst_4
+     170: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     173: iconst_2
+     174: iadd
+     175: iload         13
+     177: imul
+     178: invokevirtual #195                // Method net/minecraft/util/math/BlockPos.func_177979_c:(I)Lnet/minecraft/util/math/BlockPos;
+     181: pop
+     182: iload         14
+     184: ineg
+     185: istore        19
+     187: iload         19
+     189: iload         14
+     191: if_icmpgt     296
+     194: iload         14
+     196: ineg
+     197: istore        20
+     199: iload         20
+     201: iload         14
+     203: if_icmpgt     290
+     206: iload         14
+     208: ineg
+     209: istore        21
+     211: iload         21
+     213: iload         14
+     215: if_icmpgt     284
+     218: aload         6
+     220: aload         18
+     222: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     225: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     228: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     231: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     234: ifne          240
+     237: goto          278
+     240: aload         6
+     242: new           #56                 // class net/minecraft/util/math/BlockPos
+     245: dup
+     246: aload         18
+     248: invokevirtual #198                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+     251: iload         19
+     253: iadd
+     254: aload         18
+     256: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     259: iload         20
+     261: iadd
+     262: aload         18
+     264: invokevirtual #201                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+     267: iload         21
+     269: iadd
+     270: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     273: aload_1
+     274: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     277: pop
+     278: iinc          21, 1
+     281: goto          211
+     284: iinc          20, 1
+     287: goto          199
+     290: iinc          19, 1
+     293: goto          187
+     296: iload         13
+     298: ineg
+     299: istore        19
+     301: iload         19
+     303: iload         13
+     305: if_icmpgt     428
+     308: iload         13
+     310: ineg
+     311: istore        20
+     313: iload         20
+     315: iload         13
+     317: if_icmpgt     422
+     320: iload         13
+     322: ineg
+     323: istore        21
+     325: iload         21
+     327: iload         13
+     329: if_icmpgt     416
+     332: new           #56                 // class net/minecraft/util/math/BlockPos
+     335: dup
+     336: aload         18
+     338: invokevirtual #198                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+     341: iload         19
+     343: iadd
+     344: aload         18
+     346: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     349: iload         20
+     351: iadd
+     352: aload         18
+     354: invokevirtual #201                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+     357: iload         21
+     359: iadd
+     360: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     363: astore        22
+     365: aload         6
+     367: aload         22
+     369: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     372: aload_1
+     373: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     376: ifne          410
+     379: aload         6
+     381: aload         22
+     383: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     386: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     389: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     392: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     395: ifne          401
+     398: goto          410
+     401: aload         6
+     403: aload         22
+     405: aload_2
+     406: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     409: pop
+     410: iinc          21, 1
+     413: goto          325
+     416: iinc          20, 1
+     419: goto          313
+     422: iinc          19, 1
+     425: goto          301
+     428: iinc          12, 1
+     431: goto          3
+     434: return
+
+  public static int generateMeteor(net.minecraft.block.state.IBlockState, net.minecraft.block.state.IBlockState, java.util.Random, int, int, net.minecraft.world.World, int, int, int, int);
+    Code:
+       0: new           #216                // class java/util/HashSet
+       3: dup
+       4: invokespecial #217                // Method java/util/HashSet."<init>":()V
+       7: astore        10
+       9: bipush        7
+      11: anewarray     #219                // class java/lang/String
+      14: dup
+      15: iconst_0
+      16: ldc           #221                // String dirt
+      18: aastore
+      19: dup
+      20: iconst_1
+      21: ldc           #223                // String grass
+      23: aastore
+      24: dup
+      25: iconst_2
+      26: ldc           #225                // String stone
+      28: aastore
+      29: dup
+      30: iconst_3
+      31: ldc           #227                // String sand
+      33: aastore
+      34: dup
+      35: iconst_4
+      36: ldc           #229                // String gravel
+      38: aastore
+      39: dup
+      40: iconst_5
+      41: ldc           #231                // String cobblestone
+      43: aastore
+      44: dup
+      45: bipush        6
+      47: ldc           #233                // String sandstone
+      49: aastore
+      50: invokestatic  #143                // Method com/google/common/collect/Lists.newArrayList:([Ljava/lang/Object;)Ljava/util/ArrayList;
+      53: astore        11
+      55: aload         11
+      57: invokeinterface #237,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      62: astore        12
+      64: aload         12
+      66: invokeinterface #245,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      71: ifeq          137
+      74: aload         12
+      76: invokeinterface #249,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      81: checkcast     #219                // class java/lang/String
+      84: astore        13
+      86: aload         13
+      88: invokestatic  #255                // Method net/minecraftforge/oredict/OreDictionary.getOres:(Ljava/lang/String;)Lnet/minecraft/util/NonNullList;
+      91: invokevirtual #258                // Method net/minecraft/util/NonNullList.iterator:()Ljava/util/Iterator;
+      94: astore        14
+      96: aload         14
+      98: invokeinterface #245,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     103: ifeq          134
+     106: aload         14
+     108: invokeinterface #249,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     113: checkcast     #260                // class net/minecraft/item/ItemStack
+     116: astore        15
+     118: aload         10
+     120: aload         15
+     122: invokevirtual #264                // Method net/minecraft/item/ItemStack.func_77973_b:()Lnet/minecraft/item/Item;
+     125: invokeinterface #267,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+     130: pop
+     131: goto          96
+     134: goto          64
+     137: iconst_0
+     138: istore        12
+     140: iconst_0
+     141: istore        13
+     143: iload         13
+     145: iload         6
+     147: if_icmpge     668
+     150: aload_2
+     151: invokevirtual #54                 // Method java/util/Random.nextFloat:()F
+     154: f2d
+     155: ldc2_w        #107                // double 0.01d
+     158: iload         7
+     160: i2d
+     161: dmul
+     162: dcmpg
+     163: ifge          662
+     166: aload_2
+     167: iconst_1
+     168: iconst_5
+     169: invokestatic  #192                // Method com/sosnitzka/taiga/util/Utils.nextInt:(Ljava/util/Random;II)I
+     172: istore        14
+     174: iload_3
+     175: aload_2
+     176: bipush        16
+     178: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     181: iadd
+     182: istore        15
+     184: aload_2
+     185: iload         8
+     187: iload         9
+     189: invokestatic  #192                // Method com/sosnitzka/taiga/util/Utils.nextInt:(Ljava/util/Random;II)I
+     192: istore        16
+     194: iload         4
+     196: aload_2
+     197: bipush        16
+     199: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     202: iadd
+     203: istore        17
+     205: new           #56                 // class net/minecraft/util/math/BlockPos
+     208: dup
+     209: iload         15
+     211: iload         16
+     213: iload         17
+     215: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     218: astore        18
+     220: aload         5
+     222: aload         18
+     224: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     227: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     230: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     233: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     236: ifeq          303
+     239: aload         5
+     241: aload         18
+     243: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     246: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     249: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     252: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     255: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     258: ifeq          303
+     261: aload         5
+     263: aload         18
+     265: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     268: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     271: getstatic     #180                // Field net/minecraft/init/Blocks.field_150350_a:Lnet/minecraft/block/Block;
+     274: invokevirtual #159                // Method net/minecraft/block/Block.func_176223_P:()Lnet/minecraft/block/state/IBlockState;
+     277: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     280: ifeq          303
+     283: aload         18
+     285: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     288: astore        18
+     290: aload         18
+     292: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     295: iload         8
+     297: if_icmpge     261
+     300: goto          303
+     303: aload         10
+     305: aload         5
+     307: aload         18
+     309: invokevirtual #131                // Method net/minecraft/util/math/BlockPos.func_177977_b:()Lnet/minecraft/util/math/BlockPos;
+     312: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     315: invokeinterface #147,  1          // InterfaceMethod net/minecraft/block/state/IBlockState.func_177230_c:()Lnet/minecraft/block/Block;
+     320: invokestatic  #273                // Method net/minecraft/item/Item.func_150898_a:(Lnet/minecraft/block/Block;)Lnet/minecraft/item/Item;
+     323: invokeinterface #274,  2          // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+     328: ifne          334
+     331: goto          662
+     334: aload         18
+     336: aload_2
+     337: iload         14
+     339: iconst_2
+     340: imul
+     341: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     344: iload         14
+     346: iadd
+     347: iconst_1
+     348: iadd
+     349: invokevirtual #195                // Method net/minecraft/util/math/BlockPos.func_177979_c:(I)Lnet/minecraft/util/math/BlockPos;
+     352: astore        18
+     354: aload         5
+     356: invokestatic  #280                // Method com/sosnitzka/taiga/world/MeteorWorldSaveData.getForWorld:(Lnet/minecraft/world/World;)Lcom/sosnitzka/taiga/world/MeteorWorldSaveData;
+     359: astore        19
+     361: aload         19
+     363: aload         18
+     365: invokevirtual #284                // Method com/sosnitzka/taiga/world/MeteorWorldSaveData.addPos:(Lnet/minecraft/util/math/BlockPos;)V
+     368: aload         19
+     370: invokevirtual #287                // Method com/sosnitzka/taiga/world/MeteorWorldSaveData.func_76185_a:()V
+     373: iinc          12, 1
+     376: iconst_1
+     377: istore        20
+     379: iload         14
+     381: iconst_3
+     382: if_icmple     395
+     385: aload_2
+     386: iload         14
+     388: iconst_1
+     389: isub
+     390: invokevirtual #49                 // Method java/util/Random.nextInt:(I)I
+     393: istore        20
+     395: iload         20
+     397: ineg
+     398: istore        21
+     400: iload         21
+     402: iload         20
+     404: if_icmpgt     518
+     407: iload         20
+     409: ineg
+     410: istore        22
+     412: iload         22
+     414: iload         20
+     416: if_icmpgt     512
+     419: iload         20
+     421: ineg
+     422: istore        23
+     424: iload         23
+     426: iload         20
+     428: if_icmpgt     506
+     431: iload         21
+     433: iload         21
+     435: imul
+     436: iload         22
+     438: iload         22
+     440: imul
+     441: iadd
+     442: iload         23
+     444: iload         23
+     446: imul
+     447: iadd
+     448: i2f
+     449: invokestatic  #293                // Method net/minecraft/util/math/MathHelper.func_76129_c:(F)F
+     452: iload         20
+     454: i2f
+     455: fcmpl
+     456: ifle          462
+     459: goto          500
+     462: aload         5
+     464: new           #56                 // class net/minecraft/util/math/BlockPos
+     467: dup
+     468: aload         18
+     470: invokevirtual #198                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+     473: iload         21
+     475: iadd
+     476: aload         18
+     478: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     481: iload         22
+     483: iadd
+     484: aload         18
+     486: invokevirtual #201                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+     489: iload         23
+     491: iadd
+     492: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     495: aload_0
+     496: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     499: pop
+     500: iinc          23, 1
+     503: goto          424
+     506: iinc          22, 1
+     509: goto          412
+     512: iinc          21, 1
+     515: goto          400
+     518: iload         14
+     520: ineg
+     521: istore        21
+     523: iload         21
+     525: iload         14
+     527: if_icmpgt     662
+     530: iload         14
+     532: ineg
+     533: istore        22
+     535: iload         22
+     537: iload         14
+     539: if_icmpgt     656
+     542: iload         14
+     544: ineg
+     545: istore        23
+     547: iload         23
+     549: iload         14
+     551: if_icmpgt     650
+     554: iload         21
+     556: iload         21
+     558: imul
+     559: iload         22
+     561: iload         22
+     563: imul
+     564: iadd
+     565: iload         23
+     567: iload         23
+     569: imul
+     570: iadd
+     571: i2f
+     572: invokestatic  #293                // Method net/minecraft/util/math/MathHelper.func_76129_c:(F)F
+     575: iload         14
+     577: i2f
+     578: fcmpl
+     579: ifle          585
+     582: goto          644
+     585: new           #56                 // class net/minecraft/util/math/BlockPos
+     588: dup
+     589: aload         18
+     591: invokevirtual #198                // Method net/minecraft/util/math/BlockPos.func_177958_n:()I
+     594: iload         21
+     596: iadd
+     597: aload         18
+     599: invokevirtual #135                // Method net/minecraft/util/math/BlockPos.func_177956_o:()I
+     602: iload         22
+     604: iadd
+     605: aload         18
+     607: invokevirtual #201                // Method net/minecraft/util/math/BlockPos.func_177952_p:()I
+     610: iload         23
+     612: iadd
+     613: invokespecial #59                 // Method net/minecraft/util/math/BlockPos."<init>":(III)V
+     616: astore        24
+     618: aload         5
+     620: aload         24
+     622: invokevirtual #120                // Method net/minecraft/world/World.func_180495_p:(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;
+     625: aload_0
+     626: invokevirtual #162                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     629: ifeq          635
+     632: goto          644
+     635: aload         5
+     637: aload         24
+     639: aload_1
+     640: invokevirtual #128                // Method net/minecraft/world/World.func_175656_a:(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z
+     643: pop
+     644: iinc          23, 1
+     647: goto          547
+     650: iinc          22, 1
+     653: goto          535
+     656: iinc          21, 1
+     659: goto          523
+     662: iinc          13, 1
+     665: goto          143
+     668: iload         12
+     670: ireturn
+}

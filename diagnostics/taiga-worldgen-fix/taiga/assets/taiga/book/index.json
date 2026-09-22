@@ -1,0 +1,11 @@
+[
+  {
+    "name": "index_title",
+    "data": "sections/intro.json",
+    "icon": {
+      "item": {
+        "id": "taiga:ignitz_block"
+      }
+    }
+  }
+]

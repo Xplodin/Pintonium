@@ -1,0 +1,1553 @@
+Compiled from "ConfigItems.java"
+public class thaumcraft.common.config.ConfigItems {
+  public static net.minecraft.item.ItemStack startBook;
+
+  public static net.minecraft.creativetab.CreativeTabs TABTC;
+
+  public static final java.util.List<thaumcraft.common.items.IThaumcraftItems> ITEM_VARIANT_HOLDERS;
+
+  public static net.minecraft.item.ItemStack AIR_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack FIRE_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack WATER_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack EARTH_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack ORDER_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack ENTROPY_CRYSTAL;
+
+  public static net.minecraft.item.ItemStack FLUX_CRYSTAL;
+
+  public thaumcraft.common.config.ConfigItems();
+    Code:
+         0: aload_0
+         1: invokespecial #33                 // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static void initMisc();
+    Code:
+         0: invokestatic  #41                 // Method thaumcraft/api/OreDictionaryEntries.initializeOreDictionary:()V
+         3: getstatic     #47                 // Field thaumcraft/api/aspects/Aspect.AIR:Lthaumcraft/api/aspects/Aspect;
+         6: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+         9: putstatic     #55                 // Field AIR_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        12: getstatic     #58                 // Field thaumcraft/api/aspects/Aspect.FIRE:Lthaumcraft/api/aspects/Aspect;
+        15: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        18: putstatic     #60                 // Field FIRE_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        21: getstatic     #63                 // Field thaumcraft/api/aspects/Aspect.WATER:Lthaumcraft/api/aspects/Aspect;
+        24: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        27: putstatic     #65                 // Field WATER_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        30: getstatic     #68                 // Field thaumcraft/api/aspects/Aspect.EARTH:Lthaumcraft/api/aspects/Aspect;
+        33: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        36: putstatic     #70                 // Field EARTH_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        39: getstatic     #73                 // Field thaumcraft/api/aspects/Aspect.ORDER:Lthaumcraft/api/aspects/Aspect;
+        42: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        45: putstatic     #75                 // Field ORDER_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        48: getstatic     #78                 // Field thaumcraft/api/aspects/Aspect.ENTROPY:Lthaumcraft/api/aspects/Aspect;
+        51: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        54: putstatic     #80                 // Field ENTROPY_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        57: getstatic     #83                 // Field thaumcraft/api/aspects/Aspect.FLUX:Lthaumcraft/api/aspects/Aspect;
+        60: invokestatic  #53                 // Method thaumcraft/api/ThaumcraftApiHelper.makeCrystal:(Lthaumcraft/api/aspects/Aspect;)Lnet/minecraft/item/ItemStack;
+        63: putstatic     #85                 // Field FLUX_CRYSTAL:Lnet/minecraft/item/ItemStack;
+        66: new           #87                 // class net/minecraft/nbt/NBTTagCompound
+        69: dup
+        70: invokespecial #88                 // Method net/minecraft/nbt/NBTTagCompound."<init>":()V
+        73: astore_0
+        74: aload_0
+        75: ldc           #90                 // String generation
+        77: iconst_3
+        78: invokevirtual #94                 // Method net/minecraft/nbt/NBTTagCompound.func_74768_a:(Ljava/lang/String;I)V
+        81: aload_0
+        82: ldc           #96                 // String title
+        84: ldc           #98                 // String book.start.title
+        86: invokestatic  #104                // Method net/minecraft/util/text/translation/I18n.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+        89: invokevirtual #108                // Method net/minecraft/nbt/NBTTagCompound.func_74778_a:(Ljava/lang/String;Ljava/lang/String;)V
+        92: new           #110                // class net/minecraft/nbt/NBTTagList
+        95: dup
+        96: invokespecial #111                // Method net/minecraft/nbt/NBTTagList."<init>":()V
+        99: astore_1
+       100: aload_1
+       101: new           #113                // class net/minecraft/nbt/NBTTagString
+       104: dup
+       105: ldc           #115                // String book.start.1
+       107: invokestatic  #104                // Method net/minecraft/util/text/translation/I18n.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+       110: invokespecial #118                // Method net/minecraft/nbt/NBTTagString."<init>":(Ljava/lang/String;)V
+       113: invokevirtual #122                // Method net/minecraft/nbt/NBTTagList.func_74742_a:(Lnet/minecraft/nbt/NBTBase;)V
+       116: aload_1
+       117: new           #113                // class net/minecraft/nbt/NBTTagString
+       120: dup
+       121: ldc           #124                // String book.start.2
+       123: invokestatic  #104                // Method net/minecraft/util/text/translation/I18n.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+       126: invokespecial #118                // Method net/minecraft/nbt/NBTTagString."<init>":(Ljava/lang/String;)V
+       129: invokevirtual #122                // Method net/minecraft/nbt/NBTTagList.func_74742_a:(Lnet/minecraft/nbt/NBTBase;)V
+       132: aload_1
+       133: new           #113                // class net/minecraft/nbt/NBTTagString
+       136: dup
+       137: ldc           #126                // String book.start.3
+       139: invokestatic  #104                // Method net/minecraft/util/text/translation/I18n.func_74838_a:(Ljava/lang/String;)Ljava/lang/String;
+       142: invokespecial #118                // Method net/minecraft/nbt/NBTTagString."<init>":(Ljava/lang/String;)V
+       145: invokevirtual #122                // Method net/minecraft/nbt/NBTTagList.func_74742_a:(Lnet/minecraft/nbt/NBTBase;)V
+       148: aload_0
+       149: ldc           #128                // String pages
+       151: aload_1
+       152: invokevirtual #132                // Method net/minecraft/nbt/NBTTagCompound.func_74782_a:(Ljava/lang/String;Lnet/minecraft/nbt/NBTBase;)V
+       155: getstatic     #134                // Field startBook:Lnet/minecraft/item/ItemStack;
+       158: aload_0
+       159: invokevirtual #140                // Method net/minecraft/item/ItemStack.func_77982_d:(Lnet/minecraft/nbt/NBTTagCompound;)V
+       162: return
+
+  public static void initItems(net.minecraftforge.registries.IForgeRegistry<net.minecraft.item.Item>);
+    Code:
+         0: aload_0
+         1: new           #147                // class thaumcraft/common/items/curios/ItemThaumonomicon
+         4: dup
+         5: invokespecial #148                // Method thaumcraft/common/items/curios/ItemThaumonomicon."<init>":()V
+         8: dup
+         9: putstatic     #154                // Field thaumcraft/api/items/ItemsTC.thaumonomicon:Lnet/minecraft/item/Item;
+        12: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+        17: aload_0
+        18: new           #162                // class thaumcraft/common/items/curios/ItemCurio
+        21: dup
+        22: invokespecial #163                // Method thaumcraft/common/items/curios/ItemCurio."<init>":()V
+        25: dup
+        26: putstatic     #166                // Field thaumcraft/api/items/ItemsTC.curio:Lnet/minecraft/item/Item;
+        29: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+        34: aload_0
+        35: new           #168                // class thaumcraft/common/items/curios/ItemLootBag
+        38: dup
+        39: invokespecial #169                // Method thaumcraft/common/items/curios/ItemLootBag."<init>":()V
+        42: dup
+        43: putstatic     #172                // Field thaumcraft/api/items/ItemsTC.lootBag:Lnet/minecraft/item/Item;
+        46: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+        51: aload_0
+        52: new           #174                // class thaumcraft/common/items/curios/ItemPrimordialPearl
+        55: dup
+        56: invokespecial #175                // Method thaumcraft/common/items/curios/ItemPrimordialPearl."<init>":()V
+        59: dup
+        60: putstatic     #178                // Field thaumcraft/api/items/ItemsTC.primordialPearl:Lnet/minecraft/item/Item;
+        63: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+        68: aload_0
+        69: new           #180                // class thaumcraft/common/items/curios/ItemPechWand
+        72: dup
+        73: invokespecial #181                // Method thaumcraft/common/items/curios/ItemPechWand."<init>":()V
+        76: dup
+        77: putstatic     #184                // Field thaumcraft/api/items/ItemsTC.pechWand:Lnet/minecraft/item/Item;
+        80: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+        85: aload_0
+        86: new           #186                // class thaumcraft/common/items/curios/ItemCelestialNotes
+        89: dup
+        90: invokespecial #187                // Method thaumcraft/common/items/curios/ItemCelestialNotes."<init>":()V
+        93: dup
+        94: putstatic     #190                // Field thaumcraft/api/items/ItemsTC.celestialNotes:Lnet/minecraft/item/Item;
+        97: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       102: aload_0
+       103: new           #192                // class thaumcraft/common/items/ItemTCBase
+       106: dup
+       107: ldc           #194                // String amber
+       109: iconst_0
+       110: anewarray     #196                // class java/lang/String
+       113: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       116: dup
+       117: putstatic     #201                // Field thaumcraft/api/items/ItemsTC.amber:Lnet/minecraft/item/Item;
+       120: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       125: aload_0
+       126: new           #192                // class thaumcraft/common/items/ItemTCBase
+       129: dup
+       130: ldc           #203                // String quicksilver
+       132: iconst_0
+       133: anewarray     #196                // class java/lang/String
+       136: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       139: dup
+       140: putstatic     #205                // Field thaumcraft/api/items/ItemsTC.quicksilver:Lnet/minecraft/item/Item;
+       143: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       148: aload_0
+       149: new           #192                // class thaumcraft/common/items/ItemTCBase
+       152: dup
+       153: ldc           #207                // String ingot
+       155: iconst_3
+       156: anewarray     #196                // class java/lang/String
+       159: dup
+       160: iconst_0
+       161: ldc           #209                // String thaumium
+       163: aastore
+       164: dup
+       165: iconst_1
+       166: ldc           #211                // String void
+       168: aastore
+       169: dup
+       170: iconst_2
+       171: ldc           #213                // String brass
+       173: aastore
+       174: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       177: dup
+       178: putstatic     #216                // Field thaumcraft/api/items/ItemsTC.ingots:Lnet/minecraft/item/Item;
+       181: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       186: aload_0
+       187: new           #192                // class thaumcraft/common/items/ItemTCBase
+       190: dup
+       191: ldc           #218                // String nugget
+       193: bipush        11
+       195: anewarray     #196                // class java/lang/String
+       198: dup
+       199: iconst_0
+       200: ldc           #220                // String iron
+       202: aastore
+       203: dup
+       204: iconst_1
+       205: ldc           #222                // String copper
+       207: aastore
+       208: dup
+       209: iconst_2
+       210: ldc           #224                // String tin
+       212: aastore
+       213: dup
+       214: iconst_3
+       215: ldc           #226                // String silver
+       217: aastore
+       218: dup
+       219: iconst_4
+       220: ldc           #228                // String lead
+       222: aastore
+       223: dup
+       224: iconst_5
+       225: ldc           #203                // String quicksilver
+       227: aastore
+       228: dup
+       229: bipush        6
+       231: ldc           #209                // String thaumium
+       233: aastore
+       234: dup
+       235: bipush        7
+       237: ldc           #211                // String void
+       239: aastore
+       240: dup
+       241: bipush        8
+       243: ldc           #213                // String brass
+       245: aastore
+       246: dup
+       247: bipush        9
+       249: ldc           #230                // String quartz
+       251: aastore
+       252: dup
+       253: bipush        10
+       255: ldc           #232                // String rareearth
+       257: aastore
+       258: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       261: dup
+       262: putstatic     #235                // Field thaumcraft/api/items/ItemsTC.nuggets:Lnet/minecraft/item/Item;
+       265: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       270: aload_0
+       271: new           #192                // class thaumcraft/common/items/ItemTCBase
+       274: dup
+       275: ldc           #237                // String cluster
+       277: bipush        8
+       279: anewarray     #196                // class java/lang/String
+       282: dup
+       283: iconst_0
+       284: ldc           #220                // String iron
+       286: aastore
+       287: dup
+       288: iconst_1
+       289: ldc           #239                // String gold
+       291: aastore
+       292: dup
+       293: iconst_2
+       294: ldc           #222                // String copper
+       296: aastore
+       297: dup
+       298: iconst_3
+       299: ldc           #224                // String tin
+       301: aastore
+       302: dup
+       303: iconst_4
+       304: ldc           #226                // String silver
+       306: aastore
+       307: dup
+       308: iconst_5
+       309: ldc           #228                // String lead
+       311: aastore
+       312: dup
+       313: bipush        6
+       315: ldc           #241                // String cinnabar
+       317: aastore
+       318: dup
+       319: bipush        7
+       321: ldc           #230                // String quartz
+       323: aastore
+       324: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       327: dup
+       328: putstatic     #244                // Field thaumcraft/api/items/ItemsTC.clusters:Lnet/minecraft/item/Item;
+       331: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       336: aload_0
+       337: new           #192                // class thaumcraft/common/items/ItemTCBase
+       340: dup
+       341: ldc           #246                // String fabric
+       343: iconst_0
+       344: anewarray     #196                // class java/lang/String
+       347: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       350: dup
+       351: putstatic     #248                // Field thaumcraft/api/items/ItemsTC.fabric:Lnet/minecraft/item/Item;
+       354: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       359: aload_0
+       360: new           #192                // class thaumcraft/common/items/ItemTCBase
+       363: dup
+       364: ldc           #250                // String vis_resonator
+       366: iconst_0
+       367: anewarray     #196                // class java/lang/String
+       370: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       373: dup
+       374: putstatic     #253                // Field thaumcraft/api/items/ItemsTC.visResonator:Lnet/minecraft/item/Item;
+       377: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       382: aload_0
+       383: new           #192                // class thaumcraft/common/items/ItemTCBase
+       386: dup
+       387: ldc           #255                // String tallow
+       389: iconst_0
+       390: anewarray     #196                // class java/lang/String
+       393: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       396: dup
+       397: putstatic     #257                // Field thaumcraft/api/items/ItemsTC.tallow:Lnet/minecraft/item/Item;
+       400: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       405: aload_0
+       406: new           #192                // class thaumcraft/common/items/ItemTCBase
+       409: dup
+       410: ldc_w         #259                // String mechanism_simple
+       413: iconst_0
+       414: anewarray     #196                // class java/lang/String
+       417: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       420: dup
+       421: putstatic     #262                // Field thaumcraft/api/items/ItemsTC.mechanismSimple:Lnet/minecraft/item/Item;
+       424: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       429: aload_0
+       430: new           #192                // class thaumcraft/common/items/ItemTCBase
+       433: dup
+       434: ldc_w         #264                // String mechanism_complex
+       437: iconst_0
+       438: anewarray     #196                // class java/lang/String
+       441: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       444: dup
+       445: putstatic     #267                // Field thaumcraft/api/items/ItemsTC.mechanismComplex:Lnet/minecraft/item/Item;
+       448: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       453: aload_0
+       454: new           #192                // class thaumcraft/common/items/ItemTCBase
+       457: dup
+       458: ldc_w         #269                // String plate
+       461: iconst_4
+       462: anewarray     #196                // class java/lang/String
+       465: dup
+       466: iconst_0
+       467: ldc           #213                // String brass
+       469: aastore
+       470: dup
+       471: iconst_1
+       472: ldc           #220                // String iron
+       474: aastore
+       475: dup
+       476: iconst_2
+       477: ldc           #209                // String thaumium
+       479: aastore
+       480: dup
+       481: iconst_3
+       482: ldc           #211                // String void
+       484: aastore
+       485: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       488: dup
+       489: putstatic     #271                // Field thaumcraft/api/items/ItemsTC.plate:Lnet/minecraft/item/Item;
+       492: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       497: aload_0
+       498: new           #192                // class thaumcraft/common/items/ItemTCBase
+       501: dup
+       502: ldc_w         #273                // String filter
+       505: iconst_0
+       506: anewarray     #196                // class java/lang/String
+       509: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       512: dup
+       513: putstatic     #275                // Field thaumcraft/api/items/ItemsTC.filter:Lnet/minecraft/item/Item;
+       516: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       521: aload_0
+       522: new           #192                // class thaumcraft/common/items/ItemTCBase
+       525: dup
+       526: ldc_w         #277                // String morphic_resonator
+       529: iconst_0
+       530: anewarray     #196                // class java/lang/String
+       533: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       536: dup
+       537: putstatic     #280                // Field thaumcraft/api/items/ItemsTC.morphicResonator:Lnet/minecraft/item/Item;
+       540: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       545: aload_0
+       546: new           #282                // class thaumcraft/common/items/resources/ItemMagicDust
+       549: dup
+       550: invokespecial #283                // Method thaumcraft/common/items/resources/ItemMagicDust."<init>":()V
+       553: dup
+       554: putstatic     #286                // Field thaumcraft/api/items/ItemsTC.salisMundus:Lnet/minecraft/item/Item;
+       557: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       562: aload_0
+       563: new           #192                // class thaumcraft/common/items/ItemTCBase
+       566: dup
+       567: ldc_w         #288                // String mirrored_glass
+       570: iconst_0
+       571: anewarray     #196                // class java/lang/String
+       574: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       577: dup
+       578: putstatic     #291                // Field thaumcraft/api/items/ItemsTC.mirroredGlass:Lnet/minecraft/item/Item;
+       581: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       586: aload_0
+       587: new           #192                // class thaumcraft/common/items/ItemTCBase
+       590: dup
+       591: ldc_w         #293                // String void_seed
+       594: iconst_0
+       595: anewarray     #196                // class java/lang/String
+       598: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       601: dup
+       602: putstatic     #296                // Field thaumcraft/api/items/ItemsTC.voidSeed:Lnet/minecraft/item/Item;
+       605: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       610: aload_0
+       611: new           #192                // class thaumcraft/common/items/ItemTCBase
+       614: dup
+       615: ldc_w         #298                // String mind
+       618: iconst_2
+       619: anewarray     #196                // class java/lang/String
+       622: dup
+       623: iconst_0
+       624: ldc_w         #300                // String clockwork
+       627: aastore
+       628: dup
+       629: iconst_1
+       630: ldc_w         #302                // String biothaumic
+       633: aastore
+       634: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       637: dup
+       638: putstatic     #304                // Field thaumcraft/api/items/ItemsTC.mind:Lnet/minecraft/item/Item;
+       641: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       646: aload_0
+       647: new           #192                // class thaumcraft/common/items/ItemTCBase
+       650: dup
+       651: ldc_w         #306                // String module
+       654: iconst_2
+       655: anewarray     #196                // class java/lang/String
+       658: dup
+       659: iconst_0
+       660: ldc_w         #308                // String vision
+       663: aastore
+       664: dup
+       665: iconst_1
+       666: ldc_w         #310                // String aggression
+       669: aastore
+       670: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       673: dup
+       674: putstatic     #313                // Field thaumcraft/api/items/ItemsTC.modules:Lnet/minecraft/item/Item;
+       677: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       682: aload_0
+       683: new           #315                // class thaumcraft/common/items/resources/ItemCrystalEssence
+       686: dup
+       687: invokespecial #316                // Method thaumcraft/common/items/resources/ItemCrystalEssence."<init>":()V
+       690: dup
+       691: putstatic     #319                // Field thaumcraft/api/items/ItemsTC.crystalEssence:Lnet/minecraft/item/Item;
+       694: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       699: aload_0
+       700: new           #321                // class thaumcraft/common/items/consumables/ItemChunksEdible
+       703: dup
+       704: invokespecial #322                // Method thaumcraft/common/items/consumables/ItemChunksEdible."<init>":()V
+       707: dup
+       708: putstatic     #325                // Field thaumcraft/api/items/ItemsTC.chunks:Lnet/minecraft/item/Item;
+       711: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       716: aload_0
+       717: new           #327                // class thaumcraft/common/items/consumables/ItemTripleMeatTreat
+       720: dup
+       721: invokespecial #328                // Method thaumcraft/common/items/consumables/ItemTripleMeatTreat."<init>":()V
+       724: dup
+       725: putstatic     #331                // Field thaumcraft/api/items/ItemsTC.tripleMeatTreat:Lnet/minecraft/item/Item;
+       728: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       733: aload_0
+       734: new           #333                // class thaumcraft/common/items/consumables/ItemZombieBrain
+       737: dup
+       738: invokespecial #334                // Method thaumcraft/common/items/consumables/ItemZombieBrain."<init>":()V
+       741: dup
+       742: putstatic     #337                // Field thaumcraft/api/items/ItemsTC.brain:Lnet/minecraft/item/Item;
+       745: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       750: aload_0
+       751: new           #339                // class thaumcraft/common/items/consumables/ItemLabel
+       754: dup
+       755: invokespecial #340                // Method thaumcraft/common/items/consumables/ItemLabel."<init>":()V
+       758: dup
+       759: putstatic     #343                // Field thaumcraft/api/items/ItemsTC.label:Lnet/minecraft/item/Item;
+       762: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       767: aload_0
+       768: new           #345                // class thaumcraft/common/items/consumables/ItemPhial
+       771: dup
+       772: invokespecial #346                // Method thaumcraft/common/items/consumables/ItemPhial."<init>":()V
+       775: dup
+       776: putstatic     #349                // Field thaumcraft/api/items/ItemsTC.phial:Lnet/minecraft/item/Item;
+       779: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       784: aload_0
+       785: new           #351                // class thaumcraft/common/items/consumables/ItemAlumentum
+       788: dup
+       789: invokespecial #352                // Method thaumcraft/common/items/consumables/ItemAlumentum."<init>":()V
+       792: dup
+       793: putstatic     #355                // Field thaumcraft/api/items/ItemsTC.alumentum:Lnet/minecraft/item/Item;
+       796: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       801: aload_0
+       802: new           #192                // class thaumcraft/common/items/ItemTCBase
+       805: dup
+       806: ldc_w         #357                // String jar_brace
+       809: iconst_0
+       810: anewarray     #196                // class java/lang/String
+       813: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+       816: dup
+       817: putstatic     #360                // Field thaumcraft/api/items/ItemsTC.jarBrace:Lnet/minecraft/item/Item;
+       820: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       825: aload_0
+       826: new           #362                // class thaumcraft/common/items/consumables/ItemBottleTaint
+       829: dup
+       830: invokespecial #363                // Method thaumcraft/common/items/consumables/ItemBottleTaint."<init>":()V
+       833: dup
+       834: putstatic     #366                // Field thaumcraft/api/items/ItemsTC.bottleTaint:Lnet/minecraft/item/Item;
+       837: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       842: aload_0
+       843: new           #368                // class thaumcraft/common/items/consumables/ItemSanitySoap
+       846: dup
+       847: invokespecial #369                // Method thaumcraft/common/items/consumables/ItemSanitySoap."<init>":()V
+       850: dup
+       851: putstatic     #372                // Field thaumcraft/api/items/ItemsTC.sanitySoap:Lnet/minecraft/item/Item;
+       854: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       859: aload_0
+       860: new           #374                // class thaumcraft/common/items/consumables/ItemBathSalts
+       863: dup
+       864: invokespecial #375                // Method thaumcraft/common/items/consumables/ItemBathSalts."<init>":()V
+       867: dup
+       868: putstatic     #378                // Field thaumcraft/api/items/ItemsTC.bathSalts:Lnet/minecraft/item/Item;
+       871: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       876: aload_0
+       877: new           #380                // class thaumcraft/common/entities/construct/ItemTurretPlacer
+       880: dup
+       881: invokespecial #381                // Method thaumcraft/common/entities/construct/ItemTurretPlacer."<init>":()V
+       884: dup
+       885: putstatic     #384                // Field thaumcraft/api/items/ItemsTC.turretPlacer:Lnet/minecraft/item/Item;
+       888: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       893: aload_0
+       894: new           #386                // class thaumcraft/common/items/consumables/ItemCausalityCollapser
+       897: dup
+       898: invokespecial #387                // Method thaumcraft/common/items/consumables/ItemCausalityCollapser."<init>":()V
+       901: dup
+       902: putstatic     #390                // Field thaumcraft/api/items/ItemsTC.causalityCollapser:Lnet/minecraft/item/Item;
+       905: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       910: aload_0
+       911: new           #392                // class thaumcraft/common/items/tools/ItemScribingTools
+       914: dup
+       915: invokespecial #393                // Method thaumcraft/common/items/tools/ItemScribingTools."<init>":()V
+       918: dup
+       919: putstatic     #396                // Field thaumcraft/api/items/ItemsTC.scribingTools:Lnet/minecraft/item/Item;
+       922: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       927: aload_0
+       928: new           #398                // class thaumcraft/common/items/tools/ItemThaumometer
+       931: dup
+       932: invokespecial #399                // Method thaumcraft/common/items/tools/ItemThaumometer."<init>":()V
+       935: dup
+       936: putstatic     #402                // Field thaumcraft/api/items/ItemsTC.thaumometer:Lnet/minecraft/item/Item;
+       939: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       944: aload_0
+       945: new           #404                // class thaumcraft/common/items/tools/ItemResonator
+       948: dup
+       949: invokespecial #405                // Method thaumcraft/common/items/tools/ItemResonator."<init>":()V
+       952: dup
+       953: putstatic     #408                // Field thaumcraft/api/items/ItemsTC.resonator:Lnet/minecraft/item/Item;
+       956: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       961: aload_0
+       962: new           #410                // class thaumcraft/common/items/tools/ItemSanityChecker
+       965: dup
+       966: invokespecial #411                // Method thaumcraft/common/items/tools/ItemSanityChecker."<init>":()V
+       969: dup
+       970: putstatic     #414                // Field thaumcraft/api/items/ItemsTC.sanityChecker:Lnet/minecraft/item/Item;
+       973: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       978: aload_0
+       979: new           #416                // class thaumcraft/common/items/tools/ItemHandMirror
+       982: dup
+       983: invokespecial #417                // Method thaumcraft/common/items/tools/ItemHandMirror."<init>":()V
+       986: dup
+       987: putstatic     #420                // Field thaumcraft/api/items/ItemsTC.handMirror:Lnet/minecraft/item/Item;
+       990: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+       995: aload_0
+       996: new           #422                // class thaumcraft/common/items/tools/ItemThaumiumAxe
+       999: dup
+      1000: getstatic     #428                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_THAUMIUM:Lnet/minecraft/item/Item$ToolMaterial;
+      1003: invokespecial #431                // Method thaumcraft/common/items/tools/ItemThaumiumAxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1006: dup
+      1007: putstatic     #434                // Field thaumcraft/api/items/ItemsTC.thaumiumAxe:Lnet/minecraft/item/Item;
+      1010: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1015: aload_0
+      1016: new           #436                // class thaumcraft/common/items/tools/ItemThaumiumSword
+      1019: dup
+      1020: getstatic     #428                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_THAUMIUM:Lnet/minecraft/item/Item$ToolMaterial;
+      1023: invokespecial #437                // Method thaumcraft/common/items/tools/ItemThaumiumSword."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1026: dup
+      1027: putstatic     #440                // Field thaumcraft/api/items/ItemsTC.thaumiumSword:Lnet/minecraft/item/Item;
+      1030: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1035: aload_0
+      1036: new           #442                // class thaumcraft/common/items/tools/ItemThaumiumShovel
+      1039: dup
+      1040: getstatic     #428                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_THAUMIUM:Lnet/minecraft/item/Item$ToolMaterial;
+      1043: invokespecial #443                // Method thaumcraft/common/items/tools/ItemThaumiumShovel."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1046: dup
+      1047: putstatic     #446                // Field thaumcraft/api/items/ItemsTC.thaumiumShovel:Lnet/minecraft/item/Item;
+      1050: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1055: aload_0
+      1056: new           #448                // class thaumcraft/common/items/tools/ItemThaumiumPickaxe
+      1059: dup
+      1060: getstatic     #428                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_THAUMIUM:Lnet/minecraft/item/Item$ToolMaterial;
+      1063: invokespecial #449                // Method thaumcraft/common/items/tools/ItemThaumiumPickaxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1066: dup
+      1067: putstatic     #452                // Field thaumcraft/api/items/ItemsTC.thaumiumPick:Lnet/minecraft/item/Item;
+      1070: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1075: aload_0
+      1076: new           #454                // class thaumcraft/common/items/tools/ItemThaumiumHoe
+      1079: dup
+      1080: getstatic     #428                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_THAUMIUM:Lnet/minecraft/item/Item$ToolMaterial;
+      1083: invokespecial #455                // Method thaumcraft/common/items/tools/ItemThaumiumHoe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1086: dup
+      1087: putstatic     #458                // Field thaumcraft/api/items/ItemsTC.thaumiumHoe:Lnet/minecraft/item/Item;
+      1090: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1095: aload_0
+      1096: new           #460                // class thaumcraft/common/items/tools/ItemVoidAxe
+      1099: dup
+      1100: getstatic     #463                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_VOID:Lnet/minecraft/item/Item$ToolMaterial;
+      1103: invokespecial #464                // Method thaumcraft/common/items/tools/ItemVoidAxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1106: dup
+      1107: putstatic     #467                // Field thaumcraft/api/items/ItemsTC.voidAxe:Lnet/minecraft/item/Item;
+      1110: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1115: aload_0
+      1116: new           #469                // class thaumcraft/common/items/tools/ItemVoidSword
+      1119: dup
+      1120: getstatic     #463                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_VOID:Lnet/minecraft/item/Item$ToolMaterial;
+      1123: invokespecial #470                // Method thaumcraft/common/items/tools/ItemVoidSword."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1126: dup
+      1127: putstatic     #473                // Field thaumcraft/api/items/ItemsTC.voidSword:Lnet/minecraft/item/Item;
+      1130: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1135: aload_0
+      1136: new           #475                // class thaumcraft/common/items/tools/ItemVoidShovel
+      1139: dup
+      1140: getstatic     #463                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_VOID:Lnet/minecraft/item/Item$ToolMaterial;
+      1143: invokespecial #476                // Method thaumcraft/common/items/tools/ItemVoidShovel."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1146: dup
+      1147: putstatic     #479                // Field thaumcraft/api/items/ItemsTC.voidShovel:Lnet/minecraft/item/Item;
+      1150: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1155: aload_0
+      1156: new           #481                // class thaumcraft/common/items/tools/ItemVoidPickaxe
+      1159: dup
+      1160: getstatic     #463                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_VOID:Lnet/minecraft/item/Item$ToolMaterial;
+      1163: invokespecial #482                // Method thaumcraft/common/items/tools/ItemVoidPickaxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1166: dup
+      1167: putstatic     #485                // Field thaumcraft/api/items/ItemsTC.voidPick:Lnet/minecraft/item/Item;
+      1170: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1175: aload_0
+      1176: new           #487                // class thaumcraft/common/items/tools/ItemVoidHoe
+      1179: dup
+      1180: getstatic     #463                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_VOID:Lnet/minecraft/item/Item$ToolMaterial;
+      1183: invokespecial #488                // Method thaumcraft/common/items/tools/ItemVoidHoe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1186: dup
+      1187: putstatic     #491                // Field thaumcraft/api/items/ItemsTC.voidHoe:Lnet/minecraft/item/Item;
+      1190: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1195: aload_0
+      1196: new           #493                // class thaumcraft/common/items/tools/ItemElementalAxe
+      1199: dup
+      1200: getstatic     #496                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_ELEMENTAL:Lnet/minecraft/item/Item$ToolMaterial;
+      1203: invokespecial #497                // Method thaumcraft/common/items/tools/ItemElementalAxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1206: dup
+      1207: putstatic     #500                // Field thaumcraft/api/items/ItemsTC.elementalAxe:Lnet/minecraft/item/Item;
+      1210: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1215: aload_0
+      1216: new           #502                // class thaumcraft/common/items/tools/ItemElementalSword
+      1219: dup
+      1220: getstatic     #496                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_ELEMENTAL:Lnet/minecraft/item/Item$ToolMaterial;
+      1223: invokespecial #503                // Method thaumcraft/common/items/tools/ItemElementalSword."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1226: dup
+      1227: putstatic     #506                // Field thaumcraft/api/items/ItemsTC.elementalSword:Lnet/minecraft/item/Item;
+      1230: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1235: aload_0
+      1236: new           #508                // class thaumcraft/common/items/tools/ItemElementalShovel
+      1239: dup
+      1240: getstatic     #496                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_ELEMENTAL:Lnet/minecraft/item/Item$ToolMaterial;
+      1243: invokespecial #509                // Method thaumcraft/common/items/tools/ItemElementalShovel."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1246: dup
+      1247: putstatic     #512                // Field thaumcraft/api/items/ItemsTC.elementalShovel:Lnet/minecraft/item/Item;
+      1250: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1255: aload_0
+      1256: new           #514                // class thaumcraft/common/items/tools/ItemElementalPickaxe
+      1259: dup
+      1260: getstatic     #496                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_ELEMENTAL:Lnet/minecraft/item/Item$ToolMaterial;
+      1263: invokespecial #515                // Method thaumcraft/common/items/tools/ItemElementalPickaxe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1266: dup
+      1267: putstatic     #518                // Field thaumcraft/api/items/ItemsTC.elementalPick:Lnet/minecraft/item/Item;
+      1270: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1275: aload_0
+      1276: new           #520                // class thaumcraft/common/items/tools/ItemElementalHoe
+      1279: dup
+      1280: getstatic     #496                // Field thaumcraft/api/ThaumcraftMaterials.TOOLMAT_ELEMENTAL:Lnet/minecraft/item/Item$ToolMaterial;
+      1283: invokespecial #521                // Method thaumcraft/common/items/tools/ItemElementalHoe."<init>":(Lnet/minecraft/item/Item$ToolMaterial;)V
+      1286: dup
+      1287: putstatic     #524                // Field thaumcraft/api/items/ItemsTC.elementalHoe:Lnet/minecraft/item/Item;
+      1290: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1295: aload_0
+      1296: new           #526                // class thaumcraft/common/items/tools/ItemPrimalCrusher
+      1299: dup
+      1300: invokespecial #527                // Method thaumcraft/common/items/tools/ItemPrimalCrusher."<init>":()V
+      1303: dup
+      1304: putstatic     #530                // Field thaumcraft/api/items/ItemsTC.primalCrusher:Lnet/minecraft/item/Item;
+      1307: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1312: aload_0
+      1313: new           #532                // class thaumcraft/common/items/tools/ItemCrimsonBlade
+      1316: dup
+      1317: invokespecial #533                // Method thaumcraft/common/items/tools/ItemCrimsonBlade."<init>":()V
+      1320: dup
+      1321: putstatic     #536                // Field thaumcraft/api/items/ItemsTC.crimsonBlade:Lnet/minecraft/item/Item;
+      1324: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1329: aload_0
+      1330: new           #538                // class thaumcraft/common/items/tools/ItemGrappleGun
+      1333: dup
+      1334: invokespecial #539                // Method thaumcraft/common/items/tools/ItemGrappleGun."<init>":()V
+      1337: dup
+      1338: putstatic     #542                // Field thaumcraft/api/items/ItemsTC.grappleGun:Lnet/minecraft/item/Item;
+      1341: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1346: aload_0
+      1347: new           #192                // class thaumcraft/common/items/ItemTCBase
+      1350: dup
+      1351: ldc_w         #544                // String grapple_gun_tip
+      1354: iconst_0
+      1355: anewarray     #196                // class java/lang/String
+      1358: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+      1361: dup
+      1362: putstatic     #547                // Field thaumcraft/api/items/ItemsTC.grappleGunTip:Lnet/minecraft/item/Item;
+      1365: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1370: aload_0
+      1371: new           #192                // class thaumcraft/common/items/ItemTCBase
+      1374: dup
+      1375: ldc_w         #549                // String grapple_gun_spool
+      1378: iconst_0
+      1379: anewarray     #196                // class java/lang/String
+      1382: invokespecial #199                // Method thaumcraft/common/items/ItemTCBase."<init>":(Ljava/lang/String;[Ljava/lang/String;)V
+      1385: dup
+      1386: putstatic     #552                // Field thaumcraft/api/items/ItemsTC.grappleGunSpool:Lnet/minecraft/item/Item;
+      1389: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1394: aload_0
+      1395: new           #554                // class thaumcraft/common/items/armor/ItemGoggles
+      1398: dup
+      1399: invokespecial #555                // Method thaumcraft/common/items/armor/ItemGoggles."<init>":()V
+      1402: dup
+      1403: putstatic     #558                // Field thaumcraft/api/items/ItemsTC.goggles:Lnet/minecraft/item/Item;
+      1406: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1411: aload_0
+      1412: new           #560                // class thaumcraft/common/items/armor/ItemThaumiumArmor
+      1415: dup
+      1416: ldc_w         #562                // String thaumium_helm
+      1419: getstatic     #566                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_THAUMIUM:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1422: iconst_2
+      1423: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1426: invokespecial #575                // Method thaumcraft/common/items/armor/ItemThaumiumArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1429: dup
+      1430: putstatic     #578                // Field thaumcraft/api/items/ItemsTC.thaumiumHelm:Lnet/minecraft/item/Item;
+      1433: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1438: aload_0
+      1439: new           #560                // class thaumcraft/common/items/armor/ItemThaumiumArmor
+      1442: dup
+      1443: ldc_w         #580                // String thaumium_chest
+      1446: getstatic     #566                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_THAUMIUM:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1449: iconst_2
+      1450: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1453: invokespecial #575                // Method thaumcraft/common/items/armor/ItemThaumiumArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1456: dup
+      1457: putstatic     #586                // Field thaumcraft/api/items/ItemsTC.thaumiumChest:Lnet/minecraft/item/Item;
+      1460: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1465: aload_0
+      1466: new           #560                // class thaumcraft/common/items/armor/ItemThaumiumArmor
+      1469: dup
+      1470: ldc_w         #588                // String thaumium_legs
+      1473: getstatic     #566                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_THAUMIUM:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1476: iconst_2
+      1477: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1480: invokespecial #575                // Method thaumcraft/common/items/armor/ItemThaumiumArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1483: dup
+      1484: putstatic     #594                // Field thaumcraft/api/items/ItemsTC.thaumiumLegs:Lnet/minecraft/item/Item;
+      1487: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1492: aload_0
+      1493: new           #560                // class thaumcraft/common/items/armor/ItemThaumiumArmor
+      1496: dup
+      1497: ldc_w         #596                // String thaumium_boots
+      1500: getstatic     #566                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_THAUMIUM:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1503: iconst_2
+      1504: getstatic     #599                // Field net/minecraft/inventory/EntityEquipmentSlot.FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1507: invokespecial #575                // Method thaumcraft/common/items/armor/ItemThaumiumArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1510: dup
+      1511: putstatic     #602                // Field thaumcraft/api/items/ItemsTC.thaumiumBoots:Lnet/minecraft/item/Item;
+      1514: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1519: aload_0
+      1520: new           #604                // class thaumcraft/common/items/armor/ItemRobeArmor
+      1523: dup
+      1524: ldc_w         #606                // String cloth_chest
+      1527: getstatic     #609                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_SPECIAL:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1530: iconst_1
+      1531: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1534: invokespecial #610                // Method thaumcraft/common/items/armor/ItemRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1537: dup
+      1538: putstatic     #613                // Field thaumcraft/api/items/ItemsTC.clothChest:Lnet/minecraft/item/Item;
+      1541: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1546: aload_0
+      1547: new           #604                // class thaumcraft/common/items/armor/ItemRobeArmor
+      1550: dup
+      1551: ldc_w         #615                // String cloth_legs
+      1554: getstatic     #609                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_SPECIAL:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1557: iconst_2
+      1558: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1561: invokespecial #610                // Method thaumcraft/common/items/armor/ItemRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1564: dup
+      1565: putstatic     #618                // Field thaumcraft/api/items/ItemsTC.clothLegs:Lnet/minecraft/item/Item;
+      1568: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1573: aload_0
+      1574: new           #604                // class thaumcraft/common/items/armor/ItemRobeArmor
+      1577: dup
+      1578: ldc_w         #620                // String cloth_boots
+      1581: getstatic     #609                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_SPECIAL:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1584: iconst_1
+      1585: getstatic     #599                // Field net/minecraft/inventory/EntityEquipmentSlot.FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1588: invokespecial #610                // Method thaumcraft/common/items/armor/ItemRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1591: dup
+      1592: putstatic     #623                // Field thaumcraft/api/items/ItemsTC.clothBoots:Lnet/minecraft/item/Item;
+      1595: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1600: aload_0
+      1601: new           #625                // class thaumcraft/common/items/armor/ItemBootsTraveller
+      1604: dup
+      1605: invokespecial #626                // Method thaumcraft/common/items/armor/ItemBootsTraveller."<init>":()V
+      1608: dup
+      1609: putstatic     #629                // Field thaumcraft/api/items/ItemsTC.travellerBoots:Lnet/minecraft/item/Item;
+      1612: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1617: aload_0
+      1618: new           #631                // class thaumcraft/common/items/armor/ItemFortressArmor
+      1621: dup
+      1622: ldc_w         #633                // String fortress_helm
+      1625: getstatic     #636                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_FORTRESS:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1628: iconst_4
+      1629: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1632: invokespecial #637                // Method thaumcraft/common/items/armor/ItemFortressArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1635: dup
+      1636: putstatic     #640                // Field thaumcraft/api/items/ItemsTC.fortressHelm:Lnet/minecraft/item/Item;
+      1639: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1644: aload_0
+      1645: new           #631                // class thaumcraft/common/items/armor/ItemFortressArmor
+      1648: dup
+      1649: ldc_w         #642                // String fortress_chest
+      1652: getstatic     #636                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_FORTRESS:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1655: iconst_4
+      1656: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1659: invokespecial #637                // Method thaumcraft/common/items/armor/ItemFortressArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1662: dup
+      1663: putstatic     #645                // Field thaumcraft/api/items/ItemsTC.fortressChest:Lnet/minecraft/item/Item;
+      1666: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1671: aload_0
+      1672: new           #631                // class thaumcraft/common/items/armor/ItemFortressArmor
+      1675: dup
+      1676: ldc_w         #647                // String fortress_legs
+      1679: getstatic     #636                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_FORTRESS:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1682: iconst_4
+      1683: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1686: invokespecial #637                // Method thaumcraft/common/items/armor/ItemFortressArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1689: dup
+      1690: putstatic     #650                // Field thaumcraft/api/items/ItemsTC.fortressLegs:Lnet/minecraft/item/Item;
+      1693: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1698: aload_0
+      1699: new           #652                // class thaumcraft/common/items/armor/ItemVoidArmor
+      1702: dup
+      1703: ldc_w         #654                // String void_helm
+      1706: getstatic     #657                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOID:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1709: iconst_2
+      1710: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1713: invokespecial #658                // Method thaumcraft/common/items/armor/ItemVoidArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1716: dup
+      1717: putstatic     #661                // Field thaumcraft/api/items/ItemsTC.voidHelm:Lnet/minecraft/item/Item;
+      1720: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1725: aload_0
+      1726: new           #652                // class thaumcraft/common/items/armor/ItemVoidArmor
+      1729: dup
+      1730: ldc_w         #663                // String void_chest
+      1733: getstatic     #657                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOID:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1736: iconst_2
+      1737: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1740: invokespecial #658                // Method thaumcraft/common/items/armor/ItemVoidArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1743: dup
+      1744: putstatic     #666                // Field thaumcraft/api/items/ItemsTC.voidChest:Lnet/minecraft/item/Item;
+      1747: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1752: aload_0
+      1753: new           #652                // class thaumcraft/common/items/armor/ItemVoidArmor
+      1756: dup
+      1757: ldc_w         #668                // String void_legs
+      1760: getstatic     #657                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOID:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1763: iconst_2
+      1764: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1767: invokespecial #658                // Method thaumcraft/common/items/armor/ItemVoidArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1770: dup
+      1771: putstatic     #671                // Field thaumcraft/api/items/ItemsTC.voidLegs:Lnet/minecraft/item/Item;
+      1774: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1779: aload_0
+      1780: new           #652                // class thaumcraft/common/items/armor/ItemVoidArmor
+      1783: dup
+      1784: ldc_w         #673                // String void_boots
+      1787: getstatic     #657                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOID:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1790: iconst_2
+      1791: getstatic     #599                // Field net/minecraft/inventory/EntityEquipmentSlot.FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1794: invokespecial #658                // Method thaumcraft/common/items/armor/ItemVoidArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1797: dup
+      1798: putstatic     #676                // Field thaumcraft/api/items/ItemsTC.voidBoots:Lnet/minecraft/item/Item;
+      1801: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1806: aload_0
+      1807: new           #678                // class thaumcraft/common/items/armor/ItemVoidRobeArmor
+      1810: dup
+      1811: ldc_w         #680                // String void_robe_helm
+      1814: getstatic     #683                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOIDROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1817: iconst_4
+      1818: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1821: invokespecial #684                // Method thaumcraft/common/items/armor/ItemVoidRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1824: dup
+      1825: putstatic     #687                // Field thaumcraft/api/items/ItemsTC.voidRobeHelm:Lnet/minecraft/item/Item;
+      1828: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1833: aload_0
+      1834: new           #678                // class thaumcraft/common/items/armor/ItemVoidRobeArmor
+      1837: dup
+      1838: ldc_w         #689                // String void_robe_chest
+      1841: getstatic     #683                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOIDROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1844: iconst_4
+      1845: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1848: invokespecial #684                // Method thaumcraft/common/items/armor/ItemVoidRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1851: dup
+      1852: putstatic     #692                // Field thaumcraft/api/items/ItemsTC.voidRobeChest:Lnet/minecraft/item/Item;
+      1855: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1860: aload_0
+      1861: new           #678                // class thaumcraft/common/items/armor/ItemVoidRobeArmor
+      1864: dup
+      1865: ldc_w         #694                // String void_robe_legs
+      1868: getstatic     #683                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_VOIDROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1871: iconst_4
+      1872: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1875: invokespecial #684                // Method thaumcraft/common/items/armor/ItemVoidRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1878: dup
+      1879: putstatic     #697                // Field thaumcraft/api/items/ItemsTC.voidRobeLegs:Lnet/minecraft/item/Item;
+      1882: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1887: aload_0
+      1888: new           #699                // class thaumcraft/common/items/armor/ItemCultistPlateArmor
+      1891: dup
+      1892: ldc_w         #701                // String crimson_plate_helm
+      1895: getstatic     #704                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_PLATE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1898: iconst_4
+      1899: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1902: invokespecial #705                // Method thaumcraft/common/items/armor/ItemCultistPlateArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1905: dup
+      1906: putstatic     #708                // Field thaumcraft/api/items/ItemsTC.crimsonPlateHelm:Lnet/minecraft/item/Item;
+      1909: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1914: aload_0
+      1915: new           #699                // class thaumcraft/common/items/armor/ItemCultistPlateArmor
+      1918: dup
+      1919: ldc_w         #710                // String crimson_plate_chest
+      1922: getstatic     #704                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_PLATE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1925: iconst_4
+      1926: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1929: invokespecial #705                // Method thaumcraft/common/items/armor/ItemCultistPlateArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1932: dup
+      1933: putstatic     #713                // Field thaumcraft/api/items/ItemsTC.crimsonPlateChest:Lnet/minecraft/item/Item;
+      1936: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1941: aload_0
+      1942: new           #699                // class thaumcraft/common/items/armor/ItemCultistPlateArmor
+      1945: dup
+      1946: ldc_w         #715                // String crimson_plate_legs
+      1949: getstatic     #704                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_PLATE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1952: iconst_4
+      1953: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      1956: invokespecial #705                // Method thaumcraft/common/items/armor/ItemCultistPlateArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      1959: dup
+      1960: putstatic     #718                // Field thaumcraft/api/items/ItemsTC.crimsonPlateLegs:Lnet/minecraft/item/Item;
+      1963: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1968: aload_0
+      1969: new           #720                // class thaumcraft/common/items/armor/ItemCultistBoots
+      1972: dup
+      1973: invokespecial #721                // Method thaumcraft/common/items/armor/ItemCultistBoots."<init>":()V
+      1976: dup
+      1977: putstatic     #724                // Field thaumcraft/api/items/ItemsTC.crimsonBoots:Lnet/minecraft/item/Item;
+      1980: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      1985: aload_0
+      1986: new           #726                // class thaumcraft/common/items/armor/ItemCultistRobeArmor
+      1989: dup
+      1990: ldc_w         #728                // String crimson_robe_helm
+      1993: getstatic     #731                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_ROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      1996: iconst_4
+      1997: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2000: invokespecial #732                // Method thaumcraft/common/items/armor/ItemCultistRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2003: dup
+      2004: putstatic     #735                // Field thaumcraft/api/items/ItemsTC.crimsonRobeHelm:Lnet/minecraft/item/Item;
+      2007: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2012: aload_0
+      2013: new           #726                // class thaumcraft/common/items/armor/ItemCultistRobeArmor
+      2016: dup
+      2017: ldc_w         #737                // String crimson_robe_chest
+      2020: getstatic     #731                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_ROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      2023: iconst_4
+      2024: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2027: invokespecial #732                // Method thaumcraft/common/items/armor/ItemCultistRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2030: dup
+      2031: putstatic     #740                // Field thaumcraft/api/items/ItemsTC.crimsonRobeChest:Lnet/minecraft/item/Item;
+      2034: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2039: aload_0
+      2040: new           #726                // class thaumcraft/common/items/armor/ItemCultistRobeArmor
+      2043: dup
+      2044: ldc_w         #742                // String crimson_robe_legs
+      2047: getstatic     #731                // Field thaumcraft/api/ThaumcraftMaterials.ARMORMAT_CULTIST_ROBE:Lnet/minecraft/item/ItemArmor$ArmorMaterial;
+      2050: iconst_4
+      2051: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2054: invokespecial #732                // Method thaumcraft/common/items/armor/ItemCultistRobeArmor."<init>":(Ljava/lang/String;Lnet/minecraft/item/ItemArmor$ArmorMaterial;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2057: dup
+      2058: putstatic     #745                // Field thaumcraft/api/items/ItemsTC.crimsonRobeLegs:Lnet/minecraft/item/Item;
+      2061: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2066: aload_0
+      2067: new           #747                // class thaumcraft/common/items/armor/ItemCultistLeaderArmor
+      2070: dup
+      2071: ldc_w         #749                // String crimson_praetor_helm
+      2074: iconst_4
+      2075: getstatic     #572                // Field net/minecraft/inventory/EntityEquipmentSlot.HEAD:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2078: invokespecial #752                // Method thaumcraft/common/items/armor/ItemCultistLeaderArmor."<init>":(Ljava/lang/String;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2081: dup
+      2082: putstatic     #755                // Field thaumcraft/api/items/ItemsTC.crimsonPraetorHelm:Lnet/minecraft/item/Item;
+      2085: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2090: aload_0
+      2091: new           #747                // class thaumcraft/common/items/armor/ItemCultistLeaderArmor
+      2094: dup
+      2095: ldc_w         #757                // String crimson_praetor_chest
+      2098: iconst_4
+      2099: getstatic     #583                // Field net/minecraft/inventory/EntityEquipmentSlot.CHEST:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2102: invokespecial #752                // Method thaumcraft/common/items/armor/ItemCultistLeaderArmor."<init>":(Ljava/lang/String;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2105: dup
+      2106: putstatic     #760                // Field thaumcraft/api/items/ItemsTC.crimsonPraetorChest:Lnet/minecraft/item/Item;
+      2109: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2114: aload_0
+      2115: new           #747                // class thaumcraft/common/items/armor/ItemCultistLeaderArmor
+      2118: dup
+      2119: ldc_w         #762                // String crimson_praetor_legs
+      2122: iconst_4
+      2123: getstatic     #591                // Field net/minecraft/inventory/EntityEquipmentSlot.LEGS:Lnet/minecraft/inventory/EntityEquipmentSlot;
+      2126: invokespecial #752                // Method thaumcraft/common/items/armor/ItemCultistLeaderArmor."<init>":(Ljava/lang/String;ILnet/minecraft/inventory/EntityEquipmentSlot;)V
+      2129: dup
+      2130: putstatic     #765                // Field thaumcraft/api/items/ItemsTC.crimsonPraetorLegs:Lnet/minecraft/item/Item;
+      2133: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2138: aload_0
+      2139: new           #767                // class thaumcraft/common/items/baubles/ItemBaubles
+      2142: dup
+      2143: invokespecial #768                // Method thaumcraft/common/items/baubles/ItemBaubles."<init>":()V
+      2146: dup
+      2147: putstatic     #771                // Field thaumcraft/api/items/ItemsTC.baubles:Lnet/minecraft/item/Item;
+      2150: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2155: aload_0
+      2156: new           #773                // class thaumcraft/common/items/baubles/ItemAmuletVis
+      2159: dup
+      2160: invokespecial #774                // Method thaumcraft/common/items/baubles/ItemAmuletVis."<init>":()V
+      2163: dup
+      2164: putstatic     #777                // Field thaumcraft/api/items/ItemsTC.amuletVis:Lnet/minecraft/item/Item;
+      2167: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2172: aload_0
+      2173: new           #779                // class thaumcraft/common/items/baubles/ItemVerdantCharm
+      2176: dup
+      2177: invokespecial #780                // Method thaumcraft/common/items/baubles/ItemVerdantCharm."<init>":()V
+      2180: dup
+      2181: putstatic     #783                // Field thaumcraft/api/items/ItemsTC.charmVerdant:Lnet/minecraft/item/Item;
+      2184: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2189: aload_0
+      2190: new           #785                // class thaumcraft/common/items/baubles/ItemCuriosityBand
+      2193: dup
+      2194: invokespecial #786                // Method thaumcraft/common/items/baubles/ItemCuriosityBand."<init>":()V
+      2197: dup
+      2198: putstatic     #789                // Field thaumcraft/api/items/ItemsTC.bandCuriosity:Lnet/minecraft/item/Item;
+      2201: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2206: aload_0
+      2207: new           #791                // class thaumcraft/common/items/baubles/ItemVoidseerCharm
+      2210: dup
+      2211: invokespecial #792                // Method thaumcraft/common/items/baubles/ItemVoidseerCharm."<init>":()V
+      2214: dup
+      2215: putstatic     #795                // Field thaumcraft/api/items/ItemsTC.charmVoidseer:Lnet/minecraft/item/Item;
+      2218: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2223: aload_0
+      2224: new           #797                // class thaumcraft/common/items/baubles/ItemCloudRing
+      2227: dup
+      2228: invokespecial #798                // Method thaumcraft/common/items/baubles/ItemCloudRing."<init>":()V
+      2231: dup
+      2232: putstatic     #801                // Field thaumcraft/api/items/ItemsTC.ringCloud:Lnet/minecraft/item/Item;
+      2235: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2240: aload_0
+      2241: new           #803                // class thaumcraft/common/items/baubles/ItemCharmUndying
+      2244: dup
+      2245: invokespecial #804                // Method thaumcraft/common/items/baubles/ItemCharmUndying."<init>":()V
+      2248: dup
+      2249: putstatic     #807                // Field thaumcraft/api/items/ItemsTC.charmUndying:Lnet/minecraft/item/Item;
+      2252: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2257: aload_0
+      2258: new           #809                // class thaumcraft/common/items/misc/ItemCreativeFluxSponge
+      2261: dup
+      2262: invokespecial #810                // Method thaumcraft/common/items/misc/ItemCreativeFluxSponge."<init>":()V
+      2265: dup
+      2266: putstatic     #813                // Field thaumcraft/api/items/ItemsTC.creativeFluxSponge:Lnet/minecraft/item/Item;
+      2269: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2274: aload_0
+      2275: new           #815                // class thaumcraft/common/items/curios/ItemEnchantmentPlaceholder
+      2278: dup
+      2279: invokespecial #816                // Method thaumcraft/common/items/curios/ItemEnchantmentPlaceholder."<init>":()V
+      2282: dup
+      2283: putstatic     #819                // Field thaumcraft/api/items/ItemsTC.enchantedPlaceholder:Lnet/minecraft/item/Item;
+      2286: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2291: aload_0
+      2292: new           #821                // class thaumcraft/common/items/casters/ItemCaster
+      2295: dup
+      2296: ldc_w         #823                // String caster_basic
+      2299: iconst_0
+      2300: invokespecial #825                // Method thaumcraft/common/items/casters/ItemCaster."<init>":(Ljava/lang/String;I)V
+      2303: dup
+      2304: putstatic     #828                // Field thaumcraft/api/items/ItemsTC.casterBasic:Lnet/minecraft/item/Item;
+      2307: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2312: aload_0
+      2313: new           #830                // class thaumcraft/common/items/casters/ItemFocus
+      2316: dup
+      2317: ldc_w         #832                // String focus_1
+      2320: bipush        15
+      2322: invokespecial #833                // Method thaumcraft/common/items/casters/ItemFocus."<init>":(Ljava/lang/String;I)V
+      2325: dup
+      2326: putstatic     #836                // Field thaumcraft/api/items/ItemsTC.focus1:Lnet/minecraft/item/Item;
+      2329: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2334: aload_0
+      2335: new           #830                // class thaumcraft/common/items/casters/ItemFocus
+      2338: dup
+      2339: ldc_w         #838                // String focus_2
+      2342: bipush        25
+      2344: invokespecial #833                // Method thaumcraft/common/items/casters/ItemFocus."<init>":(Ljava/lang/String;I)V
+      2347: dup
+      2348: putstatic     #841                // Field thaumcraft/api/items/ItemsTC.focus2:Lnet/minecraft/item/Item;
+      2351: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2356: aload_0
+      2357: new           #830                // class thaumcraft/common/items/casters/ItemFocus
+      2360: dup
+      2361: ldc_w         #843                // String focus_3
+      2364: bipush        50
+      2366: invokespecial #833                // Method thaumcraft/common/items/casters/ItemFocus."<init>":(Ljava/lang/String;I)V
+      2369: dup
+      2370: putstatic     #846                // Field thaumcraft/api/items/ItemsTC.focus3:Lnet/minecraft/item/Item;
+      2373: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2378: aload_0
+      2379: new           #848                // class thaumcraft/common/items/casters/ItemFocusPouch
+      2382: dup
+      2383: invokespecial #849                // Method thaumcraft/common/items/casters/ItemFocusPouch."<init>":()V
+      2386: dup
+      2387: putstatic     #852                // Field thaumcraft/api/items/ItemsTC.focusPouch:Lnet/minecraft/item/Item;
+      2390: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2395: aload_0
+      2396: new           #854                // class thaumcraft/common/golems/ItemGolemBell
+      2399: dup
+      2400: invokespecial #855                // Method thaumcraft/common/golems/ItemGolemBell."<init>":()V
+      2403: dup
+      2404: putstatic     #858                // Field thaumcraft/api/items/ItemsTC.golemBell:Lnet/minecraft/item/Item;
+      2407: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2412: aload_0
+      2413: new           #860                // class thaumcraft/common/golems/ItemGolemPlacer
+      2416: dup
+      2417: invokespecial #861                // Method thaumcraft/common/golems/ItemGolemPlacer."<init>":()V
+      2420: dup
+      2421: putstatic     #864                // Field thaumcraft/api/items/ItemsTC.golemPlacer:Lnet/minecraft/item/Item;
+      2424: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2429: aload_0
+      2430: new           #866                // class thaumcraft/common/golems/seals/ItemSealPlacer
+      2433: dup
+      2434: invokespecial #867                // Method thaumcraft/common/golems/seals/ItemSealPlacer."<init>":()V
+      2437: dup
+      2438: putstatic     #870                // Field thaumcraft/api/items/ItemsTC.seals:Lnet/minecraft/item/Item;
+      2441: invokeinterface #160,  2          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.register:(Lnet/minecraftforge/registries/IForgeRegistryEntry;)V
+      2446: return
+
+  public static void init();
+    Code:
+         0: ldc_w         #876                // class thaumcraft/api/casters/FocusMediumRoot
+         3: new           #878                // class net/minecraft/util/ResourceLocation
+         6: dup
+         7: ldc_w         #880                // String thaumcraft
+        10: ldc_w         #882                // String textures/foci/root.png
+        13: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+        16: ldc_w         #885                // int 10066329
+        19: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+        22: ldc_w         #893                // class thaumcraft/common/items/casters/foci/FocusMediumTouch
+        25: new           #878                // class net/minecraft/util/ResourceLocation
+        28: dup
+        29: ldc_w         #880                // String thaumcraft
+        32: ldc_w         #895                // String textures/foci/touch.png
+        35: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+        38: ldc_w         #896                // int 11371909
+        41: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+        44: ldc_w         #898                // class thaumcraft/common/items/casters/foci/FocusMediumBolt
+        47: new           #878                // class net/minecraft/util/ResourceLocation
+        50: dup
+        51: ldc_w         #880                // String thaumcraft
+        54: ldc_w         #900                // String textures/foci/bolt.png
+        57: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+        60: ldc_w         #901                // int 11377029
+        63: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+        66: ldc_w         #903                // class thaumcraft/common/items/casters/foci/FocusMediumProjectile
+        69: new           #878                // class net/minecraft/util/ResourceLocation
+        72: dup
+        73: ldc_w         #880                // String thaumcraft
+        76: ldc_w         #905                // String textures/foci/projectile.png
+        79: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+        82: ldc_w         #906                // int 11382149
+        85: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+        88: ldc_w         #908                // class thaumcraft/common/items/casters/foci/FocusMediumCloud
+        91: new           #878                // class net/minecraft/util/ResourceLocation
+        94: dup
+        95: ldc_w         #880                // String thaumcraft
+        98: ldc_w         #910                // String textures/foci/cloud.png
+       101: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       104: ldc_w         #911                // int 10071429
+       107: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       110: ldc_w         #913                // class thaumcraft/common/items/casters/foci/FocusMediumMine
+       113: new           #878                // class net/minecraft/util/ResourceLocation
+       116: dup
+       117: ldc_w         #880                // String thaumcraft
+       120: ldc_w         #915                // String textures/foci/mine.png
+       123: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       126: ldc_w         #916                // int 8760709
+       129: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       132: ldc_w         #918                // class thaumcraft/common/items/casters/foci/FocusMediumPlan
+       135: new           #878                // class net/minecraft/util/ResourceLocation
+       138: dup
+       139: ldc_w         #880                // String thaumcraft
+       142: ldc_w         #920                // String textures/foci/plan.png
+       145: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       148: ldc_w         #921                // int 8760728
+       151: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       154: ldc_w         #923                // class thaumcraft/common/items/casters/foci/FocusMediumSpellBat
+       157: new           #878                // class net/minecraft/util/ResourceLocation
+       160: dup
+       161: ldc_w         #880                // String thaumcraft
+       164: ldc_w         #925                // String textures/foci/spellbat.png
+       167: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       170: ldc_w         #926                // int 8760748
+       173: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       176: ldc_w         #928                // class thaumcraft/common/items/casters/foci/FocusEffectFire
+       179: new           #878                // class net/minecraft/util/ResourceLocation
+       182: dup
+       183: ldc_w         #880                // String thaumcraft
+       186: ldc_w         #930                // String textures/foci/fire.png
+       189: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       192: ldc_w         #931                // int 16734721
+       195: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       198: ldc_w         #933                // class thaumcraft/common/items/casters/foci/FocusEffectFrost
+       201: new           #878                // class net/minecraft/util/ResourceLocation
+       204: dup
+       205: ldc_w         #880                // String thaumcraft
+       208: ldc_w         #935                // String textures/foci/frost.png
+       211: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       214: ldc_w         #936                // int 14811135
+       217: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       220: ldc_w         #938                // class thaumcraft/common/items/casters/foci/FocusEffectAir
+       223: new           #878                // class net/minecraft/util/ResourceLocation
+       226: dup
+       227: ldc_w         #880                // String thaumcraft
+       230: ldc_w         #940                // String textures/foci/air.png
+       233: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       236: ldc_w         #941                // int 16777086
+       239: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       242: ldc_w         #943                // class thaumcraft/common/items/casters/foci/FocusEffectEarth
+       245: new           #878                // class net/minecraft/util/ResourceLocation
+       248: dup
+       249: ldc_w         #880                // String thaumcraft
+       252: ldc_w         #945                // String textures/foci/earth.png
+       255: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       258: ldc_w         #946                // int 5685248
+       261: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       264: ldc_w         #948                // class thaumcraft/common/items/casters/foci/FocusEffectFlux
+       267: new           #878                // class net/minecraft/util/ResourceLocation
+       270: dup
+       271: ldc_w         #880                // String thaumcraft
+       274: ldc_w         #950                // String textures/foci/flux.png
+       277: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       280: ldc_w         #951                // int 8388736
+       283: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       286: ldc_w         #953                // class thaumcraft/common/items/casters/foci/FocusEffectBreak
+       289: new           #878                // class net/minecraft/util/ResourceLocation
+       292: dup
+       293: ldc_w         #880                // String thaumcraft
+       296: ldc_w         #955                // String textures/foci/break.png
+       299: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       302: ldc_w         #956                // int 9063176
+       305: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       308: ldc_w         #958                // class thaumcraft/common/items/casters/foci/FocusEffectRift
+       311: new           #878                // class net/minecraft/util/ResourceLocation
+       314: dup
+       315: ldc_w         #880                // String thaumcraft
+       318: ldc_w         #960                // String textures/foci/rift.png
+       321: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       324: ldc_w         #961                // int 3084645
+       327: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       330: ldc_w         #963                // class thaumcraft/common/items/casters/foci/FocusEffectExchange
+       333: new           #878                // class net/minecraft/util/ResourceLocation
+       336: dup
+       337: ldc_w         #880                // String thaumcraft
+       340: ldc_w         #965                // String textures/foci/exchange.png
+       343: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       346: ldc_w         #966                // int 5735255
+       349: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       352: ldc_w         #968                // class thaumcraft/common/items/casters/foci/FocusEffectCurse
+       355: new           #878                // class net/minecraft/util/ResourceLocation
+       358: dup
+       359: ldc_w         #880                // String thaumcraft
+       362: ldc_w         #970                // String textures/foci/curse.png
+       365: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       368: ldc_w         #971                // int 6946821
+       371: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       374: ldc_w         #973                // class thaumcraft/common/items/casters/foci/FocusEffectHeal
+       377: new           #878                // class net/minecraft/util/ResourceLocation
+       380: dup
+       381: ldc_w         #880                // String thaumcraft
+       384: ldc_w         #975                // String textures/foci/heal.png
+       387: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       390: ldc_w         #976                // int 14548997
+       393: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       396: ldc_w         #978                // class thaumcraft/common/items/casters/foci/FocusModScatter
+       399: new           #878                // class net/minecraft/util/ResourceLocation
+       402: dup
+       403: ldc_w         #880                // String thaumcraft
+       406: ldc_w         #980                // String textures/foci/scatter.png
+       409: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       412: ldc_w         #885                // int 10066329
+       415: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       418: ldc_w         #982                // class thaumcraft/common/items/casters/foci/FocusModSplitTarget
+       421: new           #878                // class net/minecraft/util/ResourceLocation
+       424: dup
+       425: ldc_w         #880                // String thaumcraft
+       428: ldc_w         #984                // String textures/foci/split_target.png
+       431: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       434: ldc_w         #885                // int 10066329
+       437: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       440: ldc_w         #986                // class thaumcraft/common/items/casters/foci/FocusModSplitTrajectory
+       443: new           #878                // class net/minecraft/util/ResourceLocation
+       446: dup
+       447: ldc_w         #880                // String thaumcraft
+       450: ldc_w         #988                // String textures/foci/split_trajectory.png
+       453: invokespecial #884                // Method net/minecraft/util/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       456: ldc_w         #885                // int 10066329
+       459: invokestatic  #891                // Method thaumcraft/api/casters/FocusEngine.registerElement:(Ljava/lang/Class;Lnet/minecraft/util/ResourceLocation;I)V
+       462: return
+
+  public static void preInitSeals();
+    Code:
+         0: new           #991                // class thaumcraft/common/golems/seals/SealPickup
+         3: dup
+         4: invokespecial #992                // Method thaumcraft/common/golems/seals/SealPickup."<init>":()V
+         7: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        10: new           #1000               // class thaumcraft/common/golems/seals/SealPickupAdvanced
+        13: dup
+        14: invokespecial #1001               // Method thaumcraft/common/golems/seals/SealPickupAdvanced."<init>":()V
+        17: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        20: new           #1003               // class thaumcraft/common/golems/seals/SealFill
+        23: dup
+        24: invokespecial #1004               // Method thaumcraft/common/golems/seals/SealFill."<init>":()V
+        27: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        30: new           #1006               // class thaumcraft/common/golems/seals/SealFillAdvanced
+        33: dup
+        34: invokespecial #1007               // Method thaumcraft/common/golems/seals/SealFillAdvanced."<init>":()V
+        37: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        40: new           #1009               // class thaumcraft/common/golems/seals/SealEmpty
+        43: dup
+        44: invokespecial #1010               // Method thaumcraft/common/golems/seals/SealEmpty."<init>":()V
+        47: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        50: new           #1012               // class thaumcraft/common/golems/seals/SealEmptyAdvanced
+        53: dup
+        54: invokespecial #1013               // Method thaumcraft/common/golems/seals/SealEmptyAdvanced."<init>":()V
+        57: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        60: new           #1015               // class thaumcraft/common/golems/seals/SealHarvest
+        63: dup
+        64: invokespecial #1016               // Method thaumcraft/common/golems/seals/SealHarvest."<init>":()V
+        67: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        70: new           #1018               // class thaumcraft/common/golems/seals/SealButcher
+        73: dup
+        74: invokespecial #1019               // Method thaumcraft/common/golems/seals/SealButcher."<init>":()V
+        77: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        80: new           #1021               // class thaumcraft/common/golems/seals/SealGuard
+        83: dup
+        84: invokespecial #1022               // Method thaumcraft/common/golems/seals/SealGuard."<init>":()V
+        87: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+        90: new           #1024               // class thaumcraft/common/golems/seals/SealGuardAdvanced
+        93: dup
+        94: invokespecial #1025               // Method thaumcraft/common/golems/seals/SealGuardAdvanced."<init>":()V
+        97: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       100: new           #1027               // class thaumcraft/common/golems/seals/SealLumber
+       103: dup
+       104: invokespecial #1028               // Method thaumcraft/common/golems/seals/SealLumber."<init>":()V
+       107: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       110: new           #1030               // class thaumcraft/common/golems/seals/SealBreaker
+       113: dup
+       114: invokespecial #1031               // Method thaumcraft/common/golems/seals/SealBreaker."<init>":()V
+       117: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       120: new           #1033               // class thaumcraft/common/golems/seals/SealUse
+       123: dup
+       124: invokespecial #1034               // Method thaumcraft/common/golems/seals/SealUse."<init>":()V
+       127: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       130: new           #1036               // class thaumcraft/common/golems/seals/SealProvide
+       133: dup
+       134: invokespecial #1037               // Method thaumcraft/common/golems/seals/SealProvide."<init>":()V
+       137: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       140: new           #1039               // class thaumcraft/common/golems/seals/SealStock
+       143: dup
+       144: invokespecial #1040               // Method thaumcraft/common/golems/seals/SealStock."<init>":()V
+       147: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       150: new           #1042               // class thaumcraft/common/golems/seals/SealBreakerAdvanced
+       153: dup
+       154: invokespecial #1043               // Method thaumcraft/common/golems/seals/SealBreakerAdvanced."<init>":()V
+       157: invokestatic  #998                // Method thaumcraft/common/golems/seals/SealHandler.registerSeal:(Lthaumcraft/api/golems/seals/ISeal;)V
+       160: return
+
+  public static void initModelsAndVariants();
+    Code:
+         0: getstatic     #1050               // Field ITEM_VARIANT_HOLDERS:Ljava/util/List;
+         3: invokeinterface #1056,  1         // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+         8: astore_0
+         9: aload_0
+        10: invokeinterface #1062,  1         // InterfaceMethod java/util/Iterator.hasNext:()Z
+        15: ifeq          35
+        18: aload_0
+        19: invokeinterface #1066,  1         // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        24: checkcast     #1068               // class thaumcraft/common/items/IThaumcraftItems
+        27: astore_1
+        28: aload_1
+        29: invokestatic  #1072               // Method initModelAndVariants:(Lthaumcraft/common/items/IThaumcraftItems;)V
+        32: goto          9
+        35: return
+
+  private static void initModelAndVariants(thaumcraft.common.items.IThaumcraftItems);
+    Code:
+         0: aload_0
+         1: invokeinterface #1078,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getCustomMesh:()Lnet/minecraft/client/renderer/ItemMeshDefinition;
+         6: ifnull        76
+         9: aload_0
+        10: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+        15: aload_0
+        16: invokeinterface #1078,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getCustomMesh:()Lnet/minecraft/client/renderer/ItemMeshDefinition;
+        21: invokestatic  #1088               // Method net/minecraftforge/client/model/ModelLoader.setCustomMeshDefinition:(Lnet/minecraft/item/Item;Lnet/minecraft/client/renderer/ItemMeshDefinition;)V
+        24: iconst_0
+        25: istore_1
+        26: iload_1
+        27: aload_0
+        28: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+        33: arraylength
+        34: if_icmpge     73
+        37: aload_0
+        38: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+        43: iconst_1
+        44: anewarray     #878                // class net/minecraft/util/ResourceLocation
+        47: dup
+        48: iconst_0
+        49: aload_0
+        50: aload_0
+        51: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+        56: iload_1
+        57: aaload
+        58: invokeinterface #1096,  2         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getCustomModelResourceLocation:(Ljava/lang/String;)Lnet/minecraft/client/renderer/block/model/ModelResourceLocation;
+        63: aastore
+        64: invokestatic  #1102               // Method net/minecraft/client/renderer/block/model/ModelBakery.registerItemVariants:(Lnet/minecraft/item/Item;[Lnet/minecraft/util/ResourceLocation;)V
+        67: iinc          1, 1
+        70: goto          26
+        73: goto          266
+        76: aload_0
+        77: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+        82: getstatic     #870                // Field thaumcraft/api/items/ItemsTC.seals:Lnet/minecraft/item/Item;
+        85: if_acmpne     174
+        88: iconst_0
+        89: istore_1
+        90: iload_1
+        91: aload_0
+        92: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+        97: arraylength
+        98: if_icmpge     171
+       101: aload_0
+       102: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       107: aload_0
+       108: invokeinterface #1106,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantMeta:()[I
+       113: iload_1
+       114: iaload
+       115: new           #1108               // class net/minecraft/client/renderer/block/model/ModelResourceLocation
+       118: dup
+       119: new           #1110               // class java/lang/StringBuilder
+       122: dup
+       123: invokespecial #1111               // Method java/lang/StringBuilder."<init>":()V
+       126: aload_0
+       127: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       132: invokevirtual #1115               // Method net/minecraft/item/Item.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+       135: invokevirtual #1119               // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+       138: ldc_w         #1121               // String _
+       141: invokevirtual #1124               // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       144: aload_0
+       145: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+       150: iload_1
+       151: aaload
+       152: invokevirtual #1124               // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       155: invokevirtual #1128               // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       158: aconst_null
+       159: invokespecial #1129               // Method net/minecraft/client/renderer/block/model/ModelResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+       162: invokestatic  #1133               // Method net/minecraftforge/client/model/ModelLoader.setCustomModelResourceLocation:(Lnet/minecraft/item/Item;ILnet/minecraft/client/renderer/block/model/ModelResourceLocation;)V
+       165: iinc          1, 1
+       168: goto          90
+       171: goto          266
+       174: aload_0
+       175: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       180: invokevirtual #1136               // Method net/minecraft/item/Item.func_77614_k:()Z
+       183: ifne          216
+       186: aload_0
+       187: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       192: iconst_0
+       193: new           #1108               // class net/minecraft/client/renderer/block/model/ModelResourceLocation
+       196: dup
+       197: aload_0
+       198: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       203: invokevirtual #1115               // Method net/minecraft/item/Item.getRegistryName:()Lnet/minecraft/util/ResourceLocation;
+       206: aconst_null
+       207: invokespecial #1139               // Method net/minecraft/client/renderer/block/model/ModelResourceLocation."<init>":(Lnet/minecraft/util/ResourceLocation;Ljava/lang/String;)V
+       210: invokestatic  #1133               // Method net/minecraftforge/client/model/ModelLoader.setCustomModelResourceLocation:(Lnet/minecraft/item/Item;ILnet/minecraft/client/renderer/block/model/ModelResourceLocation;)V
+       213: goto          266
+       216: iconst_0
+       217: istore_1
+       218: iload_1
+       219: aload_0
+       220: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+       225: arraylength
+       226: if_icmpge     266
+       229: aload_0
+       230: invokeinterface #1082,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getItem:()Lnet/minecraft/item/Item;
+       235: aload_0
+       236: invokeinterface #1106,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantMeta:()[I
+       241: iload_1
+       242: iaload
+       243: aload_0
+       244: aload_0
+       245: invokeinterface #1092,  1         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getVariantNames:()[Ljava/lang/String;
+       250: iload_1
+       251: aaload
+       252: invokeinterface #1096,  2         // InterfaceMethod thaumcraft/common/items/IThaumcraftItems.getCustomModelResourceLocation:(Ljava/lang/String;)Lnet/minecraft/client/renderer/block/model/ModelResourceLocation;
+       257: invokestatic  #1133               // Method net/minecraftforge/client/model/ModelLoader.setCustomModelResourceLocation:(Lnet/minecraft/item/Item;ILnet/minecraft/client/renderer/block/model/ModelResourceLocation;)V
+       260: iinc          1, 1
+       263: goto          218
+       266: return
+
+  static {};
+    Code:
+         0: new           #136                // class net/minecraft/item/ItemStack
+         3: dup
+         4: getstatic     #1148               // Field net/minecraft/init/Items.field_151164_bB:Lnet/minecraft/item/Item;
+         7: invokespecial #1151               // Method net/minecraft/item/ItemStack."<init>":(Lnet/minecraft/item/Item;)V
+        10: putstatic     #134                // Field startBook:Lnet/minecraft/item/ItemStack;
+        13: new           #1153               // class thaumcraft/common/lib/CreativeTabThaumcraft
+        16: dup
+        17: invokestatic  #1159               // Method net/minecraft/creativetab/CreativeTabs.getNextID:()I
+        20: ldc_w         #880                // String thaumcraft
+        23: invokespecial #1162               // Method thaumcraft/common/lib/CreativeTabThaumcraft."<init>":(ILjava/lang/String;)V
+        26: putstatic     #1164               // Field TABTC:Lnet/minecraft/creativetab/CreativeTabs;
+        29: new           #1166               // class java/util/ArrayList
+        32: dup
+        33: invokespecial #1167               // Method java/util/ArrayList."<init>":()V
+        36: putstatic     #1050               // Field ITEM_VARIANT_HOLDERS:Ljava/util/List;
+        39: return
+}

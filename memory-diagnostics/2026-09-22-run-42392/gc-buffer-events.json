@@ -1,0 +1,3726 @@
+{
+  "recording": {
+    "events": [{
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:01.069534800-04:00", 
+        "gcId": 10, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409018810368, 
+          "committedSize": 10972299264, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8818524160
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:01.069555600-04:00", 
+        "gcId": 10, 
+        "when": "Before GC", 
+        "gcThreshold": 284884992, 
+        "metaspace": {
+          "committed": 282984448, 
+          "used": 281178624, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 215089152, 
+          "used": 214039520, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 67895296, 
+          "used": 67139104, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:01.275549200-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 37, 
+        "totalCapacity": 50523232, 
+        "memoryUsed": 50523233
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:36:01.069530600-04:00", 
+        "duration": "PT1.4353039S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 10, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000714S", 
+        "longestPause": "PT0.0000452S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:02.504851800-04:00", 
+        "gcId": 10, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409018810368, 
+          "committedSize": 10972299264, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 2539651072
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:02.504852600-04:00", 
+        "gcId": 10, 
+        "when": "After GC", 
+        "gcThreshold": 286195712, 
+        "metaspace": {
+          "committed": 286195712, 
+          "used": 284419408, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 217513984, 
+          "used": 216485432, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 68681728, 
+          "used": 67933976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:02.504874100-04:00", 
+        "gcId": 11, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409018810368, 
+          "committedSize": 10972299264, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 2539651072
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:02.504876800-04:00", 
+        "gcId": 11, 
+        "when": "Before GC", 
+        "gcThreshold": 286195712, 
+        "metaspace": {
+          "committed": 286195712, 
+          "used": 284419408, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 217513984, 
+          "used": 216485432, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 68681728, 
+          "used": 67933976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:06.527340600-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 37, 
+        "totalCapacity": 50523232, 
+        "memoryUsed": 50523233
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:36:02.504872900-04:00", 
+        "duration": "PT4.1036398S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 11, 
+        "name": "ZGC Major", 
+        "cause": "Metadata GC Threshold", 
+        "sumOfPauses": "PT0.000087S", 
+        "longestPause": "PT0.000023S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:06.608522600-04:00", 
+        "gcId": 11, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4408918147072, 
+          "committedSize": 10871635968, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4418699264
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:06.608523500-04:00", 
+        "gcId": 11, 
+        "when": "After GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 291241984, 
+          "used": 289437560, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 221315072, 
+          "used": 220274304, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 69926912, 
+          "used": 69163256, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:11.948144-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1181, 
+        "totalCapacity": 70756066, 
+        "memoryUsed": 70756067
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:16.774246100-04:00", 
+        "gcId": 12, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4408414830592, 
+          "committedSize": 10368319488, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 9227468800
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:16.774248100-04:00", 
+        "gcId": 12, 
+        "when": "Before GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 317652992, 
+          "used": 315809160, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 240910336, 
+          "used": 239807648, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 76742656, 
+          "used": 76001512, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:36:16.774243300-04:00", 
+        "duration": "PT0.3946356S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 12, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000379S", 
+        "longestPause": "PT0.0000148S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:17.168890400-04:00", 
+        "gcId": 12, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4408414830592, 
+          "committedSize": 10368319488, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 1998585856
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:17.168891300-04:00", 
+        "gcId": 12, 
+        "when": "After GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 318701568, 
+          "used": 316851784, 
+          "reserved": 1342177280
+        }, 
+        "dataSpace": {
+          "committed": 241631232, 
+          "used": 240533720, 
+          "reserved": 268435456
+        }, 
+        "classSpace": {
+          "committed": 77070336, 
+          "used": 76318064, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:17.195577800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2809, 
+        "totalCapacity": 90869200, 
+        "memoryUsed": 90869204
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:22.658058700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2809, 
+        "totalCapacity": 90869200, 
+        "memoryUsed": 90869204
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:27.909733900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2809, 
+        "totalCapacity": 90869200, 
+        "memoryUsed": 90869204
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:33.348562-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2810, 
+        "totalCapacity": 90869264, 
+        "memoryUsed": 90869268
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:37.922634-04:00", 
+        "gcId": 13, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4407940874240, 
+          "committedSize": 9894363136, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 9340715008
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:37.922637700-04:00", 
+        "gcId": 13, 
+        "when": "Before GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 369164288, 
+          "used": 367278696, 
+          "reserved": 1409286144
+        }, 
+        "dataSpace": {
+          "committed": 277676032, 
+          "used": 276573720, 
+          "reserved": 335544320
+        }, 
+        "classSpace": {
+          "committed": 91488256, 
+          "used": 90704976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:38.617244100-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2810, 
+        "totalCapacity": 90869264, 
+        "memoryUsed": 90869268
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:36:37.922628500-04:00", 
+        "duration": "PT0.987319S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 13, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000517S", 
+        "longestPause": "PT0.0000193S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:38.909954800-04:00", 
+        "gcId": 13, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4407940874240, 
+          "committedSize": 9894363136, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 2350907392
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:38.909955600-04:00", 
+        "gcId": 13, 
+        "when": "After GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 372113408, 
+          "used": 370225928, 
+          "reserved": 1409286144
+        }, 
+        "dataSpace": {
+          "committed": 279773184, 
+          "used": 278661368, 
+          "reserved": 335544320
+        }, 
+        "classSpace": {
+          "committed": 92340224, 
+          "used": 91564560, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:44.094774300-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2810, 
+        "totalCapacity": 90869264, 
+        "memoryUsed": 90869268
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:49.336786-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2810, 
+        "totalCapacity": 90869264, 
+        "memoryUsed": 90869268
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:36:54.782354900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2810, 
+        "totalCapacity": 90869264, 
+        "memoryUsed": 90869268
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:55.461601200-04:00", 
+        "gcId": 14, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4407940874240, 
+          "committedSize": 9894363136, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4626317312
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:55.461604800-04:00", 
+        "gcId": 14, 
+        "when": "Before GC", 
+        "gcThreshold": 484966400, 
+        "metaspace": {
+          "committed": 390856704, 
+          "used": 389035384, 
+          "reserved": 1409286144
+        }, 
+        "dataSpace": {
+          "committed": 292880384, 
+          "used": 291832728, 
+          "reserved": 335544320
+        }, 
+        "classSpace": {
+          "committed": 97976320, 
+          "used": 97202656, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:36:55.461595100-04:00", 
+        "duration": "PT0.8972168S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 14, 
+        "name": "ZGC Major", 
+        "cause": "Heap Inspection Initiated GC", 
+        "sumOfPauses": "PT0.0001562S", 
+        "longestPause": "PT0.0000297S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:56.358819800-04:00", 
+        "gcId": 14, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4407840210944, 
+          "committedSize": 9793699840, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 2311061504
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:36:56.358820500-04:00", 
+        "gcId": 14, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 393019392, 
+          "used": 391154528, 
+          "reserved": 1409286144
+        }, 
+        "dataSpace": {
+          "committed": 294453248, 
+          "used": 293402848, 
+          "reserved": 335544320
+        }, 
+        "classSpace": {
+          "committed": 98566144, 
+          "used": 97751680, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:01.067780200-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 44, 
+        "totalCapacity": 50523568, 
+        "memoryUsed": 50523570
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:06.548155700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 45, 
+        "totalCapacity": 58912176, 
+        "memoryUsed": 58912178
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:11.801619400-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 45, 
+        "totalCapacity": 58912176, 
+        "memoryUsed": 58912178
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:17.285993600-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 45, 
+        "totalCapacity": 58912176, 
+        "memoryUsed": 58912178
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:18.568498300-04:00", 
+        "gcId": 15, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409155125248, 
+          "committedSize": 11108614144, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 11108614144
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:18.568501500-04:00", 
+        "gcId": 15, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 460521472, 
+          "used": 458199000, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 343015424, 
+          "used": 341677016, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 117506048, 
+          "used": 116521984, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:37:18.568494800-04:00", 
+        "duration": "PT1.1702313S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 15, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.000043S", 
+        "longestPause": "PT0.0000203S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:19.738732700-04:00", 
+        "gcId": 15, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3021996032
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:19.738733300-04:00", 
+        "gcId": 15, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 461897728, 
+          "used": 459566256, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 343867392, 
+          "used": 342513256, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 118030336, 
+          "used": 117053000, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:22.553851100-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 45, 
+        "totalCapacity": 58912176, 
+        "memoryUsed": 58912178
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:28.109873500-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 46, 
+        "totalCapacity": 58912240, 
+        "memoryUsed": 58912242
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:29.352745700-04:00", 
+        "gcId": 16, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8306819072
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:29.352749100-04:00", 
+        "gcId": 16, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 495910912, 
+          "used": 493569480, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 366804992, 
+          "used": 365430440, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 129105920, 
+          "used": 128139040, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:37:29.352741900-04:00", 
+        "duration": "PT1.6527971S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 16, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000834S", 
+        "longestPause": "PT0.0000455S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:31.005546700-04:00", 
+        "gcId": 16, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3605004288
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:31.005547600-04:00", 
+        "gcId": 16, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 499580928, 
+          "used": 497157864, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 369885184, 
+          "used": 368509496, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 129695744, 
+          "used": 128648368, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:33.427228700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 82, 
+        "totalCapacity": 58982008, 
+        "memoryUsed": 58982010
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:37.729012500-04:00", 
+        "gcId": 17, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8520728576
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:37.729017-04:00", 
+        "gcId": 17, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503185408, 
+          "used": 500806792, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372244480, 
+          "used": 370884560, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 130940928, 
+          "used": 129922232, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:39.066421300-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:37:37.729008400-04:00", 
+        "duration": "PT2.5992034S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 17, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000553S", 
+        "longestPause": "PT0.0000256S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:40.328221100-04:00", 
+        "gcId": 17, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5731516416
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:40.328222500-04:00", 
+        "gcId": 17, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503250944, 
+          "used": 500830952, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372310016, 
+          "used": 370906296, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 130940928, 
+          "used": 129924656, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:41.888931500-04:00", 
+        "gcId": 18, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7650410496
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:41.888935300-04:00", 
+        "gcId": 18, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503250944, 
+          "used": 500837800, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372310016, 
+          "used": 370911072, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 130940928, 
+          "used": 129926728, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:37:41.888928700-04:00", 
+        "duration": "PT0.818805S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 18, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000468S", 
+        "longestPause": "PT0.0000188S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:42.707745500-04:00", 
+        "gcId": 18, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3930062848
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:37:42.707747-04:00", 
+        "gcId": 18, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503250944, 
+          "used": 500838408, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372310016, 
+          "used": 370911680, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 130940928, 
+          "used": 129926728, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:44.377253800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:49.839543700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:37:55.058648300-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:00.448633500-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:01.112609400-04:00", 
+        "gcId": 19, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7642021888
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:01.112612600-04:00", 
+        "gcId": 19, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503775232, 
+          "used": 501320216, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372703232, 
+          "used": 371298240, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131072000, 
+          "used": 130021976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:01.112607200-04:00", 
+        "duration": "PT0.559904S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 19, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000395S", 
+        "longestPause": "PT0.0000149S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:01.672518200-04:00", 
+        "gcId": 19, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 2992635904
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:01.672518900-04:00", 
+        "gcId": 19, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503775232, 
+          "used": 501320216, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372703232, 
+          "used": 371298240, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131072000, 
+          "used": 130021976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:05.664500200-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 347, 
+        "totalCapacity": 59182348, 
+        "memoryUsed": 59182350
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:06.804361100-04:00", 
+        "gcId": 20, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3879731200
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:06.804364200-04:00", 
+        "gcId": 20, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503775232, 
+          "used": 501333776, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372703232, 
+          "used": 371311800, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131072000, 
+          "used": 130021976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:06.804358300-04:00", 
+        "duration": "PT1.3955488S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 20, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000451S", 
+        "longestPause": "PT0.0000207S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:08.199913600-04:00", 
+        "gcId": 20, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3068133376
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:08.199914300-04:00", 
+        "gcId": 20, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 503775232, 
+          "used": 501333776, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 372703232, 
+          "used": 371311800, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131072000, 
+          "used": 130021976, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.519097300-04:00", 
+        "gcId": 21, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3418357760
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.519099900-04:00", 
+        "gcId": 21, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 504692736, 
+          "used": 502223064, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 373424128, 
+          "used": 372032184, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131268608, 
+          "used": 130190880, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.707355-04:00", 
+        "gcId": 22, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3789553664
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.707358400-04:00", 
+        "gcId": 22, 
+        "when": "Before GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 504889344, 
+          "used": 502419592, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 373620736, 
+          "used": 372201104, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131268608, 
+          "used": 130218488, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.707352800-04:00", 
+        "duration": "PT0.0724979S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 22, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000321S", 
+        "longestPause": "PT0.0000157S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.779856700-04:00", 
+        "gcId": 22, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3128950784
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.779858-04:00", 
+        "gcId": 22, 
+        "when": "After GC", 
+        "gcThreshold": 655032320, 
+        "metaspace": {
+          "committed": 504954880, 
+          "used": 502513424, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 373686272, 
+          "used": 372279544, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131268608, 
+          "used": 130233880, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:11.075540600-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 351, 
+        "totalCapacity": 59182552, 
+        "memoryUsed": 59182554
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:09.519094500-04:00", 
+        "duration": "PT5.0522355S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 21, 
+        "name": "ZGC Major", 
+        "cause": "CodeCache GC Threshold", 
+        "sumOfPauses": "PT0.0000831S", 
+        "longestPause": "PT0.0000234S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:14.571338800-04:00", 
+        "gcId": 21, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7753170944
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:14.571339500-04:00", 
+        "gcId": 21, 
+        "when": "After GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505217024, 
+          "used": 502689696, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 373882880, 
+          "used": 372424408, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130265288, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:15.593196700-04:00", 
+        "gcId": 23, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 10320084992
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:15.593201800-04:00", 
+        "gcId": 23, 
+        "when": "Before GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502886144, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372575552, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130310592, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.476669300-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 345, 
+        "totalCapacity": 58985780, 
+        "memoryUsed": 58985782
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:15.593191600-04:00", 
+        "duration": "PT0.9721986S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 23, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.000044S", 
+        "longestPause": "PT0.0000168S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.565398400-04:00", 
+        "gcId": 23, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 6390022144
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.565399200-04:00", 
+        "gcId": 23, 
+        "when": "After GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502901656, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372590488, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130311168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.565435700-04:00", 
+        "gcId": 24, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 6390022144
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.565436-04:00", 
+        "gcId": 24, 
+        "when": "Before GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502901656, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372590488, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130311168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.565435200-04:00", 
+        "duration": "PT0.2469325S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 24, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000499S", 
+        "longestPause": "PT0.0000198S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.812373600-04:00", 
+        "gcId": 24, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3598712832
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.812374400-04:00", 
+        "gcId": 24, 
+        "when": "After GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502991880, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372670640, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130321240, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.934187200-04:00", 
+        "gcId": 25, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3632267264
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.934190-04:00", 
+        "gcId": 25, 
+        "when": "Before GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502992976, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372671736, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130321240, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:16.934184100-04:00", 
+        "duration": "PT0.1499894S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 25, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000474S", 
+        "longestPause": "PT0.0000168S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:17.084181100-04:00", 
+        "gcId": 25, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3412066304
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:17.084181800-04:00", 
+        "gcId": 25, 
+        "when": "After GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505348096, 
+          "used": 502999528, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374013952, 
+          "used": 372678288, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131334144, 
+          "used": 130321240, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:19.232874600-04:00", 
+        "gcId": 26, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4406116352
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:19.232879100-04:00", 
+        "gcId": 26, 
+        "when": "Before GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 505675776, 
+          "used": 503245928, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374276096, 
+          "used": 372897656, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131399680, 
+          "used": 130348272, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.614071400-04:00", 
+        "gcId": 27, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4273995776
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.614074500-04:00", 
+        "gcId": 27, 
+        "when": "Before GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 506527744, 
+          "used": 504060816, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 374996992, 
+          "used": 373586184, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131530752, 
+          "used": 130474632, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.614069400-04:00", 
+        "duration": "PT0.1276977S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 27, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000392S", 
+        "longestPause": "PT0.0000145S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.741773100-04:00", 
+        "gcId": 27, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3575644160
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.741773800-04:00", 
+        "gcId": 27, 
+        "when": "After GC", 
+        "gcThreshold": 842072064, 
+        "metaspace": {
+          "committed": 506593280, 
+          "used": 504130672, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 375062528, 
+          "used": 373645768, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131530752, 
+          "used": 130484904, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:21.899537900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 345, 
+        "totalCapacity": 58985780, 
+        "memoryUsed": 58985782
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:19.232869900-04:00", 
+        "duration": "PT6.3272908S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 26, 
+        "name": "ZGC Major", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000796S", 
+        "longestPause": "PT0.0000203S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:25.560168700-04:00", 
+        "gcId": 26, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4890558464
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:25.560169900-04:00", 
+        "gcId": 26, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 508166144, 
+          "used": 505679864, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 376373248, 
+          "used": 374968864, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 131792896, 
+          "used": 130711000, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:27.136239800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 349, 
+        "totalCapacity": 59039508, 
+        "memoryUsed": 59039510
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.297106900-04:00", 
+        "gcId": 28, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8539602944
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.297109200-04:00", 
+        "gcId": 28, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 509935616, 
+          "used": 507490840, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 377815040, 
+          "used": 376412368, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 132120576, 
+          "used": 131078472, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.558241100-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 349, 
+        "totalCapacity": 59039508, 
+        "memoryUsed": 59039510
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.297104-04:00", 
+        "duration": "PT0.4894104S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 28, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000406S", 
+        "longestPause": "PT0.0000162S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.786520700-04:00", 
+        "gcId": 28, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 3967811584
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:32.786522-04:00", 
+        "gcId": 28, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 510066688, 
+          "used": 507546720, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 377880576, 
+          "used": 376448688, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 132186112, 
+          "used": 131098032, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:37.790638700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1787, 
+        "totalCapacity": 59116180, 
+        "memoryUsed": 59116182
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:42.594297100-04:00", 
+        "gcId": 29, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 10966007808
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:42.594300300-04:00", 
+        "gcId": 29, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 528547840, 
+          "used": 526025328, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 392822784, 
+          "used": 391397512, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 135725056, 
+          "used": 134627816, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:43.209667100-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1787, 
+        "totalCapacity": 59116180, 
+        "memoryUsed": 59116182
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:42.594295100-04:00", 
+        "duration": "PT1.0271507S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 29, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.000038S", 
+        "longestPause": "PT0.0000153S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:43.621451800-04:00", 
+        "gcId": 29, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4743757824
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:43.621453-04:00", 
+        "gcId": 29, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 528613376, 
+          "used": 526136832, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 392888320, 
+          "used": 391509016, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 135725056, 
+          "used": 134627816, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:48.262946400-04:00", 
+        "gcId": 30, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8749318144
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:48.262948800-04:00", 
+        "gcId": 30, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 534052864, 
+          "used": 531509584, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 397344768, 
+          "used": 395868592, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 136708096, 
+          "used": 135640992, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:48.447900900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1816, 
+        "totalCapacity": 59116788, 
+        "memoryUsed": 59116790
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:48.262942700-04:00", 
+        "duration": "PT1.2534641S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 30, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000439S", 
+        "longestPause": "PT0.0000184S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:49.516414900-04:00", 
+        "gcId": 30, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5305794560
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:49.516415700-04:00", 
+        "gcId": 30, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 534839296, 
+          "used": 532290832, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 397934592, 
+          "used": 396469872, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 136904704, 
+          "used": 135820960, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:50.020136100-04:00", 
+        "gcId": 31, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5622464512
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:50.020139400-04:00", 
+        "gcId": 31, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 537329664, 
+          "used": 534747472, 
+          "reserved": 1476395008
+        }, 
+        "dataSpace": {
+          "committed": 399835136, 
+          "used": 398378400, 
+          "reserved": 402653184
+        }, 
+        "classSpace": {
+          "committed": 137494528, 
+          "used": 136369072, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:52.811141600-04:00", 
+        "gcId": 32, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8061452288
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:52.811145-04:00", 
+        "gcId": 32, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 544997376, 
+          "used": 542436984, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 405864448, 
+          "used": 404387496, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 139132928, 
+          "used": 138049488, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:52.811139700-04:00", 
+        "duration": "PT0.1752819S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 32, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000646S", 
+        "longestPause": "PT0.0000381S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:52.986429900-04:00", 
+        "gcId": 32, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4882169856
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:52.986430700-04:00", 
+        "gcId": 32, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 545259520, 
+          "used": 542700040, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 406061056, 
+          "used": 404599352, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 139198464, 
+          "used": 138100688, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:53.845950800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1835, 
+        "totalCapacity": 59145706, 
+        "memoryUsed": 59145708
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:54.545187700-04:00", 
+        "gcId": 33, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 6387924992
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:54.545190700-04:00", 
+        "gcId": 33, 
+        "when": "Before GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 548208640, 
+          "used": 545513448, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 408616960, 
+          "used": 407045560, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 139591680, 
+          "used": 138467888, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:54.545184700-04:00", 
+        "duration": "PT0.3201443S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 33, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000438S", 
+        "longestPause": "PT0.0000166S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:54.865335200-04:00", 
+        "gcId": 33, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 4867489792
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:54.865335900-04:00", 
+        "gcId": 33, 
+        "when": "After GC", 
+        "gcThreshold": 846987264, 
+        "metaspace": {
+          "committed": 549191680, 
+          "used": 546485712, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 409403392, 
+          "used": 407857560, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 139788288, 
+          "used": 138628152, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:50.020134200-04:00", 
+        "duration": "PT7.644062S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 31, 
+        "name": "ZGC Major", 
+        "cause": "CodeCache GC Threshold", 
+        "sumOfPauses": "PT0.0000874S", 
+        "longestPause": "PT0.0000388S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:57.664206200-04:00", 
+        "gcId": 31, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7323254784
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:57.664207100-04:00", 
+        "gcId": 31, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 556335104, 
+          "used": 553702088, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 414908416, 
+          "used": 413373888, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 141426688, 
+          "used": 140328200, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:38:59.116886900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1881, 
+        "totalCapacity": 126219482, 
+        "memoryUsed": 126219484
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:59.829851400-04:00", 
+        "gcId": 34, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8690597888
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:38:59.829853200-04:00", 
+        "gcId": 34, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 563412992, 
+          "used": 560719080, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 420151296, 
+          "used": 418623000, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 143261696, 
+          "used": 142096080, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:38:59.829848900-04:00", 
+        "duration": "PT0.6586621S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 34, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000488S", 
+        "longestPause": "PT0.0000237S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:00.488517200-04:00", 
+        "gcId": 34, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5188354048
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:00.488518-04:00", 
+        "gcId": 34, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 564068352, 
+          "used": 561333616, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 420675584, 
+          "used": 419096448, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 143392768, 
+          "used": 142237168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:04.567360900-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2410, 
+        "totalCapacity": 132521710, 
+        "memoryUsed": 132521712
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:07.583694-04:00", 
+        "gcId": 35, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 9409921024
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:07.583698600-04:00", 
+        "gcId": 35, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 575733760, 
+          "used": 573087248, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 429457408, 
+          "used": 427923592, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146276352, 
+          "used": 145163656, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:07.583690500-04:00", 
+        "duration": "PT0.7279983S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 35, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000411S", 
+        "longestPause": "PT0.0000147S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:08.311697900-04:00", 
+        "gcId": 35, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5324668928
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:08.311698800-04:00", 
+        "gcId": 35, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 576126976, 
+          "used": 573433664, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 429785088, 
+          "used": 428213128, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146341888, 
+          "used": 145220536, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:09.790073400-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2434, 
+        "totalCapacity": 132522346, 
+        "memoryUsed": 132522348
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:15.180330800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2434, 
+        "totalCapacity": 132522346, 
+        "memoryUsed": 132522348
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:15.469992200-04:00", 
+        "gcId": 36, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410830749696, 
+          "committedSize": 12784238592, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 9758048256
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:15.469994600-04:00", 
+        "gcId": 36, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 578355200, 
+          "used": 575729176, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 431554560, 
+          "used": 430014088, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146800640, 
+          "used": 145715088, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:15.469990200-04:00", 
+        "duration": "PT1.3317069S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 36, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000418S", 
+        "longestPause": "PT0.0000154S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:16.801703300-04:00", 
+        "gcId": 36, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410730086400, 
+          "committedSize": 12683575296, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 6335496192
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:16.801703900-04:00", 
+        "gcId": 36, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 578879488, 
+          "used": 576216352, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 431947776, 
+          "used": 430415424, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146931712, 
+          "used": 145800928, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:20.062963-04:00", 
+        "gcId": 37, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410528759808, 
+          "committedSize": 12482248704, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 9200205824
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:20.062966100-04:00", 
+        "gcId": 37, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 578945024, 
+          "used": 576251584, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 431947776, 
+          "used": 430448416, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:20.434135700-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2434, 
+        "totalCapacity": 132522346, 
+        "memoryUsed": 132522348
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:20.062959700-04:00", 
+        "duration": "PT1.5494701S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 37, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000453S", 
+        "longestPause": "PT0.0000169S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:21.612436300-04:00", 
+        "gcId": 37, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410428096512, 
+          "committedSize": 12381585408, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 6908018688
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:21.612437-04:00", 
+        "gcId": 37, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 578945024, 
+          "used": 576254256, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 431947776, 
+          "used": 430451088, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:23.535697700-04:00", 
+        "gcId": 38, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410226769920, 
+          "committedSize": 12180258816, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8547991552
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:23.535701100-04:00", 
+        "gcId": 38, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576265864, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430462696, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:25.866741200-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 2434, 
+        "totalCapacity": 132522346, 
+        "memoryUsed": 132522348
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:26.445902-04:00", 
+        "gcId": 39, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410025443328, 
+          "committedSize": 11978932224, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 8227127296
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:26.445905-04:00", 
+        "gcId": 39, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576266448, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430463280, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:26.445899400-04:00", 
+        "duration": "PT0.0375997S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 39, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000377S", 
+        "longestPause": "PT0.0000161S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:26.483506200-04:00", 
+        "gcId": 39, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4410025443328, 
+          "committedSize": 11978932224, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5442109440
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:26.483506900-04:00", 
+        "gcId": 39, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576266576, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430463408, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:28.893501500-04:00", 
+        "gcId": 40, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409824116736, 
+          "committedSize": 11777605632, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7597981696
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:28.893504400-04:00", 
+        "gcId": 40, 
+        "when": "Before GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576266576, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430463408, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:28.893499300-04:00", 
+        "duration": "PT0.0352067S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 40, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000426S", 
+        "longestPause": "PT0.000018S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:28.928713700-04:00", 
+        "gcId": 40, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409824116736, 
+          "committedSize": 11777605632, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5440012288
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:28.928715400-04:00", 
+        "gcId": 40, 
+        "when": "After GC", 
+        "gcThreshold": 927137792, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576266576, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430463408, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145803168, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:23.535695600-04:00", 
+        "duration": "PT7.3185916S", 
+        "eventThread": {
+          "osName": "ZDriverMajor", 
+          "osThreadId": 41796, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 38, 
+        "name": "ZGC Major", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000836S", 
+        "longestPause": "PT0.0000221S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:30.854294500-04:00", 
+        "gcId": 38, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409723453440, 
+          "committedSize": 11676942336, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 7178551296
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:30.854295500-04:00", 
+        "gcId": 38, 
+        "when": "After GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579010560, 
+          "used": 576276904, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432013312, 
+          "used": 430474296, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145802608, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:31.101210800-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1895, 
+        "totalCapacity": 126122224, 
+        "memoryUsed": 126122226
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:34.363798200-04:00", 
+        "gcId": 41, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 10068426752
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:34.363801300-04:00", 
+        "gcId": 41, 
+        "when": "Before GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579076096, 
+          "used": 576349744, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432078848, 
+          "used": 430542528, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145807216, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:34.363796100-04:00", 
+        "duration": "PT0.0611667S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 41, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000406S", 
+        "longestPause": "PT0.0000208S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:34.424968500-04:00", 
+        "gcId": 41, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5362417664
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:34.424969100-04:00", 
+        "gcId": 41, 
+        "when": "After GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579076096, 
+          "used": 576349744, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432078848, 
+          "used": 430542528, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145807216, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:36.493403-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1895, 
+        "totalCapacity": 126122224, 
+        "memoryUsed": 126122226
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:40.433523300-04:00", 
+        "gcId": 42, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 10074718208
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:40.433525900-04:00", 
+        "gcId": 42, 
+        "when": "Before GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579338240, 
+          "used": 576626792, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432340992, 
+          "used": 430788368, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:40.433520600-04:00", 
+        "duration": "PT0.0705085S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 42, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000338S", 
+        "longestPause": "PT0.0000168S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:40.504034900-04:00", 
+        "gcId": 42, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5375000576
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:40.504035600-04:00", 
+        "gcId": 42, 
+        "when": "After GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579338240, 
+          "used": 576631136, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432340992, 
+          "used": 430792712, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:41.755155600-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1895, 
+        "totalCapacity": 126122224, 
+        "memoryUsed": 126122226
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:45.970739300-04:00", 
+        "gcId": 43, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 11244929024
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:45.970742-04:00", 
+        "gcId": 43, 
+        "when": "Before GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579403776, 
+          "used": 576723208, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432406528, 
+          "used": 430884784, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:45.970736200-04:00", 
+        "duration": "PT0.0712384S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 43, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000358S", 
+        "longestPause": "PT0.0000169S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:46.041980600-04:00", 
+        "gcId": 43, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409421463552, 
+          "committedSize": 11374952448, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5408555008
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:46.041981200-04:00", 
+        "gcId": 43, 
+        "when": "After GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579403776, 
+          "used": 576723208, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432406528, 
+          "used": 430884784, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:47.155054100-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1895, 
+        "totalCapacity": 126122224, 
+        "memoryUsed": 126122226
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.354981-04:00", 
+        "gcId": 44, 
+        "when": "Before GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409629081600, 
+          "committedSize": 11582570496, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 11582570496
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.354983800-04:00", 
+        "gcId": 44, 
+        "when": "Before GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579403776, 
+          "used": 576744536, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432406528, 
+          "used": 430906112, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }, {
+      "type": "jdk.DirectBufferStatistics", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.413566200-04:00", 
+        "maxCapacity": 12784238592, 
+        "count": 1895, 
+        "totalCapacity": 126122224, 
+        "memoryUsed": 126122226
+      }
+    }, {
+      "type": "jdk.GarbageCollection", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.354978400-04:00", 
+        "duration": "PT0.0707021S", 
+        "eventThread": {
+          "osName": "ZDriverMinor", 
+          "osThreadId": 31816, 
+          "javaName": null, 
+          "javaThreadId": 0, 
+          "group": null, 
+          "virtual": false
+        }, 
+        "gcId": 44, 
+        "name": "ZGC Minor", 
+        "cause": "Allocation Rate", 
+        "sumOfPauses": "PT0.0000435S", 
+        "longestPause": "PT0.0000223S"
+      }
+    }, {
+      "type": "jdk.GCHeapSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.425687200-04:00", 
+        "gcId": 44, 
+        "when": "After GC", 
+        "heapSpace": {
+          "start": 4398046511104, 
+          "committedEnd": 4409689899008, 
+          "committedSize": 11643387904, 
+          "reservedEnd": 4410830749696, 
+          "reservedSize": 12784238592
+        }, 
+        "heapUsed": 5370806272
+      }
+    }, {
+      "type": "jdk.MetaspaceSummary", 
+      "values": {
+        "startTime": "2026-09-22T03:39:52.425687900-04:00", 
+        "gcId": 44, 
+        "when": "After GC", 
+        "gcThreshold": 965017600, 
+        "metaspace": {
+          "committed": 579403776, 
+          "used": 576744536, 
+          "reserved": 1543503872
+        }, 
+        "dataSpace": {
+          "committed": 432406528, 
+          "used": 430906112, 
+          "reserved": 469762048
+        }, 
+        "classSpace": {
+          "committed": 146997248, 
+          "used": 145838424, 
+          "reserved": 1073741824
+        }
+      }
+    }]
+  }
+}

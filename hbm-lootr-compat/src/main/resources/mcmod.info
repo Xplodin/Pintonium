@@ -1,0 +1,11 @@
+[
+  {
+    "modid": "hbmlootrcompat",
+    "name": "HBM Lootr Compatibility",
+    "description": "Converts eligible HBM structure crates into per-player Lootr containers.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": ["BeanPack compatibility patch"],
+    "dependencies": ["hbm", "lootr"]
+  }
+]

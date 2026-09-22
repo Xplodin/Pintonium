@@ -579,7 +579,7 @@ public abstract class RenderGlobalMixin implements SimpleWorldRenderer.Provider<
                         shaderEntityId = this.celeritas$getEntityShaderId(entity);
                         CapturedRenderingState.INSTANCE.setCurrentEntity(shaderEntityId);
                         CapturedRenderingState.INSTANCE.setCurrentRenderedItem(0);
-                        irisEntityPipeline.updateVintageEntityUniforms();
+                        irisEntityPipeline.updateVintageEntityUniforms(entity);
                     }
 
                     this.celeritas$prepareVanillaEntityRenderState(!irisEntityRendering, attenuateEntitySkyLight, partialTicks);
@@ -603,7 +603,7 @@ public abstract class RenderGlobalMixin implements SimpleWorldRenderer.Provider<
             if (irisEntityRendering) {
                 CapturedRenderingState.INSTANCE.setCurrentEntity(0);
                 CapturedRenderingState.INSTANCE.setCurrentRenderedItem(0);
-                irisEntityPipeline.updateVintageEntityUniforms();
+                irisEntityPipeline.updateVintageEntityUniforms(null);
                 irisEntityPipeline.endVintageEntityRendering();
             } else if (irisEntityFallbackRendering) {
                 irisEntityPipeline.endVintageEntityFallbackRendering();
@@ -624,7 +624,7 @@ public abstract class RenderGlobalMixin implements SimpleWorldRenderer.Provider<
                 int shaderEntityId = this.celeritas$getEntityShaderId(entity);
                 CapturedRenderingState.INSTANCE.setCurrentEntity(shaderEntityId);
                 CapturedRenderingState.INSTANCE.setCurrentRenderedItem(0);
-                irisEntityPipeline.updateVintageEntityUniforms();
+                irisEntityPipeline.updateVintageEntityUniforms(entity);
                 this.celeritas$prepareVanillaEntityRenderState(!irisEntityRendering, attenuateEntitySkyLight, partialTicks);
                 this.celeritas$setIrisEntityAttribute(shaderEntityId);
             } else {
@@ -637,7 +637,7 @@ public abstract class RenderGlobalMixin implements SimpleWorldRenderer.Provider<
             if (irisEntityRendering) {
                 CapturedRenderingState.INSTANCE.setCurrentEntity(0);
                 CapturedRenderingState.INSTANCE.setCurrentRenderedItem(0);
-                irisEntityPipeline.updateVintageEntityUniforms();
+                irisEntityPipeline.updateVintageEntityUniforms(null);
                 irisEntityPipeline.endVintageEntityRendering();
             } else if (irisEntityFallbackRendering) {
                 irisEntityPipeline.endVintageEntityFallbackRendering();

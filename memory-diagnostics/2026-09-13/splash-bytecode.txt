@@ -1,0 +1,1166 @@
+Compiled from "SplashProgress.java"
+class net.minecraftforge.fml.client.SplashProgress$2 implements java.lang.Runnable {
+  private final int barWidth;
+
+  private final int barHeight;
+
+  private final int textHeight2;
+
+  private final int barOffset;
+
+  private long updateTiming;
+
+  private long framecount;
+
+  final nf val$fontLoc;
+
+  final nf val$logoLoc;
+
+  final nf val$forgeLoc;
+
+  final nf val$forgeFallbackLoc;
+
+  net.minecraftforge.fml.client.SplashProgress$2();
+    Code:
+         0: aload_0
+         1: aload_1
+         2: putfield      #48                 // Field val$fontLoc:Lnf;
+         5: aload_0
+         6: aload_2
+         7: putfield      #50                 // Field val$logoLoc:Lnf;
+        10: aload_0
+        11: aload_3
+        12: putfield      #52                 // Field val$forgeLoc:Lnf;
+        15: aload_0
+        16: aload         4
+        18: putfield      #54                 // Field val$forgeFallbackLoc:Lnf;
+        21: aload_0
+        22: invokespecial #56                 // Method java/lang/Object."<init>":()V
+        25: aload_0
+        26: sipush        400
+        29: putfield      #58                 // Field barWidth:I
+        32: aload_0
+        33: bipush        20
+        35: putfield      #60                 // Field barHeight:I
+        38: aload_0
+        39: bipush        20
+        41: putfield      #62                 // Field textHeight2:I
+        44: aload_0
+        45: bipush        55
+        47: putfield      #64                 // Field barOffset:I
+        50: return
+
+  public void run();
+    Code:
+         0: aload_0
+         1: invokevirtual #72                 // Method setGL:()V
+         4: new           #14                 // class net/minecraftforge/fml/client/SplashProgress$Texture
+         7: dup
+         8: aload_0
+         9: getfield      #48                 // Field val$fontLoc:Lnf;
+        12: aconst_null
+        13: invokespecial #75                 // Method net/minecraftforge/fml/client/SplashProgress$Texture."<init>":(Lnf;Lnf;)V
+        16: putstatic     #79                 // Field net/minecraftforge/fml/client/SplashProgress.fontTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+        19: new           #14                 // class net/minecraftforge/fml/client/SplashProgress$Texture
+        22: dup
+        23: aload_0
+        24: getfield      #50                 // Field val$logoLoc:Lnf;
+        27: aconst_null
+        28: iconst_0
+        29: invokespecial #82                 // Method net/minecraftforge/fml/client/SplashProgress$Texture."<init>":(Lnf;Lnf;Z)V
+        32: putstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+        35: new           #14                 // class net/minecraftforge/fml/client/SplashProgress$Texture
+        38: dup
+        39: aload_0
+        40: getfield      #52                 // Field val$forgeLoc:Lnf;
+        43: aload_0
+        44: getfield      #54                 // Field val$forgeFallbackLoc:Lnf;
+        47: invokespecial #75                 // Method net/minecraftforge/fml/client/SplashProgress$Texture."<init>":(Lnf;Lnf;)V
+        50: putstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+        53: new           #14                 // class net/minecraftforge/fml/client/SplashProgress$Texture
+        56: dup
+        57: new           #90                 // class nf
+        60: dup
+        61: ldc           #92                 // String textures/gui/options_background.png
+        63: invokespecial #95                 // Method nf."<init>":(Ljava/lang/String;)V
+        66: aconst_null
+        67: iconst_0
+        68: invokespecial #82                 // Method net/minecraftforge/fml/client/SplashProgress$Texture."<init>":(Lnf;Lnf;Z)V
+        71: putstatic     #98                 // Field net/minecraftforge/fml/client/SplashProgress.dirtBackground:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+        74: sipush        3553
+        77: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+        80: new           #17                 // class net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer
+        83: dup
+        84: invokespecial #105                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer."<init>":()V
+        87: putstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+        90: sipush        3553
+        93: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+        96: getstatic     #116                // Field net/minecraftforge/fml/client/SplashProgress.done:Z
+        99: ifne          1385
+       102: aload_0
+       103: dup
+       104: getfield      #118                // Field framecount:J
+       107: lconst_1
+       108: ladd
+       109: putfield      #118                // Field framecount:J
+       112: invokestatic  #123                // Method com/cleanroommc/client/LoadingTracker.tick:()V
+       115: getstatic     #127                // Field net/minecraftforge/fml/client/SplashProgress.warningWarning:Ljava/lang/String;
+       118: ifnull        639
+       121: getstatic     #130                // Field net/minecraftforge/fml/client/SplashProgress.warningPrompt:Ljava/lang/String;
+       124: ifnull        639
+       127: invokestatic  #136                // Method org/lwjgl/opengl/Display.getWidth:()I
+       130: istore_1
+       131: invokestatic  #139                // Method org/lwjgl/opengl/Display.getHeight:()I
+       134: istore_2
+       135: sipush        16384
+       138: invokestatic  #142                // Method org/lwjgl/opengl/GL11.glClear:(I)V
+       141: iconst_0
+       142: iconst_0
+       143: iload_1
+       144: iload_2
+       145: invokestatic  #146                // Method org/lwjgl/opengl/GL11.glViewport:(IIII)V
+       148: sipush        5889
+       151: invokestatic  #149                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+       154: invokestatic  #152                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+       157: sipush        320
+       160: iload_1
+       161: iconst_2
+       162: idiv
+       163: isub
+       164: i2d
+       165: sipush        320
+       168: iload_1
+       169: iconst_2
+       170: idiv
+       171: iadd
+       172: i2d
+       173: sipush        240
+       176: iload_2
+       177: iconst_2
+       178: idiv
+       179: iadd
+       180: i2d
+       181: sipush        240
+       184: iload_2
+       185: iconst_2
+       186: idiv
+       187: isub
+       188: i2d
+       189: ldc2_w        #153                // double -1.0d
+       192: dconst_1
+       193: invokestatic  #158                // Method org/lwjgl/opengl/GL11.glOrtho:(DDDDDD)V
+       196: sipush        5888
+       199: invokestatic  #149                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+       202: invokestatic  #152                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+       205: sipush        3553
+       208: sipush        10242
+       211: sipush        10497
+       214: invokestatic  #162                // Method org/lwjgl/opengl/GL11.glTexParameteri:(III)V
+       217: sipush        3553
+       220: sipush        10243
+       223: sipush        10497
+       226: invokestatic  #162                // Method org/lwjgl/opengl/GL11.glTexParameteri:(III)V
+       229: getstatic     #98                 // Field net/minecraftforge/fml/client/SplashProgress.dirtBackground:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       232: invokevirtual #165                // Method net/minecraftforge/fml/client/SplashProgress$Texture.bind:()V
+       235: sipush        3553
+       238: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       241: ldc           #166                // float 320.0f
+       243: iload_1
+       244: i2f
+       245: fconst_2
+       246: fdiv
+       247: fsub
+       248: fstore_3
+       249: ldc           #166                // float 320.0f
+       251: iload_1
+       252: i2f
+       253: fconst_2
+       254: fdiv
+       255: fadd
+       256: fstore        4
+       258: ldc           #167                // float 240.0f
+       260: iload_2
+       261: i2f
+       262: fconst_2
+       263: fdiv
+       264: fsub
+       265: fstore        5
+       267: ldc           #167                // float 240.0f
+       269: iload_2
+       270: i2f
+       271: fconst_2
+       272: fdiv
+       273: fadd
+       274: fstore        6
+       276: iload_1
+       277: i2f
+       278: ldc           #168                // float 64.0f
+       280: fdiv
+       281: fstore        7
+       283: iload_2
+       284: i2f
+       285: ldc           #168                // float 64.0f
+       287: fdiv
+       288: fstore        8
+       290: bipush        7
+       292: invokestatic  #171                // Method org/lwjgl/opengl/GL11.glBegin:(I)V
+       295: ldc           #172                // float 0.25f
+       297: ldc           #172                // float 0.25f
+       299: ldc           #172                // float 0.25f
+       301: fconst_1
+       302: invokestatic  #176                // Method org/lwjgl/opengl/GL11.glColor4f:(FFFF)V
+       305: fconst_0
+       306: fconst_0
+       307: invokestatic  #180                // Method org/lwjgl/opengl/GL11.glTexCoord2f:(FF)V
+       310: fload_3
+       311: fload         5
+       313: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       316: fload         7
+       318: fconst_0
+       319: invokestatic  #180                // Method org/lwjgl/opengl/GL11.glTexCoord2f:(FF)V
+       322: fload         4
+       324: fload         5
+       326: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       329: fload         7
+       331: fload         8
+       333: invokestatic  #180                // Method org/lwjgl/opengl/GL11.glTexCoord2f:(FF)V
+       336: fload         4
+       338: fload         6
+       340: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       343: fconst_0
+       344: fload         8
+       346: invokestatic  #180                // Method org/lwjgl/opengl/GL11.glTexCoord2f:(FF)V
+       349: fload_3
+       350: fload         6
+       352: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       355: invokestatic  #186                // Method org/lwjgl/opengl/GL11.glEnd:()V
+       358: fconst_1
+       359: fconst_1
+       360: fconst_1
+       361: fconst_1
+       362: invokestatic  #176                // Method org/lwjgl/opengl/GL11.glColor4f:(FFFF)V
+       365: sipush        3553
+       368: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+       371: getstatic     #127                // Field net/minecraftforge/fml/client/SplashProgress.warningWarning:Ljava/lang/String;
+       374: ldc           #188                // String \n
+       376: invokevirtual #194                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+       379: astore        9
+       381: ldc           #195                // float 180.0f
+       383: fstore        10
+       385: aload         9
+       387: astore        11
+       389: aload         11
+       391: arraylength
+       392: istore        12
+       394: iconst_0
+       395: istore        13
+       397: iload         13
+       399: iload         12
+       401: if_icmpge     502
+       404: aload         11
+       406: iload         13
+       408: aaload
+       409: astore        14
+       411: aload         14
+       413: invokevirtual #201                // Method java/lang/String.isEmpty:()Z
+       416: ifeq          429
+       419: fload         10
+       421: ldc           #202                // float 20.0f
+       423: fadd
+       424: fstore        10
+       426: goto          496
+       429: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+       432: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       435: aload         14
+       437: invokevirtual #209                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;)I
+       440: istore        15
+       442: sipush        320
+       445: iload         15
+       447: isub
+       448: i2f
+       449: fload         10
+       451: fconst_0
+       452: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       455: fconst_2
+       456: fconst_2
+       457: fconst_1
+       458: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+       461: sipush        3553
+       464: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       467: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       470: aload         14
+       472: iconst_0
+       473: iconst_0
+       474: ldc           #217                // int 16777215
+       476: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+       479: pop
+       480: sipush        3553
+       483: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+       486: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       489: fload         10
+       491: ldc           #202                // float 20.0f
+       493: fadd
+       494: fstore        10
+       496: iinc          13, 1
+       499: goto          397
+       502: fload         10
+       504: ldc           #224                // float 10.0f
+       506: fadd
+       507: fstore        10
+       509: getstatic     #130                // Field net/minecraftforge/fml/client/SplashProgress.warningPrompt:Ljava/lang/String;
+       512: ldc           #188                // String \n
+       514: invokevirtual #194                // Method java/lang/String.split:(Ljava/lang/String;)[Ljava/lang/String;
+       517: astore        11
+       519: aload         11
+       521: astore        12
+       523: aload         12
+       525: arraylength
+       526: istore        13
+       528: iconst_0
+       529: istore        14
+       531: iload         14
+       533: iload         13
+       535: if_icmpge     636
+       538: aload         12
+       540: iload         14
+       542: aaload
+       543: astore        15
+       545: aload         15
+       547: invokevirtual #201                // Method java/lang/String.isEmpty:()Z
+       550: ifeq          563
+       553: fload         10
+       555: ldc           #202                // float 20.0f
+       557: fadd
+       558: fstore        10
+       560: goto          630
+       563: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+       566: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       569: aload         15
+       571: invokevirtual #209                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;)I
+       574: istore        16
+       576: sipush        320
+       579: iload         16
+       581: isub
+       582: i2f
+       583: fload         10
+       585: fconst_0
+       586: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       589: fconst_2
+       590: fconst_2
+       591: fconst_1
+       592: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+       595: sipush        3553
+       598: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       601: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       604: aload         15
+       606: iconst_0
+       607: iconst_0
+       608: ldc           #217                // int 16777215
+       610: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+       613: pop
+       614: sipush        3553
+       617: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+       620: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       623: fload         10
+       625: ldc           #202                // float 20.0f
+       627: fadd
+       628: fstore        10
+       630: iinc          14, 1
+       633: goto          531
+       636: goto          1212
+       639: aconst_null
+       640: astore_1
+       641: aconst_null
+       642: astore_2
+       643: aconst_null
+       644: astore_3
+       645: invokestatic  #228                // Method net/minecraftforge/fml/common/ProgressManager.barIterator:()Ljava/util/Iterator;
+       648: astore        4
+       650: aload         4
+       652: invokeinterface #233,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+       657: ifeq          694
+       660: aload_1
+       661: ifnonnull     678
+       664: aload         4
+       666: invokeinterface #237,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       671: checkcast     #20                 // class net/minecraftforge/fml/common/ProgressManager$ProgressBar
+       674: astore_1
+       675: goto          650
+       678: aload_3
+       679: astore_2
+       680: aload         4
+       682: invokeinterface #237,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       687: checkcast     #20                 // class net/minecraftforge/fml/common/ProgressManager$ProgressBar
+       690: astore_3
+       691: goto          650
+       694: sipush        16384
+       697: invokestatic  #142                // Method org/lwjgl/opengl/GL11.glClear:(I)V
+       700: invokestatic  #136                // Method org/lwjgl/opengl/Display.getWidth:()I
+       703: istore        5
+       705: invokestatic  #139                // Method org/lwjgl/opengl/Display.getHeight:()I
+       708: istore        6
+       710: iconst_0
+       711: iconst_0
+       712: iload         5
+       714: iload         6
+       716: invokestatic  #146                // Method org/lwjgl/opengl/GL11.glViewport:(IIII)V
+       719: sipush        5889
+       722: invokestatic  #149                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+       725: invokestatic  #152                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+       728: sipush        320
+       731: iload         5
+       733: iconst_2
+       734: idiv
+       735: isub
+       736: i2d
+       737: sipush        320
+       740: iload         5
+       742: iconst_2
+       743: idiv
+       744: iadd
+       745: i2d
+       746: sipush        240
+       749: iload         6
+       751: iconst_2
+       752: idiv
+       753: iadd
+       754: i2d
+       755: sipush        240
+       758: iload         6
+       760: iconst_2
+       761: idiv
+       762: isub
+       763: i2d
+       764: ldc2_w        #153                // double -1.0d
+       767: dconst_1
+       768: invokestatic  #158                // Method org/lwjgl/opengl/GL11.glOrtho:(DDDDDD)V
+       771: sipush        5888
+       774: invokestatic  #149                // Method org/lwjgl/opengl/GL11.glMatrixMode:(I)V
+       777: invokestatic  #152                // Method org/lwjgl/opengl/GL11.glLoadIdentity:()V
+       780: aload_0
+       781: getstatic     #240                // Field net/minecraftforge/fml/client/SplashProgress.backgroundColor:I
+       784: invokevirtual #243                // Method setColor:(I)V
+       787: sipush        3553
+       790: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       793: getstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       796: invokevirtual #165                // Method net/minecraftforge/fml/client/SplashProgress$Texture.bind:()V
+       799: bipush        7
+       801: invokestatic  #171                // Method org/lwjgl/opengl/GL11.glBegin:(I)V
+       804: getstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       807: iconst_0
+       808: fconst_0
+       809: fconst_0
+       810: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+       813: ldc           #168                // float 64.0f
+       815: ldc           #248                // float -16.0f
+       817: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       820: getstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       823: iconst_0
+       824: fconst_0
+       825: fconst_1
+       826: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+       829: ldc           #168                // float 64.0f
+       831: ldc           #249                // float 496.0f
+       833: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       836: getstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       839: iconst_0
+       840: fconst_1
+       841: fconst_1
+       842: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+       845: ldc           #250                // float 576.0f
+       847: ldc           #249                // float 496.0f
+       849: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       852: getstatic     #85                 // Field net/minecraftforge/fml/client/SplashProgress.logoTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       855: iconst_0
+       856: fconst_1
+       857: fconst_0
+       858: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+       861: ldc           #250                // float 576.0f
+       863: ldc           #248                // float -16.0f
+       865: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+       868: invokestatic  #186                // Method org/lwjgl/opengl/GL11.glEnd:()V
+       871: sipush        3553
+       874: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+       877: getstatic     #253                // Field net/minecraftforge/fml/client/SplashProgress.showMemory:Z
+       880: ifeq          901
+       883: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+       886: ldc           #254                // float 120.0f
+       888: ldc           #202                // float 20.0f
+       890: fconst_0
+       891: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       894: aload_0
+       895: invokevirtual #257                // Method drawMemoryBar:()V
+       898: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       901: aload_1
+       902: ifnull        959
+       905: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+       908: ldc           #254                // float 120.0f
+       910: ldc_w         #258                // float 310.0f
+       913: fconst_0
+       914: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       917: aload_0
+       918: aload_1
+       919: invokevirtual #262                // Method drawBar:(Lnet/minecraftforge/fml/common/ProgressManager$ProgressBar;)V
+       922: aload_2
+       923: ifnull        939
+       926: fconst_0
+       927: ldc_w         #263                // float 55.0f
+       930: fconst_0
+       931: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       934: aload_0
+       935: aload_2
+       936: invokevirtual #262                // Method drawBar:(Lnet/minecraftforge/fml/common/ProgressManager$ProgressBar;)V
+       939: aload_3
+       940: ifnull        956
+       943: fconst_0
+       944: ldc_w         #263                // float 55.0f
+       947: fconst_0
+       948: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       951: aload_0
+       952: aload_3
+       953: invokevirtual #262                // Method drawBar:(Lnet/minecraftforge/fml/common/ProgressManager$ProgressBar;)V
+       956: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       959: getstatic     #266                // Field net/minecraftforge/fml/client/SplashProgress.angle:I
+       962: iconst_1
+       963: iadd
+       964: putstatic     #266                // Field net/minecraftforge/fml/client/SplashProgress.angle:I
+       967: fconst_1
+       968: fconst_1
+       969: fconst_1
+       970: fconst_1
+       971: invokestatic  #176                // Method org/lwjgl/opengl/GL11.glColor4f:(FFFF)V
+       974: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       977: invokevirtual #267                // Method net/minecraftforge/fml/client/SplashProgress$Texture.getWidth:()I
+       980: i2f
+       981: fconst_2
+       982: fdiv
+       983: fstore        7
+       985: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+       988: invokevirtual #268                // Method net/minecraftforge/fml/client/SplashProgress$Texture.getHeight:()I
+       991: i2f
+       992: fconst_2
+       993: fdiv
+       994: fstore        8
+       996: getstatic     #271                // Field net/minecraftforge/fml/client/SplashProgress.rotate:Z
+       999: ifeq          1062
+      1002: fload         7
+      1004: fload         8
+      1006: invokestatic  #277                // Method java/lang/Math.max:(FF)F
+      1009: fstore        9
+      1011: sipush        320
+      1014: iload         5
+      1016: iconst_2
+      1017: idiv
+      1018: iadd
+      1019: i2f
+      1020: fload         9
+      1022: fsub
+      1023: getstatic     #280                // Field net/minecraftforge/fml/client/SplashProgress.logoOffset:I
+      1026: i2f
+      1027: fsub
+      1028: sipush        240
+      1031: iload         6
+      1033: iconst_2
+      1034: idiv
+      1035: iadd
+      1036: i2f
+      1037: fload         9
+      1039: fsub
+      1040: getstatic     #280                // Field net/minecraftforge/fml/client/SplashProgress.logoOffset:I
+      1043: i2f
+      1044: fsub
+      1045: fconst_0
+      1046: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+      1049: getstatic     #266                // Field net/minecraftforge/fml/client/SplashProgress.angle:I
+      1052: i2f
+      1053: fconst_0
+      1054: fconst_0
+      1055: fconst_1
+      1056: invokestatic  #283                // Method org/lwjgl/opengl/GL11.glRotatef:(FFFF)V
+      1059: goto          1100
+      1062: sipush        320
+      1065: iload         5
+      1067: iconst_2
+      1068: idiv
+      1069: iadd
+      1070: i2f
+      1071: fload         7
+      1073: fsub
+      1074: getstatic     #280                // Field net/minecraftforge/fml/client/SplashProgress.logoOffset:I
+      1077: i2f
+      1078: fsub
+      1079: sipush        240
+      1082: iload         6
+      1084: iconst_2
+      1085: idiv
+      1086: iadd
+      1087: i2f
+      1088: fload         8
+      1090: fsub
+      1091: getstatic     #280                // Field net/minecraftforge/fml/client/SplashProgress.logoOffset:I
+      1094: i2f
+      1095: fsub
+      1096: fconst_0
+      1097: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+      1100: getstatic     #266                // Field net/minecraftforge/fml/client/SplashProgress.angle:I
+      1103: iconst_5
+      1104: idiv
+      1105: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1108: invokevirtual #286                // Method net/minecraftforge/fml/client/SplashProgress$Texture.getFrames:()I
+      1111: irem
+      1112: istore        9
+      1114: sipush        3553
+      1117: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+      1120: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1123: invokevirtual #165                // Method net/minecraftforge/fml/client/SplashProgress$Texture.bind:()V
+      1126: bipush        7
+      1128: invokestatic  #171                // Method org/lwjgl/opengl/GL11.glBegin:(I)V
+      1131: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1134: iload         9
+      1136: fconst_0
+      1137: fconst_0
+      1138: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+      1141: fload         7
+      1143: fneg
+      1144: fload         8
+      1146: fneg
+      1147: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+      1150: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1153: iload         9
+      1155: fconst_0
+      1156: fconst_1
+      1157: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+      1160: fload         7
+      1162: fneg
+      1163: fload         8
+      1165: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+      1168: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1171: iload         9
+      1173: fconst_1
+      1174: fconst_1
+      1175: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+      1178: fload         7
+      1180: fload         8
+      1182: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+      1185: getstatic     #88                 // Field net/minecraftforge/fml/client/SplashProgress.forgeTexture:Lnet/minecraftforge/fml/client/SplashProgress$Texture;
+      1188: iload         9
+      1190: fconst_1
+      1191: fconst_0
+      1192: invokevirtual #247                // Method net/minecraftforge/fml/client/SplashProgress$Texture.texCoord:(IFF)V
+      1195: fload         7
+      1197: fload         8
+      1199: fneg
+      1200: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+      1203: invokestatic  #186                // Method org/lwjgl/opengl/GL11.glEnd:()V
+      1206: sipush        3553
+      1209: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+      1212: getstatic     #290                // Field net/minecraftforge/fml/client/SplashProgress.mutex:Ljava/util/concurrent/Semaphore;
+      1215: invokevirtual #295                // Method java/util/concurrent/Semaphore.acquireUninterruptibly:()V
+      1218: invokestatic  #301                // Method java/lang/System.nanoTime:()J
+      1221: lstore_1
+      1222: invokestatic  #304                // Method org/lwjgl/opengl/Display.update:()V
+      1225: invokestatic  #301                // Method java/lang/System.nanoTime:()J
+      1228: lload_1
+      1229: lsub
+      1230: lstore_3
+      1231: aload_0
+      1232: getfield      #118                // Field framecount:J
+      1235: ldc2_w        #305                // long 200l
+      1238: lcmp
+      1239: ifge          1252
+      1242: aload_0
+      1243: dup
+      1244: getfield      #308                // Field updateTiming:J
+      1247: lload_3
+      1248: ladd
+      1249: putfield      #308                // Field updateTiming:J
+      1252: getstatic     #290                // Field net/minecraftforge/fml/client/SplashProgress.mutex:Ljava/util/concurrent/Semaphore;
+      1255: invokevirtual #311                // Method java/util/concurrent/Semaphore.release:()V
+      1258: getstatic     #314                // Field net/minecraftforge/fml/client/SplashProgress.pause:Z
+      1261: ifeq          1272
+      1264: aload_0
+      1265: invokevirtual #317                // Method clearGL:()V
+      1268: aload_0
+      1269: invokevirtual #72                 // Method setGL:()V
+      1272: aload_0
+      1273: getfield      #118                // Field framecount:J
+      1276: ldc2_w        #305                // long 200l
+      1279: lcmp
+      1280: iflt          1342
+      1283: aload_0
+      1284: getfield      #308                // Field updateTiming:J
+      1287: ldc2_w        #318                // long 1000000000l
+      1290: lcmp
+      1291: ifle          1342
+      1294: getstatic     #322                // Field net/minecraftforge/fml/client/SplashProgress.isDisplayVSyncForced:Z
+      1297: ifne          1328
+      1300: iconst_1
+      1301: putstatic     #322                // Field net/minecraftforge/fml/client/SplashProgress.isDisplayVSyncForced:Z
+      1304: getstatic     #328                // Field net/minecraftforge/fml/common/FMLLog.log:Lorg/apache/logging/log4j/Logger;
+      1307: ldc_w         #330                // String Using alternative sync timing : {} frames of Display.update took {} nanos
+      1310: sipush        200
+      1313: invokestatic  #336                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      1316: aload_0
+      1317: getfield      #308                // Field updateTiming:J
+      1320: invokestatic  #341                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      1323: invokeinterface #347,  4          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+      1328: ldc2_w        #348                // long 16l
+      1331: invokestatic  #355                // Method java/lang/Thread.sleep:(J)V
+      1334: goto          1382
+      1337: astore        5
+      1339: goto          1382
+      1342: aload_0
+      1343: getfield      #118                // Field framecount:J
+      1346: ldc2_w        #305                // long 200l
+      1349: lcmp
+      1350: ifne          1377
+      1353: getstatic     #328                // Field net/minecraftforge/fml/common/FMLLog.log:Lorg/apache/logging/log4j/Logger;
+      1356: ldc_w         #357                // String Using sync timing. {} frames of Display.update took {} nanos
+      1359: sipush        200
+      1362: invokestatic  #336                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      1365: aload_0
+      1366: getfield      #308                // Field updateTiming:J
+      1369: invokestatic  #341                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      1372: invokeinterface #347,  4          // InterfaceMethod org/apache/logging/log4j/Logger.info:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+      1377: bipush        100
+      1379: invokestatic  #360                // Method org/lwjgl/opengl/Display.sync:(I)V
+      1382: goto          96
+      1385: aload_0
+      1386: invokevirtual #317                // Method clearGL:()V
+      1389: return
+      Exception table:
+         from    to  target type
+          1328  1334  1337   Class java/lang/InterruptedException
+
+  private void setColor(int);
+    Code:
+         0: iload_1
+         1: bipush        16
+         3: ishr
+         4: sipush        255
+         7: iand
+         8: i2b
+         9: iload_1
+        10: bipush        8
+        12: ishr
+        13: sipush        255
+        16: iand
+        17: i2b
+        18: iload_1
+        19: sipush        255
+        22: iand
+        23: i2b
+        24: invokestatic  #391                // Method org/lwjgl/opengl/GL11.glColor3ub:(BBB)V
+        27: return
+
+  private void drawBox(int, int);
+    Code:
+         0: bipush        7
+         2: invokestatic  #171                // Method org/lwjgl/opengl/GL11.glBegin:(I)V
+         5: fconst_0
+         6: fconst_0
+         7: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+        10: fconst_0
+        11: iload_2
+        12: i2f
+        13: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+        16: iload_1
+        17: i2f
+        18: iload_2
+        19: i2f
+        20: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+        23: iload_1
+        24: i2f
+        25: fconst_0
+        26: invokestatic  #183                // Method org/lwjgl/opengl/GL11.glVertex2f:(FF)V
+        29: invokestatic  #186                // Method org/lwjgl/opengl/GL11.glEnd:()V
+        32: return
+
+  private void drawBar(net.minecraftforge.fml.common.ProgressManager$ProgressBar);
+    Code:
+         0: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+         3: aload_0
+         4: getstatic     #397                // Field net/minecraftforge/fml/client/SplashProgress.fontColor:I
+         7: invokevirtual #243                // Method setColor:(I)V
+        10: fconst_2
+        11: fconst_2
+        12: fconst_1
+        13: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+        16: sipush        3553
+        19: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+        22: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+        25: aload_1
+        26: invokevirtual #401                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getTitle:()Ljava/lang/String;
+        29: aload_1
+        30: invokevirtual #404                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getMessage:()Ljava/lang/String;
+        33: invokedynamic #416,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        38: iconst_0
+        39: iconst_0
+        40: iconst_0
+        41: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+        44: pop
+        45: sipush        3553
+        48: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+        51: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+        54: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+        57: fconst_0
+        58: ldc           #202                // float 20.0f
+        60: fconst_0
+        61: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+        64: aload_0
+        65: getstatic     #419                // Field net/minecraftforge/fml/client/SplashProgress.barBorderColor:I
+        68: invokevirtual #243                // Method setColor:(I)V
+        71: aload_0
+        72: sipush        400
+        75: bipush        20
+        77: invokevirtual #421                // Method drawBox:(II)V
+        80: aload_0
+        81: getstatic     #424                // Field net/minecraftforge/fml/client/SplashProgress.barBackgroundColor:I
+        84: invokevirtual #243                // Method setColor:(I)V
+        87: fconst_1
+        88: fconst_1
+        89: fconst_0
+        90: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+        93: aload_0
+        94: sipush        398
+        97: bipush        18
+        99: invokevirtual #421                // Method drawBox:(II)V
+       102: aload_0
+       103: getstatic     #427                // Field net/minecraftforge/fml/client/SplashProgress.barColor:I
+       106: invokevirtual #243                // Method setColor:(I)V
+       109: aload_0
+       110: sipush        398
+       113: aload_1
+       114: invokevirtual #430                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getStep:()I
+       117: iconst_1
+       118: iadd
+       119: imul
+       120: aload_1
+       121: invokevirtual #433                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getSteps:()I
+       124: iconst_1
+       125: iadd
+       126: idiv
+       127: bipush        18
+       129: invokevirtual #421                // Method drawBox:(II)V
+       132: aload_1
+       133: invokevirtual #430                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getStep:()I
+       136: aload_1
+       137: invokevirtual #433                // Method net/minecraftforge/fml/common/ProgressManager$ProgressBar.getSteps:()I
+       140: invokedynamic #438,  0            // InvokeDynamic #1:makeConcatWithConstants:(II)Ljava/lang/String;
+       145: astore_2
+       146: ldc_w         #439                // float 199.0f
+       149: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       152: aload_2
+       153: invokevirtual #209                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;)I
+       156: i2f
+       157: fsub
+       158: fconst_2
+       159: fconst_0
+       160: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       163: aload_0
+       164: getstatic     #397                // Field net/minecraftforge/fml/client/SplashProgress.fontColor:I
+       167: invokevirtual #243                // Method setColor:(I)V
+       170: fconst_2
+       171: fconst_2
+       172: fconst_1
+       173: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+       176: sipush        3553
+       179: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       182: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       185: aload_2
+       186: iconst_0
+       187: iconst_0
+       188: iconst_0
+       189: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+       192: pop
+       193: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       196: return
+
+  private void drawMemoryBar();
+    Code:
+         0: invokestatic  #447                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+         3: invokevirtual #450                // Method java/lang/Runtime.maxMemory:()J
+         6: invokestatic  #454                // Method net/minecraftforge/fml/client/SplashProgress.bytesToMb:(J)I
+         9: istore_1
+        10: invokestatic  #447                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+        13: invokevirtual #457                // Method java/lang/Runtime.totalMemory:()J
+        16: invokestatic  #454                // Method net/minecraftforge/fml/client/SplashProgress.bytesToMb:(J)I
+        19: istore_2
+        20: invokestatic  #447                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+        23: invokevirtual #460                // Method java/lang/Runtime.freeMemory:()J
+        26: invokestatic  #454                // Method net/minecraftforge/fml/client/SplashProgress.bytesToMb:(J)I
+        29: istore_3
+        30: iload_2
+        31: iload_3
+        32: isub
+        33: istore        4
+        35: iload         4
+        37: i2f
+        38: iload_1
+        39: i2f
+        40: fdiv
+        41: fstore        5
+        43: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+        46: aload_0
+        47: getstatic     #397                // Field net/minecraftforge/fml/client/SplashProgress.fontColor:I
+        50: invokevirtual #243                // Method setColor:(I)V
+        53: fconst_2
+        54: fconst_2
+        55: fconst_1
+        56: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+        59: sipush        3553
+        62: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+        65: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+        68: ldc_w         #462                // String Memory Used / Total
+        71: iconst_0
+        72: iconst_0
+        73: iconst_0
+        74: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+        77: pop
+        78: sipush        3553
+        81: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+        84: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+        87: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+        90: fconst_0
+        91: ldc           #202                // float 20.0f
+        93: fconst_0
+        94: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+        97: aload_0
+        98: getstatic     #419                // Field net/minecraftforge/fml/client/SplashProgress.barBorderColor:I
+       101: invokevirtual #243                // Method setColor:(I)V
+       104: aload_0
+       105: sipush        400
+       108: bipush        20
+       110: invokevirtual #421                // Method drawBox:(II)V
+       113: aload_0
+       114: getstatic     #424                // Field net/minecraftforge/fml/client/SplashProgress.barBackgroundColor:I
+       117: invokevirtual #243                // Method setColor:(I)V
+       120: fconst_1
+       121: fconst_1
+       122: fconst_0
+       123: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       126: aload_0
+       127: sipush        398
+       130: bipush        18
+       132: invokevirtual #421                // Method drawBox:(II)V
+       135: invokestatic  #465                // Method java/lang/System.currentTimeMillis:()J
+       138: lstore        6
+       140: fload         5
+       142: getstatic     #468                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorPercent:F
+       145: fcmpl
+       146: ifgt          162
+       149: lload         6
+       151: getstatic     #471                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorChangeTime:J
+       154: lsub
+       155: ldc2_w        #472                // long 1000l
+       158: lcmp
+       159: ifle          172
+       162: lload         6
+       164: putstatic     #471                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorChangeTime:J
+       167: fload         5
+       169: putstatic     #468                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorPercent:F
+       172: getstatic     #468                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorPercent:F
+       175: ldc_w         #474                // float 0.75f
+       178: fcmpg
+       179: ifge          190
+       182: getstatic     #477                // Field net/minecraftforge/fml/client/SplashProgress.memoryGoodColor:I
+       185: istore        8
+       187: goto          213
+       190: getstatic     #468                // Field net/minecraftforge/fml/client/SplashProgress.memoryColorPercent:F
+       193: ldc_w         #478                // float 0.85f
+       196: fcmpg
+       197: ifge          208
+       200: getstatic     #481                // Field net/minecraftforge/fml/client/SplashProgress.memoryWarnColor:I
+       203: istore        8
+       205: goto          213
+       208: getstatic     #484                // Field net/minecraftforge/fml/client/SplashProgress.memoryLowColor:I
+       211: istore        8
+       213: aload_0
+       214: getstatic     #484                // Field net/minecraftforge/fml/client/SplashProgress.memoryLowColor:I
+       217: invokevirtual #243                // Method setColor:(I)V
+       220: invokestatic  #205                // Method org/lwjgl/opengl/GL11.glPushMatrix:()V
+       223: sipush        398
+       226: iload_2
+       227: imul
+       228: iload_1
+       229: idiv
+       230: iconst_2
+       231: isub
+       232: i2f
+       233: fconst_0
+       234: fconst_0
+       235: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       238: aload_0
+       239: iconst_2
+       240: bipush        18
+       242: invokevirtual #421                // Method drawBox:(II)V
+       245: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       248: aload_0
+       249: iload         8
+       251: invokevirtual #243                // Method setColor:(I)V
+       254: aload_0
+       255: sipush        398
+       258: iload         4
+       260: imul
+       261: iload_1
+       262: idiv
+       263: bipush        18
+       265: invokevirtual #421                // Method drawBox:(II)V
+       268: aload_0
+       269: iload         4
+       271: invokevirtual #488                // Method getMemoryString:(I)Ljava/lang/String;
+       274: aload_0
+       275: iload_1
+       276: invokevirtual #488                // Method getMemoryString:(I)Ljava/lang/String;
+       279: invokedynamic #491,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       284: astore        9
+       286: ldc_w         #439                // float 199.0f
+       289: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       292: aload         9
+       294: invokevirtual #209                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;)I
+       297: i2f
+       298: fsub
+       299: fconst_2
+       300: fconst_0
+       301: invokestatic  #213                // Method org/lwjgl/opengl/GL11.glTranslatef:(FFF)V
+       304: aload_0
+       305: getstatic     #397                // Field net/minecraftforge/fml/client/SplashProgress.fontColor:I
+       308: invokevirtual #243                // Method setColor:(I)V
+       311: fconst_2
+       312: fconst_2
+       313: fconst_1
+       314: invokestatic  #216                // Method org/lwjgl/opengl/GL11.glScalef:(FFF)V
+       317: sipush        3553
+       320: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       323: getstatic     #109                // Field net/minecraftforge/fml/client/SplashProgress.fontRenderer:Lnet/minecraftforge/fml/client/SplashProgress$SplashFontRenderer;
+       326: aload         9
+       328: iconst_0
+       329: iconst_0
+       330: iconst_0
+       331: invokevirtual #220                // Method net/minecraftforge/fml/client/SplashProgress$SplashFontRenderer.a:(Ljava/lang/String;III)I
+       334: pop
+       335: invokestatic  #223                // Method org/lwjgl/opengl/GL11.glPopMatrix:()V
+       338: return
+
+  private java.lang.String getMemoryString(int);
+    Code:
+         0: iload_1
+         1: invokestatic  #498                // Method java/lang/Integer.toString:(I)Ljava/lang/String;
+         4: iconst_4
+         5: bipush        32
+         7: invokestatic  #504                // Method org/apache/commons/lang3/StringUtils.leftPad:(Ljava/lang/String;IC)Ljava/lang/String;
+        10: invokedynamic #509,  0            // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        15: areturn
+
+  private void setGL();
+    Code:
+         0: getstatic     #516                // Field net/minecraftforge/fml/client/SplashProgress.lock:Ljava/util/concurrent/locks/Lock;
+         3: invokeinterface #520,  1          // InterfaceMethod java/util/concurrent/locks/Lock.lock:()V
+         8: invokestatic  #524                // Method org/lwjgl/opengl/Display.getDrawable:()Lorg/lwjgl/opengl/Drawable;
+        11: invokeinterface #529,  1          // InterfaceMethod org/lwjgl/opengl/Drawable.makeCurrent:()V
+        16: goto          41
+        19: astore_1
+        20: getstatic     #328                // Field net/minecraftforge/fml/common/FMLLog.log:Lorg/apache/logging/log4j/Logger;
+        23: ldc_w         #531                // String Error setting GL context:
+        26: aload_1
+        27: invokeinterface #535,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;Ljava/lang/Throwable;)V
+        32: new           #537                // class java/lang/RuntimeException
+        35: dup
+        36: aload_1
+        37: invokespecial #540                // Method java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+        40: athrow
+        41: getstatic     #240                // Field net/minecraftforge/fml/client/SplashProgress.backgroundColor:I
+        44: bipush        16
+        46: ishr
+        47: sipush        255
+        50: iand
+        51: i2f
+        52: ldc_w         #541                // float 255.0f
+        55: fdiv
+        56: getstatic     #240                // Field net/minecraftforge/fml/client/SplashProgress.backgroundColor:I
+        59: bipush        8
+        61: ishr
+        62: sipush        255
+        65: iand
+        66: i2f
+        67: ldc_w         #541                // float 255.0f
+        70: fdiv
+        71: getstatic     #240                // Field net/minecraftforge/fml/client/SplashProgress.backgroundColor:I
+        74: sipush        255
+        77: iand
+        78: i2f
+        79: ldc_w         #541                // float 255.0f
+        82: fdiv
+        83: fconst_1
+        84: invokestatic  #544                // Method org/lwjgl/opengl/GL11.glClearColor:(FFFF)V
+        87: sipush        2896
+        90: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+        93: sipush        2929
+        96: invokestatic  #112                // Method org/lwjgl/opengl/GL11.glDisable:(I)V
+        99: sipush        3042
+       102: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+       105: sipush        770
+       108: sipush        771
+       111: invokestatic  #547                // Method org/lwjgl/opengl/GL11.glBlendFunc:(II)V
+       114: return
+      Exception table:
+         from    to  target type
+             8    16    19   Class org/lwjgl/LWJGLException
+
+  private void clearGL();
+    Code:
+         0: invokestatic  #555                // Method bib.z:()Lbib;
+         3: astore_1
+         4: aload_1
+         5: invokestatic  #136                // Method org/lwjgl/opengl/Display.getWidth:()I
+         8: putfield      #558                // Field bib.d:I
+        11: aload_1
+        12: invokestatic  #139                // Method org/lwjgl/opengl/Display.getHeight:()I
+        15: putfield      #560                // Field bib.e:I
+        18: aload_1
+        19: aload_1
+        20: getfield      #558                // Field bib.d:I
+        23: aload_1
+        24: getfield      #560                // Field bib.e:I
+        27: invokevirtual #562                // Method bib.a:(II)V
+        30: fconst_1
+        31: fconst_1
+        32: fconst_1
+        33: fconst_1
+        34: invokestatic  #544                // Method org/lwjgl/opengl/GL11.glClearColor:(FFFF)V
+        37: sipush        2929
+        40: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+        43: sipush        515
+        46: invokestatic  #565                // Method org/lwjgl/opengl/GL11.glDepthFunc:(I)V
+        49: sipush        3008
+        52: invokestatic  #104                // Method org/lwjgl/opengl/GL11.glEnable:(I)V
+        55: sipush        516
+        58: ldc_w         #566                // float 0.1f
+        61: invokestatic  #570                // Method org/lwjgl/opengl/GL11.glAlphaFunc:(IF)V
+        64: invokestatic  #524                // Method org/lwjgl/opengl/Display.getDrawable:()Lorg/lwjgl/opengl/Drawable;
+        67: invokeinterface #573,  1          // InterfaceMethod org/lwjgl/opengl/Drawable.releaseContext:()V
+        72: getstatic     #516                // Field net/minecraftforge/fml/client/SplashProgress.lock:Ljava/util/concurrent/locks/Lock;
+        75: invokeinterface #576,  1          // InterfaceMethod java/util/concurrent/locks/Lock.unlock:()V
+        80: goto          116
+        83: astore_2
+        84: getstatic     #328                // Field net/minecraftforge/fml/common/FMLLog.log:Lorg/apache/logging/log4j/Logger;
+        87: ldc_w         #578                // String Error releasing GL context:
+        90: aload_2
+        91: invokeinterface #535,  3          // InterfaceMethod org/apache/logging/log4j/Logger.error:(Ljava/lang/String;Ljava/lang/Throwable;)V
+        96: new           #537                // class java/lang/RuntimeException
+        99: dup
+       100: aload_2
+       101: invokespecial #540                // Method java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+       104: athrow
+       105: astore_3
+       106: getstatic     #516                // Field net/minecraftforge/fml/client/SplashProgress.lock:Ljava/util/concurrent/locks/Lock;
+       109: invokeinterface #576,  1          // InterfaceMethod java/util/concurrent/locks/Lock.unlock:()V
+       114: aload_3
+       115: athrow
+       116: return
+      Exception table:
+         from    to  target type
+            64    72    83   Class org/lwjgl/LWJGLException
+            64    72   105   any
+            83   106   105   any
+}

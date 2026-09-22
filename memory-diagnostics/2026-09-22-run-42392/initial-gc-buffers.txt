@@ -1,0 +1,632 @@
+jdk.GCHeapSummary {
+  startTime = 03:36:01.069 (2026-09-22)
+  gcId = 10
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4028E000000
+    committedSize = 10.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 8.2 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:01.069 (2026-09-22)
+  gcId = 10
+  when = "Before GC"
+  gcThreshold = 271.7 MB
+  metaspace = {
+    committed = 269.9 MB
+    used = 268.2 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 205.1 MB
+    used = 204.1 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 64.8 MB
+    used = 64.0 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:01.275 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 37
+  totalCapacity = 48.2 MB
+  memoryUsed = 48.2 MB
+}
+
+jdk.GarbageCollection {
+  startTime = 03:36:01.069 (2026-09-22)
+  duration = 1.44 s
+  gcId = 10
+  name = "ZGC Minor"
+  cause = "Allocation Rate"
+  sumOfPauses = 0.0714 ms
+  longestPause = 0.0452 ms
+  eventThread = "ZDriverMinor" (osThreadId = 31816)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:02.504 (2026-09-22)
+  gcId = 10
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4028E000000
+    committedSize = 10.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 2.4 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:02.504 (2026-09-22)
+  gcId = 10
+  when = "After GC"
+  gcThreshold = 272.9 MB
+  metaspace = {
+    committed = 272.9 MB
+    used = 271.2 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 207.4 MB
+    used = 206.5 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 65.5 MB
+    used = 64.8 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:02.504 (2026-09-22)
+  gcId = 11
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4028E000000
+    committedSize = 10.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 2.4 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:02.504 (2026-09-22)
+  gcId = 11
+  when = "Before GC"
+  gcThreshold = 272.9 MB
+  metaspace = {
+    committed = 272.9 MB
+    used = 271.2 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 207.4 MB
+    used = 206.5 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 65.5 MB
+    used = 64.8 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:06.527 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 37
+  totalCapacity = 48.2 MB
+  memoryUsed = 48.2 MB
+}
+
+jdk.ZOldGarbageCollection {
+  startTime = 03:36:04.074 (2026-09-22)
+  duration = 2.53 s
+  gcId = 11
+  eventThread = "ZDriverMajor" (osThreadId = 41796)
+}
+
+jdk.GarbageCollection {
+  startTime = 03:36:02.504 (2026-09-22)
+  duration = 4.10 s
+  gcId = 11
+  name = "ZGC Major"
+  cause = "Metadata GC Threshold"
+  sumOfPauses = 0.0870 ms
+  longestPause = 0.0230 ms
+  eventThread = "ZDriverMajor" (osThreadId = 41796)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:06.608 (2026-09-22)
+  gcId = 11
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x40288000000
+    committedSize = 10.1 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 4.1 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:06.608 (2026-09-22)
+  gcId = 11
+  when = "After GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 277.8 MB
+    used = 276.0 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 211.1 MB
+    used = 210.1 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 66.7 MB
+    used = 66.0 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:11.948 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 1181
+  totalCapacity = 67.5 MB
+  memoryUsed = 67.5 MB
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:16.774 (2026-09-22)
+  gcId = 12
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4026A000000
+    committedSize = 9.7 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 8.6 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:16.774 (2026-09-22)
+  gcId = 12
+  when = "Before GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 302.9 MB
+    used = 301.2 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 229.8 MB
+    used = 228.7 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 73.2 MB
+    used = 72.5 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.GarbageCollection {
+  startTime = 03:36:16.774 (2026-09-22)
+  duration = 395 ms
+  gcId = 12
+  name = "ZGC Minor"
+  cause = "Allocation Rate"
+  sumOfPauses = 0.0379 ms
+  longestPause = 0.0148 ms
+  eventThread = "ZDriverMinor" (osThreadId = 31816)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:17.168 (2026-09-22)
+  gcId = 12
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4026A000000
+    committedSize = 9.7 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 1.9 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:17.168 (2026-09-22)
+  gcId = 12
+  when = "After GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 303.9 MB
+    used = 302.2 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 230.4 MB
+    used = 229.4 MB
+    reserved = 256.0 MB
+  }
+  classSpace = {
+    committed = 73.5 MB
+    used = 72.8 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:17.195 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2809
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:22.658 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2809
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:27.909 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2809
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:33.348 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2810
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:37.922 (2026-09-22)
+  gcId = 13
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4024DC00000
+    committedSize = 9.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 8.7 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:37.922 (2026-09-22)
+  gcId = 13
+  when = "Before GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 352.1 MB
+    used = 350.3 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 264.8 MB
+    used = 263.8 MB
+    reserved = 320.0 MB
+  }
+  classSpace = {
+    committed = 87.3 MB
+    used = 86.5 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:38.617 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2810
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.GarbageCollection {
+  startTime = 03:36:37.922 (2026-09-22)
+  duration = 987 ms
+  gcId = 13
+  name = "ZGC Minor"
+  cause = "Allocation Rate"
+  sumOfPauses = 0.0517 ms
+  longestPause = 0.0193 ms
+  eventThread = "ZDriverMinor" (osThreadId = 31816)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:38.909 (2026-09-22)
+  gcId = 13
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4024DC00000
+    committedSize = 9.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 2.2 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:38.909 (2026-09-22)
+  gcId = 13
+  when = "After GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 354.9 MB
+    used = 353.1 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 266.8 MB
+    used = 265.8 MB
+    reserved = 320.0 MB
+  }
+  classSpace = {
+    committed = 88.1 MB
+    used = 87.3 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:44.094 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2810
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:49.336 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2810
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:36:54.782 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 2810
+  totalCapacity = 86.7 MB
+  memoryUsed = 86.7 MB
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:55.461 (2026-09-22)
+  gcId = 14
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x4024DC00000
+    committedSize = 9.2 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 4.3 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:55.461 (2026-09-22)
+  gcId = 14
+  when = "Before GC"
+  gcThreshold = 462.5 MB
+  metaspace = {
+    committed = 372.8 MB
+    used = 371.0 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 279.3 MB
+    used = 278.3 MB
+    reserved = 320.0 MB
+  }
+  classSpace = {
+    committed = 93.4 MB
+    used = 92.7 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.ZOldGarbageCollection {
+  startTime = 03:36:55.771 (2026-09-22)
+  duration = 587 ms
+  gcId = 14
+  eventThread = "ZDriverMajor" (osThreadId = 41796)
+}
+
+jdk.GarbageCollection {
+  startTime = 03:36:55.461 (2026-09-22)
+  duration = 897 ms
+  gcId = 14
+  name = "ZGC Major"
+  cause = "Heap Inspection Initiated GC"
+  sumOfPauses = 0.156 ms
+  longestPause = 0.0297 ms
+  eventThread = "ZDriverMajor" (osThreadId = 41796)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:36:56.358 (2026-09-22)
+  gcId = 14
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x40247C00000
+    committedSize = 9.1 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 2.2 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:36:56.358 (2026-09-22)
+  gcId = 14
+  when = "After GC"
+  gcThreshold = 624.7 MB
+  metaspace = {
+    committed = 374.8 MB
+    used = 373.0 MB
+    reserved = 1.3 GB
+  }
+  dataSpace = {
+    committed = 280.8 MB
+    used = 279.8 MB
+    reserved = 320.0 MB
+  }
+  classSpace = {
+    committed = 94.0 MB
+    used = 93.2 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:37:01.067 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 44
+  totalCapacity = 48.2 MB
+  memoryUsed = 48.2 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:37:06.548 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 45
+  totalCapacity = 56.2 MB
+  memoryUsed = 56.2 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:37:11.801 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 45
+  totalCapacity = 56.2 MB
+  memoryUsed = 56.2 MB
+}
+
+jdk.DirectBufferStatistics {
+  startTime = 03:37:17.285 (2026-09-22)
+  maxCapacity = 11.9 GB
+  count = 45
+  totalCapacity = 56.2 MB
+  memoryUsed = 56.2 MB
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:37:18.568 (2026-09-22)
+  gcId = 15
+  when = "Before GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x40296200000
+    committedSize = 10.3 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 10.3 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:37:18.568 (2026-09-22)
+  gcId = 15
+  when = "Before GC"
+  gcThreshold = 624.7 MB
+  metaspace = {
+    committed = 439.2 MB
+    used = 437.0 MB
+    reserved = 1.4 GB
+  }
+  dataSpace = {
+    committed = 327.1 MB
+    used = 325.8 MB
+    reserved = 384.0 MB
+  }
+  classSpace = {
+    committed = 112.1 MB
+    used = 111.1 MB
+    reserved = 1.0 GB
+  }
+}
+
+jdk.GarbageCollection {
+  startTime = 03:37:18.568 (2026-09-22)
+  duration = 1.17 s
+  gcId = 15
+  name = "ZGC Minor"
+  cause = "Allocation Rate"
+  sumOfPauses = 0.0430 ms
+  longestPause = 0.0203 ms
+  eventThread = "ZDriverMinor" (osThreadId = 31816)
+}
+
+jdk.GCHeapSummary {
+  startTime = 03:37:19.738 (2026-09-22)
+  gcId = 15
+  when = "After GC"
+  heapSpace = {
+    start = 0x40000000000
+    committedEnd = 0x402B8000000
+    committedSize = 10.9 GB
+    reservedEnd = 0x402FA000000
+    reservedSize = 11.9 GB
+  }
+  heapUsed = 2.8 GB
+}
+
+jdk.MetaspaceSummary {
+  startTime = 03:37:19.738 (2026-09-22)
+  gcId = 15
+  when = "After GC"
+  gcThreshold = 624.7 MB
+  metaspace = {
+    committed = 440.5 MB
+    used = 438.3 MB
+    reserved = 1.4 GB
+  }
+  dataSpace = {
+    committed = 327.9 MB
+    used = 326.6 MB
+    reserved = 384.0 MB
+  }
+  classSpace = {
+    committed = 112.6 MB
+    used = 111.6 MB
+    reserved = 1.0 GB
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "title": "Duranite",
+  "r": 172,
+  "g": 221,
+  "b": 235,
+  "input": {
+    "id": "taiga:duranite_ore"
+  },
+  "description": [
+    {
+      "text": "Vor langer Zeit stürzten brennende Meteoriten vom Himmel. Die Reibungshitze war so groß, dass sie die Metalle im inneren zusammenschmolz und einen enorm harten Klumpen Duranite erzeugte."
+    }
+  ],
+  "informations": [
+    "Level: Duranite",
+    "Sehr selten",
+    "Eingeschlossen in Meteoriten"
+  ]
+}

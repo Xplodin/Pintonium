@@ -1,0 +1,8 @@
+PASS: compiled development redirect, production SRG mapping/discovery annotation, and both vanilla reload reads match.
+global=Fast  leaves=DEFAULT expected=opaque         before=PASS after=PASS
+global=Fast  leaves=FANCY   expected=transparent    before=FAIL (opacity mismatch) after=PASS
+global=Fast  leaves=FAST    expected=opaque         before=PASS after=PASS
+global=Fancy leaves=DEFAULT expected=transparent    before=PASS after=PASS
+global=Fancy leaves=FANCY   expected=transparent    before=PASS after=PASS
+global=Fancy leaves=FAST    expected=opaque         before=FAIL (opacity mismatch) after=PASS
+PASS: baseline reproduced both option conflicts; patched 6 combinations / 2 leaf blocks / 72 neighbor faces.

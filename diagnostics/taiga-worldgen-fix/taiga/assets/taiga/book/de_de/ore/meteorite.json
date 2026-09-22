@@ -1,0 +1,19 @@
+{
+  "title": "Meteorit",
+  "r": 35,
+  "g": 35,
+  "b": 35,
+  "input": {
+    "id": "taiga:meteorite_block"
+  },
+  "description": [
+    {
+      "text": "Man muss Geduld aufbringen, um Meteoriten zu finden. Vor vielen tausend Jahren stürzten sie vom Himmel. Die meisten von ihnen liegen unter der Erde begraben, entsprechend aufwändig gestaltet die Suche."
+    }
+  ],
+  "informations": [
+    "Level: Cobalt",
+    "Manchmal zerbröselt es beim Abbau",
+    "Liegt häufig unterirdisch"
+  ]
+}

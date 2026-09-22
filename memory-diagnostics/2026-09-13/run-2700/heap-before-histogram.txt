@@ -1,0 +1,4 @@
+2700:
+ZHeap            used 9546M, capacity 18390M, max capacity 20576M
+ Cache           8844M (33)
+  size classes   2M (2), 4M (6), 8M (5), 16M (6), 32M (1), 64M (1), 128M (5), 256M (1), 512M (2), 1G (4)

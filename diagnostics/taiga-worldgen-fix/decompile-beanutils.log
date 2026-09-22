@@ -1,0 +1,111 @@
+INFO:  Loaded 3 plugins
+INFO:  JVM info: Oracle Corporation - 21.0.11 - 21.0.11+9-LTS-211
+INFO:  Scanning classes from Java runtime current
+INFO:  Scanning classes from module java.base@21.0.11
+INFO:  Scanning classes from module java.compiler@21.0.11
+INFO:  Scanning classes from module java.datatransfer@21.0.11
+INFO:  Scanning classes from module java.desktop@21.0.11
+INFO:  Scanning classes from module java.instrument@21.0.11
+INFO:  Scanning classes from module java.logging@21.0.11
+INFO:  Scanning classes from module java.management@21.0.11
+INFO:  Scanning classes from module java.management.rmi@21.0.11
+INFO:  Scanning classes from module java.naming@21.0.11
+INFO:  Scanning classes from module java.net.http@21.0.11
+INFO:  Scanning classes from module java.prefs@21.0.11
+INFO:  Scanning classes from module java.rmi@21.0.11
+INFO:  Scanning classes from module java.scripting@21.0.11
+INFO:  Scanning classes from module java.se@21.0.11
+INFO:  Scanning classes from module java.security.jgss@21.0.11
+INFO:  Scanning classes from module java.security.sasl@21.0.11
+INFO:  Scanning classes from module java.smartcardio@21.0.11
+INFO:  Scanning classes from module java.sql@21.0.11
+INFO:  Scanning classes from module java.sql.rowset@21.0.11
+INFO:  Scanning classes from module java.transaction.xa@21.0.11
+INFO:  Scanning classes from module java.xml@21.0.11
+INFO:  Scanning classes from module java.xml.crypto@21.0.11
+INFO:  Scanning classes from module jdk.accessibility@21.0.11
+INFO:  Scanning classes from module jdk.attach@21.0.11
+INFO:  Scanning classes from module jdk.charsets@21.0.11
+INFO:  Scanning classes from module jdk.compiler@21.0.11
+INFO:  Scanning classes from module jdk.crypto.cryptoki@21.0.11
+INFO:  Scanning classes from module jdk.crypto.ec@21.0.11
+INFO:  Scanning classes from module jdk.crypto.mscapi@21.0.11
+INFO:  Scanning classes from module jdk.dynalink@21.0.11
+INFO:  Scanning classes from module jdk.editpad@21.0.11
+INFO:  Scanning classes from module jdk.hotspot.agent@21.0.11
+INFO:  Scanning classes from module jdk.httpserver@21.0.11
+INFO:  Scanning classes from module jdk.incubator.vector@21.0.11
+INFO:  Scanning classes from module jdk.internal.ed@21.0.11
+INFO:  Scanning classes from module jdk.internal.jvmstat@21.0.11
+INFO:  Scanning classes from module jdk.internal.le@21.0.11
+INFO:  Scanning classes from module jdk.internal.opt@21.0.11
+INFO:  Scanning classes from module jdk.internal.vm.ci@21.0.11
+INFO:  Scanning classes from module jdk.internal.vm.compiler@21.0.11
+INFO:  Scanning classes from module jdk.internal.vm.compiler.management@21.0.11
+INFO:  Scanning classes from module jdk.jartool@21.0.11
+INFO:  Scanning classes from module jdk.javadoc@21.0.11
+INFO:  Scanning classes from module jdk.jcmd@21.0.11
+INFO:  Scanning classes from module jdk.jconsole@21.0.11
+INFO:  Scanning classes from module jdk.jdeps@21.0.11
+INFO:  Scanning classes from module jdk.jdi@21.0.11
+INFO:  Scanning classes from module jdk.jdwp.agent@21.0.11
+INFO:  Scanning classes from module jdk.jfr@21.0.11
+INFO:  Scanning classes from module jdk.jlink@21.0.11
+INFO:  Scanning classes from module jdk.jpackage@21.0.11
+INFO:  Scanning classes from module jdk.jshell@21.0.11
+INFO:  Scanning classes from module jdk.jsobject@21.0.11
+INFO:  Scanning classes from module jdk.jstatd@21.0.11
+INFO:  Scanning classes from module jdk.localedata@21.0.11
+INFO:  Scanning classes from module jdk.management@21.0.11
+INFO:  Scanning classes from module jdk.management.agent@21.0.11
+INFO:  Scanning classes from module jdk.management.jfr@21.0.11
+INFO:  Scanning classes from module jdk.naming.dns@21.0.11
+INFO:  Scanning classes from module jdk.naming.rmi@21.0.11
+INFO:  Scanning classes from module jdk.net@21.0.11
+INFO:  Scanning classes from module jdk.nio.mapmode@21.0.11
+INFO:  Scanning classes from module jdk.random@21.0.11
+INFO:  Scanning classes from module jdk.sctp@21.0.11
+INFO:  Scanning classes from module jdk.security.auth@21.0.11
+INFO:  Scanning classes from module jdk.security.jgss@21.0.11
+INFO:  Scanning classes from module jdk.unsupported@21.0.11
+INFO:  Scanning classes from module jdk.unsupported.desktop@21.0.11
+INFO:  Scanning classes from module jdk.xml.dom@21.0.11
+INFO:  Scanning classes from module jdk.zipfs@21.0.11
+INFO:  Scanning classes from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/Beanutils from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/bettercaves/BetterCavesDepthPatcher from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/bettercaves/FlooredCavernConfig from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/bettercaves/FlooredCavernPatcher from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/hbmlootr/CompatConfig from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/hbmlootr/HbmLootrHandler$1 from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/hbmlootr/HbmLootrHandler$ReflectionBridge from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/compat/hbmlootr/HbmLootrHandler from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/config/DepthsHeightAccess$Access from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/config/DepthsHeightAccess from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/config/DepthUpdateCompat from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/keyPatch from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/bettercaves/MixinBetterCavesConfigLoader from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/bettercaves/MixinCaveCarver from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/bettercaves/MixinCavernCarver from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/MixinDistributionUniform from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/MixinGenerator from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: com/bean/beanutils/mixin/MixinWorldGen from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: dev/beanpack/memory/ResourcePathPatcher from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: dev/beanpack/memory/ResourcePathPlugin from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Loading Class: dev/beanpack/memory/ResourcePathTransformer from archive C:\Users\somet\curseforge\minecraft\Instances\BeanPack Invincible\mods\beanutils-2.1.7.jar
+INFO:  Preprocessing class com/bean/beanutils/mixin/MixinWorldGen
+INFO:  Preprocessing class com/bean/beanutils/mixin/MixinGenerator
+INFO:     Loading Class: java/lang/Object from module java.base@21.0.11
+INFO:  ... done
+INFO:  ... done
+INFO:  Decompiling class com/bean/beanutils/mixin/MixinGenerator
+INFO:  Decompiling class com/bean/beanutils/mixin/MixinWorldGen
+INFO:        Loading Class: java/util/Map from module java.base@21.0.11
+INFO:        Loading Class: java/lang/Math from module java.base@21.0.11
+INFO:        Loading Class: java/util/Random from module java.base@21.0.11
+INFO:        Loading Class: java/util/List from module java.base@21.0.11
+INFO:        Loading Class: java/lang/Number from module java.base@21.0.11
+INFO:        Loading Class: java/lang/Integer from module java.base@21.0.11
+INFO:        Loading Class: java/lang/String from module java.base@21.0.11
+INFO:  ... done
+INFO:  ... done

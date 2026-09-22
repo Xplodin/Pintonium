@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+ModType: CRL
+MixinConfigs: depthsupdate.default.mixin.json,depthsupdate.mod.mixin.jso
+ n
+FMLCorePlugin: sayys.depthsupdate.DepthsUpdateLoadingPlugin
+FMLCorePluginContainsFMLMod: true
+FMLAT: depthsupdate_at.cfg
+Fabric-Loom-Mixin-Remap-Type: static
+

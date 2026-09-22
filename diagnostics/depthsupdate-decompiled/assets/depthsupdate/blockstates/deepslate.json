@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "depthsupdate:deepslate"
+    },
+    "axis=x": {
+      "model": "depthsupdate:deepslate",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "depthsupdate:deepslate",
+      "x": 90
+    }
+  }
+}

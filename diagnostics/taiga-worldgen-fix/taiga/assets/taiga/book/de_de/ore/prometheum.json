@@ -1,0 +1,20 @@
+{
+  "title": "Prometheum",
+  "r": 55,
+  "g": 44,
+  "b": 73,
+  "input": {
+    "id": "taiga:prometheum_ore"
+  },
+  "description": [
+    {
+      "text": "Manche Wissenschaftler glauben, dass Prometheum durch den hohen Druck in den Tiefen des Nethers entsteht. Abgebaut, beginnt es radioaktiv zu strahlen und zerfällt nach und nach."
+    }
+  ],
+  "informations": [
+    "Level: Duranite",
+    "Zerfällt allmählich",
+    "Leuchtet im Dunkeln",
+    "dY: ~16"
+  ]
+}

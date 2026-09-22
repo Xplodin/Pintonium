@@ -1,0 +1,49 @@
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 100.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 100.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 100.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 100.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 42 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 42 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 42 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 42 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension -1 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -120 to -8 (chance 65.0%).
+[BCDU Compat] Ignoring invalid dimension ID: bad
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y -2048 to -2032 (chance 100.0%).
+[BeanUtilities] Ignoring invalid dimension ID: bad
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y -2048 to -2032 (chance 100.0%).
+[BCDU Compat] Ignoring invalid dimension ID: bad
+[BeanUtilities] Ignoring invalid dimension ID: bad
+[BCDU Compat] Ignoring invalid dimension ID: bad
+[BeanUtilities] Ignoring invalid dimension ID: bad
+[BCDU Compat] Ignoring invalid dimension ID: bad
+[BeanUtilities] Ignoring invalid dimension ID: bad
+[BCDU Compat] Ignoring invalid dimension ID: bad
+[BeanUtilities] Ignoring invalid dimension ID: bad
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -184 (chance 100.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -200 to -184 (chance 100.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 0 from Y 2047 to 2047 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 0 from Y 2047 to 2047 (chance 65.0%).
+[BCDU Compat] Enabled Better Caves floored caverns in dimension 7 from Y -200 to 2047 (chance 65.0%).
+[BeanUtilities] Enabled Better Caves floored caverns in dimension 7 from Y -200 to 2047 (chance 65.0%).
+PASS: 40 original-vs-merged comparisons using real Better Caves ConfigHolder; unchanged config; identical cavern handler bytecode and selectors; actual target instructions present.
