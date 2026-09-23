@@ -50,11 +50,12 @@ public class VintageBlockMaterialMapping {
     private static void addBlockStates(Block block, ResourceLocation location, IBlockEntry entry,
                                        Object2IntMap<IBlockState> idMap, int intId) {
         Map<IProperty<?>, String> properties = resolveProperties(block, location, entry, intId);
+        boolean isLiquidBlock = isLiquidBlock(block);
 
         if (!entry.metadataIds().isEmpty()) {
             for (int metadata : entry.metadataIds()) {
                 IBlockState state = block.getStateFromMeta(metadata);
-                if (properties.isEmpty() || checkState(state, properties)) {
+                if (isLiquidBlock || properties.isEmpty() || checkState(state, properties)) {
                     idMap.putIfAbsent(state, intId);
                 }
             }
@@ -62,9 +63,21 @@ public class VintageBlockMaterialMapping {
         }
 
         for (IBlockState state : block.getBlockState().getValidStates()) {
-            if (properties.isEmpty() || checkState(state, properties)) {
+            if (isLiquidBlock || properties.isEmpty() || checkState(state, properties)) {
                 idMap.putIfAbsent(state, intId);
             }
+        }
+    }
+
+    private static boolean isLiquidBlock(Block block) {
+        if (block == Blocks.LAVA || block == Blocks.FLOWING_LAVA || block == Blocks.WATER || block == Blocks.FLOWING_WATER) {
+            return true;
+        }
+
+        try {
+            return block.getDefaultState().getMaterial().isLiquid();
+        } catch (Exception e) {
+            return false;
         }
     }
 
