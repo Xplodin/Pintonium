@@ -42,3 +42,5 @@ bin/
 
 /versions-local.json
 .aider*
+/diagnostics/upstream-actinium
+/diagnostics/upstream-ausm
