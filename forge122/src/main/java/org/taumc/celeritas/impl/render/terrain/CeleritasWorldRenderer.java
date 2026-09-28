@@ -19,6 +19,7 @@ import org.embeddedt.embeddium.impl.render.chunk.terrain.TerrainRenderPass;
 import org.embeddedt.embeddium.impl.render.chunk.vertex.format.ChunkMeshFormats;
 import org.embeddedt.embeddium.impl.render.chunk.vertex.format.ChunkVertexType;
 import org.embeddedt.embeddium.impl.render.terrain.SimpleWorldRenderer;
+import org.embeddedt.embeddium.impl.render.viewport.Viewport;
 import org.joml.Matrix4f;
 import org.taumc.celeritas.CeleritasVintage;
 import org.taumc.celeritas.impl.render.GlMatrixSnapshot;
@@ -88,6 +89,11 @@ public class CeleritasWorldRenderer extends SimpleWorldRenderer<WorldClient, Vin
         super.drawChunkLayer(renderLayer, x, y, z);
 
         GlStateManager.resetColor();
+    }
+
+    /** Restores the player viewport after the separate shader shadow pass. */
+    public void restoreViewport(Viewport viewport) {
+        this.currentViewport = viewport;
     }
 
     @Override

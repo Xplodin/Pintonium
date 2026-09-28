@@ -21,6 +21,7 @@ import org.embeddedt.embeddium.impl.render.viewport.Viewport;
 import org.embeddedt.embeddium.impl.util.position.SectionPos;
 import org.jetbrains.annotations.Nullable;
 import org.taumc.celeritas.CeleritasVintage;
+import org.taumc.celeritas.impl.render.GlMatrixSnapshot;
 import org.taumc.celeritas.impl.render.terrain.compile.VintageChunkBuildContext;
 import org.taumc.celeritas.impl.render.terrain.compile.task.ChunkBuilderMeshingTask;
 import org.taumc.celeritas.impl.render.terrain.sprite.SpriteUtil;
@@ -34,7 +35,9 @@ public class VintageRenderSectionManager extends RenderSectionManager {
     private final ClonedChunkSectionCache sectionCache;
 
     public VintageRenderSectionManager(RenderPassConfiguration<?> configuration, WorldClient world, int renderDistance, CommandList commandList, int minSection, int maxSection) {
-        super(configuration, () -> new VintageChunkBuildContext(world, configuration), ChunkRenderer::new, renderDistance, commandList, minSection, maxSection, CeleritasVintage.options().performance.chunkBuilderThreads);
+        super(configuration, () -> new VintageChunkBuildContext(world, configuration), ChunkRenderer::new,
+                renderDistance, commandList, minSection, maxSection,
+                CeleritasVintage.options().performance.chunkBuilderThreads, true);
         this.world = world;
         this.sectionCache = new ClonedChunkSectionCache(world);
     }
@@ -49,6 +52,11 @@ public class VintageRenderSectionManager extends RenderSectionManager {
     }
 
     @Override
+    public boolean isInShadowPass() {
+        return GlMatrixSnapshot.isRenderingShadowPass();
+    }
+
+    @Override
     protected boolean shouldRespectUpdateTaskQueueSizeLimit() {
         return true;
     }
@@ -60,6 +68,10 @@ public class VintageRenderSectionManager extends RenderSectionManager {
 
     @Override
     protected boolean shouldUseOcclusionCulling(Viewport positionedViewport, boolean spectator) {
+        if (this.isInShadowPass()) {
+            return false;
+        }
+
         if (ShaderModBridge.areShadersEnabled() && this.world.provider != null && !this.world.provider.hasSkyLight()) {
             return false;
         }

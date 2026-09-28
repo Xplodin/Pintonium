@@ -4,6 +4,7 @@ import net.irisshaders.iris.IrisCommon;
 import net.irisshaders.iris.shaderpack.ShaderPack;
 import net.irisshaders.iris.shaderpack.materialmap.VintageBlockMaterialMapping;
 import net.irisshaders.iris.shaderpack.materialmap.VintageWorldRenderingSettings;
+import net.irisshaders.iris.shadows.VintageShadowMatrices;
 import net.irisshaders.iris.uniforms.CapturedRenderingState;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -54,7 +55,6 @@ import static net.irisshaders.iris.IrisLogging.IRIS_LOGGER;
 public class MinecraftVintageVersionShimImpl implements MinecraftVersionShimService, PlatformUtilService {
     private static final Minecraft CLIENT = Minecraft.getMinecraft();
     private static final boolean DEVELOPMENT_ENVIRONMENT = Boolean.TRUE.equals(Launch.blackboard.get("fml.deobfuscatedEnvironment"));
-    private static final float DISABLED_SHADOW_SPACE_SCALE = 1.0E-6F;
     private static boolean rendererReloadDeferred;
 
     @Override
@@ -538,16 +538,12 @@ public class MinecraftVintageVersionShimImpl implements MinecraftVersionShimServ
 
     @Override
     public Matrix4f getShadowModelView(float sunPathRotation, float intervalSize) {
-        // 1.12 does not render Iris shadow maps yet. Identity matrices make
-        // shaderpacks project world coordinates into shadow space anyway,
-        // causing directional darkness even with fallback white shadow maps.
-        // Keep this invertible so shadowModelViewInverse does not become NaN.
-        return new Matrix4f().scaling(DISABLED_SHADOW_SPACE_SCALE);
+        return VintageShadowMatrices.createModelViewMatrix(sunPathRotation, intervalSize);
     }
 
     @Override
     public Matrix4f getShadowProjection(float shadowDistance, float nearPlane, float farPlane) {
-        return new Matrix4f().scaling(DISABLED_SHADOW_SPACE_SCALE);
+        return VintageShadowMatrices.createOrthoMatrix(shadowDistance, nearPlane, farPlane);
     }
 
     @Override

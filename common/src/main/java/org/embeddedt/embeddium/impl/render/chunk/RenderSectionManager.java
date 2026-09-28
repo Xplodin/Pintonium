@@ -561,6 +561,17 @@ public abstract class RenderSectionManager {
         this.renderListManager.setNeedsUpdate(true);
     }
 
+    /**
+     * Invalidates only the list used by the shader shadow camera. The sun moves
+     * independently of the player camera, so the shadow list must be refreshed
+     * without forcing the normal terrain graph to be rebuilt every frame.
+     */
+    public void markShadowGraphDirty() {
+        if (this.shadowRenderListManager != null) {
+            this.shadowRenderListManager.setNeedsUpdate(true);
+        }
+    }
+
     public void finishAllGraphUpdates() {
         this.renderListManager.finishPreviousGraphUpdate();
         if (this.shadowRenderListManager != null) {

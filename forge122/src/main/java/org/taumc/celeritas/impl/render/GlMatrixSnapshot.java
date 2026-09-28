@@ -35,6 +35,21 @@ public record GlMatrixSnapshot(Matrix4f projection, Matrix4f modelView) {
         return matrices;
     }
 
+    /** Loads a projection/model-view pair into Minecraft 1.12's fixed-function stacks. */
+    public static void load(Matrix4f projection, Matrix4f modelView) {
+        RESTORE_BUFFER.clear();
+        projection.get(RESTORE_BUFFER);
+        RESTORE_BUFFER.rewind();
+        GL11.glMatrixMode(GL11.GL_PROJECTION);
+        GL11.glLoadMatrix(RESTORE_BUFFER);
+
+        RESTORE_BUFFER.clear();
+        modelView.get(RESTORE_BUFFER);
+        RESTORE_BUFFER.rewind();
+        GL11.glMatrixMode(GL11.GL_MODELVIEW);
+        GL11.glLoadMatrix(RESTORE_BUFFER);
+    }
+
     public static GlMatrixSnapshot getMainCamera() {
         return mainCamera;
     }

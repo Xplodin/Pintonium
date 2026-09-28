@@ -106,6 +106,14 @@ public class IrisVintage implements CeleritasShaderVersionService {
         defineBiomeAlias(define, definedKeys, "WARPED_FOREST", "hell");
         defineBiomeAlias(define, definedKeys, "BASALT_DELTAS", "hell");
         defineBiomeAlias(define, definedKeys, "SOUL_SAND_VALLEY", "hell");
+        // Minecraft 1.12 only has one End biome, registered as minecraft:sky.
+        // Modern shader packs still reference the post-1.13 End biome names in
+        // custom uniform expressions, so map every one of them to that biome.
+        defineBiomeAlias(define, definedKeys, "THE_END", "sky");
+        defineBiomeAlias(define, definedKeys, "SMALL_END_ISLANDS", "sky");
+        defineBiomeAlias(define, definedKeys, "END_MIDLANDS", "sky");
+        defineBiomeAlias(define, definedKeys, "END_HIGHLANDS", "sky");
+        defineBiomeAlias(define, definedKeys, "END_BARRENS", "sky");
         defineBiomeAlias(define, definedKeys, "PALE_GARDEN", "roofed_forest");
 
         defineMissingBiome(define, definedKeys, "CHERRY_GROVE");
@@ -288,6 +296,15 @@ public class IrisVintage implements CeleritasShaderVersionService {
             if (MinecraftVersionShimService.MINECRAFT_SHIM.isLevelLoaded()) {
                 IrisCommon.getPipelineManager().preparePipeline(getCurrentDimension());
                 resetVanillaGlState();
+                // A shader toggle changes the terrain programs even when the
+                // shader pack's material/AO settings happen to be identical.
+                // WorldRenderingSettings only requests a rebuild when one of
+                // those settings changes, which leaves existing Celeritas
+                // meshes bound to the programs from the previous pipeline.
+                // Queue the same full renderer reload as F3+A after every
+                // in-world pipeline reload so old worker results are discarded
+                // and all sections are rebuilt against the new pipeline.
+                MinecraftVersionShimService.MINECRAFT_SHIM.markRendererReloadRequired();
             } else if (!isShaderPackActive()) {
                 IrisCommon.getPipelineManager().preparePipeline(DimensionId.OVERWORLD);
                 resetMenuGlState();

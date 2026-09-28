@@ -22,6 +22,7 @@ import net.irisshaders.iris.shaderpack.properties.PackDirectives;
 import net.irisshaders.iris.shadows.CommonShadowRenderer;
 import net.irisshaders.iris.shadows.ShadowCompositeRenderer;
 import net.irisshaders.iris.shadows.ShadowRenderTargets;
+import net.irisshaders.iris.shadows.VintageShadowRenderer;
 import net.irisshaders.iris.targets.RenderTargetStateListener;
 import net.irisshaders.iris.uniforms.CommonUniforms;
 import net.irisshaders.iris.uniforms.CapturedRenderingState;
@@ -195,8 +196,16 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
     protected @Nullable CommonShadowRenderer createShadowRenderer(CommonIrisRenderingPipeline pipeline, ProgramSource programSource,
             PackDirectives packDirectives, ShadowRenderTargets shadowRenderTargets, ShadowCompositeRenderer shadowCompositeRenderer,
             CustomUniforms customUniforms, boolean separateHardwareSamplers) {
-        // TODO: Port the 1.12 shadow terrain renderer after terrain program overrides exist.
-        return null;
+        // The vintage terrain shadow pass is still incomplete: some 1.12 shader packs (including Lumina Event
+        // Horizon) cause it to leave GL_INVALID_OPERATION pending every frame. Keep the stable fully-lit shadow-map
+        // fallback as the default until the pass restores all legacy GL state correctly. Developers can explicitly
+        // opt back into the experimental renderer while working on it.
+        if (programSource == null || !Boolean.getBoolean("pintonium.experimentalVintageShadows")) {
+            return null;
+        }
+
+        return new VintageShadowRenderer(pipeline, programSource, packDirectives,
+                shadowRenderTargets, shadowCompositeRenderer, separateHardwareSamplers);
     }
 
     private void createVintageEntityProgram() {

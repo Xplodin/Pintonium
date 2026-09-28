@@ -509,10 +509,9 @@ public abstract class CommonIrisRenderingPipeline implements WorldRenderingPipel
                     clearPass.execute(emptyClearColor);
                 }
 
-				// Vintage 1.12 currently has no world shadow renderer. Keep both
-				// allocated depth textures synchronized at the cleared depth (1.0),
-				// so shader packs sample a valid fully-lit shadow map instead of an
-				// undefined texture or an incompatible RGBA white-pixel.
+				// Platforms without a world shadow renderer keep both allocated depth
+				// textures synchronized at the cleared depth (1.0), so shader packs
+				// sample a defined fully-lit shadow map rather than undefined data.
 				if (shadowRenderer == null) {
 					shadowRenderTargets.copyPreTranslucentDepth();
 				}
