@@ -44,3 +44,10 @@ bin/
 .aider*
 /diagnostics/upstream-actinium
 /diagnostics/upstream-ausm
+codex-builds/pintonium-forge-1.12.2-2.4.2-dev-shadow-terrain-candidate.jar
+codex-builds/pintonium-forge-1.12.2-2.4.2-dev-shadow-terrain-managed-device-fix.jar
+codex-builds/pintonium-forge-1.12.2-ironchest-fix-v3.jar
+codex-builds/pintonium-forge-1.12.2-ironchest-fix-v4.jar
+codex-builds/pintonium-forge-1.12.2-ironchest-v4-glfix.jar
+codex-builds/soundphysics-1.2.1-channel-fix.jar
+codex-builds/soundphysics-1.2.1-channel-fix.README.md
