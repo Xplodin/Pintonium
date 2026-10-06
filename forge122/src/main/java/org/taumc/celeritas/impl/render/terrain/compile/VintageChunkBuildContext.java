@@ -221,9 +221,27 @@ public class VintageChunkBuildContext extends ChunkBuildContext {
                 while (metadataIndex + 1 < quadMetadata.size() && q >= quadMetadata.get(metadataIndex).endQuad) {
                     metadataIndex++;
                 }
+
+                int shaderBlockId = metadata.blockId;
+                short shaderRenderType = metadata.renderType;
+
+                // Some 1.12 mods implement waterlogging by rendering the host block in both the
+                // cutout and translucent layers. The translucent invocation emits vanilla fluid
+                // quads, but the only state available to us is still the host state. In particular,
+                // FFD's underwater plants use Material.WATER, so renderType is already 1 even though
+                // blockId still identifies kelp. Always classify fluid-textured quads instead of
+                // assuming a liquid render type also carries the correct shader block ID.
+                // Aqua Acrobatics replaces the vanilla water sprites, so its known aliases are
+                // handled here as well.
+                int fluidBlockId = shaderFluidBlockId(sprite);
+                if (fluidBlockId != -1) {
+                    shaderBlockId = fluidBlockId;
+                    shaderRenderType = 1;
+                }
+
                 ChunkVertexExtendedData.set(
-                        metadata.blockId,
-                        metadata.renderType,
+                        shaderBlockId,
+                        shaderRenderType,
                         midTexCoord,
                         trueNormal,
                         tangent,
@@ -396,6 +414,36 @@ public class VintageChunkBuildContext extends ChunkBuildContext {
 
     private static short shaderRenderType(IBlockState state) {
         return state.getMaterial().isLiquid() ? (short) 1 : (short) 0;
+    }
+
+    private static int shaderFluidBlockId(TextureAtlasSprite sprite) {
+        if (sprite == null) {
+            return -1;
+        }
+
+        String iconName = sprite.getIconName().toLowerCase(Locale.ROOT).replace('\\', '/');
+        Object2IntMap<IBlockState> mappedBlockIds = VintageWorldRenderingSettings.INSTANCE.getBlockStateIds();
+
+        if (isFluidSprite(iconName, "water")) {
+            int mappedId = mappedIdForBlocks(mappedBlockIds, Blocks.WATER, Blocks.FLOWING_WATER);
+            return mappedId != -1 ? mappedId : 9;
+        }
+        if (isFluidSprite(iconName, "lava")) {
+            int mappedId = mappedIdForBlocks(mappedBlockIds, Blocks.LAVA, Blocks.FLOWING_LAVA);
+            return mappedId != -1 ? mappedId : 11;
+        }
+
+        return -1;
+    }
+
+    private static boolean isFluidSprite(String iconName, String fluidName) {
+        String path = "blocks/" + fluidName;
+        boolean supportedNamespace = !iconName.contains(":")
+                || iconName.startsWith("minecraft:")
+                || (fluidName.equals("water") && iconName.startsWith("aquaacrobatics:"));
+
+        return supportedNamespace
+                && (iconName.endsWith(path + "_still") || iconName.endsWith(path + "_flow"));
     }
 
     private record QuadMetadata(int startQuad, int endQuad, int blockId, short renderType,
