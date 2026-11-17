@@ -44,6 +44,9 @@ public class CeleritasWorldRenderer extends SimpleWorldRenderer<WorldClient, Vin
      * @return The CeleritasWorldRenderer based on the current dimension, or null if none is attached
      */
     public static CeleritasWorldRenderer instanceNullable() {
+        if (!(Minecraft.getMinecraft().renderGlobal instanceof SimpleWorldRenderer.Provider)) {
+            return null;
+        }
         return SimpleWorldRenderer.Provider.getWorldRendererNullable(Minecraft.getMinecraft().renderGlobal);
     }
 

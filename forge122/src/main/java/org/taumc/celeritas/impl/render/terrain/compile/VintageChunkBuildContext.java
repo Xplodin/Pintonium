@@ -225,6 +225,14 @@ public class VintageChunkBuildContext extends ChunkBuildContext {
                 int shaderBlockId = metadata.blockId;
                 short shaderRenderType = metadata.renderType;
 
+                // AgriCraft renders both wooden supports and plants from one PLANTS
+                // block. Only the plant quads should inherit the foliage fallback:
+                // packs such as Lumina disable directional shading and add
+                // subsurface lighting for foliage, making the supports too bright.
+                if (sprite != null && "agricraft:blocks/crop".equals(sprite.getIconName())) {
+                    shaderBlockId = genericMaterialFallbackId();
+                }
+
                 // Some 1.12 mods implement waterlogging by rendering the host block in both the
                 // cutout and translucent layers. The translucent invocation emits vanilla fluid
                 // quads, but the only state available to us is still the host state. In particular,

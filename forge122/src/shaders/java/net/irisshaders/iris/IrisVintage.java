@@ -25,6 +25,7 @@ import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import org.taumc.celeritas.CeleritasShaderVersionService;
+import org.taumc.celeritas.impl.compat.nothirium.NothiriumCompatibility;
 import org.taumc.celeritas.mixin.shaders.accessor.MixinEntityRendererLightmapAccessor;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -218,12 +219,14 @@ public class IrisVintage implements CeleritasShaderVersionService {
 
     @Override
     public void onEarlyInitialize() {
+        if (NothiriumCompatibility.isPresent()) return;
         installVanillaStateResetter();
         DHCompat.run();
     }
 
     @Override
     public void onRenderSystemInit() {
+        if (NothiriumCompatibility.isPresent()) return;
         installVanillaStateResetter();
         ensureRenderSystemInitialized();
         if (!MinecraftVersionShimService.MINECRAFT_SHIM.isDHPresent()) {
@@ -233,6 +236,7 @@ public class IrisVintage implements CeleritasShaderVersionService {
 
     @Override
     public void onLoadingComplete() {
+        if (NothiriumCompatibility.isPresent()) return;
         installVanillaStateResetter();
 
         // DH can defer loading the selected shader pack until after its API is ready.
@@ -254,6 +258,7 @@ public class IrisVintage implements CeleritasShaderVersionService {
 
     @Override
     public void destroyEverything() {
+        if (NothiriumCompatibility.isPresent()) return;
         IrisCommon.getPipelineManager().destroyPipeline();
         if (MinecraftVersionShimService.MINECRAFT_SHIM.isLevelLoaded()) {
             resetVanillaGlState();
@@ -264,6 +269,10 @@ public class IrisVintage implements CeleritasShaderVersionService {
 
     @Override
     public WorldRenderingPipeline createPipeline(NamespacedId dimensionId) {
+        if (NothiriumCompatibility.isPresent()) {
+            IrisCommon.setFallback(false);
+            return createVanillaRenderingPipeline();
+        }
         if (IrisCommon.getCurrentPack().isEmpty() || !IrisCommon.getIrisConfig().areShadersEnabled()) {
             IrisCommon.setFallback(false);
             return createVanillaRenderingPipeline();
@@ -288,6 +297,10 @@ public class IrisVintage implements CeleritasShaderVersionService {
 
     @Override
     public void reload() {
+        if (NothiriumCompatibility.isPresent()) {
+            IRIS_LOGGER.info("Shaderpack reload skipped: the Nothirium shader bridge is not yet available.");
+            return;
+        }
         try {
             IrisCommon.getIrisConfig().initialize();
             IrisCommon.destroyEverything();
@@ -323,6 +336,7 @@ public class IrisVintage implements CeleritasShaderVersionService {
     }
 
     private static void resetGlState(boolean bindWorldTextures) {
+        if (NothiriumCompatibility.isPresent()) return;
         installVanillaStateResetter();
         Minecraft minecraft = Minecraft.getMinecraft();
         if (minecraft.getFramebuffer() == null) {

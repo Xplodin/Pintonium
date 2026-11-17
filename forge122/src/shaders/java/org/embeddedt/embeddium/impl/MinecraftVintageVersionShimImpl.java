@@ -138,6 +138,12 @@ public class MinecraftVintageVersionShimImpl implements MinecraftVersionShimServ
     }
 
     @Override
+    public long getCurrentTick() {
+        WorldClient world = CLIENT.world;
+        return world == null ? 0L : world.getTotalWorldTime();
+    }
+
+    @Override
     public long getDayTime() {
         WorldClient world = CLIENT.world;
         return world == null ? 0L : world.getWorldTime();

@@ -91,7 +91,7 @@ dependencies {
     compileOnly("com.gtnewhorizons.retrofuturabootstrap:RetroFuturaBootstrap:1.0.7") {
         exclude(group = "org.apache.logging.log4j")
     }
-    modCompileOnly("maven.modrinth:distanthorizonsapi:3.0.0")
+    modCompileOnly("maven.modrinth:distanthorizonsapi:7.2.0")
     modCompileOnly("maven.modrinth:fluidlogged-api:3.0.6")
 }
 

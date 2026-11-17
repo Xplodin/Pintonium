@@ -8,6 +8,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import org.taumc.celeritas.core.CeleritasLwjgl3ifyCompat;
+import org.taumc.celeritas.impl.compat.nothirium.NothiriumCompatibility;
 
 import java.io.IOException;
 import java.net.URI;
@@ -38,7 +39,7 @@ public class CeleritasVintageMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return false;
+        return NothiriumCompatibility.shouldApplyMixin(mixinClassName, NothiriumCompatibility.isPresent());
     }
 
     @Override
@@ -104,7 +105,18 @@ public class CeleritasVintageMixinPlugin implements IMixinConfigPlugin {
         if (possibleMixinClasses.size() == 0) {
             throw new IllegalStateException("Found no mixin classes, something went very wrong");
         }
-        return List.copyOf(possibleMixinClasses);
+        boolean nothirium = NothiriumCompatibility.isPresent();
+        List<String> selectedMixins = possibleMixinClasses.stream()
+                .filter(name -> NothiriumCompatibility.shouldApplyMixin(name, nothirium))
+                .sorted()
+                .toList();
+        if (nothirium) {
+            LOGGER.info("Nothirium detected: terrain rendering and video settings remain with Nothirium. "
+                    + "Pintonium shaderpacks are unavailable in this experimental coexistence build. "
+                    + "Enabled {} independent mixins; skipped {} renderer-dependent mixins.",
+                    selectedMixins.size(), possibleMixinClasses.size() - selectedMixins.size());
+        }
+        return selectedMixins;
     }
 
     @Override

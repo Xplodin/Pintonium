@@ -26,6 +26,7 @@ import org.embeddedt.embeddium.impl.gl.device.GLRenderDevice;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL30;
 import org.taumc.celeritas.impl.compat.betterfoliage.BetterFoliageCompat;
+import org.taumc.celeritas.impl.compat.nothirium.NothiriumCompatibility;
 import org.taumc.celeritas.impl.command.TogglePassCommand;
 import org.taumc.celeritas.impl.gui.SodiumGameOptions;
 import org.taumc.celeritas.impl.render.terrain.CeleritasWorldRenderer;
@@ -39,18 +40,22 @@ public class CeleritasVintage {
 
     @EventHandler
     public void onConstruct(FMLConstructionEvent event) {
-        GLRenderDevice.VANILLA_STATE_RESETTER = () -> {
-            GL30.glBindVertexArray(0);
-            OpenGlHelper.glBindBuffer(OpenGlHelper.GL_ARRAY_BUFFER, 0);
-            GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, 0);
-        };
+        if (!NothiriumCompatibility.isPresent()) {
+            GLRenderDevice.VANILLA_STATE_RESETTER = () -> {
+                GL30.glBindVertexArray(0);
+                OpenGlHelper.glBindBuffer(OpenGlHelper.GL_ARRAY_BUFFER, 0);
+                GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, 0);
+            };
+        } else {
+            LOGGER.info("Nothirium coexistence preview: Pintonium terrain, video options and shaders are inactive.");
+        }
         VERSION = Loader.instance().getIndexedModList().get(MODID).getVersion();
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @EventHandler
     public void onInit(FMLInitializationEvent event) {
-        if ((Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
+        if (!NothiriumCompatibility.isPresent() && Boolean.TRUE.equals(Launch.blackboard.get("fml.deobfuscatedEnvironment"))) {
             ClientCommandHandler.instance.registerCommand(new TogglePassCommand());
         }
 
@@ -64,6 +69,11 @@ public class CeleritasVintage {
 
         var strings = event.getRight();
         strings.add("");
+        if (NothiriumCompatibility.isPresent()) {
+            strings.add("%sPintonium (%s): Nothirium coexistence".formatted(ChatFormatting.GREEN, VERSION));
+            strings.add("Shaderpack bridge: not yet available");
+            return;
+        }
         strings.add("%s%s Renderer (%s)".formatted(ChatFormatting.GREEN, "Pintonium", VERSION));
 
         // Embeddium: Show a lot less with reduced debug info
