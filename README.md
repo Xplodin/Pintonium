@@ -51,6 +51,12 @@ at all.
 For modern (1.13+) versions, the final mod jar should run as-is in a standard instance for that version (e.g. Java 17
 or 21 are not required, unless the underlying Minecraft version itself requires them).
 
+## Mod post-processing API
+
+The legacy Forge shader renderer exposes callbacks after shader-pack output, scene depth and camera matrices,
+and managed GL scopes for fullscreen effects and world geometry. See the [integration guide](docs/post-processing-api.md)
+for registration examples, the depth/state contract, and validation instructions.
+
 ## License
 
 Pintonium is licensed under the Lesser GNU General Public License version 3, as it uses code from its upstream fork, Iris 1.7,

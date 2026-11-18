@@ -52,3 +52,15 @@ codex-builds/pintonium-forge-1.12.2-ironchest-v4-glfix.jar
 codex-builds/soundphysics-1.2.1-channel-fix.jar
 codex-builds/soundphysics-1.2.1-channel-fix.README.md
 /diagnostics
+/codex-builds
+/sstorage-lazy-model-fix
+/space-oredict-scripts
+/scripts
+/mod-director-first-boot-fix
+/hbm-hyxcate-charms
+/logs
+/generated
+/ffd-server-guard-src
+diagnostics-galacticraft-meteor-bytecode.txt
+diagnostics-galacticraft-player-bytecode.txt
+diagnostics-galacticraft-ticks-bytecode.txt

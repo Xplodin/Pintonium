@@ -3,6 +3,7 @@ package org.taumc.celeritas.mixin.shaders;
 import net.irisshaders.iris.compat.dh.DHCompat;
 import net.irisshaders.iris.IrisCommon;
 import net.irisshaders.iris.IrisVintage;
+import net.irisshaders.iris.IrisConstants;
 import net.irisshaders.iris.pipeline.CommonIrisRenderingPipeline;
 import net.irisshaders.iris.pipeline.VintageIrisRenderingPipeline;
 import net.irisshaders.iris.pipeline.WorldRenderingPipeline;
@@ -19,8 +20,10 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.taumc.celeritas.impl.render.GlMatrixSnapshot;
+import org.lwjgl.opengl.GL11;
 
 @Mixin(EntityRenderer.class)
 public class MixinEntityRenderer_Shaders {
@@ -144,6 +147,30 @@ public class MixinEntityRenderer_Shaders {
                     this.iris$gbufferMatrices.restore();
                 }
             }
+        }
+    }
+
+    @ModifyArg(method = "renderWorldPass(IFJ)V", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/GlStateManager;clear(I)V", ordinal = 1), index = 0)
+    private int iris$preserveWorldDepthBeforeHand(int mask) {
+        if (this.iris$pipeline instanceof VintageIrisRenderingPipeline pipeline
+                && (mask & GL11.GL_DEPTH_BUFFER_BIT) != 0) {
+            // Vanilla clears world depth before the hand. Shaders need world and hand depth together,
+            // and depthtex2 must be captured before that clear rather than inside the item draw.
+            pipeline.beginHand();
+            this.iris$bindDefaultFramebuffer();
+            return mask & ~GL11.GL_DEPTH_BUFFER_BIT;
+        }
+        return mask;
+    }
+
+    @Inject(method = "renderHand(FI)V", at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/GlStateManager;loadIdentity()V",
+            ordinal = 0, shift = At.Shift.AFTER))
+    private void iris$compressHandProjectionDepth(float partialTicks, int pass, CallbackInfo ci) {
+        if (this.iris$pipeline instanceof VintageIrisRenderingPipeline) {
+            // Pre-multiply perspective by the same clip-depth scale as the modern/1.7 hand renderers.
+            GL11.glScalef(1.0F, 1.0F, IrisConstants.DEPTH);
         }
     }
 

@@ -1,6 +1,9 @@
 package org.taumc.celeritas.api.v0;
 
 import net.irisshaders.iris.api.v0.IrisApiConfig;
+import org.taumc.celeritas.api.v0.postprocess.PostProcessingApi;
+
+import java.util.Optional;
 import java.util.ServiceLoader;
 
 public interface CeleritasShadersApi {
@@ -11,6 +14,14 @@ public interface CeleritasShadersApi {
      */
     static CeleritasShadersApi getInstance() {
         return INSTANCE;
+    }
+
+    /**
+     * Optional post-processing integration. Currently implemented by the legacy Forge shader renderer.
+     * Check availability rather than assuming every platform implements this extension.
+     */
+    default Optional<PostProcessingApi> getPostProcessing() {
+        return Optional.empty();
     }
 
 

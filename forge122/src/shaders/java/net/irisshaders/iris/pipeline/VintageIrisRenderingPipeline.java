@@ -2,6 +2,7 @@ package net.irisshaders.iris.pipeline;
 
 import com.google.common.primitives.Ints;
 import net.irisshaders.iris.gl.blending.BlendModeOverride;
+import net.irisshaders.iris.apiimpl.VintagePostProcessing;
 import net.irisshaders.iris.gl.blending.AlphaTest;
 import net.irisshaders.iris.gl.blending.BufferBlendOverride;
 import net.irisshaders.iris.gl.framebuffer.GlFramebuffer;
@@ -53,6 +54,27 @@ import static net.irisshaders.iris.IrisLogging.IRIS_LOGGER;
 import static org.embeddedt.embeddium.compat.mc.MinecraftVersionShimService.MINECRAFT_SHIM;
 
 public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
+    private boolean postProcessingHandDepthAvailable;
+
+    @Override
+    public void beginLevelRendering() {
+        this.postProcessingHandDepthAvailable = false;
+        super.beginLevelRendering();
+    }
+
+    @Override
+    public void beginHand() {
+        super.beginHand();
+        this.postProcessingHandDepthAvailable = true;
+    }
+
+    @Override
+    public void finalizeLevelRendering() {
+        super.finalizeLevelRendering();
+        VintagePostProcessing.INSTANCE.render(this.renderTargets.getDepthTexture(),
+                this.postProcessingHandDepthAvailable ? this.renderTargets.getDepthTextureNoHand().getTextureId() : -1);
+    }
+
     private static final ShaderKey[] NO_SHADER_KEYS = new ShaderKey[0];
 
     @Nullable
@@ -1042,7 +1064,9 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
             this.vintageHandCompatBridgeLogged = true;
         }
 
-        this.beginHand();
+        if (!this.postProcessingHandDepthAvailable) {
+            this.beginHand();
+        }
         this.removePhaseIfNeeded();
         framebuffer.bind();
         this.setPhase(this.isBeforeTranslucent ? WorldRenderingPhase.HAND_SOLID : WorldRenderingPhase.HAND_TRANSLUCENT);
@@ -1302,6 +1326,7 @@ public class VintageIrisRenderingPipeline extends CommonIrisRenderingPipeline {
 
     @Override
     public void destroy() {
+        VintagePostProcessing.INSTANCE.destroyResources();
         if (this.vintageEntityProgram != null) {
             this.vintageEntityProgram.delete();
             this.vintageEntityProgram = null;

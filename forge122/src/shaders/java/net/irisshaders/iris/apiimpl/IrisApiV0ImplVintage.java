@@ -11,10 +11,17 @@ import org.taumc.celeritas.CeleritasShaderVersionService;
 import org.taumc.celeritas.api.v0.CeleritasShadersApi;
 
 import java.io.IOException;
+import java.util.Optional;
+import org.taumc.celeritas.api.v0.postprocess.PostProcessingApi;
 
 import static net.irisshaders.iris.IrisLogging.IRIS_LOGGER;
 
 public class IrisApiV0ImplVintage implements CeleritasShadersApi {
+    @Override
+    public Optional<PostProcessingApi> getPostProcessing() {
+        return Optional.of(VintagePostProcessing.INSTANCE.getApi());
+    }
+
     private final IrisApiConfig config = new IrisApiConfig() {
         @Override
         public boolean areShadersEnabled() {
